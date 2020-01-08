@@ -81,7 +81,7 @@ if (isset($_SESSION["id"])) {
       <!-- Nav Item - General HRD(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-users"></i>
+        <img src="../img/logo/logo_book.png" width="70" height="70" >
           <span>General HRD</span>
         </a>
       </li>

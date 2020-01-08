@@ -21,7 +21,7 @@ include "../config/connection.php";
     <body class="bg-gradient-primary">
         <div class="container">
             <div class="fullscreen d-flex flex-column justify-content-center align-items-center">
-                <h1 style="font-weight: 800; color: #40407A;">LOGIN</h1>
+                <h1 style="font-weight: 800; color: #40407A; margin-top: 60px;">LOGIN</h1>
                 <h3 style="font-weight: 800; color: #40407A;">Online Assement</h3>
             </div>
             
@@ -42,21 +42,21 @@ include "../config/connection.php";
                                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username">
                                                 </div>
                                             </div>
-                                            <div class="row form-group">
+                                            <div class="row form-group" style="margin-top: 35px;">
                                                 <label class="col-md-2 small d-flex flex-column justify-content-center" for="password">Password</label>
                                                 <div class="input-group col-md-10">
                                                     <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password" onkeyup="validatePassword(this)">
                                                     <div class="input-group-append">
-                                                        <span class="far fa-eye form-control form-control-user" id="eye" onclick="showPassword();"></span>
+                                                        <span class="far fa-eye input-group-text form-control form-control-user" id="eye" onclick="showPassword();">
+                                                            
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <div class="text-center">
-                                                    <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                                </div>
+                                                
                                             </div>
-                                            <a href="#" class="btn btn-primary btn-user btn-block">Login</a>
+                                            <a href="#" class="btn btn-primary btn-user btn-block" style="margin-top: 35px;">Login</a>
                                         </form>
                                     </div>
                                 </div>

@@ -11,20 +11,15 @@ include "../config/connection.php";
         <meta name="description" content="">
         <meta name="author" content="">
         
-        <title>Online Training Cam</title>
+        <title>Login - Online Training Cam</title>
         
         <?php
             include "../config/styles.php";
         ?>
     </head>
     
-    <body class="bg-gradient-primary">
+    <body id="login">
         <div class="container">
-            <div class="fullscreen d-flex flex-column justify-content-center align-items-center">
-                <h1 style="font-weight: 800; color: #40407A; margin-top: 60px;">LOGIN</h1>
-                <h3 style="font-weight: 800; color: #40407A;">Online Assement</h3>
-            </div>
-            
             <!-- Outer Row -->
             <div class="row justify-content-center">
                 <div class="col-xl-10 col-lg-12 col-md-9">
@@ -35,6 +30,9 @@ include "../config/connection.php";
                                 <div class="col-lg-4 d-none d-lg-block bg-login-image"></div>
                                 <div class="col-lg-8">
                                     <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                                        </div>
                                         <form class="user">
                                             <div class="row form-group">
                                                 <label class="col-md-2 small d-flex flex-column justify-content-center" for="password">Username</label>

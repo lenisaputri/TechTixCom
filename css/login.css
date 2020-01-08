@@ -1,0 +1,9 @@
+body {
+    background-color: #ceceef !important;
+}
+
+#login .bg-login-image {
+    background: url(../img/logo/logo_4.png);
+    background-position: center;
+    background-size: cover;
+}

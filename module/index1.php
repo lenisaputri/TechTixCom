@@ -1,23 +1,3 @@
-<?php
-session_start();
-include "../config/connection.php";
-
-if (isset($_SESSION["id"])) {
-  $level = $_SESSION['level'];
-  $idUser = $_SESSION['id'];
-} else {
-  $message = "Login terlebih dahulu!";
-  echo ("<script LANGUAGE='JavaScript'>
-    window.alert('$message');
-    window.location.href='../';
-    </script>");
-  // header("Location: ../");
-}
-?>
-<input id="idUser" type="hidden" name="idUser" value="<?php echo $idUser ?>">
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>

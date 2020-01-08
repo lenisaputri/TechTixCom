@@ -58,11 +58,11 @@ include "../config/connection.php";
                                         </form>
 
                                         <!-- button hak akses -->
-                                        <form action="../process/loginProcess.php" method="post" style="margin-top: 35px;">
+                                        <!-- <form action="../process/loginProcess.php" method="post" style="margin-top: 35px;">
                                             <input type="submit" name="operator" class="btn btn-primary align-self-end shadow-none mr-3" value="Operator">
                                             <input type="submit" name="supervisor" class="btn btn-secondary align-self-end shadow-none mr-3" value="Supervisor">
                                             <input type="submit" name="admin" class="btn btn-warning align-self-end shadow-none mr-3" value="Admin">
-                                        </form>
+                                        </form> -->
                                     </div>
                                 </div>
                             </div>

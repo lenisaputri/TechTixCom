@@ -15,8 +15,33 @@ if (isset($_SESSION["id"])) {
 }
 ?>
 <input id="idUser" type="hidden" name="idUser" value="<?php echo $idUser ?>">
+<?php
 
+switch ($level) {
+  case 'admin':
+    $queryUser = "SELECT a.*, b.* FROM tabel_user a, tabel_admin b WHERE a.id_user=$idUser and a.id_user=b.id_user";
+    $resultUser = mysqli_query($con, $queryUser);
+    $rowUser = mysqli_fetch_assoc($resultUser);
+    $namaUser = $rowUser["nama"];
+    break;
+  case 'operator':
+    $queryUser = "SELECT a.*, b.* FROM tabel_user a, tabel_operator b WHERE a.id_user=$idUser and a.id_user=b.id_user";
+    $resultUser = mysqli_query($con, $queryUser);
+    $rowUser = mysqli_fetch_assoc($resultUser);
+    $namaUser = $rowUser["nama"];
+    break;
+  case 'supervisor':
+    $queryUser = "SELECT a.*, b.* FROM tabel_user a, tabel_supervisor b WHERE a.id_user=$idUser and a.id_user=b.id_user";
+    $resultUser = mysqli_query($con, $queryUser);
+    $rowUser = mysqli_fetch_assoc($resultUser);
+    $namaUser = $rowUser["nama"];
+    break;
+  default:
+    $namaUser = "User tidak ditemukan";
+    break;
+}
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,22 +52,26 @@ if (isset($_SESSION["id"])) {
     <meta name="description" content="">
     <meta name="author" content="">
     
-    <title>Online Training Cam</title>
-    
+    <title>Online Result Training</title>
+
     <?php
-    include "../config/styles.php";
-    ?>
+            include "../config/styles.php";
+        ?>
   </head>
   
   <body id="page-top">
+  <!-- navigation Admin & Supervisor & Operator -->
     <!-- Page Wrapper (Untuk Menu) -->
-    <div id="wrapper">
+    <?php
+    if ($level != "admin"){
+      ?>
+      <div id="wrapper">
       <!-- Sidebar (Menu)-->
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
       <!-- Sidebar - Brand (Judul) -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+        <div class="sidebar-brand-icon">
+          <img src="../img/logo/logo_book.png" width="45" height="45" >
         </div>
         <div class="sidebar-brand-text mx-3">NAMA LOGO</div>
       </a>
@@ -52,7 +81,7 @@ if (isset($_SESSION["id"])) {
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="index.php?module=home">
           <i class="fas fa-fw fa-home"></i>
           <span>Dashboard</span>
         </a>
@@ -66,7 +95,7 @@ if (isset($_SESSION["id"])) {
 
       <!-- Nav Item - Safety (Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="index.php?module=safety">
           <i class="fas fa-fw fa-shield-alt"></i>
           <span>Safety</span>
         </a>
@@ -80,8 +109,8 @@ if (isset($_SESSION["id"])) {
 
       <!-- Nav Item - General HRD(Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link" href="#">
-        <img src="../img/logo/logo_book.png" width="70" height="70" >
+        <a class="nav-link" href="index.php?module=generalHrd">
+          <i class="fas fa-fw fa-cogs"></i>
           <span>General HRD</span>
         </a>
       </li>
@@ -94,11 +123,11 @@ if (isset($_SESSION["id"])) {
       
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="index.php?module=technical" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-cogs"></i>
           <span>Technical</span>
         </a>
-        
+<!--         
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Technical Machine :</h6>
@@ -107,7 +136,7 @@ if (isset($_SESSION["id"])) {
             <a class="collapse-item" href="#">3</a>
             <div class="collapse-divider"></div>
           </div>
-        </div>
+        </div> -->
       </li>
       
       <!-- Divider (Garis Pembagi)-->
@@ -118,7 +147,7 @@ if (isset($_SESSION["id"])) {
 
       <!-- Nav Item - Quality(Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="index.php?module=quality">
           <i class="fas fa-fw fa-certificate"></i>
           <span>Quality</span></a>
       </li>
@@ -169,10 +198,10 @@ if (isset($_SESSION["id"])) {
               
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="index.php?module=profile">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Profile
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="index.php?module=setting">
                   <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>Settings
                 </a>
                 <div class="dropdown-divider"></div>
@@ -184,29 +213,172 @@ if (isset($_SESSION["id"])) {
           </ul>
         </nav>
         <!-- End of Topbar -->
+        <?php
+    } else {
+      ?>
+            <div id="wrapper">
+      <!-- Sidebar (Menu)-->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <!-- Sidebar - Brand (Judul) -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon">
+          <img src="../img/logo/logo_book.png" width="45" height="45" >
+        </div>
+        <div class="sidebar-brand-text mx-3">NAMA LOGO</div>
+      </a>
 
-        <!-- Begin Page Content (Bawah Navbar)-->
-        <div class="container-fluid">
-          <div class="row">
-            <!-- Spider Matrix Chart -->
-            <div class="col-lg-12 mb-4">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Spider Matrix</h6>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                    <canvas id="marksChart"></canvas>
-                </div>
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php?module=home">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider">
+
+      <!-- Heading (Main Isi Menu 1)-->
+      <div class="sidebar-heading">Safety</div>
+
+      <!-- Nav Item - Safety (Sub Isi Menu)-->
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?module=safety">
+          <i class="fas fa-fw fa-shield-alt"></i>
+          <span>Safety</span>
+        </a>
+      </li>
+      
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider">
+
+      <!-- Heading (Main Isi Menu 2)-->
+      <div class="sidebar-heading">General HRD</div>
+
+      <!-- Nav Item - General HRD(Sub Isi Menu)-->
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?module=generalHrd">
+          <i class="fas fa-fw fa-cogs"></i>
+          <span>General HRD</span>
+        </a>
+      </li>
+      
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider">
+
+      <!-- Heading (Main Isi Menu 3)-->
+      <div class="sidebar-heading">Technical</div>
+      
+      <!-- Nav Item - Technical(Sub Isi Menu)-->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.php?module=technical" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-cogs"></i>
+          <span>Technical</span>
+        </a>
+        
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Technical Machine :</h6>
+            <a class="collapse-item" href="#">1</a>
+            <a class="collapse-item" href="#">2</a>
+            <a class="collapse-item" href="#">3</a>
+            <div class="collapse-divider"></div>
+          </div>
+        </div>
+      </li>
+      
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider">
+
+      <!-- Heading (Main Isi Menu 4)-->
+      <div class="sidebar-heading">Quality</div>
+
+      <!-- Nav Item - Quality(Sub Isi Menu)-->
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?module=quality">
+          <i class="fas fa-fw fa-certificate"></i>
+          <span>Quality</span></a>
+      </li>
+
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper (Konten Samping)-->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Topbar (Navbar atas)-->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          
+          <!-- Topbar Navbar Search -->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
               </div>
             </div>
-          </div>
-
-          <!-- Content Row -->
-          <div class="row">
-            <div class="col-lg-6 mb-4"></div>
-          </div>
+          </form>
+          
+          <!-- Topbar Navbar User-->
+          <ul class="navbar-nav ml-auto">
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">LEVEL</span>
+                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+              </a>
+              
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="index.php?module=profile">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Profile
+                </a>
+                <a class="dropdown-item" href="index.php?module=setting">
+                  <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>Settings
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- End of Topbar -->
+        <?php
+    } 
+    ?>
+        <!-- Begin Page Content (Bawah Navbar)-->
+        <div class="container-fluid">
+            <?php
+              $module = $_GET['module'];
+              if ($level == "operator"){
+                switch ($module){
+                  case "home":
+                    include "operator/home.php";
+                    break;
+                }
+              }
+            ?>
         </div>
         <!-- /.container-fluid -->
       </div>

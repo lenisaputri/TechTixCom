@@ -1,3 +1,23 @@
+<?php
+session_start();
+include "../config/connection.php";
+
+if (isset($_SESSION["id"])) {
+  $level = $_SESSION['level'];
+  $idUser = $_SESSION['id'];
+} else {
+  $message = "Login terlebih dahulu!";
+  echo ("<script LANGUAGE='JavaScript'>
+    window.alert('$message');
+    window.location.href='../';
+    </script>");
+  // header("Location: ../");
+}
+?>
+<input id="idUser" type="hidden" name="idUser" value="<?php echo $idUser ?>">
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,8 +41,8 @@
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
       <!-- Sidebar - Brand (Judul) -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+        <div class="sidebar-brand-icon">
+          <img src="../img/logo/logo_book.png" width="45" height="45" >
         </div>
         <div class="sidebar-brand-text mx-3">NAMA LOGO</div>
       </a>
@@ -61,7 +81,7 @@
       <!-- Nav Item - General HRD(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-users"></i>
+          <i class="fas fa-fw fa-cogs"></i>
           <span>General HRD</span>
         </a>
       </li>

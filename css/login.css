@@ -7,3 +7,15 @@ body {
     background-position: center;
     background-size: cover;
 }
+
+#login .btn-primary {
+    color: #fff;
+    background-color: #298cec;
+    border-color: #298cec;
+}
+  
+#login .btn-primary:hover {
+    color: #fff;
+    background-color: #0368ca;
+    border-color: #0368ca;
+  }

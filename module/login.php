@@ -11,7 +11,7 @@ include "../config/connection.php";
         <meta name="description" content="">
         <meta name="author" content="">
         
-        <title>Login - Online Training Cam</title>
+        <title>Login - Online Result Training</title>
         
         <?php
             include "../config/styles.php";
@@ -19,9 +19,9 @@ include "../config/connection.php";
     </head>
     
     <body id="login">
-        <div class="container">
+        <div class="container justify-content-center">
             <!-- Outer Row -->
-            <div class="row justify-content-center">
+            <div class="row d-flex justify-content-center">
                 <div class="col-xl-10 col-lg-12 col-md-9">
                     <div class="card o-hidden border-0 shadow-lg my-5">
                         <div class="card-body p-0">
@@ -31,7 +31,7 @@ include "../config/connection.php";
                                 <div class="col-lg-8">
                                     <div class="p-5">
                                         <div class="text-center">
-                                            <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                                            <h1 class="h4 text-gray-900 mb-4">Online Result Training</h1>
                                         </div>
                                         <form class="user">
                                             <div class="row form-group">
@@ -55,6 +55,13 @@ include "../config/connection.php";
                                                 
                                             </div>
                                             <a href="#" class="btn btn-primary btn-user btn-block" style="margin-top: 35px;">Login</a>
+                                        </form>
+
+                                        <!-- button hak akses -->
+                                        <form action="../process/loginProcess.php" method="post" style="margin-top: 35px;">
+                                            <input type="submit" name="operator" class="btn btn-primary align-self-end shadow-none mr-3" value="Operator">
+                                            <input type="submit" name="supervisor" class="btn btn-secondary align-self-end shadow-none mr-3" value="Supervisor">
+                                            <input type="submit" name="admin" class="btn btn-warning align-self-end shadow-none mr-3" value="Admin">
                                         </form>
                                     </div>
                                 </div>

@@ -7,4 +7,4 @@
 
 <!-- Custom styles for this template-->
 <link href="../css/techtixcom.min.css" rel="stylesheet">
-<link rel="icon" href="../img/logoA.ico" type="img/ico">
+<link rel="icon" href="../img/logo/logo_atas1.png" type="img/png">

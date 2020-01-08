@@ -33,7 +33,7 @@
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-home"></i>
           <span>Dashboard</span>
         </a>
       </li>
@@ -47,7 +47,7 @@
       <!-- Nav Item - Safety (Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-shield-alt"></i>
           <span>Safety</span>
         </a>
       </li>
@@ -61,7 +61,7 @@
       <!-- Nav Item - General HRD(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-users"></i>
           <span>General HRD</span>
         </a>
       </li>
@@ -75,7 +75,7 @@
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
+          <i class="fas fa-fw fa-cogs"></i>
           <span>Technical</span>
         </a>
         
@@ -99,7 +99,7 @@
       <!-- Nav Item - Quality(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-certificate"></i>
           <span>Quality</span></a>
       </li>
 
@@ -153,7 +153,7 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Profile
                 </a>
                 <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>Settings
+                  <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>Settings
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

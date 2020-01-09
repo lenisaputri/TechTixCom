@@ -110,7 +110,7 @@ switch ($level) {
       <!-- Nav Item - General HRD(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="index.php?module=generalHrd">
-          <i class="fas fa-fw fa-cogs"></i>
+          <i class="fas fa-fw fa-users"></i>
           <span>General HRD</span>
         </a>
       </li>
@@ -120,23 +120,11 @@ switch ($level) {
 
       <!-- Heading (Main Isi Menu 3)-->
       <div class="sidebar-heading">Technical</div>
-      
-      <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.php?module=technical" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link" href="index.php?module=technical">
           <i class="fas fa-fw fa-cogs"></i>
           <span>Technical</span>
         </a>
-<!--         
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Technical Machine :</h6>
-            <a class="collapse-item" href="#">1</a>
-            <a class="collapse-item" href="#">2</a>
-            <a class="collapse-item" href="#">3</a>
-            <div class="collapse-divider"></div>
-          </div>
-        </div> -->
       </li>
       
       <!-- Divider (Garis Pembagi)-->
@@ -261,7 +249,7 @@ switch ($level) {
       <!-- Nav Item - General HRD(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="index.php?module=generalHrd">
-          <i class="fas fa-fw fa-cogs"></i>
+          <i class="fas fa-fw fa-users"></i>
           <span>General HRD</span>
         </a>
       </li>
@@ -343,8 +331,8 @@ switch ($level) {
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">LEVEL</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+              <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo ($namaUser); ?></span>
               </a>
               
               <!-- Dropdown - User Information -->
@@ -376,6 +364,60 @@ switch ($level) {
                   case "home":
                     include "operator/home.php";
                     break;
+                  case "safety":
+                    include "operator/safety.php";
+                    break;
+                  case "generalHrd":
+                    include "operator/generalHrd.php";
+                    break;
+                  case "technical":
+                    include "operator/technical.php";
+                    break;
+                  case "quality":
+                    include "operator/quality.php";
+                    break;
+                  default:
+                    include "404.php";
+                }
+              } else if ($level == "supervisor"){
+                switch ($module){
+                  case "home":
+                    include "supervisor/home.php";
+                    break;
+                  case "safety":
+                    include "supervisor/safety.php";
+                    break;
+                  case "generalHrd":
+                    include "supervisor/generalHrd.php";
+                    break;
+                  case "technical":
+                    include "supervisor/technical.php";
+                    break;
+                  case "quality":
+                    include "supervisor/quality.php";
+                    break;
+                  default:
+                    include "404.php";
+                }
+              } else if ($level == "admin"){
+                switch ($module){
+                  case "home":
+                    include "admin/home.php";
+                    break;
+                  case "safety":
+                    include "admin/safety.php";
+                    break;
+                  case "generalHrd":
+                    include "admin/generalHrd.php";
+                    break;
+                  case "technical":
+                    include "admin/technical.php";
+                    break;
+                  case "quality":
+                    include "admin/quality.php";
+                    break;
+                  default:
+                    include "404.php";
                 }
               }
             ?>

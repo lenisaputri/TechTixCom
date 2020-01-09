@@ -252,7 +252,7 @@ switch ($level) {
         
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=dataAdmin">Materi Safety</a>
+            <a class="collapse-item" href="index.php?module=materiSafety">Materi Safety</a>
             <a class="collapse-item" href="#">Materi General HRD</a>
             <a class="collapse-item" href="#">Materi Technical Machine</a>
             <a class="collapse-item" href="#">Materi Quality</a>
@@ -437,6 +437,9 @@ switch ($level) {
                     break;
                   case "dataAdmin":
                     include "admin/dataKaryawan/dataAdmin.php";
+                    break;
+                  case "materiSafety":
+                    include "admin/materiTraining/materiSafety.php";
                     break;
                   case "quality":
                     include "admin/quality.php";

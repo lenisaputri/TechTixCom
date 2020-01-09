@@ -59,7 +59,7 @@ switch ($level) {
         ?>
   </head>
   
-  <body id="page-top">
+  <body id="home">
   <!-- navigation Admin & Supervisor & Operator -->
     <!-- Page Wrapper (Untuk Menu) -->
     <?php
@@ -71,7 +71,7 @@ switch ($level) {
       <!-- Sidebar - Brand (Judul) -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="../img/logo/logo_book.png" width="45" height="45" >
+          <img src="../img/logo/logo_book.png" width="40" height="45" >
         </div>
         <div class="sidebar-brand-text mx-3">NAMA LOGO</div>
       </a>
@@ -162,18 +162,6 @@ switch ($level) {
             <i class="fa fa-bars"></i>
           </button>
           
-          <!-- Topbar Navbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-          
           <!-- Topbar Navbar User-->
           <ul class="navbar-nav ml-auto">
             <div class="topbar-divider d-none d-sm-block"></div>
@@ -210,7 +198,7 @@ switch ($level) {
       <!-- Sidebar - Brand (Judul) -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="../img/logo/logo_book.png" width="45" height="45" >
+          <img src="../img/logo/logo_book.png" width="40" height="45" >
         </div>
         <div class="sidebar-brand-text mx-3">NAMA LOGO</div>
       </a>
@@ -224,6 +212,29 @@ switch ($level) {
           <i class="fas fa-fw fa-home"></i>
           <span>Dashboard</span>
         </a>
+      </li>
+      
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider">
+
+      <!-- Heading (Main Isi Menu 3)-->
+      <div class="sidebar-heading">Data Karyawan</div>
+      
+      <!-- Nav Item - Technical(Sub Isi Menu)-->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-cogs"></i>
+          <span>Data Karyawan</span>
+        </a>
+        
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="index.php?module=dataAdmin">Data Admin</a>
+            <a class="collapse-item" href="#">Data Operator</a>
+            <a class="collapse-item" href="#">Data Supervisor</a>
+            <div class="collapse-divider"></div>
+          </div>
+        </div>
       </li>
       
       <!-- Divider (Garis Pembagi)-->
@@ -269,7 +280,6 @@ switch ($level) {
         
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Technical Machine :</h6>
             <a class="collapse-item" href="#">1</a>
             <a class="collapse-item" href="#">2</a>
             <a class="collapse-item" href="#">3</a>
@@ -312,18 +322,6 @@ switch ($level) {
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-          
-          <!-- Topbar Navbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
           
           <!-- Topbar Navbar User-->
           <ul class="navbar-nav ml-auto">
@@ -412,6 +410,9 @@ switch ($level) {
                     break;
                   case "technical":
                     include "admin/technical.php";
+                    break;
+                  case "dataAdmin":
+                    include "admin/dataKaryawan/dataAdmin.php";
                     break;
                   case "quality":
                     include "admin/quality.php";

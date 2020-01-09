@@ -6,6 +6,9 @@
 
 <!-- add file css here! -->
 <link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/home.css">
 
 <!-- Custom styles for this template-->
 <link href="../css/techtixcom.min.css" rel="stylesheet">
+  <!-- Custom styles for this page -->
+  <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">

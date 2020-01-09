@@ -246,7 +246,7 @@ switch ($level) {
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-cogs"></i>
+          <i class="fas fa-fw fa-file-text-o"></i>
           <span>Materi Training</span>
         </a>
         

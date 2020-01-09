@@ -240,6 +240,30 @@ switch ($level) {
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider">
 
+      <!-- Heading (Main Isi Menu 4)-->
+      <div class="sidebar-heading">Materi Training</div>
+      
+      <!-- Nav Item - Technical(Sub Isi Menu)-->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-cogs"></i>
+          <span>Materi Training</span>
+        </a>
+        
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="index.php?module=dataAdmin">Materi Safety</a>
+            <a class="collapse-item" href="#">Materi General HRD</a>
+            <a class="collapse-item" href="#">Materi Technical Machine</a>
+            <a class="collapse-item" href="#">Materi Quality</a>
+            <div class="collapse-divider"></div>
+          </div>
+        </div>
+      </li>
+      
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider">
+
       <!-- Heading (Main Isi Menu 1)-->
       <div class="sidebar-heading">Safety</div>
 

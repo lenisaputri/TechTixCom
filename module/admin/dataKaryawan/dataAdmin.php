@@ -2,7 +2,7 @@
 include "../config/connection.php";
 ?>
          <!-- Begin Page Content -->
-          <div class="container-fluid">
+          <div class="container-fluid" id="dataAdmin">
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Tables</h1>
@@ -14,6 +14,14 @@ include "../config/connection.php";
     <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
   </div>
   <div class="card-body">
+  <a href="#" class="btn btn-success btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                    <span class="text">Tambah Data</span>
+                  </a>
+                  <div class="my-3"></div>
+                  
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
@@ -27,6 +35,38 @@ include "../config/connection.php";
           </tr>
         </thead>
         <tbody>
+        <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011/04/25</td>
+            <td>$320,800</td>
+          </tr>
+          <tr>
+            <td>Garrett Winters</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td>63</td>
+            <td>2011/07/25</td>
+            <td>$170,750</td>
+          </tr>
+          <tr>
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011/04/25</td>
+            <td>$320,800</td>
+          </tr>
+          <tr>
+            <td>Garrett Winters</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td>63</td>
+            <td>2011/07/25</td>
+            <td>$170,750</td>
+          </tr>
           <tr>
             <td>Tiger Nixon</td>
             <td>System Architect</td>

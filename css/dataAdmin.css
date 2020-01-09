@@ -1,0 +1,6 @@
+#dataAdmin .page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #0368ca;
+    border-color: #0368ca;
+}

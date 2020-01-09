@@ -223,7 +223,7 @@ switch ($level) {
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-cogs"></i>
+          <i class="fas fa-fw fa-list-alt"></i>
           <span>Data Karyawan</span>
         </a>
         
@@ -245,12 +245,12 @@ switch ($level) {
       
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-file-text-o"></i>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-file"></i>
           <span>Materi Training</span>
         </a>
         
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="index.php?module=materiSafety">Materi Safety</a>
             <a class="collapse-item" href="#">Materi General HRD</a>
@@ -297,12 +297,12 @@ switch ($level) {
       
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.php?module=technical" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="index.php?module=technical" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-cogs"></i>
           <span>Technical</span>
         </a>
         
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="#">1</a>
             <a class="collapse-item" href="#">2</a>
@@ -363,7 +363,7 @@ switch ($level) {
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Profile
                 </a>
                 <a class="dropdown-item" href="index.php?module=setting">
-                  <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>Settings
+                  <i class="fas fa-wrench fa-sm fa-fw mr-2 text-gray-400"></i>Settings
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

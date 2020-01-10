@@ -13,11 +13,11 @@
   <!-- DataTales Example -->
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Tambah Data Operator</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Tambah Data Supervisor</h6>
     </div>
     <div class="card-body">
 
-    <!-- FORM MENAMBAH DATA -->
+  <!-- FORM MENAMBAH DATA -->
 
       <form class="user">
                 <div class="form-group row">
@@ -75,12 +75,11 @@
               <!-- PROSES FORM MENAMBAH DATA SELESAI -->
     </div>
   </div>
-
-<!-- MENAMPILKAN DATA -->
+  <!-- MENAMPILKAN DATA -->
 
     <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Data Operator</h6>
+      <h6 class="m-0 font-weight-bold text-primary">Data Supervisor</h6>
     </div>
     <div class="card-body">
       <div class="table-responsive">

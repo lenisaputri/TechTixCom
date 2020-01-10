@@ -231,7 +231,7 @@ switch ($level) {
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="index.php?module=dataAdmin">Data Admin</a>
             <a class="collapse-item" href="index.php?module=dataOperator">Data Operator</a>
-            <a class="collapse-item" href="#">Data Supervisor</a>
+            <a class="collapse-item" href="index.php?module=dataSupervisor">Data Supervisor</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -440,6 +440,9 @@ switch ($level) {
                     break;
                   case "dataOperator":
                     include "admin/dataKaryawan/dataOperator.php";
+                    break;
+                    case "dataSupervisor":
+                    include "admin/dataKaryawan/dataSupervisor.php";
                     break;
                   case "materiSafety":
                     include "admin/materiTraining/materiSafety.php";

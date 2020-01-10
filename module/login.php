@@ -33,11 +33,11 @@ include "../config/connection.php";
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Online Result Training</h1>
                                         </div>
-                                        <form class="user">
+                                        <form class="user" action="../process/loginProcess.php" action="../process/loginProcess.php" method="post" onsubmit="return validateOnSubmit();">
                                             <div class="row form-group">
                                                 <label class="col-md-2 small d-flex flex-column justify-content-center" for="password">Username</label>
                                                 <div class="input-group col-md-10">
-                                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username">
+                                                    <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Username" onkeyup="validateUsername(this)">
                                                 </div>
                                             </div>
                                             <div class="row form-group" style="margin-top: 35px;">
@@ -52,9 +52,23 @@ include "../config/connection.php";
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                
+                                            <!-- error handling -->
+                                                <div id="parent-error" class="align-self-start mt-4">
+                                                <small class="rounded border border-danger text-danger align-self-start p-1 ml-3 d-none"
+                                                id="error-handling"></small>
+                                                <?php
+                                                if(isset($_GET["error"])) {
+                                                    $error = $_GET["error"];
+                                                    ?>
+                                                    <small class="rounded border border-danger text-danger align-self-start p-1 ml-3 d-flex"
+                                                    id="error-handling2">
+                                                    <?php
+                                                    echo $error;}
+                                                    ?>
+                                                    </small>
+                                                </div>
                                             </div>
-                                            <a href="#" class="btn btn-primary btn-user btn-block" style="margin-top: 35px;">Login</a>
+                                            <input type="submit" name="submit" class="btn btn-primary btn-user btn-block" style="margin-top: 35px;" id="masuk" value="Login">
                                         </form>
 
                                         <!-- button hak akses -->

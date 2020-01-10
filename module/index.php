@@ -14,7 +14,7 @@ if (isset($_SESSION["id"])) {
   // header("Location: ../");
 }
 ?>
-<input id="idUser" type="hidden" name="idUser" value="<?php echo $idUser ?>">
+<!-- <input id="idUser" type="hidden" name="idUser" value="<?php echo $idUser ?>"> -->
 <?php
 
 switch ($level) {
@@ -230,7 +230,7 @@ switch ($level) {
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="index.php?module=dataAdmin">Data Admin</a>
-            <a class="collapse-item" href="#">Data Operator</a>
+            <a class="collapse-item" href="index.php?module=dataOperator">Data Operator</a>
             <a class="collapse-item" href="#">Data Supervisor</a>
             <div class="collapse-divider"></div>
           </div>
@@ -438,6 +438,9 @@ switch ($level) {
                   case "dataAdmin":
                     include "admin/dataKaryawan/dataAdmin.php";
                     break;
+                  case "dataOperator":
+                    include "admin/dataKaryawan/dataOperator.php";
+                    break;
                   case "materiSafety":
                     include "admin/materiTraining/materiSafety.php";
                     break;
@@ -459,7 +462,7 @@ switch ($level) {
   <!-- End of Page Wrapper -->
   
   <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
+  <a class="scroll-to-top rounded" href="#home">
     <i class="fas fa-angle-up"></i>
   </a>
 

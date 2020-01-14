@@ -16,7 +16,7 @@
         <div class="card-body">
         <div class="row">
         <div class="col-lg-4 ml-5">
-        <img src="../img/profile.png" height="250px" width="250px;">
+        <center><img src="../img/profile.png" height="250px" width="250px;"></center>
         </div>
               <div class="col-lg-5">
                 <div class="p-5">

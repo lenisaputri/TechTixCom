@@ -3,3 +3,15 @@
     background-image: linear-gradient(180deg,#0368ca 10%,#0368ca 100%);
     background-size: cover;
 }
+
+#home .btn-primary {
+    color: #fff;
+    background-color: #298cec;
+    border-color: #298cec;
+}
+  
+#home .btn-primary:hover {
+    color: #fff;
+    background-color: #0368ca;
+    border-color: #0368ca;
+  }

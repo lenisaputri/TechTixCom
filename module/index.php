@@ -131,7 +131,7 @@ switch ($level) {
         <div id="collapseSafety" class="collapse" aria-labelledby="headingSafety" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="index.php?module=safetyTable">Table Score</a>
-            <a class="collapse-item" href="#">Spider Score</a>
+            <a class="collapse-item" href="index.php?module=safetySpider">Spider Score</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -448,6 +448,9 @@ switch ($level) {
                     break;
                   case "safetyTable":
                     include "operator/safety/safetyTable.php";
+                    break;
+                  case "safetySpider":
+                    include "operator/safety/safetySpider.php";
                     break;
                   case "generalHrd":
                     include "operator/generalHrd.php";

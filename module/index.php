@@ -154,13 +154,13 @@ switch ($level) {
 
       <!-- Nav Item - Quality(Sub Isi Menu)-->
       <li class="nav-item">
-      <a class="nav-link collapsed" href="index.php?module=quality" data-toggle="collapse" data-target="#collapseQuality" aria-expanded="true" aria-controls="collapseTwo">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQuality" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-certificate"></i>
           <span>Score Quality</span></a>
           <div id="collapseQuality" class="collapse" aria-labelledby="headingQuality" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">Table Score</a>
-            <a class="collapse-item" href="#">Spider Score</a>
+            <a class="collapse-item" href="index.php?module=qualityTable">Table Score</a>
+            <a class="collapse-item" href="index.php?module=qualitySpider">Spider Score</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -472,11 +472,14 @@ switch ($level) {
                   case "generalHrdSpider":
                     include "operator/generalHrd/generalHrdSpider.php";
                     break;
+                  case "qualityTable":
+                    include "operator/quality/qualityTable.php";
+                    break;
+                  case "qualitySpider":
+                    include "operator/quality/qualitySpider.php";
+                    break;
                   case "technical":
                     include "operator/technical.php";
-                    break;
-                  case "quality":
-                    include "operator/quality.php";
                     break;
                   default:
                     include "404.php";

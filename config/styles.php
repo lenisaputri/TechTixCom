@@ -7,6 +7,7 @@
 <!-- add file css here! -->
 <link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/safety.css">
 <link rel="stylesheet" href="../css/dataKaryawan.css">
 
 <!-- Custom styles for this template-->

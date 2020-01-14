@@ -1,5 +1,6 @@
 <?php
   include "../config/connection.php";
+  include "../process/proses_adminJabatan.php";
 ?>
 <body>
 <!-- Begin Page Content -->
@@ -15,25 +16,25 @@
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
-            <form class="user">
+            <form action="../process/proses_adminJabatan.php?module=jabatan&act=tambah" method="POST" class="user">
                 <div class = "row">
                     <div class="col-sm-6">
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">JABATAN</label>
-                                <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="JABATAN">
+                                <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="JABATAN">
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group row">
                             <div class="col-sm-12 mb-4 mb-sm-3">
-                                    <a href="#" class="btn btn-success btn-icon-split">
+                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahJabatan">
                                         <span class="icon text-white-50">
-                                        <i class="fas fa-plus"></i>
+                                            <i class="fas fa-plus"></i>
                                         </span>
                                         <span class="text">Tambah Data</span>
-                                    </a>
+                                    </button>
                             </div>
                         </div>
                     </div>
@@ -50,29 +51,50 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
+            <?php
+                $resultTampilJabatan=tampilJabatan($con);
+                $index=1;
+                if (mysqli_num_rows($resultTampilJabatan) > 0){
+            ?>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr>
-                            <th>No</th>
+                        <tr class="text-center">
+                            <th>NO.</th>
                             <th>Jabatan</th>
                             <th>Proses</th>
                         </tr>
                     </thead>
                     <tbody>
+                    <?php
+                        while ($row = mysqli_fetch_assoc($resultTampilJabatan)) {
+                    ?>
                         <tr>
-                            <td>1</td>
-                            <td>Tiger Nixon</td>
-                            <td>
-                                <a href="#" class="btn btn-primary btn-circle">
-                                    <i class="fab fa-pencil-square-"></i>
+                            <td class="text-center"><?= $index?></td>
+                            <td><?= $row["nama"]?></td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-primary">
+                                    <i class="fas fa-edit"></i>
                                 </a>
-                            <a href="#" class="btn btn-danger btn-circle">
-                    <i class="fas fa-trash"></i>
-                  </a>
+                                <a href="#" class="btn btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                </a>
                             </td>
                         </tr>
+                    <?php
+                        $index++;
+                        }
+                    ?>
                     </tbody>
                 </table>
+                <?php
+                }else{
+                    ?>
+                        <div class="text-center">
+                            <p class="text-muted">Data beasiswa kosong</p>
+                        </div>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </div>

@@ -86,8 +86,7 @@ switch ($level) {
           <span>Beranda</span>
         </a>
       </li>
-      
-     
+
       <?php
       if ($level == "operator") {
             ?>
@@ -489,17 +488,26 @@ switch ($level) {
                   case "home":
                     include "supervisor/home.php";
                     break;
-                  case "safety":
-                    include "supervisor/safety.php";
+                  case "safetyTable":
+                    include "supervisor/safety/safetyTable.php";
                     break;
-                  case "generalHrd":
-                    include "supervisor/generalHrd.php";
+                  case "safetySpider":
+                    include "supervisor/safety/safetySpider.php";
+                    break;
+                  case "generalHrdTable":
+                    include "supervisor/generalHrd/generalHrdTable.php";
+                    break;
+                  case "generalHrdSpider":
+                    include "supervisor/generalHrd/generalHrdSpider.php";
+                    break;
+                  case "qualityTable":
+                    include "supervisor/quality/qualityTable.php";
+                    break;
+                  case "qualitySpider":
+                    include "supervisor/quality/qualitySpider.php";
                     break;
                   case "technical":
                     include "supervisor/technical.php";
-                    break;
-                  case "quality":
-                    include "supervisor/quality.php";
                     break;
                   default:
                     include "404.php";

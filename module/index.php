@@ -139,14 +139,14 @@ switch ($level) {
 
       <!-- Nav Item - General HRD(Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.php?module=generalHrd" data-toggle="collapse" data-target="#collapseGeneralHRD" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGeneralHRD" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-users"></i>
           <span>Score General HRD</span>
         </a>
         <div id="collapseGeneralHRD" class="collapse" aria-labelledby="headingGeneralHRD" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="">Table Score</a>
-            <a class="collapse-item" href="#">Spider Score</a>
+            <a class="collapse-item" href="index.php?module=generalHrdTable">Table Score</a>
+            <a class="collapse-item" href="index.php?module=generalHrdSpider">Spider Score</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -453,7 +453,10 @@ switch ($level) {
                     include "operator/safety/safetySpider.php";
                     break;
                   case "generalHrd":
-                    include "operator/generalHrd.php";
+                    include "operator/generalHrd/generalHrdTable.php";
+                    break;
+                  case "generalHrdSpider":
+                    include "operator/generalHrd/generalHrdSpider.php";
                     break;
                   case "technical":
                     include "operator/technical.php";

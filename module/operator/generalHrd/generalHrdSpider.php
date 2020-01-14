@@ -2,7 +2,7 @@
 include "../config/connection.php";
 ?>
         <!-- Begin Page Content (Bawah Navbar)-->
-        <div class="container-fluid" id="safety">
+        <div class="container-fluid" id="generalHrd">
           <div class="row">
             <!-- Spider Matrix Chart -->
             <div class="col-lg-12 mb-4">

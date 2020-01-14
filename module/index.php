@@ -124,13 +124,13 @@ switch ($level) {
 
       <!-- Nav Item - Safety (Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.php?module=safetyTable"  data-toggle="collapse" data-target="#collapseSafety" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#"  data-toggle="collapse" data-target="#collapseSafety" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-shield-alt"></i>
           <span>Score Safety</span>
         </a>
         <div id="collapseSafety" class="collapse" aria-labelledby="headingSafety" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=safetyTable.php">Table Score</a>
+            <a class="collapse-item" href="index.php?module=safetyTable">Table Score</a>
             <a class="collapse-item" href="#">Spider Score</a>
             <div class="collapse-divider"></div>
           </div>
@@ -145,7 +145,7 @@ switch ($level) {
         </a>
         <div id="collapseGeneralHRD" class="collapse" aria-labelledby="headingGeneralHRD" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">Table Score</a>
+            <a class="collapse-item" href="">Table Score</a>
             <a class="collapse-item" href="#">Spider Score</a>
             <div class="collapse-divider"></div>
           </div>
@@ -325,7 +325,7 @@ switch ($level) {
         </a>
         <div id="collapseSafety" class="collapse" aria-labelledby="headingSafety" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href=".../operator/safetyTable.php">Table Score</a>
+            <a class="collapse-item" href="#">Table Score</a>
             <a class="collapse-item" href="#">Spider Score</a>
             <div class="collapse-divider"></div>
           </div>
@@ -349,7 +349,7 @@ switch ($level) {
 
       <!-- Nav Item - Quality(Sub Isi Menu)-->
       <li class="nav-item">
-      <a class="nav-link collapsed" href="index.php?module=quality" data-toggle="collapse" data-target="#collapseQuality" aria-expanded="true" aria-controls="collapseTwo">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQuality" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-certificate"></i>
           <span>Score Quality</span></a>
           <div id="collapseQuality" class="collapse" aria-labelledby="headingQuality" data-parent="#accordionSidebar">
@@ -447,7 +447,7 @@ switch ($level) {
                     include "operator/home.php";
                     break;
                   case "safetyTable":
-                    include "operator/safetyTable.php";
+                    include "operator/safety/safetyTable.php";
                     break;
                   case "generalHrd":
                     include "operator/generalHrd.php";

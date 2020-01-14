@@ -156,7 +156,7 @@ switch ($level) {
       <li class="nav-item">
       <a class="nav-link collapsed" href="index.php?module=quality" data-toggle="collapse" data-target="#collapseQuality" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-certificate"></i>
-          <span>Score Quality</span></a>
+          <span>Score Qualityyyyyyyy</span></a>
           <div id="collapseQuality" class="collapse" aria-labelledby="headingQuality" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="#">Table Score</a>

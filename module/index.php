@@ -262,7 +262,7 @@ switch ($level) {
 
       <!-- Nav Item - Safety (Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link" href="index.php?module=safety">
+        <a class="nav-link collapsed" href="index.php?module=safety"  data-toggle="collapse" data-target="#collapseSafety" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-shield-alt"></i>
           <span>Score Safety</span>
         </a>

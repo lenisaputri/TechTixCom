@@ -91,53 +91,46 @@ switch ($level) {
       <hr class="sidebar-divider">
 
       <!-- Heading (Main Isi Menu 1)-->
-      <div class="sidebar-heading">Safety</div>
+      <div class="sidebar-heading">Score Assasment</div>
 
       <!-- Nav Item - Safety (Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="index.php?module=safety">
           <i class="fas fa-fw fa-shield-alt"></i>
-          <span>Safety</span>
+          <span>Score Safety</span>
         </a>
       </li>
       
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider">
-
-      <!-- Heading (Main Isi Menu 2)-->
-      <div class="sidebar-heading">General HRD</div>
 
       <!-- Nav Item - General HRD(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="index.php?module=generalHrd">
           <i class="fas fa-fw fa-users"></i>
-          <span>General HRD</span>
+          <span>Score General HRD</span>
         </a>
       </li>
       
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider">
-
-      <!-- Heading (Main Isi Menu 3)-->
-      <div class="sidebar-heading">Technical</div>
-      <li class="nav-item">
-        <a class="nav-link" href="index.php?module=technical">
-          <i class="fas fa-fw fa-cogs"></i>
-          <span>Technical</span>
-        </a>
-      </li>
-      
-      <!-- Divider (Garis Pembagi)-->
-      <hr class="sidebar-divider">
-
-      <!-- Heading (Main Isi Menu 4)-->
-      <div class="sidebar-heading">Quality</div>
 
       <!-- Nav Item - Quality(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="index.php?module=quality">
+          <i class="fas fa-fw fa-cogs"></i>
+          <span>Score Quality</span>
+        </a>
+      </li>
+      
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider">
+
+      <!-- Nav Item - Technical(Sub Isi Menu)-->
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?module=technical">
           <i class="fas fa-fw fa-certificate"></i>
-          <span>Quality</span></a>
+          <span>Score Technical</span></a>
       </li>
 
       <!-- Divider (Garis Pembagi)-->
@@ -254,8 +247,8 @@ switch ($level) {
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="index.php?module=materiSafety">Materi Safety</a>
             <a class="collapse-item" href="#">Materi General HRD</a>
-            <a class="collapse-item" href="#">Materi Technical Machine</a>
             <a class="collapse-item" href="#">Materi Quality</a>
+            <a class="collapse-item" href="#">Materi Technical Machine</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -265,41 +258,43 @@ switch ($level) {
       <hr class="sidebar-divider">
 
       <!-- Heading (Main Isi Menu 1)-->
-      <div class="sidebar-heading">Safety</div>
+      <div class="sidebar-heading">Score Assasment</div>
 
       <!-- Nav Item - Safety (Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="index.php?module=safety">
           <i class="fas fa-fw fa-shield-alt"></i>
-          <span>Safety</span>
+          <span>Score Safety</span>
         </a>
+        <div id="collapseSafety" class="collapse" aria-labelledby="headingSafety" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="#">Table Score</a>
+            <a class="collapse-item" href="#">Spider Score</a>
+            <div class="collapse-divider"></div>
+          </div>
+        </div>
       </li>
-      
-      <!-- Divider (Garis Pembagi)-->
-      <hr class="sidebar-divider">
-
-      <!-- Heading (Main Isi Menu 2)-->
-      <div class="sidebar-heading">General HRD</div>
 
       <!-- Nav Item - General HRD(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link" href="index.php?module=generalHrd">
           <i class="fas fa-fw fa-users"></i>
-          <span>General HRD</span>
+          <span>Score General HRD</span>
         </a>
       </li>
-      
-      <!-- Divider (Garis Pembagi)-->
-      <hr class="sidebar-divider">
 
-      <!-- Heading (Main Isi Menu 3)-->
-      <div class="sidebar-heading">Technical</div>
+      <!-- Nav Item - Quality(Sub Isi Menu)-->
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?module=quality">
+          <i class="fas fa-fw fa-certificate"></i>
+          <span>Score Quality</span></a>
+      </li>
       
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link collapsed" href="index.php?module=technical" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-cogs"></i>
-          <span>Technical</span>
+          <span>Score Technical</span>
         </a>
         
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -307,22 +302,16 @@ switch ($level) {
             <a class="collapse-item" href="#">1</a>
             <a class="collapse-item" href="#">2</a>
             <a class="collapse-item" href="#">3</a>
+            <a class="collapse-item" href="#">4</a>
+            <a class="collapse-item" href="#">5</a>
+            <a class="collapse-item" href="#">6</a>
+            <a class="collapse-item" href="#">7</a>
+            <a class="collapse-item" href="#">8</a>
+            <a class="collapse-item" href="#">9</a>
+            <a class="collapse-item" href="#">10</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
-      </li>
-      
-      <!-- Divider (Garis Pembagi)-->
-      <hr class="sidebar-divider">
-
-      <!-- Heading (Main Isi Menu 4)-->
-      <div class="sidebar-heading">Quality</div>
-
-      <!-- Nav Item - Quality(Sub Isi Menu)-->
-      <li class="nav-item">
-        <a class="nav-link" href="index.php?module=quality">
-          <i class="fas fa-fw fa-certificate"></i>
-          <span>Quality</span></a>
       </li>
 
       <!-- Divider (Garis Pembagi)-->

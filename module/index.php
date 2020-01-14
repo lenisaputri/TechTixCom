@@ -83,7 +83,7 @@ switch ($level) {
       <li class="nav-item active">
         <a class="nav-link" href="index.php?module=home">
           <i class="fas fa-fw fa-home"></i>
-          <span>Dashboard</span>
+          <span>Beranda</span>
         </a>
       </li>
       

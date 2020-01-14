@@ -4,3 +4,10 @@
     background-color: #0368ca;
     border-color: #0368ca;
 }
+
+#dataKaryawan .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 300px;
+    margin: 100px auto;
+    float: none;
+    display: block;
+}

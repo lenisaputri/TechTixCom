@@ -2,7 +2,7 @@
 include "../config/connection.php";
 ?>
          <!-- Begin Page Content -->
-          <div class="container-fluid">
+          <div class="container-fluid" id="generalHrd">
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Score Training General HRD</h1>

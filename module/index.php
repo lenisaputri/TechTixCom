@@ -273,7 +273,7 @@ switch ($level) {
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-list-alt"></i>
+          <i class="fas fa-fw fa-id-card"></i>
           <span>Data Karyawan</span>
         </a>
         
@@ -285,6 +285,20 @@ switch ($level) {
             <div class="collapse-divider"></div>
           </div>
         </div>
+      </li>
+      
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider">
+
+            <!-- Heading (Main Isi Menu 3)-->
+            <div class="sidebar-heading">Jabatan</div>
+      
+      <!-- Nav Item - Technical(Sub Isi Menu)-->
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?module=jabatan" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-sitemap"></i>
+          <span>Jabatan</span>
+        </a>
       </li>
       
       <!-- Divider (Garis Pembagi)-->
@@ -452,7 +466,7 @@ switch ($level) {
                   case "safetySpider":
                     include "operator/safety/safetySpider.php";
                     break;
-                  case "generalHrd":
+                  case "generalHrdTable":
                     include "operator/generalHrd/generalHrdTable.php";
                     break;
                   case "generalHrdSpider":
@@ -507,8 +521,11 @@ switch ($level) {
                   case "dataOperator":
                     include "admin/dataKaryawan/dataOperator.php";
                     break;
-                    case "dataSupervisor":
+                  case "dataSupervisor":
                     include "admin/dataKaryawan/dataSupervisor.php";
+                    break;
+                  case "jabatan":
+                    include "admin/jabatan/jabatan.php";
                     break;
                   case "materiSafety":
                     include "admin/materiTraining/materiSafety.php";

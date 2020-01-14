@@ -116,7 +116,7 @@
                             <th>Nama Lengkap</th>
                             <th>Jabatan</th>
                             <th>Status</th>
-                            <th colspan="2">Proses</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -132,8 +132,6 @@
                                 <a href="#" class="btn btn-primary btn-circle">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
-                            </td>
-                            <td>
                                 <a href="#" class="btn btn-primary btn-circle">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>

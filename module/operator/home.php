@@ -1,5 +1,6 @@
 <?php
   include "../config/connection.php";
+  include "../process/proses_operatorProfile.php";
 ?>
 
 <!-- Begin Page Content -->
@@ -14,6 +15,11 @@
             <h6 class="m-0 font-weight-bold text-primary">Profil Karyawan</h6>   
         </div>
         <div class="card-body">
+        <?php 
+        $resultTampilProfilOperator = tampilProfilOperator($con, $idUser);
+        if (mysqli_num_rows($resultTampilProfilOperator) > 0){
+          while ($row = mysqli_fetch_assoc($resultTampilProfilOperator)) {
+            ?>
         <div class="row">
         <div class="col-lg-4 ml-5">
         <center><img src="../img/profile.png" height="250px" width="250px;"></center>

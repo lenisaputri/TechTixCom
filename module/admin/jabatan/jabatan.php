@@ -72,12 +72,12 @@
                             <td class="text-center"><?= $index?></td>
                             <td><?= $row["nama"]?></td>
                             <td class="text-center">
-                                <a href="#" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editJabatan" id="<?php echo $row["id_jabatan"];?>">
                                     <i class="fas fa-edit"></i>
-                                </a>
-                                <a href="#" class="btn btn-danger">
+                                </button>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusJabatan" id="<?php echo $row["id_jabatan"];?>">
                                     <i class="fas fa-trash"></i>
-                                </a>
+                                </button>
                             </td>
                         </tr>
                     <?php
@@ -90,7 +90,7 @@
                 }else{
                     ?>
                         <div class="text-center">
-                            <p class="text-muted">Data beasiswa kosong</p>
+                            <p class="text-muted">Data Jabatan kosong</p>
                         </div>
                     <?php
                 }
@@ -102,5 +102,60 @@
 <!-- MENAMPILKAN DATA SELESAI-->
 </div>
 <!-- /.container-fluid -->
+
+          <!-- Modal Edit Jabatan-->
+          <!-- <div class="modal modalEditKriteria fade" id="editJabatan" tabindex="-1" role="dialog" aria-labelledby="modalEditKriteria"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+              <div class="modal-content pl-4 pr-4 text-left">
+                <div class="modal-header d-flex justify-content-center pb-1">
+                  <h5 class="modal-title" id="judulModalEditKriteria">Edit Kriteria</h5>
+                </div>
+                <form action="../process/proses_kuisioner.php?module=kriteriaKuisioner&act=edit" method="post" onsubmit="return validasiSubmitEditKriteria();" id="formEditKriteria">
+                  <div class="modal-body">
+                      <input type="hidden" name="id_kuisioner" id="id_kuisionerEdit">
+                      <div class="form-group">
+                      <label for="editIsiKriteria"><h5>Isi Kriteria</h5></label>
+                      <small class="text-danger ml-3 d-none peringatanEdit" id="peringatanEdit">*Masukkan Isi Kriteria</small>
+                      <textarea class="form-control w-100" name="isiKriteria" id="editIsiKriteria" rows="3" oninput="validasiEditKriteria(this)"></textarea>
+                  </div>
+                  <div class="pb-2 pt-4 d-flex justify-content-end">
+                    <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Batal</button>
+                    <button type="submit" name="editIsi" class="btn btn-success btn-ok">Update</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="modal fade" id="editJabatan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-primary border-0">
+          <h5 class="modal-title text-white">Edit Data Jabatan</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="./aksi/aksi-kecamatan.php?tag=edit" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="id_kecamatan">Id Jabatan</label>
+              <input type="text" name="id_kecamatan" id="id_kecamatan" class="form-control" placeholder="Id Kecamatan" readonly>
+            </div>
+            <div class="form-group">
+              <label for="nama">Jabatan</label>
+              <input type="text" name="kecamatan" id="kecamatan" class="form-control" placeholder="Kecamatan">
+            </div>
+            <div class="modal-footer border-0">
+              <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+              <button class="btn btn-primary" name="simpan"><i class="fa fa-check"></i> Simpan</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+          <!-- End Modal Edit Kriteria -->
 
 </body>

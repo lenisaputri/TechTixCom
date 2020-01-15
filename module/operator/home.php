@@ -27,17 +27,21 @@
               <div class="col-lg-5">
                 <div class="p-5">
                 <div class="text">
-                    <h6 class="text-gray-900 mb-4">ID Karyawan : </h6>
+                    <h6 class="text-gray-900 mb-4">ID Karyawan : <?= $row["nik"]?> </h6>
                   </div>
                   <div class="text">
-                    <h6 class="text-gray-900 mb-4">Nama Karyawan : </h6>
+                    <h6 class="text-gray-900 mb-4">Nama Karyawan : <?= $row["nama"]?> </h6>
                   </div>
                   <div class="text">
-                    <h6 class="text-gray-900 mb-4">Jabatan : </h6>
+                    <h6 class="text-gray-900 mb-4">Jabatan : <?= tampilJabatan($row["nama"]);?> </h6>
                   </div>
                 </div>
               </div>
             </div>
+            <?php
+          } 
+        }
+        ?>
         </div>
     </div>
 </div>

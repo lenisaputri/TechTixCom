@@ -15,3 +15,11 @@
     background-color: #0368ca;
     border-color: #0368ca;
   }
+
+#home .dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0368ca;
+  }
+  
+

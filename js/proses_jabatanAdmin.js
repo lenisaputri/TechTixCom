@@ -1,5 +1,5 @@
 // JABATAN EDIT  
-$(".edit-nilai").click(function () {
+$(".edit-jabatan").click(function () {
     var id_jabatan = $(this).attr("id-jabatan");
     
     $.ajax({
@@ -14,4 +14,12 @@ $(".edit-nilai").click(function () {
       }
     });
   });
-// JABATAN EDIT  END
+// JABATAN EDIT END
+
+//JABATAN HAPUS
+$(".hapus-jabatan").click(function() {
+  var id_jabatan = $(this).attr("id-jabatan");
+  $("#id_jabatanHapus").val(id_jabatan);
+  $("#hapusJabatanModal").modal("show");
+});
+//JABATAN HAPUS END

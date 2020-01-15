@@ -23,5 +23,6 @@
   <!-- Page level custom scripts -->
   <script src="../js/demo/datatables-demo.js"></script>
 
-  <script src="../js/login.js"></script>
-  <script src="../js/dataOperatorAdmin.js"></script>
+  <script src="../js/proses_loginUser.js"></script>
+  <script src="../js/proses_dataOperatorAdmin.js"></script>
+  <script src="../js/proses_jabatanAdmin.js"></script>

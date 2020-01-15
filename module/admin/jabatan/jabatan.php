@@ -72,10 +72,10 @@
                             <td class="text-center"><?= $index?></td>
                             <td><?= $row["nama"]?></td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editJabatanModal" id-jabatan="<?php echo $row["id_jabatan"];?>">
+                                <button type="button" class="btn btn-primary edit-jabatan" data-toggle="modal" data-target="#editJabatanModal" id-jabatan="<?php echo $row["id_jabatan"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#hapusJabatanModal" id-jabatan="<?php echo $row["id_jabatan"];?>">
+                                <button type="button" class="btn btn-danger hapus-jabatan" data-toggle="modal" data-target="#hapusJabatanModal" id-jabatan="<?php echo $row["id_jabatan"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
@@ -115,24 +115,31 @@
           </button>
         </div>
         <div class="modal-body" id="edit-jabatan">
-          <form action="./aksi/aksi-kecamatan.php?tag=edit" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-              <label for="id_kecamatan">Id Jabatan</label>
-              <input type="text" name="id_kecamatan" id="id_kecamatan" class="form-control" placeholder="Id Kecamatan" readonly>
-            </div>
-            <div class="form-group">
-              <label for="nama">Jabatan</label>
-              <input type="text" name="kecamatan" id="kecamatan" class="form-control" placeholder="Kecamatan">
-            </div>
-            <div class="modal-footer border-0">
-              <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button class="btn btn-primary" name="simpan"><i class="fa fa-check"></i> Simpan</button>
-            </div>
-          </form>
+          
         </div>
       </div>
     </div>
   </div>
           <!-- End Modal Edit Kriteria -->
+
+    <!-- Modal Hapus Kriteria-->
+    <div class="modal fade" id="hapusJabatanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <form action="../process/proses_adminJabatan.php?module=jabatan&act=hapus" method="post">
+            <div class="modal-body pt-5 text-center">
+              <input type="hidden" name="id_jabatan" id="id_jabatanHapus">
+              <strong>Apakah Anda yakin?</strong>
+            </div>
+            <div class="pb-4 pt-4 d-flex justify-content-around">
+              <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
+              <button type="submit" name="hapusJabatan" class="btn btn-success btn-ok">Ya</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal Hapus Kriteria -->
 
 </body>

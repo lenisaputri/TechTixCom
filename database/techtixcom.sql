@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2020 at 03:34 AM
+-- Generation Time: Jan 15, 2020 at 04:21 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -44,7 +44,7 @@ CREATE TABLE `tabel_admin` (
 --
 
 INSERT INTO `tabel_admin` (`id_admin`, `id_user`, `id_jabatan`, `nama`, `nik`, `status_aktif`, `foto`, `waktu_edit`) VALUES
-(1, 3, 1, 'admin1', 1234567, 'ya', '', '2020-01-09 00:00:00');
+(1, 3, 1, 'admin1', 123, 'ya', '', '2020-01-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,7 @@ CREATE TABLE `tabel_supervisor` (
 --
 
 INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`, `nik`, `status_aktif`, `foto`, `waktu_tambah`) VALUES
-(1, 2, 1, 'supervisor1', 1234567, 'ya', '', '2020-01-09 00:00:00');
+(1, 2, 1, 'supervisor1', 12345678, 'ya', '', '2020-01-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -131,9 +131,9 @@ CREATE TABLE `tabel_user` (
 --
 
 INSERT INTO `tabel_user` (`id_user`, `username`, `password`, `level`) VALUES
-(1, 'operator', 'operator', 'operator'),
-(2, 'supervisor', 'supervisor', 'supervisor'),
-(3, 'admin', 'admin', 'admin');
+(1, '1234567', '1234567', 'operator'),
+(2, '12345678', '12345678', 'supervisor'),
+(3, '123', '123', 'admin');
 
 --
 -- Indexes for dumped tables

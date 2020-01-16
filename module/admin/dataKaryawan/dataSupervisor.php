@@ -108,11 +108,12 @@
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th>No</th>
                             <th>Username</th>
                             <th>Password</th>
                             <th>Gambar</th>
+                            <th>NIK</th>
                             <th>Nama Lengkap</th>
                             <th>Jabatan</th>
                             <th>Status</th>
@@ -120,14 +121,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>jjj</td>
+                    <?php
+                        $queryTampilData = "SELECT ts.*, ts.nama AS nama_lengkap ,tj.*, tj.nama AS nama_jabatan, tu.* FROM tabel_supervisor ts,tabel_jabatan tj,tabel_user tu WHERE ts.id_jabatan = tj.id_jabatan
+                            AND ts.id_user = tu.id_user;
+                            ";
+                        
+                        $resultTampilData = mysqli_query($con, $queryTampilData);
+                        $index = 1;
+
+                        if(mysqli_num_rows($resultTampilData) > 0){
+                            while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
+                    ?>
+                        <tr class="text-center" id-operator="<?php echo $rowTampilData["id_operator"] ?>">
+                            <td ><?php echo $index; ?></td>
+                            <td class="usernameOperator"><?php echo $rowTampilData["username"]; ?></td>
+                            <td class="passwordOperator">**********</td>
+                            <td class="fotoOperator"><img src="../attachment/img/<?php echo ($rowTampilData['foto'] == null)? 'avatar.jpeg' : $rowTampilData['foto'] ; ?>" style="width:50px;height:50px;border-radius:50%;"></td>
+                            <td class="nikOperator"><?php echo $rowTampilData["nik"]; ?></td>
+                            <td class="namaOperator"><?php echo $rowTampilData["nama_lengkap"]; ?></td>
+                            <td class="jabatanOperator"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
+                            <td class="statusOperator"><?php echo $rowTampilData["status_aktif"]; ?></td>
                             <td>
                                 <a href="#" class="btn btn-primary btn-circle">
                                     <i class="fab fa-facebook-f"></i>
@@ -137,6 +150,19 @@
                                 </a>
                             </td>
                         </tr>
+                    <?php 
+                        $index++;
+                        }
+                    ?>
+                    <?php
+                    }   else{
+                    ?>
+                        <div>
+                            <p>Data Operator tidak tersedia</p>
+                        </div>
+                    <?php
+                    }
+                    ?>
                     </tbody>
                 </table>
             </div>

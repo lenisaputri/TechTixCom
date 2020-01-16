@@ -22,7 +22,7 @@
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">JABATAN</label>
-                                <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="JABATAN">
+                                <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="JABATAN" required>
                             </div>
                         </div>
                     </div>

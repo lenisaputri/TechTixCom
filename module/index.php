@@ -169,21 +169,32 @@ switch ($level) {
       <li class="nav-item">
         <a class="nav-link collapsed" href="index.php?module=technical" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-cogs"></i>
-          <span>Score Technical</span>
+          <b><span>Score Technical</span></b>
         </a>
         
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">1</a>
-            <a class="collapse-item" href="#">2</a>
-            <a class="collapse-item" href="#">3</a>
-            <a class="collapse-item" href="#">4</a>
-            <a class="collapse-item" href="#">5</a>
-            <a class="collapse-item" href="#">6</a>
-            <a class="collapse-item" href="#">7</a>
-            <a class="collapse-item" href="#">8</a>
-            <a class="collapse-item" href="#">9</a>
-            <a class="collapse-item" href="#">10</a>
+          <ul>
+        <li class="menu__item to-left">
+          <a href="#" class="menu__link">Body Welder Operator</a>
+          <ul class="menu__sub-menu">
+            <li class="menu__sub-menu__item">
+              <a href="" class="menu__sub-menu__link">Submenu link 1</a>
+            </li>
+
+            <li class="menu__sub-menu__item">
+              <a href="" class="menu__sub-menu__link">Submenu link 2</a>
+            </li>
+      </ul>
+            <b><a class="collapse-item" href="#">Body Welder Operator</a></b>
+            <b><a class="collapse-item" href="#">Can O Mat Operator</a></b>
+            <b><a class="collapse-item" href="#">End O Mat Operator</a></b>
+            <b><a class="collapse-item" href="#">Palleteizer Operator</a></b>
+            <b><a class="collapse-item" href="#">Area Engineer Technician</a></b>
+            <b><a class="collapse-item" href="#">Admin SAP</a></b>
+            <b><a class="collapse-item" href="#">Production SPV</a></b>
+            <b><a class="collapse-item" href="#">Area Engineer SPV</a></b>
+            <b><a class="collapse-item" href="#">Can Making Manager</a></b>
             <div class="collapse-divider"></div>
           </div>
         </div>

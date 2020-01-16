@@ -40,3 +40,22 @@ function preventDefaultAction(event){
         document.getElementById("fileidOperatorAdminBlank").innerHTML = "";
     }
 }
+
+// show password
+// function showPasswordOperator() {
+//     var password = document.getElementById("passwordOperatorAdmin");
+//     if (password.type == "password") {
+//       password.type = "text";
+//     } else {
+//       password.type = "password";
+//     }
+  
+//     var eye = document.getElementById("eye").classList;
+//     if (eye.contains("fa-eye")) {
+//       eye.remove("fa-eye");
+//       eye.add("fa-eye-slash");
+//     } else {
+//       eye.remove("fa-eye-slash");
+//       eye.add("fa-eye");
+//     }
+//   }

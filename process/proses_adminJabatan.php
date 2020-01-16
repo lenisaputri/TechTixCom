@@ -47,7 +47,7 @@ if(isset($_POST["editJabatan"]))
         <input type="hidden" name="id_jabatan" value="<?=$rowEditJabatan["id_jabatan"]?>">
             <div class="form-group">
               <label for="nama">Jabatan</label>
-              <input type="text" name="nama" id="nama" class="form-control" value="<?=$rowEditJabatan["nama"]?>">
+              <input type="text" name="nama" id="nama" class="form-control" value="<?=$rowEditJabatan["nama"]?>" required>
             </div>
             <?php
                     $i++;

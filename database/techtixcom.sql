@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2020 at 04:21 AM
+-- Generation Time: Jan 16, 2020 at 07:50 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -34,8 +34,8 @@ CREATE TABLE `tabel_admin` (
   `id_jabatan` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `nik` int(20) NOT NULL,
-  `status_aktif` enum('ya','tidak') NOT NULL,
   `foto` text NOT NULL,
+  `status_aktif` enum('Aktif','Non-Aktif') NOT NULL,
   `waktu_edit` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,8 +43,8 @@ CREATE TABLE `tabel_admin` (
 -- Dumping data for table `tabel_admin`
 --
 
-INSERT INTO `tabel_admin` (`id_admin`, `id_user`, `id_jabatan`, `nama`, `nik`, `status_aktif`, `foto`, `waktu_edit`) VALUES
-(1, 3, 1, 'admin1', 123, 'ya', '', '2020-01-09 00:00:00');
+INSERT INTO `tabel_admin` (`id_admin`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_edit`) VALUES
+(1, 3, 1, 'admin1', 123, '', '', '2020-01-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -63,7 +63,14 @@ CREATE TABLE `tabel_jabatan` (
 
 INSERT INTO `tabel_jabatan` (`id_jabatan`, `nama`) VALUES
 (1, 'Body welder operator'),
-(2, 'bismillah');
+(2, 'Can o mat operator'),
+(3, 'End o mat operator'),
+(4, 'Palleteizer operator'),
+(5, 'Area engineer technician'),
+(6, 'Admin sap'),
+(7, 'Production spv'),
+(8, 'Area engineer spv'),
+(9, 'Can making manager');
 
 -- --------------------------------------------------------
 
@@ -78,7 +85,7 @@ CREATE TABLE `tabel_operator` (
   `nama` varchar(50) NOT NULL,
   `nik` int(20) NOT NULL,
   `foto` text NOT NULL,
-  `status_aktif` enum('ya','tidak') NOT NULL,
+  `status_aktif` enum('Aktif','Non-Aktif') NOT NULL,
   `waktu_tambah` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -87,7 +94,7 @@ CREATE TABLE `tabel_operator` (
 --
 
 INSERT INTO `tabel_operator` (`id_operator`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`) VALUES
-(1, 1, 1, 'operator1', 1234567, '', 'ya', '2020-01-09 00:00:00');
+(1, 1, 1, 'operator1', 1234567, '', 'Non-Aktif', '2020-01-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -101,8 +108,8 @@ CREATE TABLE `tabel_supervisor` (
   `id_jabatan` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `nik` int(20) NOT NULL,
-  `status_aktif` enum('ya','tidak') NOT NULL,
   `foto` text NOT NULL,
+  `status_aktif` enum('Aktif','Non-Aktif') NOT NULL,
   `waktu_tambah` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -110,8 +117,8 @@ CREATE TABLE `tabel_supervisor` (
 -- Dumping data for table `tabel_supervisor`
 --
 
-INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`, `nik`, `status_aktif`, `foto`, `waktu_tambah`) VALUES
-(1, 2, 1, 'supervisor1', 12345678, 'ya', '', '2020-01-09 00:00:00');
+INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`) VALUES
+(1, 2, 1, 'supervisor1', 12345678, '', '', '2020-01-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -189,7 +196,7 @@ ALTER TABLE `tabel_admin`
 -- AUTO_INCREMENT for table `tabel_jabatan`
 --
 ALTER TABLE `tabel_jabatan`
-  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tabel_operator`

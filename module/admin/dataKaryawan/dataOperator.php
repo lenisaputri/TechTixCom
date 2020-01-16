@@ -31,14 +31,14 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">PASSWORD</label>
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="passwordOperatorAdmin" style="font-weight: bold">PASSWORD</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control form-control-user" name="passwordOperatorAdmin" id="password" placeholder="**********" required >
+                                    <input type="password" class="form-control form-control-user" name="passwordOperatorAdmin" id="passwordOperatorAdmin" placeholder="**********" required >
                                     <div class="input-group-append">
-                                        <span class="far fa-eye input-group-text form-control form-control-user" id="eye" onclick="showPassword();"></span>
+                                        <span class="far fa-eye input-group-text form-control form-control-user" id="eyeOperator" onclick="showPasswordOperator();"></span>
                                     </div>
                                 </div>
-                            </div>
+                            </div>   
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9">
                                 <div id="passwordOperatorAdminBlank" class="text-danger"></div>

@@ -174,19 +174,12 @@ switch ($level) {
         
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-          <ul>
-        <li class="menu__item to-left">
-          <a href="#" class="menu__link">Body Welder Operator</a>
-          <ul class="menu__sub-menu">
-            <li class="menu__sub-menu__item">
-              <a href="" class="menu__sub-menu__link">Submenu link 1</a>
-            </li>
-
-            <li class="menu__sub-menu__item">
-              <a href="" class="menu__sub-menu__link">Submenu link 2</a>
-            </li>
-      </ul>
-            <b><a class="collapse-item" href="#">Body Welder Operator</a></b>
+            <a class="collapse-item" href="#" data-toggle="collapse" data-target="#bodyWelder" aria-expanded="true" aria-controls="collapseUtilities" style="font-weight: bold">Body Welder Operator</a>
+                <div id="bodyWelder" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                      <a class="nav collapse-item" href="#">Can O Mat Operator</a>
+                  </div>
+                </div>
             <b><a class="collapse-item" href="#">Can O Mat Operator</a></b>
             <b><a class="collapse-item" href="#">End O Mat Operator</a></b>
             <b><a class="collapse-item" href="#">Palleteizer Operator</a></b>

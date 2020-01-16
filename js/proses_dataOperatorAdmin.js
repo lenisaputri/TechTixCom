@@ -58,4 +58,54 @@ function showPasswordOperator() {
       eye.remove("fa-eye-slash");
       eye.add("fa-eye");
     }
-  }
+}
+
+//VALIDASI TAMBAH
+function ValidasiTambah(){
+    var usernameOperatorAdmin = document.getElementById("usernameOperatorAdmin").value;
+    var passwordOperatorAdmin = document.getElementById("passwordOperatorAdmin").value;
+    var fileid2 = document.getElementById("fileid2").value;
+    var nikOperatorAdmin = document.getElementById("nikOperatorAdmin").value;
+    var namaOperatorAdmin = document.getElementById("namaOperatorAdmin").value;
+
+    if(usernameOperatorAdmin==""){
+        document.getElementById("usernameOperatorAdminBlank").innerHTML="*Masukkan Username Operator";
+    }
+
+    else if(usernameOperatorAdmin!=""){
+        document.getElementById("usernameOperatorAdminBlank").innerHTML="";
+    }
+    
+    if(passwordOperatorAdmin==""){
+        document.getElementById("passwordOperatorAdminBlank").innerHTML="*Masukkan Password Operator";
+    }
+
+    else if(passwordOperatorAdmin!=""){
+        document.getElementById("passwordOperatorAdminBlank").innerHTML="";
+    }
+
+    if(fileid2==""){
+        document.getElementById("fileidOperatorAdminBlank").innerHTML="*Upload File Gambar Operator";
+    }
+
+    else if(fileid2!=""){
+        document.getElementById("fileidOperatorAdminBlank").innerHTML="";
+    }
+
+
+    if(nikOperatorAdmin==""){
+        document.getElementById("nikOperatorAdminBlank").innerHTML="*Masukkan NIK Operator";
+    }
+
+    else if(nikOperatorAdmin!=""){
+        document.getElementById("nikOperatorAdminBlank").innerHTML="";
+    }
+
+    if(namaOperatorAdmin==""){
+        document.getElementById("namaOperatorAdminBlank").innerHTML="*Masukkan Nama Operator";
+    }
+
+    else if(namaOperatorAdmin!=""){
+        document.getElementById("namaOperatorAdminBlank").innerHTML="";
+    }
+}

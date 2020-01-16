@@ -24,9 +24,8 @@
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">USERNAME</label>
                                 <input type="text" class="form-control form-control-user" placeholder="USERNAME" id="usernameOperatorAdmin" name="usernameOperatorAdmin" required>
                             </div>
-                            <div class="col-sm-3"></div>
-                            <div class="col-sm-9">
-                                <div id="usernameOperatorAdminBlank" class="text-danger"></div>
+                            <div class="col-sm-12">
+                                <div id="usernameOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -38,10 +37,9 @@
                                         <span class="far fa-eye input-group-text form-control form-control-user" id="eyeOperator" onclick="showPasswordOperator();"></span>
                                     </div>
                                 </div>
-                            </div>   
-                            <div class="col-sm-3"></div>
-                            <div class="col-sm-9">
-                                <div id="passwordOperatorAdminBlank" class="text-danger"></div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="passwordOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -56,9 +54,8 @@
                                     <input id='fileid2' type='file' name='fileid2' onchange="preview_images22(event);"  hidden required />
                                     <input id='buttonid2' type='button' value='Load Gambar'class="btn btn-loading btn-primary tmbl-loading ml-2"  />
                                 </div>
-                                <div class="col-sm-3"></div>
-                                <div class="col-sm-9">
-                                    <div id="fileidOperatorAdminBlank" class="text-danger"></div>
+                                <div class="col-sm-12">
+                                    <div id="fileidOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                         </div>
@@ -69,9 +66,8 @@
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nik" style="font-weight: bold">NIK</label>
                                 <input type="text" class="form-control form-control-user" placeholder="NIK OPERATOR" id="nikOperatorAdmin" name="nikOperatorAdmin" required>
                             </div>
-                            <div class="col-sm-3"></div>
-                            <div class="col-sm-9">
-                                <div id="nikOperatorAdminBlank" class="text-danger"></div>
+                            <div class="col-sm-12">
+                                <div id="nikOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -79,9 +75,8 @@
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nama" style="font-weight: bold">NAMA LENGKAP</label>
                                 <input type="text" class="form-control form-control-user" placeholder="NAMA OPERATOR" id="namaOperatorAdmin" name="namaOperatorAdmin" required>
                             </div>
-                            <div class="col-sm-3"></div>
-                            <div class="col-sm-9">
-                                <div id="namaOperatorAdminBlank" class="text-danger"></div>
+                            <div class="col-sm-12">
+                                <div id="namaOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -177,12 +172,12 @@
                             <td class="jabatanOperator"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
                             <td class="statusOperator"><?php echo $rowTampilData["status_aktif"]; ?></td>
                             <td>
-                                <a href="#" class="btn btn-primary btn-circle">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="btn btn-primary btn-circle">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
+                                <button type="button" class="btn btn-primary edit-jabatan" data-toggle="modal" data-target="#editJabatanModal" id-jabatan="<?php echo $row["id_jabatan"];?>">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger hapus-jabatan" data-toggle="modal" data-target="#hapusJabatanModal" id-jabatan="<?php echo $row["id_jabatan"];?>">
+                                    <i class="fas fa-trash"></i>
+                                </button>
                             </td>
                         </tr>
                     <?php 

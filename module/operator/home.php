@@ -22,7 +22,7 @@
             ?>
         <div class="row">
         <div class="col-lg-4 ml-5">
-        <center><img src="../img/profile.png" height="250px" width="250px;"></center>
+        <center><img src="../img/profile1.png" height="250px" width="250px;"></center>
         </div>
               <div class="col-lg-5">
                 <div class="p-5">

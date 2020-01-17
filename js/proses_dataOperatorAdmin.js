@@ -1,3 +1,25 @@
+// JABATAN EDIT  
+$(".edit-dataOperator-admin").click(function () {
+    var id_userEdit = $(this).attr("id_userEdit");
+    var id_operatorEdit= $(this).attr("id_operatorEdit");
+
+    $.ajax({
+      url: "../process/proses_adminDataOperator.php",
+      method: "post",
+      data: {
+        editDataOperator_idUser : id_userEdit,
+        editDataOperator_idOperator: id_operatorEdit
+      },
+      success: function (data) {
+        $("#id_userUpdate").val(id_userEdit);
+        $("#id_operatorUpdate").val(id_operatorEdit);
+        $("#edit-dataOperator").html(data);
+        $("#editDataOperatorModal").modal("show");
+      }
+    });
+  });
+// JABATAN EDIT END
+
 function setup2() {
     document.getElementById('buttonid2').addEventListener('click', openDialog);
     function openDialog() {
@@ -44,6 +66,25 @@ function preventDefaultAction(event){
 // show password
 function showPasswordOperator() {
     var password = document.getElementById("passwordOperatorAdmin");
+    if (password.type == "password") {
+      password.type = "text";
+    } else {
+      password.type = "password";
+    }
+  
+    var eye = document.getElementById("eyeOperator").classList;
+    if (eye.contains("fa-eye")) {
+      eye.remove("fa-eye");
+      eye.add("fa-eye-slash");
+    } else {
+      eye.remove("fa-eye-slash");
+      eye.add("fa-eye");
+    }
+}
+
+// show password2
+function showPasswordOperator2() {
+    var password = document.getElementById("passwordOperatorAdmin2");
     if (password.type == "password") {
       password.type = "text";
     } else {

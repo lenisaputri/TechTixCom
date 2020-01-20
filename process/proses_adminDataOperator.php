@@ -47,7 +47,7 @@ function tampilJabatanEdit($con, $id_jabatanEdit){
     return $output;
 }
 
-if (isset($_POST["tambahDataOperator"]) || isset($_POST["editDataOperator"])){
+if (isset($_POST["tambahDataOperator"]) || isset($_POST["editDataOperator"]) || isset($_POST["hapusDataOperator"])){
 
     if($_GET["module"]=="dataOperator" && $_GET["act"]=="tambah"){
 
@@ -147,6 +147,23 @@ if (isset($_POST["tambahDataOperator"]) || isset($_POST["editDataOperator"])){
             else{            
                 echo("Error description: " . mysqli_error($con));
             }
+        }
+    }
+
+    else if($_GET["module"] =="dataOperator" && $_GET["act"]=="hapus"){
+        $delete=$_POST['id_user'];
+        $idnya = $_POST['id_operator'];
+
+        $queryDelete = "DELETE FROM tabel_operator WHERE id_user='$idnya';";
+        $queryDelete2 = "DELETE FROM tabel_user WHERE id_user='$delete';";
+
+        if(mysqli_query($con,$queryDelete) && mysqli_query($con,$queryDelete2)){
+
+            header('location:../module/index.php?module=' . $_GET["module"]);
+        }
+
+        else{            
+            echo("Error description: " . mysqli_error($con));
         }
     }
 }

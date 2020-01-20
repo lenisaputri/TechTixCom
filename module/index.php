@@ -172,55 +172,55 @@ switch ($level) {
           <span>Score Technical</span>
         </a>
         <div id="collapseUtilities" class="collapse list-group" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-            <a href="#sub-menu1" class="list-group-item active nav-link collapsed" data-toggle="collapse" data-parent="#sub-menu1">Body Welder Operator<span class="caret"></span></a>
+            <a href="#sub-menu1" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu1">Body Welder Operator<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu1">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
-            <a href="#sub-menu2" class="list-group-item active nav-link collapsed" data-toggle="collapse" data-parent="#sub-menu2">Can O Mat Operator<span class="caret"></span></a>
+            <a href="#sub-menu2" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu2">Can O Mat Operator<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu2">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
-            <a href="#sub-menu3" class="list-group-item active nav-link collapsed" data-toggle="collapse" data-parent="#sub-menu3">End O Mat Operator<span class="caret"></span></a>
+            <a href="#sub-menu3" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu3">End O Mat Operator<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu3">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
-            <a href="#sub-menu4" class="list-group-item active nav-link collapsed" data-toggle="collapse" data-parent="#sub-menu4">Palleteizer Operator<span class="caret"></span></a>
+            <a href="#sub-menu4" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu4">Palleteizer Operator<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu4">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
-            <a href="#sub-menu5" class="list-group-item active nav-link collapsed" data-toggle="collapse" data-parent="#sub-menu5">Area Engineer Technician<span class="caret"></span></a>
+            <a href="#sub-menu5" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu5">Area Engineer Technician<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu5">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
-            <a href="#sub-menu6" class="list-group-item active nav-link collapsed" data-toggle="collapse" data-parent="#sub-menu6">Admin SAP<span class="caret"></span></a>
+            <a href="#sub-menu6" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu6">Admin SAP<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu6">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
-            <a href="#sub-menu7" class="list-group-item active nav-link collapsed" data-toggle="collapse" data-parent="#sub-menu7">Production SPV<span class="caret"></span></a>
+            <a href="#sub-menu7" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu7">Production SPV<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu7">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
-            <a href="#sub-menu8" class="list-group-item active nav-link collapsed" data-toggle="collapse" data-parent="#sub-menu8">Area Engineer SPV<span class="caret"></span></a>
+            <a href="#sub-menu8" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu8">Area Engineer SPV<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu8">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
-            <a href="#sub-menu9" class="list-group-item active nav-link collapsed" data-toggle="collapse" data-parent="#sub-menu9">Can Making Manager<span class="caret"></span></a>
+            <a href="#sub-menu9" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu9">Can Making Manager<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu9">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>

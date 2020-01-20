@@ -225,7 +225,7 @@
       </div>
     </div>
   </div>
-          <!-- End Modal Edit Jabatan -->
+ <!-- End Modal Edit Jabatan -->
 
     <!-- Modal Hapus Jabatan-->
     <div class="modal fade" id="hapusDataOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2020 at 07:50 AM
+-- Generation Time: Jan 20, 2020 at 07:21 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -36,6 +36,7 @@ CREATE TABLE `tabel_admin` (
   `nik` int(20) NOT NULL,
   `foto` text NOT NULL,
   `status_aktif` enum('Aktif','Non-Aktif') NOT NULL,
+  `waktu_tambah` datetime NOT NULL,
   `waktu_edit` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,8 +44,8 @@ CREATE TABLE `tabel_admin` (
 -- Dumping data for table `tabel_admin`
 --
 
-INSERT INTO `tabel_admin` (`id_admin`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_edit`) VALUES
-(1, 3, 1, 'admin1', 123, '', '', '2020-01-09 00:00:00');
+INSERT INTO `tabel_admin` (`id_admin`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`, `waktu_edit`) VALUES
+(1, 3, 1, 'admin1', 123, '', '', '0000-00-00 00:00:00', '2020-01-09 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -86,15 +87,17 @@ CREATE TABLE `tabel_operator` (
   `nik` int(20) NOT NULL,
   `foto` text NOT NULL,
   `status_aktif` enum('Aktif','Non-Aktif') NOT NULL,
-  `waktu_tambah` datetime NOT NULL
+  `waktu_tambah` datetime NOT NULL,
+  `waktu_edit` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tabel_operator`
 --
 
-INSERT INTO `tabel_operator` (`id_operator`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`) VALUES
-(1, 1, 1, 'operator1', 1234567, '', 'Non-Aktif', '2020-01-09 00:00:00');
+INSERT INTO `tabel_operator` (`id_operator`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`, `waktu_edit`) VALUES
+(1, 1, 1, 'operator1', 1234567, '51436135_2551525554862691_8785967233080754176_n.jpg', 'Aktif', '2020-01-09 00:00:00', '2020-01-20 00:00:00'),
+(2, 7, 5, 'cob', 123333399, 'bts-21.jpg', 'Aktif', '2020-01-16 00:00:00', '2020-01-20 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -110,15 +113,16 @@ CREATE TABLE `tabel_supervisor` (
   `nik` int(20) NOT NULL,
   `foto` text NOT NULL,
   `status_aktif` enum('Aktif','Non-Aktif') NOT NULL,
-  `waktu_tambah` datetime NOT NULL
+  `waktu_tambah` datetime NOT NULL,
+  `waktu_edit` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tabel_supervisor`
 --
 
-INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`) VALUES
-(1, 2, 1, 'supervisor1', 12345678, '', '', '2020-01-09 00:00:00');
+INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`, `waktu_edit`) VALUES
+(1, 2, 1, 'supervisor1', 12345678, '', '', '2020-01-09 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -138,9 +142,10 @@ CREATE TABLE `tabel_user` (
 --
 
 INSERT INTO `tabel_user` (`id_user`, `username`, `password`, `level`) VALUES
-(1, '1234567', '1234567', 'operator'),
+(1, '12345678', '12345678', 'operator'),
 (2, '12345678', '12345678', 'supervisor'),
-(3, '123', '123', 'admin');
+(3, '123', '123', 'admin'),
+(7, '1233333', '12333333', 'operator');
 
 --
 -- Indexes for dumped tables
@@ -202,7 +207,7 @@ ALTER TABLE `tabel_jabatan`
 -- AUTO_INCREMENT for table `tabel_operator`
 --
 ALTER TABLE `tabel_operator`
-  MODIFY `id_operator` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_operator` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tabel_supervisor`
@@ -214,7 +219,7 @@ ALTER TABLE `tabel_supervisor`
 -- AUTO_INCREMENT for table `tabel_user`
 --
 ALTER TABLE `tabel_user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

@@ -103,13 +103,12 @@
 </div>
 <!-- /.container-fluid -->
 
-          <!-- Modal Edit Jabatan-->
-
-          <div class="modal fade" id="editJabatanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<!-- Modal Edit Jabatan-->
+<div class="modal fade" id="editJabatanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header bg-primary border-0">
-          <h5 class="modal-title text-white">Edit Data Jabatan</h5>
+        <div class="modal-header d-flex justify-content-center bg-jabatan border-0">
+          <h5 class="modal-title text-white w-100 text-center">Edit Data Jabatan</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -120,9 +119,9 @@
       </div>
     </div>
   </div>
-          <!-- End Modal Edit Kriteria -->
+          <!-- End Modal Edit Jabatan -->
 
-    <!-- Modal Hapus Kriteria-->
+    <!-- Modal Hapus Jabatan-->
     <div class="modal fade" id="hapusJabatanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -140,6 +139,6 @@
         </div>
       </div>
     </div>
-    <!-- End Modal Hapus Kriteria -->
+    <!-- End Modal Hapus Jabatan -->
 
 </body>

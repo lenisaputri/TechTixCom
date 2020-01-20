@@ -172,10 +172,10 @@
                             <td class="jabatanOperator"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
                             <td class="statusOperator"><?php echo $rowTampilData["status_aktif"]; ?></td>
                             <td>
-                                <button type="button" class="btn btn-primary edit-jabatan" data-toggle="modal" data-target="#editJabatanModal" id-jabatan="<?php echo $row["id_jabatan"];?>">
+                                <button type="button" class="btn btn-primary edit-dataOperator-admin" data-toggle="modal" data-target="#editDataOperatorModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_operatorEdit="<?php echo $rowTampilData["id_operator"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger hapus-jabatan" data-toggle="modal" data-target="#hapusJabatanModal" id-jabatan="<?php echo $row["id_jabatan"];?>">
+                                <button type="button" class="btn btn-danger hapus-jabatan" data-toggle="modal" data-target="#hapusJabatanModal" id_userHapus="<?php echo $row["id_user"];?>" id_operatorHapus="<?php echo $row["id_operator"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
@@ -202,5 +202,29 @@
 <!-- MENAMPILKAN DATA SELESAI-->
 </div>
 <!-- /.container-fluid -->
+
+<!-- Modal Edit Jabatan-->
+<div class="modal fade" id="editDataOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-operator border-0">
+          <h5 class="modal-title text-white w-100 text-center">Edit Data Operator</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="../process/proses_adminDataOperator.php?module=dataOperator&act=edit" id="formEditDataOperatorAdmin" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id_user" id="id_userUpdate" >
+                <input type="hidden" name="id_operator" id="id_operatorUpdate" >
+                <div class="container-fluid" id="edit-dataOperator">
+
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+          <!-- End Modal Edit Jabatan -->
 
 </body>

@@ -11,3 +11,13 @@
     float: none;
     display: block;
 }
+
+#editDataOperatorModal .bg-operator {
+    background-color: #0368ca !important;
+}
+
+#modail .form-control{
+    font-size: .8rem;
+    border-radius: 10rem;
+    padding: 1.5rem 1rem;
+}

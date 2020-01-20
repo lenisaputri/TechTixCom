@@ -1,7 +1,3 @@
-#jabatan .bg-primary {
-    background-color: #0368ca!important;
-}
-
 #jabatan .page-item.active .page-link {
     z-index: 1;
     color: #fff;
@@ -14,4 +10,8 @@
     margin: 100px auto;
     float: none;
     display: block;
+}
+
+#editJabatanModal .bg-jabatan {
+    background-color: #0368ca !important;
 }

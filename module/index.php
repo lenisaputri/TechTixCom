@@ -105,9 +105,9 @@ switch ($level) {
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="index.php?module=materiSafety">Materi Safety</a>
-            <a class="collapse-item" href="#">Materi General HRD</a>
-            <a class="collapse-item" href="#">Materi Quality</a>
-            <a class="collapse-item" href="#">Materi Technical Machine</a>
+            <a class="collapse-item" href="index.php?module=materiGeneralHrd">Materi General HRD</a>
+            <a class="collapse-item" href="index.php?module=materiQuality">Materi Quality</a>
+            <a class="collapse-item" href="index.php?module=materiTechnical">Materi Technical Machine</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -459,6 +459,18 @@ switch ($level) {
                     break;
                   case "technical":
                     include "operator/technical.php";
+                    break;
+                  case "materiSafety":
+                    include "operator/materiOperator/materiSafety.php";
+                    break;
+                  case "materiGeneralHrd":
+                    include "operator/materiOperator/materiGeneralHrd.php";
+                    break;
+                  case "materiQuality":
+                    include "operator/materiOperator/materiQuality.php";
+                    break;
+                  case "materiTechnical":
+                    include "operator/materiOperator/materiTechnical.php";
                     break;
                   default:
                     include "404.php";

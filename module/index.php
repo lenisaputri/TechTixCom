@@ -171,16 +171,14 @@ switch ($level) {
           <i class="fas fa-fw fa-cogs"></i>
           <span>Score Technical</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="collapse list-group-level1" id="sub-menu">
-            <a href="#sub-sub-menu" class="list-group-item" data-toggle="collapse" data-parent="#sub-menu">Sub Item 3 <span class="caret"></span></a>
-            <div class="collapse list-group-level2" id="sub-sub-menu">
-              <a href="#" class="list-group-item" data-parent="#sub-sub-menu">Sub Sub Item 1</a>
-              <a href="#" class="list-group-item" data-parent="#sub-sub-menu">Sub Sub Item 2</a>
-              <a href="#" class="list-group-item" data-parent="#sub-sub-menu">Sub Sub Item 3</a>
+        <div id="collapseUtilities" class="collapse list-group" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <a href="#sub-menu" class="list-group-item active nav-link collapsed" data-toggle="collapse" data-parent="#sub-menu">Item 3 <span class="caret"></span></a>
+            <div class="collapse list-group-level2" id="sub-menu">
+              <a href="#" class="list-group-item" data-parent="#sub-menu">Sub Item 1</a>
+              <a href="#" class="list-group-item" data-parent="#sub-menu">Sub Item 2</a>
+              <a href="#" class="list-group-item" data-parent="#sub-menu">Sub Item 3</a>
             </div>
-          </div>
-          </div>
+        </div>
 
         <!-- <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">

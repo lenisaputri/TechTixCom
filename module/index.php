@@ -62,10 +62,7 @@ switch ($level) {
   <body id="home">
   <!-- navigation Admin & Supervisor & Operator -->
     <!-- Page Wrapper (Untuk Menu) -->
-    <?php
-    if ($level != "admin"){
-      ?>
-      <div id="wrapper">
+    <div id="wrapper">
       <!-- Sidebar (Menu)-->
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
       <!-- Sidebar - Brand (Judul) -->
@@ -73,9 +70,11 @@ switch ($level) {
         <div class="sidebar-brand-icon">
           <img src="../img/logo/logo_book.png" width="40" height="45" >
         </div>
-        <div class="sidebar-brand-text mx-3">NAMA LOGO</div>
+        <div class="sidebar-brand-text mx-3">MATRIX DEVELOPMENT</div>
       </a>
-
+    <?php
+    if ($level != "admin"){
+      ?>
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider my-0">
 
@@ -295,16 +294,16 @@ switch ($level) {
         <?php
     } else {
       ?>
-            <div id="wrapper">
+            <!-- <div id="wrapper"> -->
       <!-- Sidebar (Menu)-->
-      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <!-- <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"> -->
       <!-- Sidebar - Brand (Judul) -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <!-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
           <img src="../img/logo/logo_book.png" width="40" height="45" >
         </div>
-        <div class="sidebar-brand-text mx-3">NAMA LOGO</div>
-      </a>
+        <div class="sidebar-brand-text mx-3">MATRIX DEVELOPMENT</div>
+      </a> -->
 
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider my-0">
@@ -362,22 +361,20 @@ switch ($level) {
       
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-file"></i>
-          <span>Materi Training</span>
+        <a class="nav-link" href="index.php?module=kategoriMateri" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-th-large"></i>
+          <span>Kategori Materi</span>
         </a>
-        
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=materiSafety">Materi Safety</a>
-            <a class="collapse-item" href="#">Materi General HRD</a>
-            <a class="collapse-item" href="#">Materi Quality</a>
-            <a class="collapse-item" href="#">Materi Technical Machine</a>
-            <div class="collapse-divider"></div>
-          </div>
-        </div>
       </li>
-      
+
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?module=dataMateri" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-file"></i>
+          <span>Data Materi</span>
+        </a>
+      </li>
+        
+
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider">
 
@@ -530,11 +527,11 @@ switch ($level) {
                   case "jabatan":
                     include "admin/jabatan/jabatan.php";
                     break;
-                  case "materiSafety":
-                    include "admin/materiTraining/materiSafety.php";
+                  case "kategoriMateri":
+                    include "admin/materiTraining/kategoriMateri.php";
                     break;
-                  case "quality":
-                    include "admin/quality.php";
+                  case "dataMateri":
+                    include "admin/materiTraining/dataMateri.php";
                     break;
                   default:
                     include "404.php";

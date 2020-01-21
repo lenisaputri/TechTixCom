@@ -21,5 +21,24 @@
     text-decoration: none;
     background-color: #0368ca;
   }
+
+#home .sidebar .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: .85rem;
+    padding: 1rem;
+    width: 14rem;
+}
+
+#home .list-group-item {
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    font-size: .85rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+}
   
 

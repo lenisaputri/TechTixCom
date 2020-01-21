@@ -23,3 +23,29 @@ $(".hapus-jabatan").click(function() {
   $("#hapusJabatanModal").modal("show");
 });
 //JABATAN HAPUS END
+
+//VALIDASI TAMBAH
+function ValidasiTambahJabatan(){
+  var nama = document.getElementById("nama").value;
+
+  if(nama==""){
+      document.getElementById("namaBlank").innerHTML="*Masukkan Data Jabatan";
+  }
+
+  else if(nama!=""){
+      document.getElementById("namaBlank").innerHTML="";
+  }
+}
+
+//VALIDASI EDIT
+function ValidasiEditJabatan(){
+  var nama2 = document.getElementById("nama2").value;
+
+  if(nama2==""){
+      document.getElementById("nama2Blank").innerHTML="*Masukkan Data Jabatan";
+  }
+
+  else if(nama2!=""){
+      document.getElementById("nama2Blank").innerHTML="";
+  }
+}

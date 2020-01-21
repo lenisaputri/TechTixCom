@@ -46,8 +46,13 @@ if(isset($_POST["editKategoriMateri"]))
         <form action="../process/proses_adminKategoriMateri.php?module=kategoriMateri&act=edit" method="POST">
             <input type="hidden" name="id_kategori_materi" value="<?=$rowEditKategoriMateri["id_kategori_materi"]?>">
             <div class="form-group">
-              <label for="kategori_materi">Kategori Materi</label>
-              <input type="text" name="kategori_materi" id="kategori_materi" class="form-control" value="<?=$rowEditKategoriMateri["kategori_materi"]?>" required>
+                <div class="col-sm-12 mb-3 mb-sm-0">
+                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="kategori_materi" style="font-weight: bold">KATEGORI MATERI</label>
+                    <input type="text" name="kategori_materi" id="kategori_materi2" class="form-control" value="<?=$rowEditKategoriMateri["kategori_materi"]?>" required>
+                </div>
+                <div class="col-sm-12">
+                    <div id="kategori_materi2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                </div>
             </div>
             <?php
             $i++;
@@ -56,7 +61,7 @@ if(isset($_POST["editKategoriMateri"]))
             ?>
             <div class="modal-footer border-0">
                 <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                <button class="btn btn-primary" name="editKategoriMateriProses" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                <button class="btn btn-primary" name="editKategoriMateriProses" type="submit" onclick="ValidasiEditKategoriMateri();"><i class="fa fa-check"></i> Simpan</button>
             </div>
         </form>
     <?php

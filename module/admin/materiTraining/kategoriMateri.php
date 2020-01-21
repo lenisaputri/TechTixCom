@@ -24,17 +24,20 @@ include "../process/proses_adminKategoriMateri.php";
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="kategori_materi" style="font-weight: bold">KATEGORI MATERI</label>
                                 <input type="text" class="form-control form-control-user" id="kategori_materi" name="kategori_materi" placeholder="KATEGORI MATERI" required>
                             </div>
+                            <div class="col-sm-12">
+                                <div id="kategori_materiBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group row">
-                            <div class="col-sm-12 mb-4 mb-sm-3">
-                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahKategoriMateri">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-plus"></i>
-                                        </span>
-                                        <span class="text">Tambah Data</span>
-                                    </button>
+                            <div class="col-sm-12 mb-3 mb-sm-0">
+                                <button type="submit" class="btn btn-success btn-icon-split" name="tambahKategoriMateri" onclick="ValidasiTambahKategoriMateri();">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                    <span class="text">Tambah Data</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -47,7 +50,7 @@ include "../process/proses_adminKategoriMateri.php";
     <!-- MENAMPILKAN DATA -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Jabatan</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data Kategori Materi</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -122,8 +125,7 @@ include "../process/proses_adminKategoriMateri.php";
           <!-- End Modal Edit Jabatan -->
 
     <!-- Modal Hapus Jabatan-->
-    <div class="modal fade" id="#hapusKategoriMateriModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
+    <div class="modal fade" id="hapusKategoriMateriModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <form action="../process/proses_adminKategoriMateri.php?module=kategoriMateri&act=hapus" method="post">

@@ -24,6 +24,7 @@
   <script src="../js/demo/datatables-demo.js"></script>
 
   <script src="../js/proses_loginUser.js"></script>
+  <script src="../js/proses_dataAdminAdmin.js"></script>
   <script src="../js/proses_dataOperatorAdmin.js"></script>
   <script src="../js/proses_dataSupervisorAdmin.js"></script>
   <script src="../js/proses_jabatanAdmin.js"></script>

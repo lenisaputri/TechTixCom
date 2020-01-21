@@ -2,9 +2,9 @@
   include "../config/connection.php";
   include "../process/proses_adminDataAdmin.php";
 ?>
-<body onload="setup2();">
+<body onload="setupAdmin2();">
 <!-- Begin Page Content -->
-<div class="container-fluid" id="dataKaryawan" onload="setup2();">
+<div class="container-fluid" id="dataKaryawan" onload="setupAdmin2();">
     <!-- Page Heading -->
     <!-- <h1 class="h3 mb-2 text-gray-800">Data Operator</h1>
         <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
@@ -16,47 +16,47 @@
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=tambah" id="formDataAdmin" method="POST" enctype="multipart/form-data">
+            <form class="user" action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=tambah" id="formDataAdminAdmin" method="POST" enctype="multipart/form-data">
                 <div class = "row">
                     <div class="col-sm-6">
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">USERNAME</label>
-                                <input type="text" class="form-control form-control-user" placeholder="USERNAME" id="usernameAdmin" name="usernameAdmin" required>
+                                <input type="text" class="form-control form-control-user" placeholder="USERNAME" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
                             </div>
                             <div class="col-sm-12">
-                                <div id="usernameAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="passwordAdmin" style="font-weight: bold">PASSWORD</label>
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="passwordAdminAdmin" style="font-weight: bold">PASSWORD</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control form-control-user" name="passwordAdmin" id="passwordAdmin" placeholder="**********" required >
+                                    <input type="password" class="form-control form-control-user" name="passwordAdminAdmin" id="passwordAdminAdmin" placeholder="**********" required >
                                     <div class="input-group-append">
                                         <span class="far fa-eye input-group-text form-control form-control-user" id="eyeAdmin" onclick="showPasswordAdmin();"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                <div id="passwordAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="passwordAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">GAMBAR</label>
                                 <div class="input-group col-sm-10">
-                                    <img src="../attachment/img/avatar.jpeg" id="fotoPrevAdmin3" height="200px" width="200px">
+                                    <img src="../attachment/img/avatar.jpeg" id="fotoPrevAdminAdmin3" height="200px" width="200px">
                                 </div>
                                 <div class="col-md-2"></div>
                                 <div class="col-md-10">
                                     <br>
-                                    <input id='fileid2' type='file' name='fileid2' onchange="preview_images22(event);"  hidden required />
+                                    <input id='fileid2' type='file' name='fileid2' onchange="preview_imagesAdmin22(event);"  hidden required />
                                     <input id='buttonid2' type='button' value='Load Gambar'class="btn btn-loading btn-primary tmbl-loading ml-2"  />
                                 </div>
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-9">
-                                    <div id="fileidAdminBlank" class="text-danger"></div>
+                                    <div id="fileidAdminAdminBlank" class="text-danger"></div>
                                 </div>
                             </div>
                         </div>
@@ -65,10 +65,10 @@
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nik" style="font-weight: bold">NIK</label>
-                                <input type="text" class="form-control form-control-user" placeholder="NIK ADMIN" id="nikAdmin" name="nikAdmin" required>
+                                <input type="text" class="form-control form-control-user" placeholder="NIK ADMIN" id="nikAdminAdmin" name="nikAdminAdmin" required>
                             </div>
                             <div class="col-sm-12">
-                                <div id="nikAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="nikAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -77,7 +77,7 @@
                                 <input type="text" class="form-control form-control-user" placeholder="NAMA ADMIN" id="namaAdmin" name="namaAdmin" required>
                             </div>
                             <div class="col-sm-12">
-                                <div id="namaAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="namaAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -86,7 +86,7 @@
                                 <?php
                                     $resultJabatan = tampilJabatan($con);
                                 ?>
-                                <select class="custom-select my-1 mr-sm-2" name="jabatanAdmin">  <!-- tampilannya belum -->
+                                <select class="custom-select my-1 mr-sm-2" name="jabatanAdminAdmin">  <!-- tampilannya belum -->
                                     <?php
                                         if(mysqli_num_rows($resultJabatan) > 0){
                                             while($row = mysqli_fetch_assoc($resultJabatan)){
@@ -101,12 +101,12 @@
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">STATUS KARYAWAN</label>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input form-control-user" type="radio" name="statusAdmin" id="statusAdmin1" value="Aktif">
-                                    <label class="form-check-label" for="statusAdmin1">Aktif</label>
+                                    <input class="form-check-input form-control-user" type="radio" name="statusAdminAdmin" id="statusAdminAdmin1" value="Aktif">
+                                    <label class="form-check-label" for="statusAdminAdmin1">Aktif</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="statusAdmin" id="statusAdmin2" value="Non-Aktif">
-                                    <label class="form-check-label" for="statusAdmin2">Non-Aktif</label>
+                                    <input class="form-check-input" type="radio" name="statusAdminAdmin" id="statusAdminAdmin2" value="Non-Aktif">
+                                    <label class="form-check-label" for="statusAdminAdmin2">Non-Aktif</label>
                                 </div>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <div class="col-sm-4"></div>
                                 <div class="col-sm-8">
-                                    <a href="#" class="btn btn-success btn-icon-split">
+                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataAdmin" onclick="ValidasiTambahAdmin(); preventDefaultActionAdmin(event);">
                                         <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                         </span>
@@ -176,7 +176,7 @@
                                 <button type="button" class="btn btn-primary edit-dataAdmin-admin" data-toggle="modal" data-target="#editDataAdminModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_adminEdit="<?php echo $rowTampilData["id_admin"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger hapus-jabatan" data-toggle="modal" data-target="#hapusJabatanModal" id_userHapus="<?php echo $row["id_user"];?>" id_adminHapus="<?php echo $row["id_admin"];?>">
+                                <button type="button" class="btn btn-danger hapus-dataAdmin-admin" data-toggle="modal" data-target="#hapusDataAdminModal" id_user="<?php echo $rowTampilData["id_user"];?>" id_admin="<?php echo $rowTampilData["id_admin"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
@@ -188,9 +188,9 @@
                     <?php
                     }   else{
                     ?>
-                        <div>
+                        <!-- <div>
                             <p>Data Admin tidak tersedia</p>
-                        </div>
+                        </div> -->
                     <?php
                     }
                     ?>
@@ -215,7 +215,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=edit" id="formEditDataAdmin" method="POST" enctype="multipart/form-data">
+            <form action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=edit" id="formEditDataAdminAdmin" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id_user" id="id_userUpdate" >
                 <input type="hidden" name="id_admin" id="id_adminUpdate" >
                 <div class="container-fluid" id="edit-dataAdmin">
@@ -226,6 +226,26 @@
       </div>
     </div>
   </div>
-          <!-- End Modal Edit Jabatan -->
+  <!-- End Modal Edit Jabatan -->
+
+    <!-- Modal Hapus Jabatan-->
+    <div class="modal fade" id="hapusDataAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <form action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=hapus" method="post">
+                <div class="modal-body pt-5 text-center">
+                <input type="hidden" name="id_user" id="id_userHapus" >
+                <input type="hidden" name="id_admin" id="id_adminHapus" >
+                    <strong>Apakah Anda yakin?</strong>
+                </div>
+                <div class="pb-4 pt-4 d-flex justify-content-around">
+                    <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
+                    <button type="submit" name="hapusDataAdmin" class="btn btn-success btn-ok">Ya</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal Hapus Jabatan -->
 
 </body>

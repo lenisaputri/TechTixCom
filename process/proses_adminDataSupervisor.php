@@ -1,7 +1,7 @@
 <?php
 include "../config/connection.php";
 
-function linkYAYAYA($Foto){
+function linkFotoSupervisor($Foto){
 
     $ling = "";
 
@@ -47,7 +47,7 @@ function tampilJabatanEdit($con, $id_jabatanEdit){
     return $output;
 }
 
-if (isset($_POST["tambahDataSupervisor"]) || isset($_POST["editDataSupervisor"])){
+if (isset($_POST["tambahDataSupervisor"]) || isset($_POST["editDataSupervisor"]) || isset($_POST["hapusDataSupervisor"])){
 
     if($_GET["module"]=="dataSupervisor" && $_GET["act"]=="tambah"){
 
@@ -150,22 +150,22 @@ if (isset($_POST["tambahDataSupervisor"]) || isset($_POST["editDataSupervisor"])
         }
     }
 
-    // else if($_GET["module"] =="dataOperator" && $_GET["act"]=="hapus"){
-    //     $delete=$_POST['id_user'];
-    //     $idnya = $_POST['id_operator'];
+    else if($_GET["module"] =="dataSupervisor" && $_GET["act"]=="hapus"){
+        $delete=$_POST['id_user'];
+        $idnya = $_POST['id_supervisor'];
 
-    //     $queryDelete = "DELETE FROM tabel_operator WHERE id_user='$idnya';";
-    //     $queryDelete2 = "DELETE FROM tabel_user WHERE id_user='$delete';";
+        $queryDeleteSupervisor = "DELETE FROM tabel_supervisor WHERE id_supervisor='$idnya';";
+        $queryDeleteUser = "DELETE FROM tabel_user WHERE id_user='$delete';";
 
-    //     if(mysqli_query($con,$queryDelete) && mysqli_query($con,$queryDelete2)){
+        if(mysqli_query($con,$queryDeleteSupervisor) && mysqli_query($con,$queryDeleteUser)){
 
-    //         header('location:../module/index.php?module=' . $_GET["module"]);
-    //     }
+            header('location:../module/index.php?module=' . $_GET["module"]);
+        }
 
-    //     else{            
-    //         echo("Error description: " . mysqli_error($con));
-    //     }
-    // }
+        else{            
+            echo("Error description: " . mysqli_error($con));
+        }
+    }
 }
 
 // MODAL EDIT SUPERVISOR
@@ -212,12 +212,12 @@ if(isset($_POST["editDataSupervisor_idSupervisor"])){
                     <div class='col-sm-12 mb-3 mb-sm-0'>
                         <label class='col-sm-6 small d-flex flex-column justify-content-center' for='gambar' style='font-weight: bold'>GAMBAR</label>
                         <div class='input-group col-sm-10'>`
-                            <img src='".linkYAYAYA($rowEditSupervisor["foto"])."' id='fotoPrevSupervisorAdmin2' height='200px' width='200px'>
+                            <img src='".linkFotoSupervisor($rowEditSupervisor["foto"])."' id='fotoPrevSupervisorAdmin2' height='200px' width='200px'>
                         </div>
                         <div class='col-md-2'></div>
                         <div class='col-md-10'>
                             <br>
-                            <input id='fileid3' type='file' name='fileid3' onchange='preview_images6(event);'  hidden />
+                            <input id='fileid3' type='file' name='fileid3' onchange='preview_imagesSupervisor6(event);'  hidden />
                             <input id='buttonid3' type='button' value='Load Gambar' class='btn btn-loading btn-primary tmbl-loading ml-2'  />
                         </div>
                         <div class='col-sm-12'>
@@ -274,7 +274,7 @@ if(isset($_POST["editDataSupervisor_idSupervisor"])){
                     <div class='col-sm-8>
                         <div class='modal-footer border-0'>
                             <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
-                            <button class='btn btn-primary' name='editDataSupervisor' type='submit' onclick='ValidasiEdit(); preventDefaultAction2(event);><i class='fa fa-check'></i> Simpan</button>
+                            <button class='btn btn-primary' name='editDataSupervisor' type='submit' onclick='ValidasiEditSupervisor(); preventDefaultActionSupervisor2(event);><i class='fa fa-check'></i> Simpan</button>
                         </div>
                     </div>
                 </div>
@@ -282,9 +282,9 @@ if(isset($_POST["editDataSupervisor_idSupervisor"])){
         </div>
                                       
         <script>
-            document.getElementById('modail').addEventListener('load', setup3());
+            document.getElementById('modail').addEventListener('load', setupSupervisor3());
             
-            function setup3() {
+            function setupSupervisor3() {
                 document.getElementById('buttonid3').addEventListener('click', openDialog2);
                 function openDialog2() {
                     document.getElementById('fileid3').click();

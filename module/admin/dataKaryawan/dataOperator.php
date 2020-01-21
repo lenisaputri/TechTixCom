@@ -85,7 +85,7 @@
                                 <?php
                                     $resultJabatan = tampilJabatan($con);
                                 ?>
-                               <select class="custom-select my-1 mr-sm-2" name="jabatanOperatorAdmin">  <!-- tampilannya belum -->
+                               <select class="custom-select-karyawan my-1 mr-sm-2" name="jabatanOperatorAdmin">  <!-- tampilannya belum -->
                                     <?php
                                         if(mysqli_num_rows($resultJabatan) > 0){
                                             while($row = mysqli_fetch_assoc($resultJabatan)){

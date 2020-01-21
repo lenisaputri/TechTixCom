@@ -47,7 +47,7 @@ function tampilJabatanEdit($con, $id_jabatanEdit){
     return $output;
 }
 
-if (isset($_POST["tambahDataSupervisor"])){
+if (isset($_POST["tambahDataSupervisor"]) || isset($_POST["editDataSupervisor"])){
 
     if($_GET["module"]=="dataSupervisor" && $_GET["act"]=="tambah"){
 
@@ -90,65 +90,65 @@ if (isset($_POST["tambahDataSupervisor"])){
         }
     } 
 
-    // else if($_GET["module"] =="dataOperator" && $_GET["act"]=="edit"){
-    //     $update = $_POST["id_userUpdate"];
-    //     $id_operatorUpdate = $_POST["id_operatorUpdate"];
+    else if($_GET["module"] =="dataSupervisor" && $_GET["act"]=="edit"){
+        $update = $_POST["id_userUpdate"];
+        $id_supervisorUpdate = $_POST["id_supervisorUpdate"];
         
-    //     $nama_folder = "img";
-    //     $tmp = $_FILES["fileid3"]["tmp_name"];
-    //     $namanya_file = $_FILES["fileid3"]["name"];
-    //     move_uploaded_file($tmp, "../attachment/$nama_folder/$namanya_file");
+        $nama_folder = "img";
+        $tmp = $_FILES["fileid3"]["tmp_name"];
+        $namanya_file = $_FILES["fileid3"]["name"];
+        move_uploaded_file($tmp, "../attachment/$nama_folder/$namanya_file");
 
-    //     if($namanya_file!=""){
+        if($namanya_file!=""){
             
-    //         $query9 = "UPDATE tabel_user 
-    //         set username='$_POST[usernameOperatorAdmin2]',
-    //         password='$_POST[passwordOperatorAdmin2]'
-    //         where id_user= '$update';";
+            $query9 = "UPDATE tabel_user 
+            set username='$_POST[usernameSupervisorAdmin2]',
+            password='$_POST[passwordSupervisorAdmin2]'
+            where id_user= '$update';";
 
-    //         $query10="UPDATE tabel_operator
-    //         set id_jabatan = '$_POST[jabatanOperatorAdmin2]',
-    //         nama = '$_POST[namaOperatorAdmin2]',
-    //         nik = '$_POST[nikOperatorAdmin2]',
-    //         foto = '$namanya_file',
-    //         status_aktif = '$_POST[statusOperatorAdmin]',
-    //         waktu_edit = curdate()
-    //         where id_user='$update';";
+            $query10="UPDATE tabel_supervisor
+            set id_jabatan = '$_POST[jabatanSupervisorAdmin2]',
+            nama = '$_POST[namaSupervisorAdmin2]',
+            nik = '$_POST[nikSupervisorAdmin2]',
+            foto = '$namanya_file',
+            status_aktif = '$_POST[statusSupervisorAdmin]',
+            waktu_edit = curdate()
+            where id_user='$update';";
 
-    //         if(mysqli_query($con,$query9) && mysqli_query($con,$query10)){
+            if(mysqli_query($con,$query9) && mysqli_query($con,$query10)){
 
-    //             header('location:../module/index.php?module=' . $_GET["module"]);
-    //         }
+                header('location:../module/index.php?module=' . $_GET["module"]);
+            }
 
-    //         else{            
-    //             echo("Error description: " . mysqli_error($con));
-    //         }
-    //     }
+            else{            
+                echo("Error description: " . mysqli_error($con));
+            }
+        }
 
-    //     else if($namanya_file == ""){
-    //         $query9 = "UPDATE tabel_user 
-    //         set username='$_POST[usernameOperatorAdmin2]',
-    //         password='$_POST[passwordOperatorAdmin2]'
-    //         where id_user= '$update';";
+        else if($namanya_file == ""){
+            $query9 = "UPDATE tabel_user 
+            set username='$_POST[usernameSupervisorAdmin2]',
+            password='$_POST[passwordSupervisorAdmin2]'
+            where id_user= '$update';";
 
-    //         $query10="UPDATE tabel_operator
-    //         set id_jabatan = '$_POST[jabatanOperatorAdmin2]',
-    //         nama = '$_POST[namaOperatorAdmin2]',
-    //         nik = '$_POST[nikOperatorAdmin2]',
-    //         status_aktif = '$_POST[statusOperatorAdmin]',
-    //         waktu_edit = curdate()
-    //         where id_user='$update';";
+            $query10="UPDATE tabel_supervisor
+            set id_jabatan = '$_POST[jabatanSupervisorAdmin2]',
+            nama = '$_POST[namaSupervisorAdmin2]',
+            nik = '$_POST[nikSupervisorAdmin2]',
+            status_aktif = '$_POST[statusSupervisorAdmin]',
+            waktu_edit = curdate()
+            where id_user='$update';";
 
-    //         if(mysqli_query($con,$query9) && mysqli_query($con,$query10)){
+            if(mysqli_query($con,$query9) && mysqli_query($con,$query10)){
 
-    //             header('location:../module/index.php?module=' . $_GET["module"]);
-    //         }
+                header('location:../module/index.php?module=' . $_GET["module"]);
+            }
 
-    //         else{            
-    //             echo("Error description: " . mysqli_error($con));
-    //         }
-    //     }
-    // }
+            else{            
+                echo("Error description: " . mysqli_error($con));
+            }
+        }
+    }
 
     // else if($_GET["module"] =="dataOperator" && $_GET["act"]=="hapus"){
     //     $delete=$_POST['id_user'];

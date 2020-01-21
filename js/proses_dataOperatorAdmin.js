@@ -22,12 +22,12 @@ $(".edit-dataOperator-admin").click(function () {
 
 // DATA OPERATOR HAPUS
 
-$('.hapus-mahasiswa-admin').click(function () {
+$(".hapus-dataOperator-admin").click(function () {
     var id_user = $(this).attr("id_user");
-    var id_mahasiswa = $(this).attr("id_mahasiswa");
+    var id_operator = $(this).attr("id_operator");
     $('#id_userHapus').val(id_user);
-    $('#id_mahasiswaHapus').val(id_mahasiswa);
-    $('#hapus').modal("show");
+    $('#id_operatorHapus').val(id_operator);
+    $('#hapusDataOperatorModal').modal("show");
 })
 
 // DATA OPERATOR HAPUS END

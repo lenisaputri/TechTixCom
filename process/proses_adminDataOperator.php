@@ -47,7 +47,7 @@ function tampilJabatanEdit($con, $id_jabatanEdit){
     return $output;
 }
 
-if (isset($_POST["tambahDataOperator"]) || isset($_POST["editDataOperator"])){
+if (isset($_POST["tambahDataOperator"]) || isset($_POST["editDataOperator"]) || isset($_POST["hapusDataOperator"])){
 
     if($_GET["module"]=="dataOperator" && $_GET["act"]=="tambah"){
 
@@ -149,10 +149,27 @@ if (isset($_POST["tambahDataOperator"]) || isset($_POST["editDataOperator"])){
             }
         }
     }
+
+    else if($_GET["module"] =="dataOperator" && $_GET["act"]=="hapus"){
+        $delete=$_POST['id_user'];
+        $idnya = $_POST['id_operator'];
+
+        $queryDelete = "DELETE FROM tabel_operator WHERE id_user='$idnya';";
+        $queryDelete2 = "DELETE FROM tabel_user WHERE id_user='$delete';";
+
+        if(mysqli_query($con,$queryDelete) && mysqli_query($con,$queryDelete2)){
+
+            header('location:../module/index.php?module=' . $_GET["module"]);
+        }
+
+        else{            
+            echo("Error description: " . mysqli_error($con));
+        }
+    }
 }
 
 
-// Modal Edit Mahasiswa
+// MODAL EDIT OPERATOR
 if(isset($_POST["editDataOperator_idOperator"])){
     $editOperator = "SELECT tp.*, tp.id_operator ,tp.nama AS nama_lengkap ,tj.*, tj.nama AS nama_jabatan, tu.* FROM tabel_operator tp,tabel_jabatan tj,tabel_user tu 
     WHERE tp.id_jabatan = tj.id_jabatan
@@ -246,7 +263,7 @@ if(isset($_POST["editDataOperator_idOperator"])){
                             <label class='form-check-label' for='statusOperatorAdmin1'>Aktif</label>
                         </div>
                         <div class='form-check form-check-inline'>
-                            <input class='form-check-input form-control-user' type='radio' name='statusOperatorAdmin' id='statusOperatorAdmin1' value='Aktif'>
+                            <input class='form-check-input form-control-user' type='radio' name='statusOperatorAdmin' id='statusOperatorAdmin1' value='Non-Aktif'>
                             <label class='form-check-label' for='statusOperatorAdmin2'>Non-Aktif</label>
                         </div>
                     </div>

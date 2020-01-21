@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2020 at 07:28 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Waktu pembuatan: 21 Jan 2020 pada 07.40
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel_admin`
+-- Struktur dari tabel `tabel_admin`
 --
 
 CREATE TABLE `tabel_admin` (
@@ -41,7 +41,7 @@ CREATE TABLE `tabel_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tabel_admin`
+-- Dumping data untuk tabel `tabel_admin`
 --
 
 INSERT INTO `tabel_admin` (`id_admin`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`, `waktu_edit`) VALUES
@@ -50,7 +50,7 @@ INSERT INTO `tabel_admin` (`id_admin`, `id_user`, `id_jabatan`, `nama`, `nik`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel_jabatan`
+-- Struktur dari tabel `tabel_jabatan`
 --
 
 CREATE TABLE `tabel_jabatan` (
@@ -59,7 +59,7 @@ CREATE TABLE `tabel_jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tabel_jabatan`
+-- Dumping data untuk tabel `tabel_jabatan`
 --
 
 INSERT INTO `tabel_jabatan` (`id_jabatan`, `nama`) VALUES
@@ -76,7 +76,41 @@ INSERT INTO `tabel_jabatan` (`id_jabatan`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel_operator`
+-- Struktur dari tabel `tabel_kategori_materi`
+--
+
+CREATE TABLE `tabel_kategori_materi` (
+  `id_kategori_materi` int(11) NOT NULL,
+  `kategori_materi` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tabel_kategori_materi`
+--
+
+INSERT INTO `tabel_kategori_materi` (`id_kategori_materi`, `kategori_materi`) VALUES
+(1, 'Safety');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tabel_materi`
+--
+
+CREATE TABLE `tabel_materi` (
+  `id_materi` int(11) NOT NULL,
+  `id_kategori_materi` int(11) NOT NULL,
+  `judul` varchar(100) NOT NULL,
+  `keterangan` text NOT NULL,
+  `tipe` enum('pdf','docx','pptx') NOT NULL,
+  `file` text NOT NULL,
+  `tanggal_upload` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tabel_operator`
 --
 
 CREATE TABLE `tabel_operator` (
@@ -92,7 +126,7 @@ CREATE TABLE `tabel_operator` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tabel_operator`
+-- Dumping data untuk tabel `tabel_operator`
 --
 
 INSERT INTO `tabel_operator` (`id_operator`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`, `waktu_edit`) VALUES
@@ -101,7 +135,7 @@ INSERT INTO `tabel_operator` (`id_operator`, `id_user`, `id_jabatan`, `nama`, `n
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel_supervisor`
+-- Struktur dari tabel `tabel_supervisor`
 --
 
 CREATE TABLE `tabel_supervisor` (
@@ -117,7 +151,7 @@ CREATE TABLE `tabel_supervisor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tabel_supervisor`
+-- Dumping data untuk tabel `tabel_supervisor`
 --
 
 INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`, `waktu_edit`) VALUES
@@ -127,7 +161,7 @@ INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel_user`
+-- Struktur dari tabel `tabel_user`
 --
 
 CREATE TABLE `tabel_user` (
@@ -138,7 +172,7 @@ CREATE TABLE `tabel_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tabel_user`
+-- Dumping data untuk tabel `tabel_user`
 --
 
 INSERT INTO `tabel_user` (`id_user`, `username`, `password`, `level`) VALUES
@@ -152,7 +186,7 @@ INSERT INTO `tabel_user` (`id_user`, `username`, `password`, `level`) VALUES
 --
 
 --
--- Indexes for table `tabel_admin`
+-- Indeks untuk tabel `tabel_admin`
 --
 ALTER TABLE `tabel_admin`
   ADD PRIMARY KEY (`id_admin`),
@@ -160,13 +194,25 @@ ALTER TABLE `tabel_admin`
   ADD KEY `id_jabatan` (`id_jabatan`);
 
 --
--- Indexes for table `tabel_jabatan`
+-- Indeks untuk tabel `tabel_jabatan`
 --
 ALTER TABLE `tabel_jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indexes for table `tabel_operator`
+-- Indeks untuk tabel `tabel_kategori_materi`
+--
+ALTER TABLE `tabel_kategori_materi`
+  ADD PRIMARY KEY (`id_kategori_materi`);
+
+--
+-- Indeks untuk tabel `tabel_materi`
+--
+ALTER TABLE `tabel_materi`
+  ADD KEY `id_kategori_materi` (`id_kategori_materi`);
+
+--
+-- Indeks untuk tabel `tabel_operator`
 --
 ALTER TABLE `tabel_operator`
   ADD PRIMARY KEY (`id_operator`),
@@ -174,7 +220,7 @@ ALTER TABLE `tabel_operator`
   ADD KEY `id_jabatan` (`id_jabatan`);
 
 --
--- Indexes for table `tabel_supervisor`
+-- Indeks untuk tabel `tabel_supervisor`
 --
 ALTER TABLE `tabel_supervisor`
   ADD PRIMARY KEY (`id_supervisor`),
@@ -182,65 +228,77 @@ ALTER TABLE `tabel_supervisor`
   ADD KEY `id_jabatan` (`id_jabatan`);
 
 --
--- Indexes for table `tabel_user`
+-- Indeks untuk tabel `tabel_user`
 --
 ALTER TABLE `tabel_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tabel_admin`
+-- AUTO_INCREMENT untuk tabel `tabel_admin`
 --
 ALTER TABLE `tabel_admin`
   MODIFY `id_admin` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tabel_jabatan`
+-- AUTO_INCREMENT untuk tabel `tabel_jabatan`
 --
 ALTER TABLE `tabel_jabatan`
   MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `tabel_operator`
+-- AUTO_INCREMENT untuk tabel `tabel_kategori_materi`
+--
+ALTER TABLE `tabel_kategori_materi`
+  MODIFY `id_kategori_materi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `tabel_operator`
 --
 ALTER TABLE `tabel_operator`
   MODIFY `id_operator` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tabel_supervisor`
+-- AUTO_INCREMENT untuk tabel `tabel_supervisor`
 --
 ALTER TABLE `tabel_supervisor`
   MODIFY `id_supervisor` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tabel_user`
+-- AUTO_INCREMENT untuk tabel `tabel_user`
 --
 ALTER TABLE `tabel_user`
   MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `tabel_admin`
+-- Ketidakleluasaan untuk tabel `tabel_admin`
 --
 ALTER TABLE `tabel_admin`
   ADD CONSTRAINT `tabel_admin_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tabel_user` (`id_user`),
   ADD CONSTRAINT `tabel_admin_ibfk_2` FOREIGN KEY (`id_jabatan`) REFERENCES `tabel_jabatan` (`id_jabatan`);
 
 --
--- Constraints for table `tabel_operator`
+-- Ketidakleluasaan untuk tabel `tabel_materi`
+--
+ALTER TABLE `tabel_materi`
+  ADD CONSTRAINT `tabel_materi_ibfk_1` FOREIGN KEY (`id_kategori_materi`) REFERENCES `tabel_kategori_materi` (`id_kategori_materi`);
+
+--
+-- Ketidakleluasaan untuk tabel `tabel_operator`
 --
 ALTER TABLE `tabel_operator`
   ADD CONSTRAINT `tabel_operator_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tabel_user` (`id_user`),
   ADD CONSTRAINT `tabel_operator_ibfk_2` FOREIGN KEY (`id_jabatan`) REFERENCES `tabel_jabatan` (`id_jabatan`);
 
 --
--- Constraints for table `tabel_supervisor`
+-- Ketidakleluasaan untuk tabel `tabel_supervisor`
 --
 ALTER TABLE `tabel_supervisor`
   ADD CONSTRAINT `tabel_supervisor_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tabel_user` (`id_user`),

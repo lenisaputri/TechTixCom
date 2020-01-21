@@ -52,14 +52,14 @@ function showPasswordSupervisor() {
     }
 }
 
-function setup2() {
+function setupSupervisor2() {
   document.getElementById('buttonid2').addEventListener('click', openDialog);
   function openDialog() {
       document.getElementById('fileid2').click();
   }
 }
 
-function preview_images22(event) {
+function preview_imagesSupervisor22(event) {
   var reader = new FileReader();
   reader.onload = function() {
     var output = document.getElementById("fotoPrevSupervisorAdmin3");
@@ -68,7 +68,7 @@ function preview_images22(event) {
   reader.readAsDataURL(event.target.files[0]);
 }
 
-function preventDefaultAction(event){
+function preventDefaultActionSupervisor(event){
 
   var input, file;
 
@@ -95,7 +95,7 @@ function preventDefaultAction(event){
   }
 }
 
-function ValidasiTambah(){
+function ValidasiTambahSupervisor(){
   var usernameSupervisorAdmin = document.getElementById("usernameSupervisorAdmin").value;
   var passwordSupervisorAdmin = document.getElementById("passwordSupervisorAdmin").value;
   var fileid2 = document.getElementById("fileid2").value;
@@ -148,14 +148,14 @@ function ValidasiTambah(){
 
 //PROSES EDIT
 
-function setup3() {
+function setupSupervisor3() {
   document.getElementById('buttonid3').addEventListener('click', openDialog2);
   function openDialog2() {
       document.getElementById('fileid3').click();
   }
 }
 
-function preview_images6(event) {
+function preview_imagesSupervisor6(event) {
   var reader = new FileReader();
   reader.onload = function() {
     var output = document.getElementById("fotoPrevSupervisorAdmin2");
@@ -164,7 +164,7 @@ function preview_images6(event) {
   reader.readAsDataURL(event.target.files[0]);
 }
 
-function preventDefaultAction2(event){
+function preventDefaultActionSupervisor2(event){
 
   var input2, file2;
 
@@ -209,7 +209,7 @@ function showPasswordOperator2() {
   }
 }
 
-function ValidasiEdit(){
+function ValidasiEditSupervisor(){
   var usernameSupervisorAdmin2 = document.getElementById("usernameSupervisorAdmin2").value;
   var passwordSupervisorAdmin2 = document.getElementById("passwordSupervisorAdmin2").value;
 

@@ -154,7 +154,7 @@ if (isset($_POST["tambahDataOperator"]) || isset($_POST["editDataOperator"]) || 
         $delete=$_POST['id_user'];
         $idnya = $_POST['id_operator'];
 
-        $queryDelete = "DELETE FROM tabel_operator WHERE id_user='$idnya';";
+        $queryDelete = "DELETE FROM tabel_operator WHERE id_operator='$idnya';";
         $queryDelete2 = "DELETE FROM tabel_user WHERE id_user='$delete';";
 
         if(mysqli_query($con,$queryDelete) && mysqli_query($con,$queryDelete2)){

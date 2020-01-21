@@ -1,0 +1,17 @@
+#kategoriMateri .page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #0368ca;
+    border-color: #0368ca;
+}
+
+#kategoriMateri .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 300px;
+    margin: 100px auto;
+    float: none;
+    display: block;
+}
+
+#editKategoriMateriModal .bg-kategoriMateri {
+    background-color: #0368ca !important;
+}

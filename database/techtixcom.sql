@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2020 at 07:21 AM
+-- Generation Time: Jan 21, 2020 at 07:28 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -63,7 +63,7 @@ CREATE TABLE `tabel_jabatan` (
 --
 
 INSERT INTO `tabel_jabatan` (`id_jabatan`, `nama`) VALUES
-(1, 'Body welder operator'),
+(1, 'Body Welder Operator'),
 (2, 'Can o mat operator'),
 (3, 'End o mat operator'),
 (4, 'Palleteizer operator'),
@@ -96,8 +96,7 @@ CREATE TABLE `tabel_operator` (
 --
 
 INSERT INTO `tabel_operator` (`id_operator`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`, `waktu_edit`) VALUES
-(1, 1, 1, 'operator1', 1234567, '51436135_2551525554862691_8785967233080754176_n.jpg', 'Aktif', '2020-01-09 00:00:00', '2020-01-20 00:00:00'),
-(2, 7, 5, 'cob', 123333399, 'bts-21.jpg', 'Aktif', '2020-01-16 00:00:00', '2020-01-20 00:00:00');
+(4, 11, 1, 'assaaaaa', 12, 'DJ0BYCfVYAAPUEd.jpg', 'Non-Aktif', '2020-01-21 00:00:00', '2020-01-21 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -122,7 +121,8 @@ CREATE TABLE `tabel_supervisor` (
 --
 
 INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `status_aktif`, `waktu_tambah`, `waktu_edit`) VALUES
-(1, 2, 1, 'supervisor1', 12345678, '', '', '2020-01-09 00:00:00', '0000-00-00 00:00:00');
+(1, 2, 1, 'supervisor1', 11111, 'flat,1000x1000,075,f.u3.jpg', 'Non-Aktif', '2020-01-09 00:00:00', '2020-01-21 00:00:00'),
+(2, 9, 9, 'aaaaaa', 122, '51436135_2551525554862691_8785967233080754176_n.jpg', 'Aktif', '2020-01-20 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -142,10 +142,10 @@ CREATE TABLE `tabel_user` (
 --
 
 INSERT INTO `tabel_user` (`id_user`, `username`, `password`, `level`) VALUES
-(1, '12345678', '12345678', 'operator'),
-(2, '12345678', '12345678', 'supervisor'),
+(2, '11111', '11111', 'supervisor'),
 (3, '123', '123', 'admin'),
-(7, '1233333', '12333333', 'operator');
+(9, '122', '1222', 'supervisor'),
+(11, '12', '12', 'operator');
 
 --
 -- Indexes for dumped tables
@@ -207,19 +207,19 @@ ALTER TABLE `tabel_jabatan`
 -- AUTO_INCREMENT for table `tabel_operator`
 --
 ALTER TABLE `tabel_operator`
-  MODIFY `id_operator` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_operator` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tabel_supervisor`
 --
 ALTER TABLE `tabel_supervisor`
-  MODIFY `id_supervisor` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_supervisor` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tabel_user`
 --
 ALTER TABLE `tabel_user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

@@ -107,7 +107,7 @@ function ValidasiTambahSupervisor(){
   }
 
   else if(usernameSupervisorAdmin!=""){
-      document.getElementById("usernameOperatorAdminBlank").innerHTML="";
+      document.getElementById("usernameSupervisorAdminBlank").innerHTML="";
   }
   
   if(passwordSupervisorAdmin==""){
@@ -217,7 +217,7 @@ function ValidasiEditSupervisor(){
   var namaSupervisorAdmin2 = document.getElementById("namaSupervisorAdmin2").value;
 
   if(usernameSupervisorAdmin2==""){
-      document.getElementById("usernameOperatorAdminBlank2").innerHTML="*Masukkan Username Supervisor";
+      document.getElementById("usernameSupervisorAdminBlank2").innerHTML="*Masukkan Username Supervisor";
   }
 
   else if(usernameSupervisorAdmin2!=""){

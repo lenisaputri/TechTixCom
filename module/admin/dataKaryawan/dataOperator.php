@@ -2,9 +2,9 @@
   include "../config/connection.php";
   include "../process/proses_adminDataOperator.php";
 ?>
-<body onload="setup2();">
+<body onload="setupOperator2();">
 <!-- Begin Page Content -->
-<div class="container-fluid" id="dataKaryawan" onload="setup2();">
+<div class="container-fluid" id="dataKaryawan" onload="setupOperator2();">
     <!-- Page Heading -->
     <!-- <h1 class="h3 mb-2 text-gray-800">Data Operator</h1>
         <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
@@ -51,7 +51,7 @@
                                 <div class="col-md-2"></div>
                                 <div class="col-md-10">
                                     <br>
-                                    <input id='fileid2' type='file' name='fileid2' onchange="preview_images22(event);"  hidden required />
+                                    <input id='fileid2' type='file' name='fileid2' onchange="preview_imagesOperator22(event);"  hidden required />
                                     <input id='buttonid2' type='button' value='Load Gambar'class="btn btn-loading btn-primary tmbl-loading ml-2"  />
                                 </div>
                                 <div class="col-sm-12">
@@ -113,7 +113,7 @@
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <div class="col-sm-4"></div>
                                 <div class="col-sm-8">
-                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataOperator" onclick="ValidasiTambah(); preventDefaultAction(event);">
+                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataOperator" onclick="ValidasiTambahOperator(); preventDefaultActionOperator(event);">
                                         <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                         </span>

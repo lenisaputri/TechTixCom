@@ -34,7 +34,7 @@ $(".hapus-dataOperator-admin").click(function () {
 
 // DATA OPERATOR MENGAMBIL GAMBAR DI PROSES TAMBAH
 
-function setup2() {
+function setupOperator2() {
     document.getElementById('buttonid2').addEventListener('click', openDialog);
     function openDialog() {
         document.getElementById('fileid2').click();
@@ -45,7 +45,7 @@ function setup2() {
 
 // DATA OPERATOR MENGAMBIL GAMBAR DI PROSES EDIT
 
-function setup3() {
+function setupOperator3() {
     document.getElementById('buttonid3').addEventListener('click', openDialog2);
     function openDialog2() {
         document.getElementById('fileid3').click();
@@ -56,7 +56,7 @@ function setup3() {
 
 // DATA OPERATOR MENAMPILKAN GAMBAR DI PROSES TAMBAH
 
-function preview_images22(event) {
+function preview_imagesOperator22(event) {
     var reader = new FileReader();
     reader.onload = function() {
       var output = document.getElementById("fotoPrevOperatorAdmin3");
@@ -69,7 +69,7 @@ function preview_images22(event) {
 
 // DATA OPERATOR MENAMPILKAN GAMBAR DI PROSES EDIT
 
-function preview_images6(event) {
+function preview_imagesOperator6(event) {
     var reader = new FileReader();
     reader.onload = function() {
       var output = document.getElementById("fotoPrevOperatorAdmin2");
@@ -80,7 +80,7 @@ function preview_images6(event) {
 
 // DATA OPERATOR MENAMPILKAN GAMBAR DI PROSES EDIT END
 
-function preventDefaultAction(event){
+function preventDefaultActionOperator(event){
 
     var input, file;
 
@@ -107,7 +107,7 @@ function preventDefaultAction(event){
     }
 }
 
-function preventDefaultAction2(event){
+function preventDefaultActionOperator2(event){
 
     var input2, file2;
 
@@ -162,7 +162,7 @@ function showPasswordOperator2() {
       password.type = "password";
     }
   
-    var eye = document.getElementById("eyeOperator").classList;
+    var eye = document.getElementById("eyeOperator2").classList;
     if (eye.contains("fa-eye")) {
       eye.remove("fa-eye");
       eye.add("fa-eye-slash");
@@ -173,7 +173,7 @@ function showPasswordOperator2() {
 }
 
 //VALIDASI TAMBAH
-function ValidasiTambah(){
+function ValidasiTambahOperator(){
     var usernameOperatorAdmin = document.getElementById("usernameOperatorAdmin").value;
     var passwordOperatorAdmin = document.getElementById("passwordOperatorAdmin").value;
     var fileid2 = document.getElementById("fileid2").value;
@@ -223,7 +223,7 @@ function ValidasiTambah(){
 }
 
 //VALIDASI EDIT
-function ValidasiEdit(){
+function ValidasiEditOperator(){
     var usernameOperatorAdmin2 = document.getElementById("usernameOperatorAdmin2").value;
     var passwordOperatorAdmin2 = document.getElementById("passwordOperatorAdmin2").value;
 

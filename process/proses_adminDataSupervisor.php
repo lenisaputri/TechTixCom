@@ -228,12 +228,12 @@ if(isset($_POST["editDataSupervisor_idSupervisor"])){
             </div>
             <div class='col-sm-6'>
                 <div class='form-group row'>
-                    <div class='col-sm-12 mb-3 mb-sm-0>
+                    <div class='col-sm-12 mb-3 mb-sm-0'>
                         <label class='col-sm-6 small d-flex flex-column justify-content-center' for='nik' style='font-weight: bold'>NIK</label>
                         <input type='text' class='form-control' placeholder='NIK SUPERVISOR' id='nikSupervisorAdmin2' name='nikSupervisorAdmin2' value='".$rowEditSupervisor["nik"]."' required />
                     </div>
                     <div class='col-sm-12'>
-                        <div id='nikSupervisorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'>
+                        <div id='nikSupervisorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
                     </div>
                 </div>
                 <div class='form-group row'>
@@ -274,7 +274,7 @@ if(isset($_POST["editDataSupervisor_idSupervisor"])){
                     <div class='col-sm-8>
                         <div class='modal-footer border-0'>
                             <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
-                            <button class='btn btn-primary' name='editDataSupervisor' type='submit' onclick='ValidasiEditSupervisor(); preventDefaultActionSupervisor2(event);><i class='fa fa-check'></i> Simpan</button>
+                            <button class='btn btn-primary' name='editDataSupervisor' type='submit' onclick='ValidasiEditSupervisor(); preventDefaultActionSupervisor2(event);'><i class='fa fa-check'></i> Simpan</button>
                         </div>
                     </div>
                 </div>

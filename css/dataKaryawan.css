@@ -63,3 +63,7 @@
 #editDataSupervisorModal .bg-supervisor {
     background-color: #0368ca !important;
 }
+
+#editDataAdminModal .bg-admin {
+    background-color: #0368ca !important;
+}

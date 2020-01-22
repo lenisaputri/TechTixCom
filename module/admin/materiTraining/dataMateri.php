@@ -25,7 +25,7 @@
                                 <input type="text" class="form-control form-control-user" placeholder="JUDUL MATERI" id="judulMateri" name="judulMateri" required>
                             </div>
                             <div class="col-sm-12">
-                                <div id="usernameOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -34,7 +34,7 @@
                                 <textarea type="text" class="form-control form-control-user" placeholder="KETERANGAN MATERI" id="keteranganMateri" name="keteranganMateri" required></textarea>
                             </div>
                             <div class="col-sm-12">
-                                <div id="nikOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nama" style="font-weight: bold">NAMA LENGKAP</label>
-                                <input type="file" id="file" name="file">
+                                <input type="file" id="file1" name="file1">
                             </div>
                             <div class="col-sm-12">
                                 <div id="namaOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -117,9 +117,9 @@
                         <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi"] ?>">
                             <td ><?php echo $index; ?></td>
                             <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
-                            <td class="judulMateri"><?php echo $rowTampilData["judul"]; ?></td>
-                            <td class="keteranganMateri"><?php echo $rowTampilData["keterangan"]; ?></td>
-                            <td class="fileMateri"><?php echo $rowTampilData["file"]; ?></td>
+                            <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
+                            <td class="keteranganMateri"><?php echo $rowTampilData["keterangan_materi"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
                             <td>
                                 <button type="button" class="btn btn-primary edit-dataOperator-admin" data-toggle="modal" data-target="#editDataOperatorModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_operatorEdit="<?php echo $rowTampilData["id_operator"];?>">
                                     <i class="fas fa-edit"></i>

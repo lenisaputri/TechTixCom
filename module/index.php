@@ -227,20 +227,6 @@ switch ($level) {
             </div>
         </div>
 
-        <!-- <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="#">Body Welder Operator</a>
-            <a class="collapse-item" href="#">Can O Mat Operator</a>
-            <a class="collapse-item" href="#">End O Mat Operator</a>
-            <a class="collapse-item" href="#">Palleteizer Operator</a>
-            <a class="collapse-item" href="#">Area Engineer Technician</a>
-            <a class="collapse-item" href="#">Admin SAP</a>
-            <a class="collapse-item" href="#">Production SPV</a>
-            <a class="collapse-item" href="#">Area Engineer SPV</a>
-            <a class="collapse-item" href="#">Can Making Manager</a>
-            <div class="collapse-divider"></div>
-          </div>
-        </div> -->
       </li>
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider d-none d-md-block">
@@ -291,16 +277,6 @@ switch ($level) {
         <?php
     } else {
       ?>
-            <!-- <div id="wrapper"> -->
-      <!-- Sidebar (Menu)-->
-      <!-- <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar"> -->
-      <!-- Sidebar - Brand (Judul) -->
-      <!-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon">
-          <img src="../img/logo/logo_book.png" width="40" height="45" >
-        </div>
-        <div class="sidebar-brand-text mx-3">MATRIX DEVELOPMENT</div>
-      </a> -->
 
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider my-0">
@@ -357,20 +333,28 @@ switch ($level) {
       <div class="sidebar-heading">Materi Training</div>
       
       <!-- Nav Item - Technical(Sub Isi Menu)-->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="index.php?module=kategoriMateri" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-th-large"></i>
           <span>Kategori Materi</span>
         </a>
-      </li>
-
+      </li> -->
       <li class="nav-item">
-        <a class="nav-link" href="index.php?module=dataMateri" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-file"></i>
           <span>Data Materi</span>
         </a>
-      </li>
         
+        <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="index.php?module=dataMateriSafety">Materi Safety</a>
+            <a class="collapse-item" href="index.php?module=dataMateriQuality">Materi Quality</a>
+            <a class="collapse-item" href="index.php?module=dataMateriGeneralHrd">Materi General HRD</a>
+            <a class="collapse-item" href="index.php?module=dataMateriTechnical">Materi Technical</a>
+            <div class="collapse-divider"></div>
+          </div>
+        </div>
+      </li>
 
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider">
@@ -524,11 +508,11 @@ switch ($level) {
                   case "jabatan":
                     include "admin/jabatan/jabatan.php";
                     break;
-                  case "kategoriMateri":
-                    include "admin/materiTraining/kategoriMateri.php";
-                    break;
-                  case "dataMateri":
-                    include "admin/materiTraining/dataMateri.php";
+                  // case "kategoriMateri":
+                  //   include "admin/materiTraining/kategoriMateri.php";
+                  //   break;
+                  case "dataMateriSafety":
+                    include "admin/materiTraining/dataMateriSafety.php";
                     break;
                   default:
                     include "404.php";

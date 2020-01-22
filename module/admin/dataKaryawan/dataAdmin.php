@@ -119,7 +119,7 @@
                                         <i class="fas fa-plus"></i>
                                         </span>
                                         <span class="text">Tambah Data</span>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 <?php
   include "../config/connection.php";
-  include "../process/proses_adminDataMateri.php";
+  include "../process/proses_adminDataMateriSafety.php";
 ?>
 <body>
 <!-- Begin Page Content -->
@@ -16,67 +16,46 @@
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="../process/proses_adminDataMateri.php?module=dataMateri&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
-                <div class = "row">
-                    <div class="col-sm-6">
-                      <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="judulMateri" style="font-weight: bold">JUDUL MATERI</label>
-                                <input type="text" class="form-control form-control-user" placeholder="JUDUL MATERI" id="judulMateri" name="judulMateri" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="keteranganMateri" style="font-weight: bold">KETERANGAN MATERI</label>
-                                <textarea type="text" class="form-control form-control-user" placeholder="KETERANGAN MATERI" id="keteranganMateri" name="keteranganMateri" required></textarea>
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
-                        </div>
+            <form class="user" action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="file" class="form-control border-0" id="inputGroupFile02" name="fileMateri">
+                    <div class="col-sm-12">
+                        <div id="namaOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nama" style="font-weight: bold">NAMA LENGKAP</label>
-                                <input type="file" id="file1" name="file1">
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="namaOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
+                </div> 
+                <hr>
+                <div class="form-group">
+                    <input type="text" class="form-control border-0" id="judulMateri" name="judulMateri" placeholder="Judul Materi ..." style="width=100%" required>
+                    <div class="col-sm-12">
+                        <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <input type="text" class="form-control border-0" id="kategoriMateri" name="kategoriMateri" placeholder="Kategori Materi ..." style="width=100%" required>
+                    <div class="col-sm-12">
+                        <div id="kategoriMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
+                    <div class="col-sm-12">
+                        <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <div class="row">
+                       <div class="col-6">
                         </div>
-                        <div class="form-group row">
-                        <div class="col-sm-12 mb-3 mb-sm-0">
-                          <label class="col-sm-6 small d-flex flex-column justify-content-center" for="kategoriMateri" style="font-weight: bold">KATEGORI MATERI</label>
-                            <?php
-                              $resultKategoriMateri = tampilKategoriMateri($con);
-                            ?>
-                          <select class="custom-select-karyawan my-1 mr-sm-2" name="kategoriMateriAdmin">  <!-- tampilannya belum -->
-                            <?php
-                              if(mysqli_num_rows($resultKategoriMateri) > 0){
-                                while($row = mysqli_fetch_assoc($resultKategoriMateri)){
-                                  echo "<option value='".$row['id_kategori_materi']."'>".$row['kategori_materi']."</option>";
-                                }
-                              }
-                            ?>
-                          </select>
-                        </div>
-                      </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <div class="col-sm-4"></div>
-                                <div class="col-sm-8">
-                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
-                                        <span class="icon text-white-50">
-                                        <i class="fas fa-plus"></i>
-                                        </span>
-                                        <span class="text">Tambah Data</span>
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="col-6 text-right d-flex justify-content-end ">
+                            <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                                <span class="text">Tambah Data</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -98,14 +77,13 @@
                             <th>No</th>
                             <th>Kategori Materi</th>
                             <th>Judul</th>
-                            <th>Keterangan</th>
                             <th>File</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT tm.* ,tkm.* FROM tabel_materi tm,tabel_kategori_materi tkm WHERE tm.id_kategori_materi = tkm.id_kategori_materi;
+                        $queryTampilData = "SELECT * FROM tabel_materi_safety;
                             ";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -114,17 +92,16 @@
                         if(mysqli_num_rows($resultTampilData) > 0){
                             while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
                     ?>
-                        <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi"] ?>">
+                        <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_safety"] ?>">
                             <td ><?php echo $index; ?></td>
                             <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
                             <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
-                            <td class="keteranganMateri"><?php echo $rowTampilData["keterangan_materi"]; ?></td>
                             <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
                             <td>
-                                <button type="button" class="btn btn-primary edit-dataOperator-admin" data-toggle="modal" data-target="#editDataOperatorModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_operatorEdit="<?php echo $rowTampilData["id_operator"];?>">
+                                <button type="button" class="btn btn-primary edit-dataMateri-admin" data-toggle="modal" data-target="#editDataOperatorModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_operatorEdit="<?php echo $rowTampilData["id_operator"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger hapus-dataOperator-admin" data-toggle="modal" data-target="#hapusDataOperatorModal" id_user="<?php echo $rowTampilData["id_user"];?>" id_operator="<?php echo $rowTampilData["id_operator"];?>">
+                                <button type="button" class="btn btn-danger hapus-dataMateri-admin" data-toggle="modal" data-target="#hapusDataOperatorModal" id_user="<?php echo $rowTampilData["id_user"];?>" id_operator="<?php echo $rowTampilData["id_operator"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>

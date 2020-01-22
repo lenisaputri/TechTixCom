@@ -1,21 +1,15 @@
 <?php
 include "../config/connection.php";
 
-function tampilKategoriMateri($con){
-    $kategoriMateri ="SELECT * FROM tabel_kategori_materi";
-    $resultKategoriMateri = mysqli_query($con, $kategoriMateri);
-    return $resultKategoriMateri;
-}
-
 if (isset($_POST["tambahDataMateri"])){
-    if($_GET["module"]=="dataMateri" && $_GET["act"]=="tambah"){
+    if($_GET["module"]=="dataMateriSafety" && $_GET["act"]=="tambah"){
         $nama_folder = "file";
-        $tmp = $_FILES["file1"]["tmp_name"];
-        $nama_file = $_FILES["file1"]["name"];
+        $tmp = $_FILES["fileMateri"]["tmp_name"];
+        $nama_file = $_FILES["fileMateri"]["name"];
         move_uploaded_file($tmp, "../attachment/$nama_folder/$nama_file");
 
-        $query2 = "INSERT INTO tabel_materi (
-            id_kategori_materi,
+        $query2 = "INSERT INTO tabel_materi_safety (
+            kategori_materi,
             judul_materi,
             keterangan_materi,
             file_materi,
@@ -23,7 +17,7 @@ if (isset($_POST["tambahDataMateri"])){
         )
     
         values
-        (  '$_POST[kategoriMateriAdmin]',
+        (  '$_POST[kategoriMateri]',
            '$_POST[judulMateri]',
            '$_POST[keteranganMateri]',
            '$nama_file',

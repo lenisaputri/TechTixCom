@@ -24,12 +24,15 @@
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">JABATAN</label>
                                 <input type="text" class="form-control form-control-user" id="nama" name="nama" placeholder="JABATAN" required>
                             </div>
+                            <div class="col-sm-12">
+                                <div id="namaBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group row">
                             <div class="col-sm-12 mb-4 mb-sm-3">
-                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahJabatan">
+                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahJabatan" onclick="ValidasiTambahJabatan();">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-plus"></i>
                                         </span>

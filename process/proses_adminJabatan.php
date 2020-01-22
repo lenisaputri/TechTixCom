@@ -44,22 +44,27 @@ if(isset($_POST["editJabatan"]))
         while($rowEditJabatan=mysqli_fetch_assoc($resultEditJabatan)){
         ?> 
         <form action="../process/proses_adminJabatan.php?module=jabatan&act=edit" method="POST">
-        <input type="hidden" name="id_jabatan" value="<?=$rowEditJabatan["id_jabatan"]?>">
-            <div class="form-group">
-              <label for="nama">Jabatan</label>
-              <input type="text" name="nama" id="nama" class="form-control" value="<?=$rowEditJabatan["nama"]?>" required>
+            <input type="hidden" name="id_jabatan" value="<?=$rowEditJabatan["id_jabatan"]?>">
+            <div class="form-group row">
+                <div class="col-sm-12 mb-3 mb-sm-0">
+                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">JABATAN</label>
+                    <input type="text" name="nama" id="nama2" class="form-control" value="<?=$rowEditJabatan["nama"]?>" required>
+                </div>
+                <div class="col-sm-12">
+                    <div id="nama2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                </div>
             </div>
-            <?php
-                    $i++;
-                    }
-                }
-                ?>
-                            <div class="modal-footer border-0">
-              <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-              <button class="btn btn-primary" name="editJabatanProses" type="submit"><i class="fa fa-check"></i> Simpan</button>
-            </div>
-          </form>
         <?php
+        $i++;
+        }
     }
+        ?>
+            <div class="modal-footer border-0">
+                <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                <button class="btn btn-primary" name="editJabatanProses" type="submit" onclick="ValidasiEditJabatan();"><i class="fa fa-check"></i> Simpan</button>
+            </div>
+        </form>
+    <?php
+}
     
 ?>

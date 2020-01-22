@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../css/safety.css">
 <link rel="stylesheet" href="../css/dataKaryawan.css">
 <link rel="stylesheet" href="../css/jabatan.css">
+<link rel="stylesheet" href="../css/kategoriMateri.css">
 <link rel="stylesheet" href="../css/materiOperator.css">
 
 <link href="../css/techtixcom.min.css" rel="stylesheet">

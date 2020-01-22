@@ -212,7 +212,7 @@ if(isset($_POST["editDataAdmin_idAdmin"])){
                 <div class='form-group row'>
                     <div class='col-sm-12 mb-3 mb-sm-0'>
                         <label class='col-sm-6 small d-flex flex-column justify-content-center' for='gambar' style='font-weight: bold'>GAMBAR</label>
-                        <div class='input-group col-sm-10'>`
+                        <div class='input-group col-sm-10'>
                             <img src='".linkFotoAdmin($rowEditAdmin["foto"])."' id='fotoPrevAdminAdmin2' height='200px' width='200px'>
                         </div>
                         <div class='col-md-2'></div>
@@ -268,18 +268,18 @@ if(isset($_POST["editDataAdmin_idAdmin"])){
                         </div>
                     </div>
                 </div>
-           </div>
-           <div class='form-group row'>
-                <div class='col-sm-12 mb-3 mb-sm-0'>
-                    <div class='col-sm-4'></div>
-                    <div class='col-sm-8>
-                        <div class='modal-footer border-0'>
-                            <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
-                            <button class='btn btn-primary' name='editDataAdmin' type='submit' onclick='ValidasiEditAdmin(); preventDefaultActionAdmin2(event);'><i class='fa fa-check'></i> Simpan</button>
+                <div class='form-group row'>
+                    <div class='col-sm-12 mb-3 mb-sm-0'>
+                        <div class='col-sm-4'></div>
+                        <div class='col-sm-8>
+                            <div class='modal-footer border-0'>
+                                <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
+                                <button class='btn btn-primary' name='editDataAdmin' type='submit' onclick='ValidasiEditAdmin(); preventDefaultActionAdmin2(event);'><i class='fa fa-check'></i> Simpan</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
                                       
         <script>

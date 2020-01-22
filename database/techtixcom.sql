@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2020 at 02:36 AM
+-- Generation Time: Jan 22, 2020 at 02:40 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -102,7 +102,6 @@ CREATE TABLE `tabel_materi` (
   `id_kategori_materi` int(11) NOT NULL,
   `judul` varchar(100) NOT NULL,
   `keterangan` text NOT NULL,
-  `tipe` enum('pdf','docx','pptx') NOT NULL,
   `file` text NOT NULL,
   `tanggal_upload` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

@@ -22,14 +22,11 @@
     background-color: #0368ca;
   }
 
-/* #home .sidebar .nav-item .nav-link {
+#home .sidebar .nav-item .nav-link {
     display: block;
     width: 100%;
-    text-align: left;
     font-size: .85rem;
-    padding: 1rem;
-    width: 14rem;
-} */
+}
 
 #home .list-group-item {
     position: relative;
@@ -40,5 +37,6 @@
     background-color: #fff;
     border: 1px solid rgba(0,0,0,.125);
 }
+
   
 

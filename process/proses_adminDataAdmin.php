@@ -229,12 +229,12 @@ if(isset($_POST["editDataAdmin_idAdmin"])){
             </div>
             <div class='col-sm-6'>
                 <div class='form-group row'>
-                    <div class='col-sm-12 mb-3 mb-sm-0>
+                    <div class='col-sm-12 mb-3 mb-sm-0'>
                         <label class='col-sm-6 small d-flex flex-column justify-content-center' for='nik' style='font-weight: bold'>NIK</label>
                         <input type='text' class='form-control' placeholder='NIK ADMIN' id='nikAdminAdmin2' name='nikAdminAdmin2' value='".$rowEditAdmin["nik"]."' required />
                     </div>
                     <div class='col-sm-12'>
-                        <div id='nikAdminAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'>
+                        <div id='nikAdminAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
                     </div>
                 </div>
                 <div class='form-group row'>
@@ -243,16 +243,16 @@ if(isset($_POST["editDataAdmin_idAdmin"])){
                         <input type='text' class='form-control' placeholder='NAMA ADMIN' id='namaAdminAdmin2' name='namaAdminAdmin2' value='".$rowEditAdmin['nama_lengkap']."' required />
                     </div>
                     <div class='col-sm-12'>
-                        <div id='namaAdminAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'>
+                        <div id='namaAdminAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
                     </div>
                 </div>
                 <div class='form-group row'>
-                    <div class='col-sm-12 mb-3 mb-sm-0>
+                    <div class='col-sm-12 mb-3 mb-sm-0'>
                         <label class='col-sm-6 small d-flex flex-column justify-content-center' for='jabatan' style='font-weight: bold'>JABATAN</label>
                         <select class='custom-select my-1 mr-sm-2' name='jabatanAdminAdmin2'>".tampilJabatanEdit($con,$rowEditAdmin["id_jabatan"])."</select>
                     </div>
                     <div class='col-sm-12'>
-                        <div id='jabatanAdminAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'>
+                        <div id='jabatanAdminAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
                     </div>
                 </div>
                 <div class='form-group row'>
@@ -275,7 +275,7 @@ if(isset($_POST["editDataAdmin_idAdmin"])){
                     <div class='col-sm-8>
                         <div class='modal-footer border-0'>
                             <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
-                            <button class='btn btn-primary' name='editDataAdmin' type='submit' onclick='ValidasiEditAdmin(); preventDefaultActionAdmin2(event);><i class='fa fa-check'></i> Simpan</button>
+                            <button class='btn btn-primary' name='editDataAdmin' type='submit' onclick='ValidasiEditAdmin(); preventDefaultActionAdmin2(event);'><i class='fa fa-check'></i> Simpan</button>
                         </div>
                     </div>
                 </div>

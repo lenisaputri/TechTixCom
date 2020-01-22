@@ -186,7 +186,7 @@ if(isset($_POST["editDataSupervisor_idSupervisor"])){
                 <div class='form-group row'>
                     <div class='col-sm-12 mb-3 mb-sm-0'>
                         <input type='hidden' name='id_userUpdate' value=".$rowEditSupervisor["id_user"].">
-                        <input type='hidden' name='id_operatorUpdate' value=".$rowEditSupervisor["id_supervisor"].">               
+                        <input type='hidden' name='id_supervisorUpdate' value=".$rowEditSupervisor["id_supervisor"].">               
                         <label class='col-sm-6 small d-flex flex-column justify-content-center' for='username' style='font-weight: bold'>USERNAME</label>
                         <input type='text' class='form-control' placeholder='USERNAME' id='usernameSupervisorAdmin2' name='usernameSupervisorAdmin2' value='".$rowEditSupervisor["username"]."' required />
                     </div>
@@ -242,16 +242,16 @@ if(isset($_POST["editDataSupervisor_idSupervisor"])){
                         <input type='text' class='form-control' placeholder='NAMA SUPERVISOR' id='namaSupervisorAdmin2' name='namaSupervisorAdmin2' value='".$rowEditSupervisor['nama_lengkap']."' required />
                     </div>
                     <div class='col-sm-12'>
-                        <div id='namaSupervisorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'>
+                        <div id='namaSupervisorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
                     </div>
                 </div>
                 <div class='form-group row'>
-                    <div class='col-sm-12 mb-3 mb-sm-0>
+                    <div class='col-sm-12 mb-3 mb-sm-0'>
                         <label class='col-sm-6 small d-flex flex-column justify-content-center' for='jabatan' style='font-weight: bold'>JABATAN</label>
                         <select class='custom-select my-1 mr-sm-2' name='jabatanSupervisorAdmin2'>".tampilJabatanEdit($con,$rowEditSupervisor["id_jabatan"])."</select>
                     </div>
                     <div class='col-sm-12'>
-                        <div id='jabatanSupervisorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'>
+                        <div id='jabatanSupervisorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
                     </div>
                 </div>
                 <div class='form-group row'>
@@ -267,18 +267,18 @@ if(isset($_POST["editDataSupervisor_idSupervisor"])){
                         </div>
                     </div>
                 </div>
-           </div>
-           <div class='form-group row'>
-                <div class='col-sm-12 mb-3 mb-sm-0'>
-                    <div class='col-sm-4'></div>
-                    <div class='col-sm-8>
-                        <div class='modal-footer border-0'>
-                            <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
-                            <button class='btn btn-primary' name='editDataSupervisor' type='submit' onclick='ValidasiEditSupervisor(); preventDefaultActionSupervisor2(event);'><i class='fa fa-check'></i> Simpan</button>
+                <div class='form-group row'>
+                    <div class='col-sm-12 mb-3 mb-sm-0'>
+                        <div class='col-sm-4'></div>
+                        <div class='col-sm-8>
+                            <div class='modal-footer border-0'>
+                                <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
+                                <button class='btn btn-primary' name='editDataSupervisor' type='submit' onclick='ValidasiEditSupervisor(); preventDefaultActionSupervisor2(event);'><i class='fa fa-check'></i> Simpan</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+           </div>
         </div>
                                       
         <script>

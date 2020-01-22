@@ -1,22 +1,22 @@
-#jabatan .page-item.active .page-link {
+#kategoriMateri .page-item.active .page-link {
     z-index: 1;
     color: #fff;
     background-color: #0368ca;
     border-color: #0368ca;
 }
 
-#jabatan .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+#kategoriMateri .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
     width: 300px;
     margin: 100px auto;
     float: none;
     display: block;
 }
 
-#editJabatanModal .bg-jabatan {
+#editKategoriMateriModal .bg-kategoriMateri {
     background-color: #0368ca !important;
 }
 
-#edit-jabatan .form-control{
+#edit-kategoriMateri .form-control{
     font-size: .8rem;
     border-radius: 10rem;
     padding: 1.5rem 1rem;

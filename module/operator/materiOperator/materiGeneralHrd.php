@@ -24,7 +24,7 @@
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseMateriOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMateriOne">
+                    <div id="collapseMateriOne" class="panel-collapse collapse ml-3" role="tabpanel" aria-labelledby="headingMateriOne">
                         <div class="panel-body">
                             <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>
                             <div>
@@ -32,57 +32,15 @@
                             <p>Download dengan klik button download</p>
                             </div>
                             <div>
-                                <i class="fas fa-fw fa-download"></i>
-                                <button type="button" class="btn btn-primary">Download</button>
+                            <button type="submit" class="btn btn-primary btn-icon-split" name="download">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-fw fa-download"></i>
+                                </span>
+                                <span class="text">Download</span>
+                            </button>
                             </div>
                             <br>
                         </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingMateriTwo">
-                        <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMateriTwo" aria-expanded="false" aria-controls="collapseMateriTwo">
-                                <i class="more-less glyphicon fas fa-fw fa-plus"></i>
-                                Materi General HRD 2
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseMateriTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMateriTwo">
-                        <div class="panel-body">
-                            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.</p>
-                            <div>
-                            <img src="../img/pdf.jpg" height="150px" width="150px;">
-                            <p>Download dengan klik button download</p>
-                            </div>
-                            <div>
-                            <i class="fas fa-fw fa-download"></i>
-                            <button type="button" class="btn btn-primary">Download</button>
-                            </div>
-                            <br>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingMateriThree">
-                        <h4 class="panel-title">
-                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMateriThree" aria-expanded="false" aria-controls="collapseMateriThree">
-                                <i class="more-less glyphicon fas fa-fw fa-plus"></i>
-                                Materi General HRD 3
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapseMateriThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingMateriThree"><div class="panel-body">
-                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>
-                        <div>
-                        <img src="../img/pdf.jpg" height="150px" width="150px;">
-                        <p>Download dengan klik button download</p>
-                        </div>
-                        <div>
-                        <i class="fas fa-fw fa-download"></i>
-                        <button type="button" class="btn btn-primary">Download</button>
-                        </div>
-                        <br>
                     </div>
                 </div>
             </div>

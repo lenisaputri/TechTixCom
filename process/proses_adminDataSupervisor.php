@@ -186,7 +186,7 @@ if(isset($_POST["editDataSupervisor_idSupervisor"])){
                 <div class='form-group row'>
                     <div class='col-sm-12 mb-3 mb-sm-0'>
                         <input type='hidden' name='id_userUpdate' value=".$rowEditSupervisor["id_user"].">
-                        <input type='hidden' name='id_operatorUpdate' value=".$rowEditSupervisor["id_supervisor"].">               
+                        <input type='hidden' name='id_supervisorUpdate' value=".$rowEditSupervisor["id_supervisor"].">               
                         <label class='col-sm-6 small d-flex flex-column justify-content-center' for='username' style='font-weight: bold'>USERNAME</label>
                         <input type='text' class='form-control' placeholder='USERNAME' id='usernameSupervisorAdmin2' name='usernameSupervisorAdmin2' value='".$rowEditSupervisor["username"]."' required />
                     </div>

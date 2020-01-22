@@ -74,7 +74,7 @@
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nama" style="font-weight: bold">NAMA LENGKAP</label>
-                                <input type="text" class="form-control form-control-user" placeholder="NAMA ADMIN" id="namaAdmin" name="namaAdmin" required>
+                                <input type="text" class="form-control form-control-user" placeholder="NAMA ADMIN" id="namaAdminAdmin" name="namaAdminAdmin" required>
                             </div>
                             <div class="col-sm-12">
                                 <div id="namaAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>

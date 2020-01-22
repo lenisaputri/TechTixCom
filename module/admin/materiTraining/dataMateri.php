@@ -20,12 +20,41 @@
                 <div class = "row">
                     <div class="col-sm-6">
                       <div class="form-group row">
+                            <div class="col-sm-12 mb-3 mb-sm-0">
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="judulMateri" style="font-weight: bold">JUDUL MATERI</label>
+                                <input type="text" class="form-control form-control-user" placeholder="JUDUL MATERI" id="judulMateri" name="judulMateri" required>
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="usernameOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 mb-3 mb-sm-0">
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="keteranganMateri" style="font-weight: bold">KETERANGAN MATERI</label>
+                                <textarea type="text" class="form-control form-control-user" placeholder="KETERANGAN MATERI" id="keteranganMateri" name="keteranganMateri" required></textarea>
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="nikOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <div class="col-sm-12 mb-3 mb-sm-0">
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nama" style="font-weight: bold">NAMA LENGKAP</label>
+                                <input type="file" id="file" name="file">
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="namaOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
                         <div class="col-sm-12 mb-3 mb-sm-0">
-                          <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">JABATAN</label>
+                          <label class="col-sm-6 small d-flex flex-column justify-content-center" for="kategoriMateri" style="font-weight: bold">KATEGORI MATERI</label>
                             <?php
                               $resultKategoriMateri = tampilKategoriMateri($con);
                             ?>
-                          <select class="custom-select-karyawan my-1 mr-sm-2" name="jabatanOperatorAdmin">  <!-- tampilannya belum -->
+                          <select class="custom-select-karyawan my-1 mr-sm-2" name="kategoriMateriAdmin">  <!-- tampilannya belum -->
                             <?php
                               if(mysqli_num_rows($resultKategoriMateri) > 0){
                                 while($row = mysqli_fetch_assoc($resultKategoriMateri)){
@@ -36,40 +65,11 @@
                           </select>
                         </div>
                       </div>
-                      <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">USERNAME</label>
-                                <input type="text" class="form-control form-control-user" placeholder="USERNAME" id="usernameOperatorAdmin" name="usernameOperatorAdmin" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="usernameOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nik" style="font-weight: bold">NIK</label>
-                                <input type="text" class="form-control form-control-user" placeholder="NIK OPERATOR" id="nikOperatorAdmin" name="nikOperatorAdmin" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="nikOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nama" style="font-weight: bold">NAMA LENGKAP</label>
-                                <input type="text" class="form-control form-control-user" placeholder="NAMA OPERATOR" id="namaOperatorAdmin" name="namaOperatorAdmin" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="namaOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
-                        </div>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
                                 <div class="col-sm-4"></div>
                                 <div class="col-sm-8">
-                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataOperator" onclick="ValidasiTambahOperator(); preventDefaultActionOperator(event);">
+                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
                                         <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                         </span>

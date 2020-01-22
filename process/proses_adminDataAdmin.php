@@ -1,7 +1,7 @@
 <?php
 include "../config/connection.php";
 
-function linkYAYAYA($Foto){
+function linkFotoAdmin($Foto){
 
     $ling = "";
 
@@ -154,10 +154,10 @@ if (isset($_POST["tambahDataAdmin"]) || isset($_POST["editDataAdmin"]) || isset(
         $delete=$_POST['id_user'];
         $idnya = $_POST['id_admin'];
 
-        $queryDelete = "DELETE FROM tabel_admin WHERE id_admin='$idnya';";
-        $queryDelete2 = "DELETE FROM tabel_user WHERE id_user='$delete';";
+        $queryDeleteAdmin = "DELETE FROM tabel_admin WHERE id_admin='$idnya';";
+        $queryDeleteUser = "DELETE FROM tabel_user WHERE id_user='$delete';";
 
-        if(mysqli_query($con,$queryDelete) && mysqli_query($con,$queryDelete2)){
+        if(mysqli_query($con,$queryDeleteAdmin) && mysqli_query($con,$queryDeleteUser)){
 
             header('location:../module/index.php?module=' . $_GET["module"]);
         }
@@ -171,10 +171,10 @@ if (isset($_POST["tambahDataAdmin"]) || isset($_POST["editDataAdmin"]) || isset(
 
 // MODAL EDIT ADMIN
 if(isset($_POST["editDataAdmin_idAdmin"])){
-    $editAdmin = "SELECT tp.*, tp.id_admin ,tp.nama AS nama_lengkap ,tj.*, tj.nama AS nama_jabatan, tu.* FROM tabel_admin tp,tabel_jabatan tj,tabel_user tu 
-    WHERE tp.id_jabatan = tj.id_jabatan
-    AND tp.id_user = tu.id_user 
-    AND tp.id_admin = $_POST[editDataAdmin_idAdmin]";
+    $editAdmin = "SELECT ta.*, ta.id_admin ,ta.nama AS nama_lengkap ,tj.*, tj.nama AS nama_jabatan, tu.* FROM tabel_admin ta,tabel_jabatan tj,tabel_user tu 
+    WHERE ta.id_jabatan = tj.id_jabatan
+    AND ta.id_user = tu.id_user 
+    AND ta.id_admin = $_POST[editDataAdmin_idAdmin]";
     $resultEditAdmin = mysqli_query($con, $editAdmin);
   
     if(mysqli_num_rows($resultEditAdmin) > 0){
@@ -201,7 +201,7 @@ if(isset($_POST["editDataAdmin_idAdmin"])){
                         <div class='input-group'>
                             <input type='password' class='form-control' placeholder='**********' name='passwordAdminAdmin2' id='passwordAdminAdmin2' placeholder='**********' value='".$rowEditAdmin["password"]."' required />
                             <div class='input-group-append'>
-                                <span class='far fa-eye input-group-text form-control' id='eyeAdmin' onclick='showPasswordAdmin2();'></span>
+                                <span class='far fa-eye input-group-text form-control' id='eyeAdmin2' onclick='showPasswordAdmin2();'></span>
                             </div>
                         </div>
                     </div>
@@ -213,12 +213,12 @@ if(isset($_POST["editDataAdmin_idAdmin"])){
                     <div class='col-sm-12 mb-3 mb-sm-0'>
                         <label class='col-sm-6 small d-flex flex-column justify-content-center' for='gambar' style='font-weight: bold'>GAMBAR</label>
                         <div class='input-group col-sm-10'>`
-                            <img src='".linkYAYAYA($rowEditAdmin["foto"])."' id='fotoPrevAdminAdmin2' height='200px' width='200px'>
+                            <img src='".linkFotoAdmin($rowEditAdmin["foto"])."' id='fotoPrevAdminAdmin2' height='200px' width='200px'>
                         </div>
                         <div class='col-md-2'></div>
                         <div class='col-md-10'>
                             <br>
-                            <input id='fileid3' type='file' name='fileid3' onchange='preview_images6(event);'  hidden />
+                            <input id='fileid3' type='file' name='fileid3' onchange='preview_imagesAdmin6(event);'  hidden />
                             <input id='buttonid3' type='button' value='Load Gambar' class='btn btn-loading btn-primary tmbl-loading ml-2'  />
                         </div>
                         <div class='col-sm-12'>
@@ -275,7 +275,7 @@ if(isset($_POST["editDataAdmin_idAdmin"])){
                     <div class='col-sm-8>
                         <div class='modal-footer border-0'>
                             <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
-                            <button class='btn btn-primary' name='editDataAdmin' type='submit' onclick='ValidasiEdit(); preventDefaultAction2(event);><i class='fa fa-check'></i> Simpan</button>
+                            <button class='btn btn-primary' name='editDataAdmin' type='submit' onclick='ValidasiEditAdmin(); preventDefaultActionAdmin2(event);><i class='fa fa-check'></i> Simpan</button>
                         </div>
                     </div>
                 </div>
@@ -283,7 +283,7 @@ if(isset($_POST["editDataAdmin_idAdmin"])){
         </div>
                                       
         <script>
-            document.getElementById('modail').addEventListener('load', setup3());
+            document.getElementById('modail').addEventListener('load', setupAdmin3());
             
             function setup3() {
                 document.getElementById('buttonid3').addEventListener('click', openDialog2);

@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">GAMBAR</label>
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gambar" style="font-weight: bold">GAMBAR</label>
                                 <div class="input-group col-sm-10">
                                     <img src="../attachment/img/avatar.jpeg" id="fotoPrevAdminAdmin3" height="200px" width="200px">
                                 </div>
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-9">
-                                    <div id="fileidAdminAdminBlank" class="text-danger"></div>
+                                    <div id="fileidAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                         if(mysqli_num_rows($resultTampilData) > 0){
                             while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
                     ?>
-                        <tr class="text-center" id-operator="<?php echo $rowTampilData["id_admin"] ?>">
+                        <tr class="text-center" id-admin="<?php echo $rowTampilData["id_admin"] ?>">
                             <td ><?php echo $index; ?></td>
                             <td class="usernameAdmin"><?php echo $rowTampilData["username"]; ?></td>
                             <td class="passwordAdmin">**********</td>

@@ -35,7 +35,7 @@ $(".hapus-dataAdmin-admin").click(function () {
 // PROSES TAMBAH
 
 function showPasswordAdmin() {
-    var password = document.getElementById("passwordAdmin");
+    var password = document.getElementById("passwordAdminAdmin");
     if (password.type == "password") {
       password.type = "text";
     } else {

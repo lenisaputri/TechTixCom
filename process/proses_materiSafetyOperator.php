@@ -1,10 +1,10 @@
 <?php
     include "../config/connection.php";
 
-    function tampilJabatan($con)
+    function tampilMateriSafety($con)
     {
-        $tampilJabatan="select * from tabel_jabatan";
-        $resultTampilJabatan=mysqli_query($con, $tampilJabatan);
-        return $resultTampilJabatan;
+        $tampilMateriSafety="select * from tabel_materi_safety";
+        $resultTampilMateriSafety=mysqli_query($con, $tampilMateriSafety);
+        return $resultTampilMateriSafety;
     }
 ?>

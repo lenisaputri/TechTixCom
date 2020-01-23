@@ -1,7 +1,7 @@
 <?php
 include "../config/connection.php";
 
-if (isset($_POST["tambahDataMateri"]) || isset($_POST["editDataMateriSafety"])){
+if (isset($_POST["tambahDataMateri"]) || isset($_POST["editDataMateriSafety"]) || isset($_POST["hapusDataMateriSafety"])){
     if($_GET["module"]=="dataMateriSafety" && $_GET["act"]=="tambah"){
         $nama_folder = "file";
         $tmp = $_FILES["fileMateri"]["tmp_name"];
@@ -95,6 +95,10 @@ if (isset($_POST["tambahDataMateri"]) || isset($_POST["editDataMateriSafety"])){
                echo("Error description: " . mysqli_error($con));           
             }
         }
+    } else if($_GET["module"]=="dataMateriSafety" && $_GET["act"]=="hapus"){
+        $HapusMateriSafetyQuery="DELETE FROM tabel_materi_safety WHERE id_materi_safety ='$_POST[id_materi_safety]'";
+        mysqli_query($con, $HapusMateriSafetyQuery);
+        header('location:../module/index.php?module=' . $_GET["module"]);
     }
 }
 

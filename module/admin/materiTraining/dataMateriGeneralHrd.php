@@ -12,11 +12,11 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Safety</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi General HRD</h6>
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
+            <form class="user" action="../process/proses_adminDataMateriGeneralHrd.php?module=dataMateriGeneralHrd&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <input type="file" class="form-control border-0" id="inputGroupFile02" name="fileMateri">
                     <div class="col-sm-12">
@@ -128,49 +128,4 @@
 <!-- MENAMPILKAN DATA SELESAI-->
 </div>
 <!-- /.container-fluid -->
-
-<!-- Modal Edit Jabatan-->
-<div class="modal fade" id="editDataOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-header d-flex justify-content-center bg-operator border-0">
-          <h5 class="modal-title text-white w-100 text-center">Edit Data Operator</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form action="../process/proses_adminDataOperator.php?module=dataOperator&act=edit" id="formEditDataOperatorAdmin" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="id_user" id="id_userUpdate" >
-                <input type="hidden" name="id_operator" id="id_operatorUpdate" >
-                <div class="container-fluid" id="edit-dataOperator">
-
-                </div>
-            </form>
-        </div>
-      </div>
-    </div>
-  </div>
- <!-- End Modal Edit Jabatan -->
-
-    <!-- Modal Hapus Jabatan-->
-    <div class="modal fade" id="hapusDataOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <form action="../process/proses_adminDataOperator.php?module=dataOperator&act=hapus" method="post">
-            <div class="modal-body pt-5 text-center">
-            <input type="hidden" name="id_user" id="id_userHapus" >
-            <input type="hidden" name="id_operator" id="id_operatorHapus" >
-              <strong>Apakah Anda yakin?</strong>
-            </div>
-            <div class="pb-4 pt-4 d-flex justify-content-around">
-              <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
-              <button type="submit" name="hapusDataOperator" class="btn btn-success btn-ok">Ya</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- End Modal Hapus Jabatan -->
 </body>

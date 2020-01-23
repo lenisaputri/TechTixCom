@@ -514,6 +514,9 @@ switch ($level) {
                   case "dataMateriSafety":
                     include "admin/materiTraining/dataMateriSafety.php";
                     break;
+                  case "dataMateriGeneralHrd":
+                    include "admin/materiTraining/dataMateriGeneralHrd.php";
+                    break;
                   default:
                     include "404.php";
                 }

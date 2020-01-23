@@ -98,19 +98,6 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">STATUS KARYAWAN</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input form-control-user" type="radio" name="statusOperatorAdmin" id="statusOperatorAdmin1" value="Aktif">
-                                    <label class="form-check-label" for="statusOperatorAdmin1">Aktif</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="statusOperatorAdmin" id="statusOperatorAdmin2" value="Non-Aktif">
-                                    <label class="form-check-label" for="statusOperatorAdmin2">Non-Aktif</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
                                 <div class="col-sm-4"></div>
                                 <div class="col-sm-8">
                                     <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataOperator" onclick="ValidasiTambahOperator(); preventDefaultActionOperator(event);">
@@ -146,7 +133,6 @@
                             <th>NIK</th>
                             <th>Nama Lengkap</th>
                             <th>Jabatan</th>
-                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -170,7 +156,6 @@
                             <td class="nikOperator"><?php echo $rowTampilData["nik"]; ?></td>
                             <td class="namaOperator"><?php echo $rowTampilData["nama_lengkap"]; ?></td>
                             <td class="jabatanOperator"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
-                            <td class="statusOperator"><?php echo $rowTampilData["status_aktif"]; ?></td>
                             <td>
                                 <button type="button" class="btn btn-primary edit-dataOperator-admin" data-toggle="modal" data-target="#editDataOperatorModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_operatorEdit="<?php echo $rowTampilData["id_operator"];?>">
                                     <i class="fas fa-edit"></i>

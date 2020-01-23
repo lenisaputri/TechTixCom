@@ -99,19 +99,6 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">STATUS KARYAWAN</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input form-control-user" type="radio" name="statusAdminAdmin" id="statusAdminAdmin1" value="Aktif">
-                                    <label class="form-check-label" for="statusAdminAdmin1">Aktif</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="statusAdminAdmin" id="statusAdminAdmin2" value="Non-Aktif">
-                                    <label class="form-check-label" for="statusAdminAdmin2">Non-Aktif</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
                                 <div class="col-sm-4"></div>
                                 <div class="col-sm-8">
                                     <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataAdmin" onclick="ValidasiTambahAdmin(); preventDefaultActionAdmin(event);">
@@ -147,7 +134,6 @@
                             <th>NIK</th>
                             <th>Nama Lengkap</th>
                             <th>Jabatan</th>
-                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -171,7 +157,6 @@
                             <td class="nikAdmin"><?php echo $rowTampilData["nik"]; ?></td>
                             <td class="namaAdmin"><?php echo $rowTampilData["nama_lengkap"]; ?></td>
                             <td class="jabatanAdmin"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
-                            <td class="statusAdmin"><?php echo $rowTampilData["status_aktif"]; ?></td>
                             <td>
                                 <button type="button" class="btn btn-primary edit-dataAdmin-admin" data-toggle="modal" data-target="#editDataAdminModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_adminEdit="<?php echo $rowTampilData["id_admin"];?>">
                                     <i class="fas fa-edit"></i>

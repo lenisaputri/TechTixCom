@@ -66,44 +66,95 @@ if (isset($_POST["tambahDataMateri"])){
 
 // MODAL EDIT OPERATOR
 if(isset($_POST["editDataMateriSafety_idMateriSafety"])){
-    $editMateriSafety = "SELECT * FROM tabel_materi_safety";
+    $editMateriSafety = "SELECT * FROM tabel_materi_safety WHERE id_materi_safety = $_POST[editDataMateriSafety_idMateriSafety]";
     $resultEditMateriSafety = mysqli_query($con, $editMateriSafety);
   
     if(mysqli_num_rows($resultEditMateriSafety) > 0){
-      $rowEditMateriSafety=mysqli_fetch_assoc($resultEditMateriSafety);
-        
-        $output="";
-        $output.="      
-        <div class='row' id='modail'>
-            <div class='form-group'>
-                <input type='hidden' name='id_materiSafetyUpdate' value=".$rowEditMateriSafety["id_materi_safety"].">      
-                <div class='row'>
-                    <div class='col-sm-5'>
-                        <input type='file' class='form-control border-0' id='inputFile2' name='fileMateri'>
-                        <div class='col-sm-6'>
-                            <div id='fileMateriAdminBlank' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
+        $i = 1;
+        while($rowEditMateriSafety=mysqli_fetch_assoc($resultEditMateriSafety)){
+            ?>
+            <div class="form-group">
+                <input type="hidden" name="id_materiSafetyUpdate" value="<?=$rowEditMateriSafety["id_materi_safety"]?>" > 
+                <?php
+                    if($rowEditMateriSafety["tipe"] == "file"){
+                        ?>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <input type="file" class="custom-file-input" id="validatedCustomFile">
+                                <label class="custom-file-label" for="validatedCustomFile"><?php echo $rowEditMateriSafety['file_materi']; ?></label>
+                        <!-- <input type="file" class="form-control border-0" id="inputFile" name="fileMateri" > -->
+                        <div class="col-sm-6">
+                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
-                    <div class='col-sm-1 mt-3 mt-sm-0'>
-                    <label class='d-flex flex-column justify-content-center' for='kategori_materi' style='font-weight: bold'>ATAU</label>
+                    <div class="col-sm-1 mt-3 mt-sm-0">
+                    <label class="d-flex flex-column justify-content-center" for="kategori_materi" style="font-weight: bold">ATAU</label>
                     </div>
-                    <div class='col-sm-6'>
-                        <input type='text' class='form-control border-0' id='linkMateri' name='linkMateri' placeholder='Link Materi ...' style='width=100%'>
-                        <div class='col-sm-6'>
-                            <div id='linkMateriBlank' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control border-0" id="linkMateri" name="linkMateri" placeholder="Link Materi ..." style="width=100%">
+                        <div class="col-sm-6">
+                            <div id="linkMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div> 
                 </div>
-                
-                
+                <?php
+                    } else {
+                        ?>
+                        <div class="row">
+                            <div class="col-sm-5">
+                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
+                        <div class="col-sm-6">
+                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 mt-3 mt-sm-0">
+                    <label class="d-flex flex-column justify-content-center" for="kategori_materi" style="font-weight: bold">ATAU</label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control border-0" id="linkMateri" name="linkMateri" placeholder="Link Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["file_materi"]?>">
+                        <div class="col-sm-6">
+                            <div id="linkMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
+                    </div> 
+                </div>
+                <?php
+                    }
+                ?>
             </div>
-
-        </div>
-        ";
-    echo $output;
-  
-    }else{
-      echo $output.="Data Kosong";
-    }
+                <hr>
+                <div class="form-group">
+                    <input type="text" class="form-control border-0" id="judulMateri" name="judulMateri" placeholder="Judul Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["judul_materi"]?>" required>
+                    <div class="col-sm-12">
+                        <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <input type="text" class="form-control border-0" id="kategoriMateri" name="kategoriMateri" placeholder="Kategori Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["kategori_materi"]?>" required>
+                    <div class="col-sm-12">
+                        <div id="kategoriMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"><?=$rowEditMateriSafety["keterangan_materi"]?></textarea>
+                    <div class="col-sm-12">
+                        <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <?php
+            $i++;
+            }
+        }
+            ?>
+            <hr>
+                <div class="form-group">
+                    <div class="modal-footer border-0">
+                        <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                        <button class="btn btn-primary" name="editJabatanProses" type="submit" onclick="ValidasiEditJabatan();"><i class="fa fa-check"></i> Simpan</button>
+                </div>
+            <?php
   }
 ?>

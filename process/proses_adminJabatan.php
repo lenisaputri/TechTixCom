@@ -61,7 +61,7 @@ if(isset($_POST["editJabatan"]))
         ?>
             <div class="modal-footer border-0">
                 <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                <button class="btn btn-primary" name="editJabatanProses" type="submit" onclick="ValidasiEditJabatan();"><i class="fa fa-check"></i> Simpan</button>
+                <button class="btn btn-primary" name="editDataMateriSafety" type="submit"><i class="fa fa-check"></i> Simpan</button>
             </div>
         </form>
     <?php

@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <div class="row">
                     <div class="col-sm-5">
-                        <input type="file" class="form-control border-0" id="inputGroupFile02" name="fileMateri">
+                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
                         <div class="col-sm-6">
                             <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>

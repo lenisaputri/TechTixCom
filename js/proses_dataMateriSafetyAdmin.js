@@ -6,7 +6,7 @@ $(".edit-dataMateriSafety-admin").click(function () {
       url: "../process/proses_adminDataMateriSafety.php",
       method: "post",
       data: {
-        editDataMateriSafety_idMateriSaefty : id_materiSafetyEdit,
+        editDataMateriSafety_idMateriSafety : id_materiSafetyEdit,
       },
       success: function (data) {
         $("#id_materiSafetyUpdate").val(id_materiSafetyEdit);

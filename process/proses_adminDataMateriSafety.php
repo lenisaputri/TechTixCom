@@ -1,7 +1,7 @@
 <?php
 include "../config/connection.php";
 
-if (isset($_POST["tambahDataMateri"])){
+if (isset($_POST["tambahDataMateri"]) || isset($_POST["editDataMateriSafety"])){
     if($_GET["module"]=="dataMateriSafety" && $_GET["act"]=="tambah"){
         $nama_folder = "file";
         $tmp = $_FILES["fileMateri"]["tmp_name"];
@@ -61,6 +61,40 @@ if (isset($_POST["tambahDataMateri"])){
             }
         }
         
+    } else if($_GET["module"]=="dataMateriSafety" && $_GET["act"]=="edit"){
+        $id_materiSafetyUpdate = $_POST["id_materiSafetyUpdate"];
+
+        $nama_folder = "file";
+        $tmp = $_FILES["fileMateri2"]["tmp_name"];
+        $namanya_file = $_FILES["fileMateri2"]["name"];
+        move_uploaded_file($tmp, "../attachment/$nama_folder/$nama_file");
+
+        if (isset($namanya_file)){
+
+            $query9 = "UPDATE tabel_materi_safety set kategori_materi = '$_POST[kategoriMateri2]',
+            judul_materi = '$_POST[judulMateri2]', keterangan_materi = '$_POST[keteranganMateri2]',
+            file_materi = '$namanya_file', tipe = 'file' WHERE id_materi_safety = '$id_materiSafetyUpdate'
+            ";
+           
+            if(mysqli_query($con, $query9)){ 
+                header('location:../module/index.php?module=' . $_GET["module"]);
+            }
+            else{            
+               echo("Error description: " . mysqli_error($con));           
+            }
+        } else if(isset($_POST["linkMateri2"])){
+            $query10 = "UPDATE tabel_materi_safety set kategori_materi = '$_POST[kategoriMateri2]',
+            judul_materi = '$_POST[judulMateri2]', keterangan_materi = '$_POST[keteranganMateri2]',
+            file_materi = '$_POST[linkMateri2]', tipe = 'file' WHERE id_materi_safety = '$id_materiSafetyUpdate'
+            ";
+           
+            if(mysqli_query($con, $query10)){ 
+                header('location:../module/index.php?module=' . $_GET["module"]);
+            }
+            else{            
+               echo("Error description: " . mysqli_error($con));           
+            }
+        }
     }
 }
 
@@ -80,20 +114,20 @@ if(isset($_POST["editDataMateriSafety_idMateriSafety"])){
                         ?>
                         <div class="row">
                             <div class="col-sm-5">
-                                <input type="file" class="custom-file-input" id="validatedCustomFile">
+                                <input type="file" class="custom-file-input" id="fileMateri2" name="fileMateri2">
                                 <label class="custom-file-label" for="validatedCustomFile"><?php echo $rowEditMateriSafety['file_materi']; ?></label>
                         <!-- <input type="file" class="form-control border-0" id="inputFile" name="fileMateri" > -->
                         <div class="col-sm-6">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="fileMateri2AdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <div class="col-sm-1 mt-3 mt-sm-0">
-                    <label class="d-flex flex-column justify-content-center" for="kategori_materi" style="font-weight: bold">ATAU</label>
+                    <label class="d-flex flex-column justify-content-center" for="atau" style="font-weight: bold">ATAU</label>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control border-0" id="linkMateri" name="linkMateri" placeholder="Link Materi ..." style="width=100%">
+                        <input type="text" class="form-control border-0" id="linkMateri2" name="linkMateri2" placeholder="Link Materi ..." style="width=100%">
                         <div class="col-sm-6">
-                            <div id="linkMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="linkMateri2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div> 
                 </div>
@@ -102,18 +136,18 @@ if(isset($_POST["editDataMateriSafety_idMateriSafety"])){
                         ?>
                         <div class="row">
                             <div class="col-sm-5">
-                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
+                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri2">
                         <div class="col-sm-6">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="fileMateri2AdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <div class="col-sm-1 mt-3 mt-sm-0">
-                    <label class="d-flex flex-column justify-content-center" for="kategori_materi" style="font-weight: bold">ATAU</label>
+                    <label class="d-flex flex-column justify-content-center" for="atau" style="font-weight: bold">ATAU</label>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control border-0" id="linkMateri" name="linkMateri" placeholder="Link Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["file_materi"]?>">
+                        <input type="text" class="form-control border-0" id="linkMateri2" name="linkMateri2" placeholder="Link Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["file_materi"]?>">
                         <div class="col-sm-6">
-                            <div id="linkMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="linkMateri2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div> 
                 </div>
@@ -123,23 +157,23 @@ if(isset($_POST["editDataMateriSafety_idMateriSafety"])){
             </div>
                 <hr>
                 <div class="form-group">
-                    <input type="text" class="form-control border-0" id="judulMateri" name="judulMateri" placeholder="Judul Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["judul_materi"]?>" required>
+                    <input type="text" class="form-control border-0" id="judulMateri2" name="judulMateri2" placeholder="Judul Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["judul_materi"]?>" required>
                     <div class="col-sm-12">
-                        <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        <div id="judulMateri2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
                 </div>
                 <hr>
                 <div class="form-group">
-                    <input type="text" class="form-control border-0" id="kategoriMateri" name="kategoriMateri" placeholder="Kategori Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["kategori_materi"]?>" required>
+                    <input type="text" class="form-control border-0" id="kategoriMateri2" name="kategoriMateri2" placeholder="Kategori Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["kategori_materi"]?>" required>
                     <div class="col-sm-12">
-                        <div id="kategoriMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        <div id="kategoriMateri2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
                 </div>
                 <hr>
                 <div class="form-group">
-                    <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"><?=$rowEditMateriSafety["keterangan_materi"]?></textarea>
+                    <textarea id="keteranganMateri2" name="keteranganMateri2" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"><?=$rowEditMateriSafety["keterangan_materi"]?></textarea>
                     <div class="col-sm-12">
-                        <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        <div id="keteranganMateri2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
                 </div>
                 <hr>
@@ -149,11 +183,11 @@ if(isset($_POST["editDataMateriSafety_idMateriSafety"])){
             }
         }
             ?>
-            <hr>
+            
                 <div class="form-group">
                     <div class="modal-footer border-0">
                         <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                        <button class="btn btn-primary" name="editJabatanProses" type="submit" onclick="ValidasiEditJabatan();"><i class="fa fa-check"></i> Simpan</button>
+                        <button class="btn btn-primary" name="editDataMateriSafety" type="submit"><i class="fa fa-check"></i> Simpan</button>
                 </div>
             <?php
   }

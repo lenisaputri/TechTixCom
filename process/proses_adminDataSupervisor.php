@@ -68,7 +68,6 @@ if (isset($_POST["tambahDataSupervisor"]) || isset($_POST["editDataSupervisor"])
          nama,
          nik,
          foto,
-         status_aktif,
          waktu_tambah
     )
 
@@ -78,7 +77,6 @@ if (isset($_POST["tambahDataSupervisor"]) || isset($_POST["editDataSupervisor"])
         '$_POST[namaSupervisorAdmin]',
         '$_POST[nikSupervisorAdmin]',
         '$nama_file',
-        '$_POST[statusSupervisorAdmin]',
         curdate()
     );";
     
@@ -111,7 +109,6 @@ if (isset($_POST["tambahDataSupervisor"]) || isset($_POST["editDataSupervisor"])
             nama = '$_POST[namaSupervisorAdmin2]',
             nik = '$_POST[nikSupervisorAdmin2]',
             foto = '$namanya_file',
-            status_aktif = '$_POST[statusSupervisorAdmin]',
             waktu_edit = curdate()
             where id_user='$update';";
 
@@ -135,7 +132,6 @@ if (isset($_POST["tambahDataSupervisor"]) || isset($_POST["editDataSupervisor"])
             set id_jabatan = '$_POST[jabatanSupervisorAdmin2]',
             nama = '$_POST[namaSupervisorAdmin2]',
             nik = '$_POST[nikSupervisorAdmin2]',
-            status_aktif = '$_POST[statusSupervisorAdmin]',
             waktu_edit = curdate()
             where id_user='$update';";
 
@@ -252,19 +248,6 @@ if(isset($_POST["editDataSupervisor_idSupervisor"])){
                     </div>
                     <div class='col-sm-12'>
                         <div id='jabatanSupervisorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
-                    </div>
-                </div>
-                <div class='form-group row'>
-                    <div class='col-sm-12 mb-3 mb-sm-0'>
-                    <label class='col-sm-6 small d-flex flex-column justify-content-center' for='password' style='font-weight: bold'>STATUS KARYAWAN</label>
-                        <div class='form-check form-check-inline'>
-                            <input class='form-check-input form-control-user' type='radio' name='statusSupervisorAdmin' id='statusSupervisorAdmin1' value='Aktif'>
-                            <label class='form-check-label' for='statusSupervisorAdmin1'>Aktif</label>
-                        </div>
-                        <div class='form-check form-check-inline'>
-                            <input class='form-check-input form-control-user' type='radio' name='statusSupervisorAdmin' id='statusSupervisorAdmin1' value='Non-Aktif'>
-                            <label class='form-check-label' for='statusSupervisorAdmin2'>Non-Aktif</label>
-                        </div>
                     </div>
                 </div>
                 <div class='form-group row'>

@@ -1,10 +1,10 @@
 <?php
   include "../config/connection.php";
-  include "../process/proses_adminDataMateriSafety.php";
+  include "../process/proses_adminDataMateriTechnical.php";
 ?>
 <body>
 <!-- Begin Page Content -->
-<div class="container-fluid" id="dataMateri">
+<div class="container-fluid" id="dataKaryawan">
     <!-- Page Heading -->
     <!-- <h1 class="h3 mb-2 text-gray-800">Data Operator</h1>
         <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
@@ -12,29 +12,16 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Safety</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Technical</h6>
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
+            <form class="user" action="../process/proses_adminDataMateriTechnical.php?module=dataMateriTechnical&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <div class="row">
-                    <div class="col-sm-5">
-                        <input type="file" class="form-control border-0" id="inputGroupFile02" name="fileMateri">
-                        <div class="col-sm-6">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                        </div>
+                    <input type="file" class="form-control border-0" id="inputGroupFile02" name="fileMateri">
+                    <div class="col-sm-12">
+                        <div id="namaOperatorAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
-                    <div class="col-sm-1 mt-3 mt-sm-0">
-                    <label class="d-flex flex-column justify-content-center" for="kategori_materi" style="font-weight: bold">ATAU</label>
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control border-0" id="linkMateri" name="linkMateri" placeholder="Link Materi ..." style="width=100%">
-                        <div class="col-sm-6">
-                            <div id="linkMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                        </div>
-                    </div> 
-                </div>
                 </div> 
                 <hr>
                 <div class="form-group">
@@ -59,20 +46,22 @@
                 </div>
                 <hr>
                 <div class="form-group">
-                    <div class="row d-flex justify-content-end">
-                    <label for="file-input">
-                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                    <div class="row">
+                       <div class="col-6">
+                        </div>
+                        <div class="col-6 text-right d-flex justify-content-end ">
+                            <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>
                                 <span class="text">Tambah Data</span>
                             </button>
-                        
+                        </div>
                     </div>
                 </div>
                 <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
             </form>
-            <!-- PROSES FORM MENAMBAH DATA SELESAI -->
+           <!-- PROSES FORM MENAMBAH DATA SELESAI -->
         </div>
     </div>
     <!-- MENAMPILKAN DATA -->
@@ -94,7 +83,7 @@
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT * FROM tabel_materi_safety;
+                        $queryTampilData = "SELECT * FROM tabel_materi_technical;
                             ";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -103,16 +92,16 @@
                         if(mysqli_num_rows($resultTampilData) > 0){
                             while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
                     ?>
-                        <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_safety"] ?>">
+                        <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_technical"] ?>">
                             <td ><?php echo $index; ?></td>
                             <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
                             <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
                             <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
                             <td>
-                                <button type="button" class="btn btn-primary edit-dataMateriSafety-admin" data-toggle="modal" data-target="#editDataMateriSafetyModal" id_materiSafetyEdit="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                <button type="button" class="btn btn-primary edit-dataMateri-admin" data-toggle="modal" data-target="#editDataMateriTechnicalModal" id_materiTechnicalEdit="<?php echo $rowTampilData["id_materi_technical"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger hapus-dataMateriSafety-admin" data-toggle="modal" data-target="#hapusDataMateriSafetyModal" id_materiSafetyEdit="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                <button type="button" class="btn btn-danger hapus-dataMateri-admin" data-toggle="modal" data-target="#hapusDataMateriTechnicalModal" id_materiTechnicalEdit="<?php echo $rowTampilData["id_materi_technical"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
@@ -141,19 +130,19 @@
 <!-- /.container-fluid -->
 
 <!-- Modal Edit Jabatan-->
-<div class="modal fade" id="editDataMateriSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editDataMateriTechnicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
-        <div class="modal-header d-flex justify-content-center bg-materiSafety border-0">
-          <h5 class="modal-title text-white w-100 text-center">Edit Data Materi Safety</h5>
+        <div class="modal-header d-flex justify-content-center bg-operator border-0">
+          <h5 class="modal-title text-white w-100 text-center">Edit Data Materi Technical</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <form action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=edit" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="id_materi_safety" id="id_materiSafetyUpdate" >
-                <div class="container-fluid" id="edit-dataMateriSafety">
+            <form action="../process/proses_adminDataMateriTechnical.php?module=dataMateriTechnical&act=edit" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id_user" id="id_userUpdate" >
+                <div class="container-fluid" id="edit-dataOperator">
 
                 </div>
             </form>
@@ -164,7 +153,7 @@
  <!-- End Modal Edit Jabatan -->
 
     <!-- Modal Hapus Jabatan-->
-    <div class="modal fade" id="hapusDataMateriSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="hapusDataOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

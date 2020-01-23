@@ -145,13 +145,13 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-center bg-materiGeneralHrd border-0">
-          <h5 class="modal-title text-white w-100 text-center">Edit Data Materi General HRD</h5>
+          <h5 class="modal-title text-white w-100 text-center">Edit Data Materi GeneralHrd</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <form action="../process/proses_adminDataMateriGeneralHrd.php?module=dataMateriGeneral&act=edit" method="POST" enctype="multipart/form-data">
+            <form action="../process/proses_adminDataMateriGeneralHrd.php?module=dataMateriGeneralHrd&act=edit" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id_materi_generalhrd" id="id_materiGeneralHrdUpdate" >
                 <div class="container-fluid" id="edit-dataMateriGeneralHrd">
 
@@ -168,15 +168,14 @@
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <form action="../process/proses_adminDataOperator.php?module=dataOperator&act=hapus" method="post">
+          <form action="../process/proses_adminDataMateriGeneralHrd.php?module=dataMateriGeneralHrd&act=hapus" method="post">
             <div class="modal-body pt-5 text-center">
-            <input type="hidden" name="id_user" id="id_userHapus" >
-            <input type="hidden" name="id_operator" id="id_operatorHapus" >
+            <input type="hidden" name="id_materi_generalhrd" id="id_materiGeneralHrdHapus" >
               <strong>Apakah Anda yakin?</strong>
             </div>
             <div class="pb-4 pt-4 d-flex justify-content-around">
               <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
-              <button type="submit" name="hapusDataOperator" class="btn btn-success btn-ok">Ya</button>
+              <button type="submit" name="hapusDataMateriGeneralHrd" class="btn btn-success btn-ok">Ya</button>
             </div>
           </form>
         </div>

@@ -168,15 +168,14 @@
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <form action="../process/proses_adminDataOperator.php?module=dataOperator&act=hapus" method="post">
+          <form action="../process/proses_adminDataMateriQuality.php?module=dataMateriQuality&act=hapus" method="post">
             <div class="modal-body pt-5 text-center">
-            <input type="hidden" name="id_user" id="id_userHapus" >
-            <input type="hidden" name="id_operator" id="id_operatorHapus" >
+            <input type="hidden" name="id_materi_quality" id="id_materiQualityHapus" >
               <strong>Apakah Anda yakin?</strong>
             </div>
             <div class="pb-4 pt-4 d-flex justify-content-around">
               <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
-              <button type="submit" name="hapusDataOperator" class="btn btn-success btn-ok">Ya</button>
+              <button type="submit" name="hapusDataMateriQuality" class="btn btn-success btn-ok">Ya</button>
             </div>
           </form>
         </div>

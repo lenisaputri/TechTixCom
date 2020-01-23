@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2020 at 02:40 AM
+-- Generation Time: Jan 23, 2020 at 02:43 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -76,35 +76,26 @@ INSERT INTO `tabel_jabatan` (`id_jabatan`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tabel_kategori_materi`
+-- Table structure for table `tabel_materi_safety`
 --
 
-CREATE TABLE `tabel_kategori_materi` (
-  `id_kategori_materi` int(11) NOT NULL,
-  `kategori_materi` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tabel_kategori_materi`
---
-
-INSERT INTO `tabel_kategori_materi` (`id_kategori_materi`, `kategori_materi`) VALUES
-(1, 'Safetys');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tabel_materi`
---
-
-CREATE TABLE `tabel_materi` (
-  `id_materi` int(11) NOT NULL,
-  `id_kategori_materi` int(11) NOT NULL,
-  `judul` varchar(100) NOT NULL,
-  `keterangan` text NOT NULL,
-  `file` text NOT NULL,
+CREATE TABLE `tabel_materi_safety` (
+  `id_materi_safety` int(11) NOT NULL,
+  `kategori_materi` varchar(100) NOT NULL,
+  `judul_materi` varchar(100) NOT NULL,
+  `file_materi` text NOT NULL,
+  `keterangan_materi` text NOT NULL,
   `tanggal_upload` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tabel_materi_safety`
+--
+
+INSERT INTO `tabel_materi_safety` (`id_materi_safety`, `kategori_materi`, `judul_materi`, `file_materi`, `keterangan_materi`, `tanggal_upload`) VALUES
+(1, '', 'aaa', 'Result Assassement Quality.pdf', 'aaaaa', '2020-01-22'),
+(2, 'aaaaa', 'aa', 'Pedoman-Kebutuhan-Penguasaan-Teknik-Berbasis-Industri-Aplikasi-dan-Pengembang-Permainan.pdf', 'aaaaaaaaaaaaaa', '2020-01-22'),
+(3, 'b', 'a', 'Result Assassement Quality 1.pdf', 'c', '2020-01-22');
 
 -- --------------------------------------------------------
 
@@ -199,16 +190,10 @@ ALTER TABLE `tabel_jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indexes for table `tabel_kategori_materi`
+-- Indexes for table `tabel_materi_safety`
 --
-ALTER TABLE `tabel_kategori_materi`
-  ADD PRIMARY KEY (`id_kategori_materi`);
-
---
--- Indexes for table `tabel_materi`
---
-ALTER TABLE `tabel_materi`
-  ADD KEY `id_kategori_materi` (`id_kategori_materi`);
+ALTER TABLE `tabel_materi_safety`
+  ADD PRIMARY KEY (`id_materi_safety`);
 
 --
 -- Indexes for table `tabel_operator`
@@ -249,10 +234,10 @@ ALTER TABLE `tabel_jabatan`
   MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `tabel_kategori_materi`
+-- AUTO_INCREMENT for table `tabel_materi_safety`
 --
-ALTER TABLE `tabel_kategori_materi`
-  MODIFY `id_kategori_materi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `tabel_materi_safety`
+  MODIFY `id_materi_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tabel_operator`
@@ -282,12 +267,6 @@ ALTER TABLE `tabel_user`
 ALTER TABLE `tabel_admin`
   ADD CONSTRAINT `tabel_admin_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tabel_user` (`id_user`),
   ADD CONSTRAINT `tabel_admin_ibfk_2` FOREIGN KEY (`id_jabatan`) REFERENCES `tabel_jabatan` (`id_jabatan`);
-
---
--- Constraints for table `tabel_materi`
---
-ALTER TABLE `tabel_materi`
-  ADD CONSTRAINT `tabel_materi_ibfk_1` FOREIGN KEY (`id_kategori_materi`) REFERENCES `tabel_kategori_materi` (`id_kategori_materi`);
 
 --
 -- Constraints for table `tabel_operator`

@@ -83,7 +83,7 @@
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT * FROM tabel_materi_technical;
+                        $queryTampilData = "SELECT * FROM tabel_technical;
                             ";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);

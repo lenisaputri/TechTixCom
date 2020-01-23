@@ -8,7 +8,7 @@ if (isset($_POST["tambahDataMateri"])){
         $nama_file = $_FILES["fileMateri"]["name"];
         move_uploaded_file($tmp, "../attachment/$nama_folder/$nama_file");
 
-        $query2 = "INSERT INTO tabel_materi_technical (
+        $query2 = "INSERT INTO tabel_technical (
             kategori_materi,
             judul_materi,
             keterangan_materi,

@@ -19,7 +19,7 @@ include "../config/connection.php";
     </head>
     
     <body id="login">
-        <div class="container justify-content-center">
+        <div class="container justify-content-center bg-container">
             <!-- Outer Row -->
             <div class="row d-flex justify-content-center">
                 <div class="col-xl-10 col-lg-12 col-md-9">

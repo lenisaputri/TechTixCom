@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
+-- Generation Time: Jan 23, 2020 at 08:27 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
+=======
 -- Waktu pembuatan: 23 Jan 2020 pada 04.36
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
+>>>>>>> 5a3d57fde1030bb2e585719b6cfecce6aac342b3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -127,8 +133,9 @@ CREATE TABLE `tabel_materi_safety` (
   `id_materi_safety` int(11) NOT NULL,
   `kategori_materi` varchar(100) NOT NULL,
   `judul_materi` varchar(100) NOT NULL,
-  `file_materi` text NOT NULL,
   `keterangan_materi` text NOT NULL,
+  `file_materi` text NOT NULL,
+  `tipe` enum('link','file') NOT NULL,
   `tanggal_upload` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -136,10 +143,9 @@ CREATE TABLE `tabel_materi_safety` (
 -- Dumping data untuk tabel `tabel_materi_safety`
 --
 
-INSERT INTO `tabel_materi_safety` (`id_materi_safety`, `kategori_materi`, `judul_materi`, `file_materi`, `keterangan_materi`, `tanggal_upload`) VALUES
-(1, '', 'aaa', 'Result Assassement Quality.pdf', 'aaaaa', '2020-01-22'),
-(2, 'aaaaa', 'aa', 'Pedoman-Kebutuhan-Penguasaan-Teknik-Berbasis-Industri-Aplikasi-dan-Pengembang-Permainan.pdf', 'aaaaaaaaaaaaaa', '2020-01-22'),
-(3, 'b', 'a', 'Result Assassement Quality 1.pdf', 'c', '2020-01-22');
+INSERT INTO `tabel_materi_safety` (`id_materi_safety`, `kategori_materi`, `judul_materi`, `keterangan_materi`, `file_materi`, `tipe`, `tanggal_upload`) VALUES
+(5, 'ddddddd', 'aasddd', 'dddddd', 'aaaa', 'link', '2020-01-23'),
+(7, 'q', 'q', 'q', 'Result Assassement Quality 1.pdf', 'file', '2020-01-23');
 
 -- --------------------------------------------------------
 
@@ -326,7 +332,7 @@ ALTER TABLE `tabel_materi_quality`
 -- AUTO_INCREMENT untuk tabel `tabel_materi_safety`
 --
 ALTER TABLE `tabel_materi_safety`
-  MODIFY `id_materi_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_materi_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_operator`

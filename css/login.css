@@ -1,5 +1,9 @@
 body {
-    background-color: #ceceef !important;
+    /* background-color: #ceceef !important; */
+    background: url(../img/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #login .bg-login-image {

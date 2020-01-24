@@ -15,20 +15,28 @@
             <h6 class="m-0 font-weight-bold text-primary">Materi Safety</h6>   
         </div>
         <div class="card-body">
+            <?php
+                $resultTampilMateriSafety = tampilMateriSafety($con);
+                $index=1;
+                if (mysqli_num_rows($resultTampilMateriSafety) > 0){
+            ?>
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
-
+                <?php
+                        while ($row = mysqli_fetch_assoc($resultTampilMateriSafety)) {
+                    ?>
                     <div class="panel-heading" role="tab" id="headingMateriOne">
                         <h4 class="panel-title">
-                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMateriOne" aria-expanded="true" aria-controls="collapseMateriOne">
-                                Materi Safety 1
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMateriOne<?= $index?>" aria-expanded="true" aria-controls="collapseMateriOne<?= $index?>">
+                                    <?= $row["judul_materi"]?>
                                 <i class="more-less glyphicon fas fa-fw fa-plus"></i>
                             </a>
                         </h4>
                     </div>
-                    <div id="collapseMateriOne" class="panel-collapse collapse ml-3" role="tabpanel" aria-labelledby="headingMateriOne">
+                    <div id="collapseMateriOne<?= $index?>" class="panel-collapse collapse ml-3" role="tabpanel" aria-labelledby="headingMateriOne<?= $index?>">
                         <div class="panel-body">
-                            <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>
+                            <p>KATEGORI MATERI : <?= $row["kategori_materi"]?></p>
+                            <p>KETERANGAN : <?= $row["keterangan_materi"]?></p>
                             <div>
                             <img src="../img/pdf.jpg" height="150px" width="150px;">
                             <p>Download dengan klik button download</p>
@@ -44,9 +52,22 @@
                             <br>
                         </div>
                     </div>
+                    <?php
+                        $index++;
+                        }
+                    ?>
                 </div>
             </div>
             <!-- panel-group -->
+            <?php
+                }else{
+                    ?>
+                        <div class="text-center">
+                            <p class="text-muted">Data Jabatan kosong</p>
+                        </div>
+                    <?php
+                }
+                ?>
         </div>
     </div>
 </div>

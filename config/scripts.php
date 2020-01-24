@@ -33,5 +33,9 @@
 
   <script src="../js/proses_kategoriMateriAdmin.js"></script>
   <script src="../js/proses_dataMateriSafetyAdmin.js"></script>
+  <script src="../js/proses_dataMateriQuality.js"></script>
+  <script src="../js/proses_dataMateriGeneralHrd.js"></script>
+  <script src="../js/proses_dataMateriTechnical.js"></script>
+
 
   <script src="../js/materiOperator.js"></script>

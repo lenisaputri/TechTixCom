@@ -112,7 +112,7 @@
                                 <button type="button" class="btn btn-primary edit-dataMateriTechnical-admin" data-toggle="modal" data-target="#editDataMateriTechnicalModal" id_materiTechnicalEdit="<?php echo $rowTampilData["id_materi_technical"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger hapus-dataMateriTechnical-admin" data-toggle="modal" data-target="#hapusDataMateriTechnicalModal" id_materiTechnicalEdit="<?php echo $rowTampilData["id_materi_technical"];?>">
+                                <button type="button" class="btn btn-danger hapus-dataMateriTechnical-admin" data-toggle="modal" data-target="#hapusDataMateriTechnicalModal" id_materi_technical="<?php echo $rowTampilData["id_materi_technical"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>

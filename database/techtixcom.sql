@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Jan 2020 pada 14.10
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.2
+-- Waktu pembuatan: 24 Jan 2020 pada 02.45
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -75,6 +75,52 @@ INSERT INTO `tabel_jabatan` (`id_jabatan`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tabel_materi_generalhrd`
+--
+
+CREATE TABLE `tabel_materi_generalhrd` (
+  `id_materi_generalhrd` int(11) NOT NULL,
+  `kategori_materi` varchar(100) NOT NULL,
+  `judul_materi` varchar(100) NOT NULL,
+  `keterangan_materi` text NOT NULL,
+  `file_materi` text NOT NULL,
+  `tipe` enum('link','file') NOT NULL,
+  `tanggal_upload` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tabel_materi_generalhrd`
+--
+
+INSERT INTO `tabel_materi_generalhrd` (`id_materi_generalhrd`, `kategori_materi`, `judul_materi`, `keterangan_materi`, `file_materi`, `tipe`, `tanggal_upload`) VALUES
+(1, 'generalhrd', 'link coba', 'coba coba', '', 'file', '2020-01-23');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tabel_materi_quality`
+--
+
+CREATE TABLE `tabel_materi_quality` (
+  `id_materi_quality` int(11) NOT NULL,
+  `kategori_materi` varchar(100) NOT NULL,
+  `judul_materi` varchar(100) NOT NULL,
+  `keterangan_materi` text NOT NULL,
+  `file_materi` text NOT NULL,
+  `tipe` enum('link','file') NOT NULL,
+  `tanggal_upload` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tabel_materi_quality`
+--
+
+INSERT INTO `tabel_materi_quality` (`id_materi_quality`, `kategori_materi`, `judul_materi`, `keterangan_materi`, `file_materi`, `tipe`, `tanggal_upload`) VALUES
+(1, 'pkl', 'lampiran', 'berkas berkas materi', '000 Lampiran 3_Format-PROPOSAL_PKL JTI 2019.docx', 'file', '2020-01-23');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tabel_materi_safety`
 --
 
@@ -93,8 +139,30 @@ CREATE TABLE `tabel_materi_safety` (
 --
 
 INSERT INTO `tabel_materi_safety` (`id_materi_safety`, `kategori_materi`, `judul_materi`, `keterangan_materi`, `file_materi`, `tipe`, `tanggal_upload`) VALUES
-(5, 'ddddddd', 'aasddd', 'dddddd', 'aaaa', 'link', '2020-01-23'),
-(7, 'q', 'q', 'q', 'Result Assassement Quality 1.pdf', 'file', '2020-01-23');
+(5, 'ddddddd', 'aasddd1', 'dddddd', '', 'file', '2020-01-23');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tabel_materi_technical`
+--
+
+CREATE TABLE `tabel_materi_technical` (
+  `id_materi_technical` int(11) NOT NULL,
+  `kategori_materi` varchar(100) NOT NULL,
+  `judul_materi` varchar(100) NOT NULL,
+  `keterangan_materi` text NOT NULL,
+  `file_materi` text NOT NULL,
+  `tipe` enum('link','file') NOT NULL,
+  `tanggal_upload` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tabel_materi_technical`
+--
+
+INSERT INTO `tabel_materi_technical` (`id_materi_technical`, `kategori_materi`, `judul_materi`, `keterangan_materi`, `file_materi`, `tipe`, `tanggal_upload`) VALUES
+(1, 'pkl', 'cv', 'lalalala', 'cv.docx', 'file', '2020-01-23');
 
 -- --------------------------------------------------------
 
@@ -187,10 +255,28 @@ ALTER TABLE `tabel_jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
+-- Indeks untuk tabel `tabel_materi_generalhrd`
+--
+ALTER TABLE `tabel_materi_generalhrd`
+  ADD PRIMARY KEY (`id_materi_generalhrd`);
+
+--
+-- Indeks untuk tabel `tabel_materi_quality`
+--
+ALTER TABLE `tabel_materi_quality`
+  ADD PRIMARY KEY (`id_materi_quality`);
+
+--
 -- Indeks untuk tabel `tabel_materi_safety`
 --
 ALTER TABLE `tabel_materi_safety`
   ADD PRIMARY KEY (`id_materi_safety`);
+
+--
+-- Indeks untuk tabel `tabel_materi_technical`
+--
+ALTER TABLE `tabel_materi_technical`
+  ADD PRIMARY KEY (`id_materi_technical`);
 
 --
 -- Indeks untuk tabel `tabel_operator`
@@ -231,10 +317,28 @@ ALTER TABLE `tabel_jabatan`
   MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT untuk tabel `tabel_materi_generalhrd`
+--
+ALTER TABLE `tabel_materi_generalhrd`
+  MODIFY `id_materi_generalhrd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `tabel_materi_quality`
+--
+ALTER TABLE `tabel_materi_quality`
+  MODIFY `id_materi_quality` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `tabel_materi_safety`
 --
 ALTER TABLE `tabel_materi_safety`
-  MODIFY `id_materi_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_materi_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `tabel_materi_technical`
+--
+ALTER TABLE `tabel_materi_technical`
+  MODIFY `id_materi_technical` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `tabel_operator`

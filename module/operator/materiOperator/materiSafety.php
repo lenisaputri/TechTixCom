@@ -64,7 +64,7 @@
                                     <?php
                                     } else if($row["tipe"] == "link"){
                                     ?>
-                                        <div class="embed-responsive embed-responsive-16by9">
+                                        <div class="embed-responsive embed-responsive-16by9 mb-3">
                                             <iframe class="embed-responsive-item" src="<?= $row["file_materi"]?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
                                     <?php

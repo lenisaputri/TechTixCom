@@ -35,22 +35,43 @@
                     </div>
                     <div id="collapseMateriOne<?= $index?>" class="panel-collapse collapse ml-3" role="tabpanel" aria-labelledby="headingMateriOne<?= $index?>">
                         <div class="panel-body">
-                            <p>KATEGORI MATERI : <?= $row["kategori_materi"]?></p>
-                            <p>KETERANGAN : <?= $row["keterangan_materi"]?></p>
-                            <div>
-                            <img src="../img/pdf.jpg" height="150px" width="150px;">
-                            <p>Download dengan klik button download</p>
+                            <div class="row">
+                                <p class="col-sm-12 d-flex flex-column justify-content-center">KATEGORI MATERI :</p>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-12 d-flex flex-column justify-content-center" for="nik" style="font-weight: bold"> <?= $row["kategori_materi"]?></label>
+                                    </div>
+                                </div>
+                                <p class="col-sm-12 d-flex flex-column justify-content-center">KETERANGAN :</p>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-12 d-flex flex-column justify-content-center" for="nik" style="font-weight: bold"><?= $row["keterangan_materi"]?></label>
+                                    </div>
+                                </div>
+                                <?php
+                                    if($row["tipe"] == "file"){
+                                    ?>
+                                        <div class="form-group row">
+                                            <img src="../img/pdf.jpg" height="150px" width="150px;">
+                                            <p>Download dengan klik button download</p>
+                                            <button type="submit" class="btn btn-primary btn-icon-split" name="download">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-fw fa-download"></i>
+                                                </span>
+                                                <span class="text">Download</span>
+                                            </button>
+                                        </div>
+                                    <?php
+                                    } else if($row["tipe"] == "link"){
+                                    ?>
+                                        <div class="embed-responsive embed-responsive-16by9 mb-3">
+                                            <iframe class="embed-responsive-item" src="<?= $row["file_materi"]?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    <?php
+                                    }
+                                ?>
                             </div>
-                            <div>
-                            <button type="submit" class="btn btn-primary btn-icon-split" name="download">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-fw fa-download"></i>
-                                </span>
-                                <span class="text">Download</span>
-                            </button>
-                            </div>
-                            <br>
-                        </div>
+                        </div>  
                     </div>
                     <?php
                         $index++;

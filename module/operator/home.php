@@ -33,6 +33,9 @@
                     <h6 class="text-gray-900 mb-4">Nama Karyawan : <?= $row["nama"]?> </h6>
                   </div>
                   <div class="text">
+                    <h6 class="text-gray-900 mb-4">Jenis Kelamin : <?= $row["jenis_kelamin"];?> </h6>
+                  </div>
+                  <div class="text">
                     <h6 class="text-gray-900 mb-4">Jabatan : <?= $row["nama_jabatan"];?> </h6>
                   </div>
                 </div>

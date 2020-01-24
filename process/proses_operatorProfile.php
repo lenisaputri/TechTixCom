@@ -8,9 +8,5 @@ function tampilProfilOperator($con, $idUser){
     return $resultTampilProfilOperator;
    }
 
-// function tampilJabatan($con){
-//     $tampilJabatan="SELECT a.*, b.nama AS nama_jabatan, c.* FROM tabel_operator a, tabel_jabatan b , tabel_user c WHERE a.id_jabatan = b.id_jabatan AND c.username = a.nik AND c.id_user = '$idUser'";
-//     $resultJabatan = mysqli_query($con, $tampilJabatan);
-//     return $resultJabatan;
-// }
+   
 ?>

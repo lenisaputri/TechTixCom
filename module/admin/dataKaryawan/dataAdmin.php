@@ -82,6 +82,19 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">JENIS KELAMIN</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input form-control-user" type="radio" name="jkAdminAdmin" id="jkAdminAdmin1" value="Laki-Laki">
+                                    <label class="form-check-label" for="jkAdminAdmin1">Laki-Laki</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="jkAdminAdmin" id="jkAdminAdmin2" value="Perempuan">
+                                    <label class="form-check-label" for="jkAdminAdmin2">Perempuan</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">JABATAN</label>
                                 <?php
                                     $resultJabatan = tampilJabatan($con);
@@ -133,6 +146,7 @@
                             <th>Gambar</th>
                             <th>NIK</th>
                             <th>Nama Lengkap</th>
+                            <th>Jenis Kelamin</th>
                             <th>Jabatan</th>
                             <th>Aksi</th>
                         </tr>
@@ -156,6 +170,7 @@
                             <td class="fotoAdmin"><img src="../attachment/img/<?php echo ($rowTampilData['foto'] == null)? 'avatar.jpeg' : $rowTampilData['foto'] ; ?>" style="width:50px;height:50px;border-radius:50%;"></td>
                             <td class="nikAdmin"><?php echo $rowTampilData["nik"]; ?></td>
                             <td class="namaAdmin"><?php echo $rowTampilData["nama_lengkap"]; ?></td>
+                            <td class="jkAdmin"><?php echo $rowTampilData["jenis_kelamin"]; ?></td>
                             <td class="jabatanAdmin"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
                             <td>
                                 <button type="button" class="btn btn-primary edit-dataAdmin-admin" data-toggle="modal" data-target="#editDataAdminModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_adminEdit="<?php echo $rowTampilData["id_admin"];?>">

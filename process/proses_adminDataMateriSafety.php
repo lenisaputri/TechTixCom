@@ -3,6 +3,9 @@ include "../config/connection.php";
 
 if (isset($_POST["tambahDataMateri"]) || isset($_POST["editDataMateriSafety"]) || isset($_POST["hapusDataMateriSafety"])){
     if($_GET["module"]=="dataMateriSafety" && $_GET["act"]=="tambah"){
+
+        $tipe = "";
+
         $nama_folder = "file";
         $tmp = $_FILES["fileMateri"]["tmp_name"];
         $nama_file = $_FILES["fileMateri"]["name"];
@@ -34,6 +37,7 @@ if (isset($_POST["tambahDataMateri"]) || isset($_POST["editDataMateriSafety"]) |
             else{            
                echo("Error description: " . mysqli_error($con));           
             }
+            
         } else if(isset($_POST["linkMateri"])){
             $query3 = "INSERT INTO tabel_materi_safety (
                 kategori_materi,

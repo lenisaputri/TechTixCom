@@ -25,7 +25,7 @@
                 <?php
                         while ($row = mysqli_fetch_assoc($resultTampilMateriTechnical)) {
                     ?>
-                    <div class="panel-heading" role="tab" id="headingMateriOne">
+                    <div class="panel-heading" role="tab" id="headingMateriOne" style="word-break: break-all;">
                         <h4 class="panel-title">
                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMateriOne<?= $index?>" aria-expanded="true" aria-controls="collapseMateriOne<?= $index?>">
                                     <?= $row["judul_materi"]?>
@@ -38,13 +38,13 @@
                             <div class="row">
                                 <p class="col-sm-12 d-flex flex-column justify-content-center">KATEGORI MATERI :</p>
                                 <div class="form-group row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12" style="word-break: break-all;">
                                         <label class="col-sm-12 d-flex flex-column justify-content-center" for="nik" style="font-weight: bold"> <?= $row["kategori_materi"]?></label>
                                     </div>
                                 </div>
                                 <p class="col-sm-12 d-flex flex-column justify-content-center">KETERANGAN :</p>
                                 <div class="form-group row">
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12" style="word-break: break-all;">
                                         <label class="col-sm-12 d-flex flex-column justify-content-center" for="nik" style="font-weight: bold"><?= $row["keterangan_materi"]?></label>
                                     </div>
                                 </div>

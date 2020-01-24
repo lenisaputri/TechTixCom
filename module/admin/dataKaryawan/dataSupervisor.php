@@ -81,6 +81,19 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">JENIS KELAMIN</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input form-control-user" type="radio" name="jkSupervisorAdmin" id="jkSupervisorAdmin1" value="Laki-Laki">
+                                    <label class="form-check-label" for="jkSupervisorAdmin1">Laki-Laki</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="jkSupervisorAdmin" id="jkSupervisorAdmin2" value="Perempuan">
+                                    <label class="form-check-label" for="jkSupervisorAdmin2">Perempuan</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 mb-3 mb-sm-0">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">JABATAN</label>
                                 <?php
                                     $resultJabatan = tampilJabatan($con);
@@ -132,6 +145,7 @@
                             <th>Gambar</th>
                             <th>NIK</th>
                             <th>Nama Lengkap</th>
+                            <th>Jenis Kelamin</th>
                             <th>Jabatan</th>
                             <th>Aksi</th>
                         </tr>
@@ -155,6 +169,7 @@
                             <td class="fotoSupervisor"><img src="../attachment/img/<?php echo ($rowTampilData['foto'] == null)? 'avatar.jpeg' : $rowTampilData['foto'] ; ?>" style="width:50px;height:50px;border-radius:50%;"></td>
                             <td class="nikSupervisor"><?php echo $rowTampilData["nik"]; ?></td>
                             <td class="namaSupervisor"><?php echo $rowTampilData["nama_lengkap"]; ?></td>
+                            <td class="jkSupervisor"><?php echo $rowTampilData["jenis_kelamin"]; ?></td>
                             <td class="jabatanSupervisor"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
                             <td>
                                 <button type="button" class="btn btn-primary edit-dataSupervisor-admin" data-toggle="modal" data-target="#editDataSupervisorModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_supervisorEdit="<?php echo $rowTampilData["id_supervisor"];?>">

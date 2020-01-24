@@ -64,7 +64,7 @@
                 }else{
                     ?>
                         <div class="text-center">
-                            <p class="text-muted">Data Materi kosong</p>
+                            <p class="text-muted">Data Materi Safety kosong!!</p>
                         </div>
                     <?php
                 }

@@ -4,6 +4,50 @@
     background-size: cover;
 }
 
+#home .dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0368ca;;
+  }
+
+#home .breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .7rem;
+    color: #ffffff;
+    content: "/";
+}
+
+#home .breadcrumb-item.active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#home .breadcrumb {
+    background-color: #0368ca;
+    border: 1px solid #e3e6f0;
+    background-clip: border-box;
+    font-size: .85rem;
+}
+
+#home .breadcrumb-item+.breadcrumb-item {
+    padding-left: .7rem;
+}
+
+#home ol.breadcrumb li.breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.404);
+    text-decoration: none;
+    background-color: transparent;
+}
+
+#home ol.breadcrumb li.breadcrumb-item a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#home .text-primary {
+    color: #0368ca!important;
+}
+
 #home .btn-primary {
     color: #fff;
     background-color: #298cec;
@@ -38,5 +82,9 @@
     border: 1px solid rgba(0,0,0,.125);
 }
 
+/* MODAL PENGATURAN */
+#editPengaturan .bg-editPengaturan {
+    background-color: #0368ca !important;
+}
   
 

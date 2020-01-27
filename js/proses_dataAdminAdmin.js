@@ -191,7 +191,7 @@ function showPasswordAdmin() {
     }
   }
   
-  function showPasswordOperator2() {
+  function showPasswordAdmin2() {
     var password = document.getElementById("passwordAdminAdmin2");
     if (password.type == "password") {
       password.type = "text";

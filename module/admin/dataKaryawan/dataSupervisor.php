@@ -213,7 +213,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-center bg-supervisor border-0">
-          <h5 class="modal-title text-white w-100 text-center">Edit Data Operator</h5>
+          <h5 class="modal-title text-white w-100 text-center">Edit Data Supervisor</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

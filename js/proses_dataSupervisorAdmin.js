@@ -191,7 +191,7 @@ function preventDefaultActionSupervisor2(event){
   }
 }
 
-function showPasswordOperator2() {
+function showPasswordSupervisor2() {
   var password = document.getElementById("passwordSupervisorAdmin2");
   if (password.type == "password") {
     password.type = "text";

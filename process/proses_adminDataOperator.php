@@ -192,7 +192,7 @@ if(isset($_POST["editDataOperator_idOperator"])){
                         <input type='text' class='form-control' placeholder='USERNAME' id='usernameOperatorAdmin2' name='usernameOperatorAdmin2' value='".$rowEditOperator["username"]."' required />
                     </div>
                     <div class='col-sm-12'>
-                        <div id='nikOperatorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
+                        <div id='usernameOperatorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
                     </div>
                 </div>
                 <div class='form-group row'>
@@ -265,13 +265,13 @@ if(isset($_POST["editDataOperator_idOperator"])){
                         <select class='custom-select my-1 mr-sm-2' name='jabatanOperatorAdmin2'>".tampilJabatanEdit($con,$rowEditOperator["id_jabatan"])."</select>
                     </div>
                     <div class='col-sm-12'>
-                        <div id='namaOperatorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
+                        <div id='jabatanOperatorAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
                     </div>
                 </div>
                 <div class='form-group row'>
                     <div class='col-sm-12 mb-3 mb-sm-0'>
                         <div class='col-sm-4'></div>
-                        <div class='col-sm-8'>
+                        <div class='col-sm-8>
                             <div class='modal-footer border-0'>
                                 <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
                                 <button class='btn btn-primary' name='editDataOperator' type='submit' onclick='ValidasiEditOperator(); preventDefaultActionOperator2(event);'><i class='fa fa-check'></i> Simpan</button>

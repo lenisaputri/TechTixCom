@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "../config/connection.php";
-include "../process/proses_modalPengaturan.php";
 
 if (isset($_SESSION["id"])) {
   $level = $_SESSION['level'];
@@ -14,18 +13,10 @@ if (isset($_SESSION["id"])) {
     </script>");
   // header("Location: ../");
 }
-
-$queryModalPengaturan = "SELECT * FROM tabel_user WHERE id_user = '$idUser'";
-$resultModalPengaturan = mysqli_query($con, $queryModalPengaturan);
-
-$item = '';
-if (mysqli_num_rows($resultModalPengaturan) == 1) {
-  $item = mysqli_fetch_assoc($resultModalPengaturan);
-}
-
 ?>
 <!-- <input id="idUser" type="hidden" name="idUser" value="<?php echo $idUser ?>"> -->
 <?php
+
 switch ($level) {
   case 'admin':
     $queryUser = "SELECT a.*, b.* FROM tabel_user a, tabel_admin b WHERE a.id_user=$idUser and a.id_user=b.id_user";
@@ -246,6 +237,43 @@ switch ($level) {
       </div>
 
     </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper (Konten Samping)-->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Topbar (Navbar atas)-->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          
+          <!-- Topbar Navbar User-->
+          <ul class="navbar-nav ml-auto">
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo ($namaUser); ?></span>
+              </a>
+              
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="index.php?module=setting">
+                  <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>Settings
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- End of Topbar -->
         <?php
     } else {
       ?>
@@ -286,8 +314,9 @@ switch ($level) {
       
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider">
-      <!-- Heading (Main Isi Menu 3)-->
-      <div class="sidebar-heading">Jabatan</div>
+
+            <!-- Heading (Main Isi Menu 3)-->
+            <div class="sidebar-heading">Jabatan</div>
       
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
@@ -303,6 +332,13 @@ switch ($level) {
       <!-- Heading (Main Isi Menu 4)-->
       <div class="sidebar-heading">Materi Training</div>
       
+      <!-- Nav Item - Technical(Sub Isi Menu)-->
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="index.php?module=kategoriMateri" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-th-large"></i>
+          <span>Kategori Materi</span>
+        </a>
+      </li> -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-file"></i>
@@ -329,10 +365,6 @@ switch ($level) {
       </div>
 
     </ul>
-        <?php
-    } 
-    ?>
-
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper (Konten Samping)-->
@@ -358,8 +390,8 @@ switch ($level) {
               
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="index.php?module=setting" data-target="#editPengaturan" data-toggle="modal">
-                  <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>Settings
+                <a class="dropdown-item" href="index.php?module=setting">
+                  <i class="fas fa-wrench fa-sm fa-fw mr-2 text-gray-400"></i>Settings
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -370,7 +402,9 @@ switch ($level) {
           </ul>
         </nav>
         <!-- End of Topbar -->
-
+        <?php
+    } 
+    ?>
         <!-- Begin Page Content (Bawah Navbar)-->
         <div class="container-fluid">
             <?php
@@ -504,81 +538,6 @@ switch ($level) {
   <a class="scroll-to-top rounded" href="#home">
     <i class="fas fa-angle-up"></i>
   </a>
-
-  <div class="modal fade" id="editPengaturan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header d-flex justify-content-center bg-editPengaturan border-0">
-          <h5 class="modal-title text-white w-100 text-center">Edit Data Jabatan</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <input type="hidden" id="passwordModal" value="<?php echo $item['password'] ?>">
-        <div class="modal-body" id="edit-jabatan">  
-        <div class="row">
-            <div class="col-md-12">
-              <center><img src="../attachment/img/<?php echo ($rowUser['foto'] == null) ? 'avatar.jpeg' : $rowUser['foto']; ?>" id="fotoPrev" height="150px" width="150px" class="rounded-circle" /></center>
-              <br>
-              <center><?php echo ($namaUser); ?></center>
-              <br>
-              <form action="../process/proses_modalPengaturan.php?module=modalPengaturan&act=edit" id="formModalPengaturan2" method="POST" enctype="multipart/form-data">
-                <div class="form-group row">
-                  <input type="hidden" name="id_usernya" id="id_usernya" value="<?php echo $idUser ?>">
-                  <input type="hidden" name="id_levelnya" id="id_levelnya" value="<?php echo $level ?>">
-                  <label class="col-sm-3 small d-flex flex-column justify-content-center" for="foto" style="font-weight: bold">GANTI FOTO</label>
-                  <div class="input-group col-sm-9">
-                    <input type="file" class="form-control border-0 form-control-user"  id="foto" name="foto" onblur="reset_Blank(); reset_Size(); reset_Check();" onchange="preview_image(event);" accept="image/*">
-                  </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-3 small d-flex flex-column justify-content-center" for="passwordLama" style="font-weight: bold">PASSWORD LAMA</label>
-                    <div class="col-sm-9 input-group">
-                      <input type="password" class="form-control form-control-user" name="passwordLama" id="passwordLama" placeholder="Password Lama" onblur="reset_Blank();">
-                      <div class="input-group-append">
-                        <span class="far fa-eye input-group-text form-control form-control-user" id="eyeA" onclick="showPasswordLama();"></span>
-                      </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-3 small d-flex flex-column justify-content-center" for="passwordBaru" style="font-weight: bold">PASSWORD BARU</label>
-                    <div class="col-sm-9 input-group">
-                      <input type="password" class="form-control form-control-user" id="passwordBaru" placeholder="Password Baru" name="passwordBaru" onblur="reset_Blank();">
-                      <div class="input-group-append">
-                        <span class="far fa-eye input-group-text form-control form-control-user" id="eyeB" onclick="showPasswordBaru();"></span>
-                      </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-3 small d-flex flex-column justify-content-center" for="konfirmasiPassword" style="font-weight: bold">KONFIRMASI PASSWORD</label>
-                    <div class="col-sm-9 input-group">
-                      <input type="password" class="form-control form-control-user" id="konfirmasiPassword" placeholder="Konfirmasi Password" name="konfirmasiPassword" onblur="reset_Blank();">
-                      <div class="input-group-append">
-                        <span class="far fa-eye input-group-text form-control form-control-user" id="eyeC" onclick="showPasswordKonfirmasi();"></span>
-                      </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-12">
-                  <div id="Blank" class="small d-flex flex-column justify-content-center text-danger"></div>
-                  <div id="fotoSize" class="small d-flex flex-column justify-content-center text-danger"></div>
-                  <div id="fotoType" class="small d-flex flex-column justify-content-center text-danger"></div>
-                  <div id="konfirmasipasswordSalah" class="small d-flex flex-column justify-content-center text-danger"></div>
-                  <div id="konfirmasipasswordLamaSalah" class="small d-flex flex-column justify-content-center text-danger"></div>
-                </div>
-                </div>
-                <div class="modal-footer border-0">
-                <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                <button class="btn btn-primary"  name="update" type="submit" onclick="showFilesSize(event);"><i class="fa fa-check"></i> Simpan</button>
-                </div>
-              </form>
-            </div>
-          </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

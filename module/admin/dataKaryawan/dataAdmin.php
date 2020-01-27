@@ -3,66 +3,67 @@
   include "../process/proses_adminDataAdmin.php";
 ?>
 <body onload="setupAdmin2();">
-<!-- Begin Page Content -->
-<div class="container-fluid" id="dataKaryawan" onload="setupAdmin2();">
-    <!-- Page Heading -->
-    <!-- <h1 class="h3 mb-2 text-gray-800">Data Operator</h1>
-        <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-    -->
-    <nav aria-label="breadcrumb">
-  <ol class="breadcrumb bg-white">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Library</a></li>
-    <li class="breadcrumb-item active">Data</li>
-  </ol>
-</nav>
-    
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Admin</h6>
-        </div>
-        <div class="card-body">
-            <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=tambah" id="formDataAdminAdmin" method="POST" enctype="multipart/form-data">
-                <div class = "row">
-                    <div class="col-sm-6">
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">USERNAME</label>
-                                <input type="text" class="form-control form-control-user" placeholder="USERNAME" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+    <div class="container-fluid" id="dataKaryawan" onload="setupAdmin2();">
+        <nav aria-label="breadcrumb" class="shadow">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
+                        <span>Beranda</span>
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <i class="fas fa-fw fa-id-card"></i>
+                    <span>Data Admin</span>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Admin</h6>
+            </div>
+            <div class="card-body">
+                <!-- FORM MENAMBAH DATA -->
+                <form class="user" action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=tambah" id="formDataAdminAdmin" method="POST" enctype="multipart/form-data">
+                    <div class = "row">
+                        <div class="col-sm-6">
+                            <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">USERNAME</label>
+                                    <input type="text" class="form-control form-control-user" placeholder="USERNAME" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
                             </div>
-                            <div class="col-sm-12">
-                                <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="passwordAdminAdmin" style="font-weight: bold">PASSWORD</label>
-                                <div class="input-group">
-                                    <input type="password" class="form-control form-control-user" name="passwordAdminAdmin" id="passwordAdminAdmin" placeholder="**********" required >
-                                    <div class="input-group-append">
-                                        <span class="far fa-eye input-group-text form-control form-control-user" id="eyeAdmin" onclick="showPasswordAdmin();"></span>
+                            <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="passwordAdminAdmin" style="font-weight: bold">PASSWORD</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control form-control-user" name="passwordAdminAdmin" id="passwordAdminAdmin" placeholder="**********" required >
+                                        <div class="input-group-append">
+                                            <span class="far fa-eye input-group-text form-control form-control-user" id="eyeAdmin" onclick="showPasswordAdmin();"></span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="passwordAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gambar" style="font-weight: bold">GAMBAR</label>
-                                <div class="input-group col-sm-10">
-                                    <img src="../attachment/img/avatar.jpeg" id="fotoPrevAdminAdmin3" height="200px" width="200px">
+                                <div class="col-sm-12">
+                                    <div id="passwordAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
-                                <div class="col-md-2"></div>
-                                <div class="col-md-10">
-                                    <br>
-                                    <input id='fileid2' type='file' name='fileid2' onchange="preview_imagesAdmin22(event);"  hidden required />
-                                    <input id='buttonid2' type='button' value='Load Gambar'class="btn btn-loading btn-primary tmbl-loading ml-2"  />
-                                </div>
-                                <div class="col-sm-3"></div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gambar" style="font-weight: bold">GAMBAR</label>
+                                    <div class="input-group col-sm-10">
+                                        <img src="../attachment/img/avatar.jpeg" id="fotoPrevAdminAdmin3" height="200px" width="200px">
+                                    </div>
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-10">
+                                        <br>
+                                        <input id='fileid2' type='file' name='fileid2' onchange="preview_imagesAdmin22(event);"  hidden required />
+                                        <input id='buttonid2' type='button' value='Load Gambar'class="btn btn-loading btn-primary tmbl-loading ml-2"  />
+                                    </div>
+                                    <div class="col-sm-3"></div>
                                 <div class="col-sm-9">
                                     <div id="fileidAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
@@ -118,21 +119,19 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group row">
+                    </div>
+                </div>
+
+                <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
-                                <div class="col-sm-4"></div>
-                                <div class="col-sm-8">
-                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataAdmin" onclick="ValidasiTambahAdmin(); preventDefaultActionAdmin(event);">
+                                    <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataAdmin" onclick="ValidasiTambahAdmin(); preventDefaultActionAdmin(event);">
                                         <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                         </span>
                                         <span class="text">Tambah Data</span>
                                     </button>
-                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
                 <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
             </form>
             <!-- PROSES FORM MENAMBAH DATA SELESAI -->

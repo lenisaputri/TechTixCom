@@ -5,10 +5,19 @@
 <body onload="setupOperator2();">
 <!-- Begin Page Content -->
 <div class="container-fluid" id="dataKaryawan" onload="setupOperator2();">
-    <!-- Page Heading -->
-    <!-- <h1 class="h3 mb-2 text-gray-800">Data Operator</h1>
-        <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-    -->
+    <nav aria-label="breadcrumb" class="shadow">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
+                        <span>Beranda</span>
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <i class="fas fa-fw fa-id-card"></i>
+                    <span>Data Operator</span>
+                </li>
+            </ol>
+        </nav>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -109,21 +118,18 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group row">
+                    </div>
+                </div>
+                <div class="form-group row">
                             <div class="col-sm-12 mb-3 mb-sm-0">
-                                <div class="col-sm-4"></div>
-                                <div class="col-sm-8">
-                                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataOperator" onclick="ValidasiTambahOperator(); preventDefaultActionOperator(event);">
+                                    <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataOperator" onclick="ValidasiTambahOperator(); preventDefaultActionOperator(event);">
                                         <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                         </span>
                                         <span class="text">Tambah Data</span>
                                     </a>
                                 </div>
-                            </div>
                         </div>
-                    </div>
-                </div>
                 <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
             </form>
             <!-- PROSES FORM MENAMBAH DATA SELESAI -->

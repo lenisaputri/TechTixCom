@@ -98,7 +98,7 @@
                 </thead>
                 <tbody>
                     <?php
-                    $queryTampilData = "SELECT * FROM tabel_materi_safety;";
+                    $queryTampilData = "SELECT * FROM tabel_materi_safety WHERE tipe LIKE '%file%';";
                     $resultTampilData = mysqli_query($con, $queryTampilData);
                     $index = 1;
                     if(mysqli_num_rows($resultTampilData) > 0){

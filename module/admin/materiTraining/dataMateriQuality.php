@@ -33,15 +33,6 @@
                             <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
-                    <div class="col-sm-1 mt-3 mt-sm-0">
-                    <label class="d-flex flex-column justify-content-center" for="kategori_materi" style="font-weight: bold">ATAU</label>
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control border-0" id="linkMateri" name="linkMateri" placeholder="Link Materi ..." style="width=100%">
-                        <div class="col-sm-6">
-                            <div id="linkMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                        </div>
-                    </div> 
                 </div>
                 </div> 
                 <hr>
@@ -75,7 +66,12 @@
                                 </span>
                                 <span class="text">Tambah Data</span>
                             </button>
-                        
+                            <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateriLink" onclick="location.href='index.php?module=dataMateriQualityLink';">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                            <span class="text">Tambah Data Link</span>
+                        </button>
                     </div>
                 </div>
                 <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
@@ -102,8 +98,7 @@
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT * FROM tabel_materi_quality;
-                            ";
+                        $queryTampilData = "SELECT * FROM tabel_materi_qualityWHERE tipe LIKE '%file%';";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);
                         $index = 1;

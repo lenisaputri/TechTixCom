@@ -32,15 +32,6 @@
                         <div class="col-sm-6">
                             <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
-                    </div>
-                    <div class="col-sm-1 mt-3 mt-sm-0">
-                    <label class="d-flex flex-column justify-content-center" for="kategori_materi" style="font-weight: bold">ATAU</label>
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control border-0" id="linkMateri" name="linkMateri" placeholder="Link Materi ..." style="width=100%">
-                        <div class="col-sm-6">
-                            <div id="linkMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                        </div>
                     </div> 
                 </div>
                 </div> 

@@ -27,3 +27,33 @@ $(".hapus-dataMateriSafety-admin").click(function () {
 })
 
 // DATA MATERI SAFETY HAPUS END
+
+// DATA MATERI SAFETY Link EDIT  
+$(".edit-dataMateriSafetyLink-admin").click(function () {
+  var id_materiSafetyLinkEdit = $(this).attr("id_materiSafetyLinkEdit");
+
+  $.ajax({
+    url: "../process/proses_adminDataMateriSafetyLink.php",
+    method: "post",
+    data: {
+      editDataMateriSafetyLink_idMateriSafety : id_materiSafetyLinkEdit,
+    },
+    success: function (data) {
+      $("#id_materiSafetyLinkUpdate").val(id_materiSafetyLinkEdit);
+      $("#edit-dataMateriSafetyLink").html(data);
+      $("#editDataMateriSafetyLinkModal").modal("show");
+    }
+  });
+});
+// DATA MATERI SAFETY EDIT Link END
+
+// DATA MATERI SAFETY Link HAPUS
+
+$(".hapus-dataMateriSafetyLink-admin").click(function () {
+var id_materi_safety = $(this).attr("id_materi_safety");
+
+$('#id_materiSafetyLinkHapus').val(id_materi_safety);
+$('#hapusDataMateriSafetyLinkModal').modal("show");
+})
+
+// DATA MATERI SAFETY Link HAPUS END

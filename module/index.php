@@ -323,6 +323,29 @@ switch ($level) {
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider">
 
+       <!-- Heading (Main Isi Menu 4)-->
+       <div class="sidebar-heading">SCORE ASSESSMENT</div>
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseScore" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-trophy"></i>
+          <span>Data Score Assessment</span>
+        </a>
+        
+        <div id="collapseScore" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="index.php?module=dataMateriSafety">Data Score Safety</a>
+            <a class="collapse-item" href="index.php?module=dataMateriQuality">Data Score Quality</a>
+            <a class="collapse-item" href="index.php?module=dataMateriGeneralHrd">Data Score General HRD</a>
+            <a class="collapse-item" href="index.php?module=dataMateriTechnical">Data Score Technical</a>
+            <div class="collapse-divider"></div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider (Garis Pembagi)-->
+      <hr class="sidebar-divider">
+
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

@@ -334,10 +334,10 @@ switch ($level) {
         
         <div id="collapseScore" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=dataMateriSafety">Data Score Safety</a>
-            <a class="collapse-item" href="index.php?module=dataMateriQuality">Data Score Quality</a>
-            <a class="collapse-item" href="index.php?module=dataMateriGeneralHrd">Data Score General HRD</a>
-            <a class="collapse-item" href="index.php?module=dataMateriTechnical">Data Score Technical</a>
+            <a class="collapse-item" href="index.php?module=dataScoreSafety">Data Score Safety</a>
+            <a class="collapse-item" href="index.php?module=dataScoreQuality">Data Score Quality</a>
+            <a class="collapse-item" href="index.php?module=dataScoreGeneralHrd">Data Score General HRD</a>
+            <a class="collapse-item" href="index.php?module=dataScoreTechnical">Data Score Technical</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -508,6 +508,30 @@ switch ($level) {
                     break;
                   case "dataMateriTechnical":
                     include "admin/materiTraining/dataMateriTechnical.php";
+                    break;
+                  case "dataScoreSafety":
+                    include "admin/dataScore/dataScoreSafety.php";
+                    break;
+                  case "dataScoreQuality":
+                    include "admin/dataScore/dataScoreQuality.php";
+                    break;
+                  case "dataScoreGeneralHrd":
+                    include "admin/dataScore/dataScoreGeneralHrd.php";
+                    break;
+                  case "dataScoreTechnical":
+                    include "admin/dataScore/dataScoreTechnical.php";
+                    break;
+                  case "dataScoreSafetyDetail":
+                    include "admin/dataScoreDetail/dataScoreSafetyDetail.php";
+                    break;
+                  case "dataScoreQualityDetail":
+                    include "admin/dataScoreDetail/dataScoreQualityDetail.php";
+                    break;
+                  case "dataScoreGeneralHrdDetail":
+                    include "admin/dataScoreDetail/dataScoreGeneralHrdDetail.php";
+                    break;
+                  case "dataScoreTechnicalDetail":
+                    include "admin/dataScoreDetail/dataScoreTechnicalDetail.php";
                     break;
                   default:
                     include "404.php";

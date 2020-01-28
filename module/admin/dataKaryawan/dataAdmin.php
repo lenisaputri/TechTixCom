@@ -17,14 +17,11 @@
                 </li>
             </ol>
         </nav>
-
-        <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Tambah Data Admin</h6>
             </div>
             <div class="card-body">
-                <!-- FORM MENAMBAH DATA -->
                 <form class="user" action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=tambah" id="formDataAdminAdmin" method="POST" enctype="multipart/form-data">
                     <div class = "row">
                         <div class="col-sm-6">
@@ -64,195 +61,178 @@
                                         <input id='buttonid2' type='button' value='Load Gambar'class="btn btn-loading btn-primary tmbl-loading ml-2"  />
                                     </div>
                                     <div class="col-sm-3"></div>
-                                <div class="col-sm-9">
-                                    <div id="fileidAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div class="col-sm-9">
+                                        <div id="fileidAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nik" style="font-weight: bold">NIK</label>
+                                    <input type="text" class="form-control form-control-user" placeholder="NIK ADMIN" id="nikAdminAdmin" name="nikAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="nikAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nama" style="font-weight: bold">NAMA LENGKAP</label>
+                                    <input type="text" class="form-control form-control-user" placeholder="NAMA ADMIN" id="namaAdminAdmin" name="namaAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="namaAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">JENIS KELAMIN</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input form-control-user" type="radio" name="jkAdminAdmin" id="jkAdminAdmin1" value="Laki-Laki">
+                                        <label class="form-check-label" for="jkAdminAdmin1">Laki-Laki</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="jkAdminAdmin" id="jkAdminAdmin2" value="Perempuan">
+                                        <label class="form-check-label" for="jkAdminAdmin2">Perempuan</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12 mb-3 mb-sm-0">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">JABATAN</label>
+                                    <?php
+                                        $resultJabatan = tampilJabatan($con);
+                                    ?>
+                                    <select class="custom-select-karyawan my-1 mr-sm-2" name="jabatanAdminAdmin">  <!-- tampilannya belum -->
+                                        <?php
+                                            if(mysqli_num_rows($resultJabatan) > 0){
+                                                while($row = mysqli_fetch_assoc($resultJabatan)){
+                                                    echo "<option value='".$row['id_jabatan']."'>".$row['nama']."</option>";
+                                                }
+                                            }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nik" style="font-weight: bold">NIK</label>
-                                <input type="text" class="form-control form-control-user" placeholder="NIK ADMIN" id="nikAdminAdmin" name="nikAdminAdmin" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="nikAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12 mb-3 mb-sm-0">
+                            <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataAdmin" onclick="ValidasiTambahAdmin(); preventDefaultActionAdmin(event);">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                                <span class="text">Tambah Data</span>
+                            </button>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nama" style="font-weight: bold">NAMA LENGKAP</label>
-                                <input type="text" class="form-control form-control-user" placeholder="NAMA ADMIN" id="namaAdminAdmin" name="namaAdminAdmin" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="namaAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">JENIS KELAMIN</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input form-control-user" type="radio" name="jkAdminAdmin" id="jkAdminAdmin1" value="Laki-Laki">
-                                    <label class="form-check-label" for="jkAdminAdmin1">Laki-Laki</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="jkAdminAdmin" id="jkAdminAdmin2" value="Perempuan">
-                                    <label class="form-check-label" for="jkAdminAdmin2">Perempuan</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">JABATAN</label>
-                                <?php
-                                    $resultJabatan = tampilJabatan($con);
-                                ?>
-                                <select class="custom-select-karyawan my-1 mr-sm-2" name="jabatanAdminAdmin">  <!-- tampilannya belum -->
-                                    <?php
-                                        if(mysqli_num_rows($resultJabatan) > 0){
-                                            while($row = mysqli_fetch_assoc($resultJabatan)){
-                                                echo "<option value='".$row['id_jabatan']."'>".$row['nama']."</option>";
-                                            }
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Data Admin</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr class="text-center">
+                                <th>No</th>
+                                <th>Username</th>
+                                <th>Password</th>
+                                <th>Gambar</th>
+                                <th>NIK</th>
+                                <th>Nama Lengkap</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Jabatan</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                            $queryTampilData = "SELECT ta.*, ta.nama AS nama_lengkap ,tj.*, tj.nama AS nama_jabatan, tu.* FROM tabel_admin ta,tabel_jabatan tj,tabel_user tu WHERE ta.id_jabatan = tj.id_jabatan
+                                AND ta.id_user = tu.id_user;
+                                ";
+                        
+                            $resultTampilData = mysqli_query($con, $queryTampilData);
+                            $index = 1;
+
+                            if(mysqli_num_rows($resultTampilData) > 0){
+                                while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
+                        ?>
+                            <tr class="text-center" id-admin="<?php echo $rowTampilData["id_admin"] ?>">
+                                <td ><?php echo $index; ?></td>
+                                <td class="usernameAdmin"><?php echo $rowTampilData["username"]; ?></td>
+                                <td class="passwordAdmin">**********</td>
+                                <td class="fotoAdmin"><img src="../attachment/img/<?php echo ($rowTampilData['foto'] == null)? 'avatar.jpeg' : $rowTampilData['foto'] ; ?>" style="width:50px;height:50px;border-radius:50%;"></td>
+                                <td class="nikAdmin"><?php echo $rowTampilData["nik"]; ?></td>
+                                <td class="namaAdmin"><?php echo $rowTampilData["nama_lengkap"]; ?></td>
+                                <td class="jkAdmin"><?php echo $rowTampilData["jenis_kelamin"]; ?></td>
+                                <td class="jabatanAdmin"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
+                                <td>
+                                    <button type="button" class="btn btn-primary edit-dataAdmin-admin" data-toggle="modal" data-target="#editDataAdminModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_adminEdit="<?php echo $rowTampilData["id_admin"];?>">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-danger hapus-dataAdmin-admin" data-toggle="modal" data-target="#hapusDataAdminModal" id_user="<?php echo $rowTampilData["id_user"];?>" id_admin="<?php echo $rowTampilData["id_admin"];?>">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        <?php 
+                            $index++;
+                            }
+                        ?>
+                        <?php
+                            }   else{
+                        ?>
+                        <?php
+                            }
+                        ?>
+                        </tbody>
+                    </table>
                     </div>
                 </div>
-
-                <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                    <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataAdmin" onclick="ValidasiTambahAdmin(); preventDefaultActionAdmin(event);">
-                                        <span class="icon text-white-50">
-                                        <i class="fas fa-plus"></i>
-                                        </span>
-                                        <span class="text">Tambah Data</span>
-                                    </button>
-                            </div>
-                        </div>
-                <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
-            </form>
-            <!-- PROSES FORM MENAMBAH DATA SELESAI -->
-        </div>
-    </div>
-    <!-- MENAMPILKAN DATA -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Admin</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr class="text-center">
-                            <th>No</th>
-                            <th>Username</th>
-                            <th>Password</th>
-                            <th>Gambar</th>
-                            <th>NIK</th>
-                            <th>Nama Lengkap</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Jabatan</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                        $queryTampilData = "SELECT ta.*, ta.nama AS nama_lengkap ,tj.*, tj.nama AS nama_jabatan, tu.* FROM tabel_admin ta,tabel_jabatan tj,tabel_user tu WHERE ta.id_jabatan = tj.id_jabatan
-                            AND ta.id_user = tu.id_user;
-                            ";
-                        
-                        $resultTampilData = mysqli_query($con, $queryTampilData);
-                        $index = 1;
-
-                        if(mysqli_num_rows($resultTampilData) > 0){
-                            while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                    ?>
-                        <tr class="text-center" id-admin="<?php echo $rowTampilData["id_admin"] ?>">
-                            <td ><?php echo $index; ?></td>
-                            <td class="usernameAdmin"><?php echo $rowTampilData["username"]; ?></td>
-                            <td class="passwordAdmin">**********</td>
-                            <td class="fotoAdmin"><img src="../attachment/img/<?php echo ($rowTampilData['foto'] == null)? 'avatar.jpeg' : $rowTampilData['foto'] ; ?>" style="width:50px;height:50px;border-radius:50%;"></td>
-                            <td class="nikAdmin"><?php echo $rowTampilData["nik"]; ?></td>
-                            <td class="namaAdmin"><?php echo $rowTampilData["nama_lengkap"]; ?></td>
-                            <td class="jkAdmin"><?php echo $rowTampilData["jenis_kelamin"]; ?></td>
-                            <td class="jabatanAdmin"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
-                            <td>
-                                <button type="button" class="btn btn-primary edit-dataAdmin-admin" data-toggle="modal" data-target="#editDataAdminModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_adminEdit="<?php echo $rowTampilData["id_admin"];?>">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger hapus-dataAdmin-admin" data-toggle="modal" data-target="#hapusDataAdminModal" id_user="<?php echo $rowTampilData["id_user"];?>" id_admin="<?php echo $rowTampilData["id_admin"];?>">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    <?php 
-                        $index++;
-                        }
-                    ?>
-                    <?php
-                    }   else{
-                    ?>
-                        <!-- <div>
-                            <p>Data Admin tidak tersedia</p>
-                        </div> -->
-                    <?php
-                    }
-                    ?>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
-</div>
-<!-- MENAMPILKAN DATA SELESAI-->
-</div>
-<!-- /.container-fluid -->
-
-<!-- Modal Edit Jabatan-->
-<div class="modal fade" id="editDataAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-header d-flex justify-content-center bg-admin border-0">
-          <h5 class="modal-title text-white w-100 text-center">Edit Data Admin</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=edit" id="formEditDataAdminAdmin" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="id_user" id="id_userUpdate" >
-                <input type="hidden" name="id_admin" id="id_adminUpdate" >
-                <div class="container-fluid" id="edit-dataAdmin">
-
+    <div class="modal fade" id="editDataAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center bg-admin border-0">
+                        <h5 class="modal-title text-white w-100 text-center">Edit Data Admin</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </form>
+                <div class="modal-body">
+                    <form action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=edit" id="formEditDataAdminAdmin" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="id_user" id="id_userUpdate" >
+                        <input type="hidden" name="id_admin" id="id_adminUpdate" >
+                        <div class="container-fluid" id="edit-dataAdmin"></div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!-- End Modal Edit Jabatan -->
-
-    <!-- Modal Hapus Jabatan-->
     <div class="modal fade" id="hapusDataAdminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-            <form action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=hapus" method="post">
-                <div class="modal-body pt-5 text-center">
-                <input type="hidden" name="id_user" id="id_userHapus" >
-                <input type="hidden" name="id_admin" id="id_adminHapus" >
-                    <strong>Apakah Anda yakin?</strong>
-                </div>
-                <div class="pb-4 pt-4 d-flex justify-content-around">
-                    <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
-                    <button type="submit" name="hapusDataAdmin" class="btn btn-success btn-ok">Ya</button>
-                </div>
-            </form>
+                <form action="../process/proses_adminDataAdmin.php?module=dataAdmin&act=hapus" method="post">
+                    <div class="modal-body pt-5 text-center">
+                        <input type="hidden" name="id_user" id="id_userHapus" >
+                        <input type="hidden" name="id_admin" id="id_adminHapus" >
+                            <strong>Apakah Anda yakin?</strong>
+                    </div>
+                    <div class="pb-4 pt-4 d-flex justify-content-around">
+                        <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
+                        <button type="submit" name="hapusDataAdmin" class="btn btn-success btn-ok">Ya</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-    <!-- End Modal Hapus Jabatan -->
 
 </body>

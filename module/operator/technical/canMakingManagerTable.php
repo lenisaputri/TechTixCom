@@ -1,11 +1,11 @@
 <?php
 include "../config/connection.php";
 ?>
-         <!-- Begin Page Content -->
-          <div class="container-fluid" id="generalHrd">
+<!-- Begin Page Content -->
+<div class="container-fluid" id="technical">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Score Training General HRD</h1>
+<h1 class="h3 mb-2 text-gray-800">Score Online Training Technical Can Making Manager</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">

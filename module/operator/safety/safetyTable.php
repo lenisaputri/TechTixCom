@@ -1,8 +1,8 @@
 <?php
 include "../config/connection.php";
 ?>
-         <!-- Begin Page Content -->
-          <div class="container-fluid" id="safety">
+<!-- Begin Page Content -->
+<div class="container-fluid" id="safety">
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Score Training Safety</h1>
@@ -18,11 +18,10 @@ include "../config/connection.php";
         <thead>
           <tr>
             <th>No.</th>
-            <th>Nama</th>
-            <th>Total Benar</th>
-            <th>Total Salah</th>
-            <th>Total Semua</th>
-            <th>Tanggal Training</th>
+            <th>NIK</th>
+            <th>Total Nilai</th>
+            <th>Tanggal Mulai</th>
+            <th>Detail</th>
           </tr>
         </thead>
         <tbody>
@@ -31,22 +30,17 @@ include "../config/connection.php";
             <td>System Architect</td>
             <td>Edinburgh</td>
             <td>61</td>
-            <td>2011/04/25</td>
-            <td>$320,800</td>
           </tr>
           <tr>
             <td>Garrett Winters</td>
             <td>Accountant</td>
             <td>Tokyo</td>
             <td>63</td>
-            <td>2011/07/25</td>
-            <td>$170,750</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-
 </div>
 <!-- /.container-fluid -->

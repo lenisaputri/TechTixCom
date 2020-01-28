@@ -175,7 +175,7 @@ switch ($level) {
       
       <!-- Nav Item - Technical(Sub Isi Menu)-->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.php?module=technical" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-cogs"></i>
           <span>Score Technical</span>
         </a>
@@ -183,55 +183,55 @@ switch ($level) {
             <a href="#sub-menu1" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu1">Body Welder Operator<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu1">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
+              <a href="index.php?module=bodyWelderTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
             <a href="#sub-menu2" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu2">Can O Mat Operator<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu2">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
+              <a href="index.php?module=canOmatTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
             <a href="#sub-menu3" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu3">End O Mat Operator<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu3">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
+              <a href="index.php?module=endOmatTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
             <a href="#sub-menu4" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu4">Palleteizer Operator<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu4">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
+              <a href="index.php?module=palleteizerTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
             <a href="#sub-menu5" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu5">Area Engineer Technician<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu5">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
+              <a href="index.php?module=technicianTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
             <a href="#sub-menu6" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu6">Admin SAP<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu6">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
+              <a href="index.php?module=adminSapTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
             <a href="#sub-menu7" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu7">Production SPV<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu7">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
+              <a href="index.php?module=productionSpvTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
             <a href="#sub-menu8" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu8">Area Engineer SPV<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu8">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
+              <a href="index.php?module=engineerSpvTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
             <a href="#sub-menu9" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu9">Can Making Manager<span class="caret"></span></a>
             <div class="collapse list-group" id="sub-menu9">
               <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Online Training</a>
+              <a href="index.php?module=canMakingManagerTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
               <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
             </div>
         </div>
@@ -423,6 +423,33 @@ switch ($level) {
                     break;
                   case "technical":
                     include "operator/technical.php";
+                    break;
+                  case "technical":
+                    include "operator/technical/adminSapTable.php";
+                    break;
+                  case "technical":
+                    include "operator/technical/bodyWelderTable.php";
+                    break;
+                  case "technical":
+                    include "operator/technical/canMakingManagerTable.php";
+                    break;
+                  case "technical":
+                    include "operator/technical/canOmatTable.php";
+                    break;
+                  case "technical":
+                    include "operator/technical/endOmatTable.php";
+                    break;
+                  case "technical":
+                    include "operator/technical/engineerSpvTable.php";
+                    break;
+                  case "technical":
+                    include "operator/technical/palleteizerTable.php";
+                    break;
+                  case "technical":
+                    include "operator/technical/productionSpvTable.php";
+                    break;
+                  case "technical":
+                    include "operator/technical/technicianTable.php";
                     break;
                   case "materiSafety":
                     include "operator/materiOperator/materiSafety.php";

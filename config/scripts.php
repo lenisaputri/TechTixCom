@@ -38,5 +38,6 @@
   <script src="../js/proses_dataMateriGeneralHrdAdmin.js"></script>
   <script src="../js/proses_dataMateriTechnicalAdmin.js"></script>
 
+  <script src="../js/proses_dataScoreSafety.js"></script>
 
   <script src="../js/materiOperator.js"></script>

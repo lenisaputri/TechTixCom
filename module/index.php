@@ -560,6 +560,12 @@ switch ($level) {
                   case "dataScoreTechnicalDetail":
                     include "admin/dataScoreDetail/dataScoreTechnicalDetail.php";
                     break;
+                  case "dataMateriSafetyLink":
+                    include "admin/materiTraining/dataMateriSafetyLink.php";
+                    break;
+                  case "dataScoreSafetyImport":
+                    include "admin/dataScore/dataScoreSafetyImport.php";
+                    break;
                   default:
                     include "404.php";
                 }

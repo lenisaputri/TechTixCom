@@ -3,9 +3,8 @@
   include "../process/proses_adminDataSupervisor.php";
 ?>
 <body onload="setupSupervisor2();">
-<!-- Begin Page Content -->
-<div class="container-fluid" id="dataKaryawan" onload="setupSupervisor2();">
-<nav aria-label="breadcrumb" class="shadow">
+    <div class="container-fluid" id="dataKaryawan" onload="setupSupervisor2();">
+        <nav aria-label="breadcrumb" class="shadow">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
@@ -23,7 +22,6 @@
             <h6 class="m-0 font-weight-bold text-primary">Tambah Data Supervisor</h6>
         </div>
         <div class="card-body">
-            <!-- FORM MENAMBAH DATA -->
             <form class="user" action="../process/proses_adminDataSupervisor.php?module=dataSupervisor&act=tambah" id="formDataSupervisorAdmin" method="POST" enctype="multipart/form-data">
                 <div class = "row">
                     <div class="col-sm-6">
@@ -119,22 +117,19 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group row">
-                            <div class="col-sm-12 mb-3 mb-sm-0">
-                                    <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataSupervisor" onclick="ValidasiTambahSupervisor(); preventDefaultActionSupervisor(event);">
-                                        <span class="icon text-white-50">
-                                        <i class="fas fa-plus"></i>
-                                        </span>
-                                        <span class="text">Tambah Data</span>
-                                    </a>
-                                </div>
-                        </div>
+                    <div class="col-sm-12 mb-3 mb-sm-0">
+                        <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataSupervisor" onclick="ValidasiTambahSupervisor(); preventDefaultActionSupervisor(event);">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                            <span class="text">Tambah Data</span>
+                        </button>
+                    </div>
+                </div>
             </form>
-            <!-- PROSES FORM MENAMBAH DATA SELESAI -->
         </div>
     </div>
-    <!-- MENAMPILKAN DATA -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Data Supervisor</h6>
@@ -190,49 +185,35 @@
                         }
                     ?>
                     <?php
-                    }   else{
+                        }   else{
                     ?>
-                        <!-- <div>
-                            <p>Data Operator tidak tersedia</p>
-                        </div> -->
                     <?php
-                    }
+                        }
                     ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-</div>
-<!-- MENAMPILKAN DATA SELESAI-->
-</div>
-<!-- /.container-fluid -->
-
-<!-- Modal Edit Jabatan-->
-<div class="modal fade" id="editDataSupervisorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-header d-flex justify-content-center bg-supervisor border-0">
-          <h5 class="modal-title text-white w-100 text-center">Edit Data Supervisor</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form action="../process/proses_adminDataSupervisor.php?module=dataSupervisor&act=edit" id="formEditDataSupervisorAdmin" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="id_user" id="id_userUpdate" >
-                <input type="hidden" name="id_supervisor" id="id_supervisorUpdate" >
-                <div class="container-fluid" id="edit-dataSupervisor">
-
+    <div class="modal fade" id="editDataSupervisorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center bg-supervisor border-0">
+                    <h5 class="modal-title text-white w-100 text-center">Edit Data Supervisor</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </form>
+                <div class="modal-body">
+                    <form action="../process/proses_adminDataSupervisor.php?module=dataSupervisor&act=edit" id="formEditDataSupervisorAdmin" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="id_user" id="id_userUpdate" >
+                        <input type="hidden" name="id_supervisor" id="id_supervisorUpdate" >
+                        <div class="container-fluid" id="edit-dataSupervisor"></div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
- <!-- End Modal Edit Jabatan -->
-
-<!-- Modal Hapus Jabatan-->
      <div class="modal fade" id="hapusDataSupervisorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">

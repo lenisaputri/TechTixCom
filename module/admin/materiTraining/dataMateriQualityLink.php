@@ -5,80 +5,75 @@
 <body>
 <!-- Begin Page Content -->
 <div class="container-fluid" id="dataMateri">
-<nav aria-label="breadcrumb" class="shadow">
+    <nav aria-label="breadcrumb" class="shadow">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
                         <span>Beranda</span>
                     </a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-fw fa-file"></i>
-                    <span>Materi Quality</span>
+                <li class="breadcrumb-item">
+                    <a href="index.php?module=dataMateriQuality"><i class="fas fa-fw fa-file"></i>
+                        <span>Materi Quality</span>
+                    </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-fw fa-file"></i>
+                    <i class="fas fa-fw fa-link"></i>
                     <span>Materi Quality Link</span>
                 </li>
             </ol>
         </nav>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Quality Link</h6>
-        </div>
-        <div class="card-body">
-            <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="../process/proses_adminDataMateriQuality.php?module=dataMateriQuality&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Quality</h6>
+            </div>
+            <div class="card-body">
+                <!-- FORM MENAMBAH DATA -->
+                <form class="user" action="../process/proses_adminDataMateriQualityLink.php?module=dataMateriQualityLink&act=tambah" id="formDataMateriAdmin" method="POST">
                 <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control border-0" id="linkMateri" name="linkMateri" placeholder="Link Materi ..." style="width=100%">
+                            <input type="text" class="form-control border-0" id="linkMateriLink" name="linkMateri" placeholder="Link Materi ..." style="width=100%">
                             <div class="col-sm-6">
-                                <div id="linkMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="linkMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
-                        </div>
+                        
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="judulMateri" name="judulMateri" placeholder="Judul Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="judulMateriLink" name="judulMateriLink" placeholder="Judul Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="judulMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                    <input type="text" class="form-control border-0" id="kategoriMateri" name="kategoriMateri" placeholder="Kategori Materi ..." style="width=100%" required>
-                    <div class="col-sm-12">
-                        <div id="kategoriMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        <input type="text" class="form-control border-0" id="kategoriMateriLink" name="kategoriMateriLink" placeholder="Kategori Materi ..." style="width=100%" required>
+                        <div class="col-sm-12">
+                            <div id="kategoriMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <div class="form-group">
-                    <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
-                    <div class="col-sm-12">
-                        <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                    <hr>
+                    <div class="form-group">
+                        <textarea id="keteranganMateriLink" name="keteranganMateriLink" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
+                        <div class="col-sm-12">
+                            <div id="keteranganMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <div class="form-group">
-                    <div class="row d-flex justify-content-end">
-                    <label for="file-input">
-                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                    <hr>
+                    <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriLink" onclick="ValidasiTambahDataMateri();">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>
                                 <span class="text">Tambah Data Link</span>
                             </button>
-                        
                     </div>
-                </div>
-                <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
-            </form>
-            <!-- PROSES FORM MENAMBAH DATA SELESAI -->
+                    <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
+                </form>
+                <!-- PROSES FORM MENAMBAH DATA SELESAI -->
+            </div>
         </div>
-    </div>
-    <!-- MENAMPILKAN DATA -->
-    <div class="card shadow mb-4">
+        <!-- MENAMPILKAN DATA -->
+        <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Data Materi Quality Link</h6>
         </div>
@@ -110,10 +105,10 @@
                             <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
                             <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
                             <td>
-                                <button type="button" class="btn btn-primary edit-dataMateriQuality-admin" data-toggle="modal" data-target="#editDataMateriQualityModal" id_materiQualityEdit="<?php echo $rowTampilData["id_materi_quality"];?>">
+                                <button type="button" class="btn btn-primary edit-dataMateriQualityLink-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriQualityLinkModal" id_materiQualityLinkEdit="<?php echo $rowTampilData["id_materi_quality"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger hapus-dataMateriQuality-admin" data-toggle="modal" data-target="#hapusDataMateriQualityModal" id_materi_quality="<?php echo $rowTampilData["id_materi_quality"];?>">
+                                <button type="button" class="btn btn-danger hapus-dataMateriQualityLink-admin" data-toggle="modal" data-target="#hapusDataMateriQualityLinkModal" id_materi_quality="<?php echo $rowTampilData["id_materi_quality"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
@@ -142,19 +137,19 @@
 <!-- /.container-fluid -->
 
 <!-- Modal Edit Jabatan-->
-<div class="modal fade" id="editDataMateriQualityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editDataMateriQualityLinkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
-        <div class="modal-header d-flex justify-content-center bg-materiQuality border-0">
+        <div class="modal-header d-flex justify-content-center bg-materiQualityLink border-0">
           <h5 class="modal-title text-white w-100 text-center">Edit Data Materi Quality</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <form action="../process/proses_adminDataMateriQuality.php?module=dataMateriQuality&act=edit" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="id_materi_quality" id="id_materiQualityUpdate" >
-                <div class="container-fluid" id="edit-dataMateriQuality">
+            <form action="../process/proses_adminDataMateriQualityLink.php?module=dataMateriQualityLink&act=edit" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id_materi_quality" id="id_materiQualityLinkUpdate" >
+                <div class="container-fluid" id="edit-dataMateriQualityLink">
 
                 </div>
             </form>
@@ -165,18 +160,18 @@
  <!-- End Modal Edit Jabatan -->
 
     <!-- Modal Hapus Jabatan-->
-    <div class="modal fade" id="hapusDataMateriQualityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="hapusDataMateriQualityLinkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <form action="../process/proses_adminDataMateriQuality.php?module=dataMateriQuality&act=hapus" method="post">
+          <form action="../process/proses_adminDataMateriQualityLink.php?module=dataMateriQualityLink&act=hapus" method="post">
             <div class="modal-body pt-5 text-center">
-            <input type="hidden" name="id_materi_quality" id="id_materiQualityHapus" >
+            <input type="hidden" name="id_materi_quality" id="id_materiQualityLinkHapus" >
               <strong>Apakah Anda yakin?</strong>
             </div>
             <div class="pb-4 pt-4 d-flex justify-content-around">
               <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
-              <button type="submit" name="hapusDataMateriQuality" class="btn btn-success btn-ok">Ya</button>
+              <button type="submit" name="hapusDataMateriQualityLink" class="btn btn-success btn-ok">Ya</button>
             </div>
           </form>
         </div>

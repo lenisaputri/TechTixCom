@@ -566,6 +566,9 @@ switch ($level) {
                   case "dataMateriQualityLink":
                     include "admin/materiTraining/dataMateriQualityLink.php";
                     break;
+                  case "dataMateriGeneralHrdLink":
+                    include "admin/materiTraining/dataMateriGeneralHrdLink.php";
+                    break;
                   case "dataScoreSafetyImport":
                     include "admin/dataScore/dataScoreSafetyImport.php";
                     break;

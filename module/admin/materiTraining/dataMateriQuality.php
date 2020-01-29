@@ -26,13 +26,9 @@
             <!-- FORM MENAMBAH DATA -->
             <form class="user" action="../process/proses_adminDataMateriQuality.php?module=dataMateriQuality&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <div class="row">
-                    <div class="col-sm-5">
-                        <input type="file" class="form-control border-0" id="inputGroupFile02" name="fileMateri">
-                        <div class="col-sm-6">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                        </div>
-                    </div>
+                <input type="file" class="form-control border-0" id="inputGroupFile02" name="fileMateri">
+                <div class="col-sm-6">
+                <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                 </div>
                 </div> 
                 <hr>
@@ -51,38 +47,29 @@
                 </div>
                 <hr>
                 <div class="form-group">
-                    <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
-                    <div class="col-sm-12">
-                        <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                    </div>
+                <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+                </span>
+                <span class="text">Tambah Data</span>
+                </button>
                 </div>
-                <hr>
-                <div class="form-group">
+            <div class="form-group">
                     <div class="row d-flex justify-content-end">
-                    <label for="file-input">
-                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Tambah Data</span>
-                            </button>
-                            <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateriLink" onclick="location.href='index.php?module=dataMateriQualityLink';">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
-                            </span>
-                            <span class="text">Tambah Data Link</span>
-                        </button>
-                    </div>
+                        <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateriLink" onclick="location.href='index.php?module=dataMateriQualityLink';">
+                        <span class="text">Tambah Data Link</span>
+                    </button>
                 </div>
-                <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
-            </form>
+            </div>
+            <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
+        </form>
             <!-- PROSES FORM MENAMBAH DATA SELESAI -->
         </div>
     </div>
     <!-- MENAMPILKAN DATA -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Materi Quality</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data Materi General HRD</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -98,8 +85,7 @@
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT * FROM tabel_materi_qualityWHERE tipe LIKE '%file%';";
-                        
+                        $queryTampilData = "SELECT * FROM tabel_materi_quality WHERE tipe LIKE '%file%';";
                         $resultTampilData = mysqli_query($con, $queryTampilData);
                         $index = 1;
 

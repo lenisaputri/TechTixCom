@@ -26,11 +26,10 @@
             <!-- FORM MENAMBAH DATA -->
             <form class="user" action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                   
-                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
-                        <div class="col-sm-6">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                        </div>
+                <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
+                <div class="col-sm-6">
+                <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                </div>
                 </div> 
                 <hr>
                 <div class="form-group">
@@ -55,13 +54,13 @@
                 </div>
                 <hr>
                 <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Tambah Data</span>
-                        </button>
-            </div>
+                <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                <span class="icon text-white-50">
+                <i class="fas fa-plus"></i>
+                </span>
+                <span class="text">Tambah Data</span>
+                </button>
+                </div>
             <div class="form-group">
                     <div class="row d-flex justify-content-end">
                         <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateriLink" onclick="location.href='index.php?module=dataMateriSafetyLink';">

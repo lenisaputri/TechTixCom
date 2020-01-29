@@ -68,6 +68,7 @@
             </div>
         </div>
         <div class="card shadow mb-4">
+<<<<<<< HEAD
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Data Materi General HRD Link</h6>
             </div>
@@ -89,6 +90,29 @@
                                 
                                 $resultTampilData = mysqli_query($con, $queryTampilData);
                                 $index = 1;
+=======
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Data Materi General Hrd Link</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr class="text-center">
+                            <th>No</th>
+                            <th>Kategori Materi</th>
+                            <th>Judul</th>
+                            <th>File</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        $queryTampilData = "SELECT * FROM tabel_materi_generalhrd WHERE tipe LIKE '%link%';";
+                        
+                        $resultTampilData = mysqli_query($con, $queryTampilData);
+                        $index = 1;
+>>>>>>> 651fd1ff8ca6884ae9597a6916d17f7f4c1987ce
 
                                 if(mysqli_num_rows($resultTampilData) > 0){
                                     while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
@@ -123,6 +147,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="modal fade" id="editDataMateriGeneralHrdyLinkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
@@ -137,6 +162,28 @@
                         <input type="hidden" name="id_materi_generalhrd" id="id_materiGeneralHrdLinkUpdate" >
                         <div class="container-fluid" id="edit-dataMateriGeneralHrdLink"></div>
                     </form>
+=======
+</div>
+<!-- MENAMPILKAN DATA SELESAI-->
+</div>
+<!-- /.container-fluid -->
+
+<!-- Modal Edit Jabatan-->
+<div class="modal fade" id="editDataMateriGeneralHrdLinkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-materiGeneralHrdLink border-0">
+          <h5 class="modal-title text-white w-100 text-center">Edit Data Materi General HRD</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="../process/proses_adminDataMateriGeneralHrdLink.php?module=dataMateriGeneralHrdLink&act=edit" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id_materi_generalhrd" id="id_materiGeneralHrdLinkUpdate" >
+                <div class="container-fluid" id="edit-dataMateriGeneralHrdLink">
+
+>>>>>>> 651fd1ff8ca6884ae9597a6916d17f7f4c1987ce
                 </div>
             </div>
         </div>

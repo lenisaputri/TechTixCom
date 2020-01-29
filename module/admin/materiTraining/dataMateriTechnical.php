@@ -3,14 +3,8 @@
   include "../process/proses_adminDataMateriTechnical.php";
 ?>
 <body>
-<<<<<<< HEAD
     <div class="container-fluid" id="dataMateri">
         <nav aria-label="breadcrumb" class="shadow">
-=======
-<!-- Begin Page Content -->
-<div class="container-fluid" id="dataMateri">
-    <nav aria-label="breadcrumb" class="shadow">
->>>>>>> 651fd1ff8ca6884ae9597a6916d17f7f4c1987ce
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
@@ -23,7 +17,6 @@
                 </li>
             </ol>
         </nav>
-<<<<<<< HEAD
         <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Technical</h6>
@@ -55,26 +48,6 @@
                         <div class="col-sm-12">
                             <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
-=======
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Technical</h6>
-        </div>
-        <div class="card-body">
-            <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="../process/proses_adminDataMateriTechnical.php?module=dataMateriTechnical&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
-                <div class="col-sm-6">
-                <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                </div>
-                </div> 
-                <hr>
-                <div class="form-group">
-                    <input type="text" class="form-control border-0" id="judulMateri" name="judulMateri" placeholder="Judul Materi ..." style="width=100%" required>
-                    <div class="col-sm-12">
-                        <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
->>>>>>> 651fd1ff8ca6884ae9597a6916d17f7f4c1987ce
                     </div>
                     <hr>
                     <div class="form-group">
@@ -90,7 +63,6 @@
                             <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
-<<<<<<< HEAD
                     <hr>
                     <div class="form-group">
                         <div class="row d-flex justify-content-end">
@@ -160,85 +132,6 @@
                         </tbody>
                     </table>
                 </div>
-=======
-                </div>
-                <hr>
-                <div class="form-group">
-                <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
-                <span class="icon text-white-50">
-                <i class="fas fa-plus"></i>
-                </span>
-                <span class="text">Tambah Data</span>
-                </button>
-                </div>
-            <div class="form-group">
-                    <div class="row d-flex justify-content-end">
-                        <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateriLink" onclick="location.href='index.php?module=dataMateriTechnicalLink';">
-                        <span class="text">Tambah Data Link</span>
-                    </button>
-                </div>
-            </div>
-            <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
-        </form>
-        <!-- PROSES FORM MENAMBAH DATA SELESAI -->
-    </div>
-</div>
-<!-- MENAMPILKAN DATA -->
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Materi Technical</h6>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr class="text-center">
-                        <th>No</th>
-                        <th>Kategori Materi</th>
-                        <th>Judul</th>
-                        <th>File</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    $queryTampilData = "SELECT * FROM tabel_materi_technical WHERE tipe LIKE '%file%';";
-                    $resultTampilData = mysqli_query($con, $queryTampilData);
-                    $index = 1;
-                    if(mysqli_num_rows($resultTampilData) > 0){
-                        while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                            ?>
-                            <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_technical"] ?>">
-                            <td ><?php echo $index; ?></td>
-                            <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
-                            <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
-                            <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
-                            <td>
-                                <button type="button" class="btn btn-primary edit-dataMateriTechnical-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriTechnicalModal" id_materiTechnicalEdit="<?php echo $rowTampilData["id_materi_technical"];?>">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <br>
-                                <button type="button" class="btn btn-danger hapus-dataMateriTechnical-admin" data-toggle="modal" data-target="#hapusDataMateriTechnicalModal" id_materi_technical="<?php echo $rowTampilData["id_materi_technical"];?>">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    <?php 
-                        $index++;
-                        }
-                    ?>
-                    <?php
-                    }   else{
-                    ?>
-                        <!-- <div>
-                            <p>Data Operator tidak tersedia</p>
-                        </div> -->
-                    <?php
-                    }
-                    ?>
-                    </tbody>
-                </table>
->>>>>>> 651fd1ff8ca6884ae9597a6916d17f7f4c1987ce
             </div>
         </div>
     </div>

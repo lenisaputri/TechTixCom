@@ -24,14 +24,14 @@
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="" method="POST">
+            <form class="user" action="../process/proses_adminDataScoreSafety.php?module=dataScoreSafety&act=tambah" method="POST">
                 <div class="form-group row">
                             <div class="col-sm-12">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">NIK OPERATOR</label>
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nikSafety" style="font-weight: bold">NIK OPERATOR</label>
                                 <?php
                                     $resultOperator = tampilOperator($con);
                                 ?>
-                               <select class="custom-select-karyawan my-1 mr-sm-2" name="jabatanOperatorAdmin">  <!-- tampilannya belum -->
+                               <select class="custom-select-karyawan my-1 mr-sm-2" name="nikSafety">  <!-- tampilannya belum -->
                                     <?php
                                         if(mysqli_num_rows($resultOperator) > 0){
                                             while($row = mysqli_fetch_assoc($resultOperator)){
@@ -44,27 +44,27 @@
                         </div>
                         <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL POIN</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL POIN" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="poinSafety" style="font-weight: bold">TOTAL POIN</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL POIN" id="poinSafety" name="poinSafety" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="poinSafetyBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                         <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nilaiSafety" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="nilaiSafety" name="nilaiSafety" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="nilaiSafetyBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                         <div class="form-group row">
                             <div class="col-sm-12">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TANGGAL ASSESMENT</label>
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateSafety" style="font-weight: bold">TANGGAL ASSESMENT</label>
                                 <div class="input-group date" id="datepickerTanggalTraining" data-provide="datepicker">
-                                    <input type="text" id="batasTanggal" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="batasTanggal">
+                                    <input type="text" id="dateSafety" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateSafety">
                                     <div class="input-group-addon">
                                         <span class="input-group-text form-control form-control-user">
                                             <i class='far fa-calendar-alt' aria-hidden="true"></i>
@@ -73,12 +73,12 @@
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="dateSafetyBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                         </div>
                         <hr>
                         <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                    <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreSafety">
                         <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                         </span>
@@ -115,15 +115,15 @@
                         <tr class="text-center">
                             <th>No</th>
                             <th>NIK</th>
-                            <th>Total Nilai</th>
                             <th>Total Poin</th>
+                            <th>Total Nilai</th>
                             <th>Tanggal Assessment</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT * FROM tabel_score_safety;
+                        $queryTampilData = "SELECT tss.*, tp.id_operator, tp.nik FROM tabel_score_safety tss, tabel_operator tp WHERE tss.id_operator = tp.id_operator;
                             ";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -134,18 +134,18 @@
                     ?>
                         <tr class="text-center" id-score-safety="<?php echo $rowTampilData["id_score_safety"] ?>">
                             <td ><?php echo $index; ?></td>
-                            <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
+                            <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
                             <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
                             <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                             <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                             <td> 
-                                <button type="button" class="btn btn-warning hapus-dataMateriSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataMateriSafetyModal" id_materi_safety="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                <button type="button" class="btn btn-warning info-dataScoreSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataScoreSafetyModal" id_scoreSafetyInfo="<?php echo $rowTampilData["id_score_safety"];?>">
                                     <i class="fas fa-info-circle"></i>
                                 </button>
-                                <button type="button" class="btn btn-primary edit-dataMateriSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataMateriSafetyModal" id_materiSafetyEdit="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                <button type="button" class="btn btn-primary edit-dataScoreSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreSafetyModal" id_scoreSafetyEdit="<?php echo $rowTampilData["id_score_safety"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger hapus-dataMateriSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataMateriSafetyModal" id_materi_safety="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                <button type="button" class="btn btn-danger hapus-dataScoreSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataMateriSafetyModal" id_score_safety="<?php echo $rowTampilData["id_score_safety"];?>" >
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
@@ -174,19 +174,19 @@
 <!-- /.container-fluid -->
 
 <!-- Modal Edit Jabatan-->
-<div class="modal fade" id="editDataMateriSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+<div class="modal fade" id="editDataScoreSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header d-flex justify-content-center bg-materiSafety border-0">
-          <h5 class="modal-title text-white w-100 text-center">Edit Data Materi Safety</h5>
+        <div class="modal-header d-flex justify-content-center bg-scoreSafety border-0">
+          <h5 class="modal-title text-white w-100 text-center">Edit Data Score Safety</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <form action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=edit" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="id_materi_safety" id="id_materiSafetyUpdate" >
-                <div class="container-fluid" id="edit-dataMateriSafety">
+            <form action="../process/proses_adminDataScoreSafety.php?module=dataScoreSafety&act=edit" method="POST">
+                <input type="hidden" name="id_score_safety" id="id_scoreSafetyUpdate" >
+                <div class="container-fluid" id="edit-dataScoreSafety">
 
                 </div>
             </form>
@@ -196,14 +196,14 @@
   </div>
  <!-- End Modal Edit Jabatan -->
 
-    <!-- Modal Hapus Jabatan-->
+    <!-- Modal HAPUS Jabatan-->
     <div class="modal fade" id="hapusDataMateriSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <form action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=hapus" method="post">
+          <form action="../process/proses_adminDataScoreSafety.php?module=dataScoreSafety&act=hapus" method="post">
             <div class="modal-body pt-5 text-center">
-            <input type="hidden" name="id_materi_safety" id="id_materiSafetyHapus" >
+            <input type="hidden" name="id_score_safety" id="id_scoreSafetyHapus" >
               <strong>Apakah Anda yakin?</strong>
             </div>
             <div class="pb-4 pt-4 d-flex justify-content-around">
@@ -215,4 +215,22 @@
       </div>
     </div>
     <!-- End Modal Hapus Jabatan -->
+
+    <div class="modal fade" id="infoDataScoreSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-scoreSafetyInfo border-0">
+          <h5 class="modal-title text-white w-100 text-center">Edit Data Score Safety</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                <div class="container-fluid" id="info-dataScoreSafety">
+
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>

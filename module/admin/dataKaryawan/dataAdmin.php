@@ -176,6 +176,7 @@
                                     <button type="button" class="btn btn-primary edit-dataAdmin-admin" data-toggle="modal" data-target="#editDataAdminModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_adminEdit="<?php echo $rowTampilData["id_admin"];?>">
                                         <i class="fas fa-edit"></i>
                                     </button>
+                                    <p></p>
                                     <button type="button" class="btn btn-danger hapus-dataAdmin-admin" data-toggle="modal" data-target="#hapusDataAdminModal" id_user="<?php echo $rowTampilData["id_user"];?>" id_admin="<?php echo $rowTampilData["id_admin"];?>">
                                         <i class="fas fa-trash"></i>
                                     </button>

@@ -424,7 +424,7 @@ switch ($level) {
                   case "technical":
                     include "operator/technical.php";
                     break;
-                  case "technical":
+                  case "adminSapTable":
                     include "operator/technical/adminSapTable.php";
                     break;
                   case "technical":

@@ -59,15 +59,17 @@
                                 <?php
                                     if($row["tipe"] == "file"){
                                     ?>
+                                        <img src="../img/pdf.jpg" height="150px" width="150px;" class="d-flex flex-column justify-content-center">
+                                        <p class="col-sm-12 d-flex flex-column justify-content-center" style="word-break: break-all;"><?= $row["file_materi"]?></p>
                                         <div class="form-group row">
-                                            <img src="../img/pdf.jpg" height="150px" width="150px;">
-                                            <p><?= $row["file_materi"]?></p>
-                                            <a type="button" class="btn btn-primary btn-icon-split" href="">
+                                            <div class="col-sm-12 d-flex flex-column justify-content-center">
+                                            <a class="btn btn-primary btn-icon-split" href="../process/proses_download_safety.php?file=<?=$row["file_materi"]?>">
                                                 <span class="icon text-white-50">
                                                     <i class="fas fa-fw fa-download"></i>
                                                 </span>
                                                 <span class="text">Download</span>
                                             </a>
+                                            </div>
                                         </div>
                                     <?php
                                     } else if($row["tipe"] == "link"){

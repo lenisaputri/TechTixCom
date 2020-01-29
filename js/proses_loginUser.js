@@ -29,7 +29,7 @@ function validateUsername(input) {
       document.getElementById("error-handling2").classList.remove("d-flex");
     }
     return false;
-  } 
+  }
   // else if (!/^[0-9]+$/.test(input.value)) {
   //   document.getElementById("error-handling").classList.remove("d-none");
   //   document.getElementById("error-handling").classList.add("d-flex");

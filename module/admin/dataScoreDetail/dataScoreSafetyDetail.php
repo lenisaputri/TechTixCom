@@ -38,11 +38,17 @@
                 </div> 
                 <hr>
                 <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-plus"></i>
+                <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                        <span class="text">Tambah Data</span>
+                        </button>
+                    <button type="button" class="btn btn-warning btn-icon-split" onclick="location.href='index.php?module=dataScoreSafetyDetailImport';">
+                            <span class="icon text-white-50">
+                            <i class="fas fa-arrow-circle-up"></i>
                                 </span>
-                                <span class="text">Tambah Data</span>
+                                <span class="text">Import xlxs</span>
                             </button>
                 </div>
                 <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->

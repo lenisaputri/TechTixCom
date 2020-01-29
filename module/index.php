@@ -551,6 +551,9 @@ switch ($level) {
                   case "dataScoreSafetyDetail":
                     include "admin/dataScoreDetail/dataScoreSafetyDetail.php";
                     break;
+                  case "dataScoreSafetyDetailImport":
+                    include "admin/dataScoreDetail/dataScoreSafetyDetailImport.php";
+                    break;
                   case "dataScoreQualityDetail":
                     include "admin/dataScoreDetail/dataScoreQualityDetail.php";
                     break;

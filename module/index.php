@@ -424,7 +424,7 @@ switch ($level) {
                   case "technical":
                     include "operator/technical.php";
                     break;
-                  case "technical":
+                  case "adminSapTable":
                     include "operator/technical/adminSapTable.php";
                     break;
                   case "technical":
@@ -550,6 +550,9 @@ switch ($level) {
                     break;
                   case "dataScoreSafetyDetail":
                     include "admin/dataScoreDetail/dataScoreSafetyDetail.php";
+                    break;
+                  case "dataScoreSafetyDetailImport":
+                    include "admin/dataScoreDetail/dataScoreSafetyDetailImport.php";
                     break;
                   case "dataScoreQualityDetail":
                     include "admin/dataScoreDetail/dataScoreQualityDetail.php";

@@ -30,12 +30,7 @@ include "../config/connection.php";
             <td>System Architect</td>
             <td>Edinburgh</td>
             <td>61</td>
-          </tr>
-          <tr>
-            <td>Garrett Winters</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td>63</td>
+            <td>61</td>
           </tr>
         </tbody>
       </table>

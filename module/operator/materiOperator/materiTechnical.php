@@ -53,21 +53,23 @@
                                 <p class="col-sm-12 d-flex flex-column justify-content-center">KETERANGAN :</p>
                                 <div class="form-group row">
                                     <div class="col-sm-12" style="word-break: break-all;">
-                                        <label class="col-sm-12 d-flex flex-column justify-content-center" for="nik" style="font-weight: bold"><?= $row["keterangan_materi"]?></label>
+                                        <p class="col-sm-12 d-flex flex-column justify-content-center" for="nik" style="font-weight: bold;"><?= $row["keterangan_materi"]?></p>
                                     </div>
                                 </div>
                                 <?php
                                     if($row["tipe"] == "file"){
                                     ?>
+                                        <img src="../img/pdf.jpg" height="150px" width="150px;" class="d-flex flex-column justify-content-center">
+                                        <p class="col-sm-12 d-flex flex-column justify-content-center" style="word-break: break-all;"><?= $row["file_materi"]?></p>
                                         <div class="form-group row">
-                                            <img src="../img/pdf.jpg" height="150px" width="150px;">
-                                            <p>Download dengan klik button download</p>
-                                            <button type="submit" class="btn btn-primary btn-icon-split" name="download">
+                                            <div class="col-sm-12 d-flex flex-column justify-content-center">
+                                            <a class="btn btn-primary btn-icon-split" href="../process/proses_download_technical.php?file=<?=$row["file_materi"]?>">
                                                 <span class="icon text-white-50">
                                                     <i class="fas fa-fw fa-download"></i>
                                                 </span>
                                                 <span class="text">Download</span>
-                                            </button>
+                                            </a>
+                                            </div>
                                         </div>
                                     <?php
                                     } else if($row["tipe"] == "link"){

@@ -61,13 +61,13 @@
                                     ?>
                                         <div class="form-group row">
                                             <img src="../img/pdf.jpg" height="150px" width="150px;">
-                                            <p>Download dengan klik button download</p>
-                                            <button type="submit" class="btn btn-primary btn-icon-split" name="download">
+                                            <p><?= $row["file_materi"]?></p>
+                                            <a type="button" class="btn btn-primary btn-icon-split" href="">
                                                 <span class="icon text-white-50">
                                                     <i class="fas fa-fw fa-download"></i>
                                                 </span>
                                                 <span class="text">Download</span>
-                                            </button>
+                                            </a>
                                         </div>
                                     <?php
                                     } else if($row["tipe"] == "link"){

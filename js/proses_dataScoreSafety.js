@@ -1,1 +1,3 @@
-$('.datepicker').pickadate();
+$(function() {
+    $('#datepickerTanggalTraining').datepicker();
+  });

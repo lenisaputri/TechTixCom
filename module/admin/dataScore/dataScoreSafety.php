@@ -44,6 +44,15 @@
                         </div>
                         <div class="form-group row">
                                 <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL POIN</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL POIN" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                        <div class="form-group row">
+                                <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
                                     <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
                                 </div>
@@ -54,10 +63,12 @@
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TANGGAL ASSESMENT</label>
-                                <div class="input-group date">
+                                <div class="input-group date" id="datepickerTanggalTraining" data-provide="datepicker">
                                     <input type="text" id="batasTanggal" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="batasTanggal">
-                                    <div class="input-group-append">
-                                        <span class="far fa-calendar-alt input-group-text form-control form-control-user"></span>
+                                    <div class="input-group-addon">
+                                        <span class="input-group-text form-control form-control-user">
+                                            <i class='far fa-calendar-alt' aria-hidden="true"></i>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -105,13 +116,14 @@
                             <th>No</th>
                             <th>NIK</th>
                             <th>Total Nilai</th>
+                            <th>Total Poin</th>
                             <th>Tanggal Assessment</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT * FROM tabel_materi_safety;
+                        $queryTampilData = "SELECT * FROM tabel_score_safety;
                             ";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -120,11 +132,12 @@
                         if(mysqli_num_rows($resultTampilData) > 0){
                             while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
                     ?>
-                        <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_safety"] ?>">
+                        <tr class="text-center" id-score-safety="<?php echo $rowTampilData["id_score_safety"] ?>">
                             <td ><?php echo $index; ?></td>
                             <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
-                            <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
-                            <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
+                            <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                             <td> 
                                 <button type="button" class="btn btn-warning hapus-dataMateriSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataMateriSafetyModal" id_materi_safety="<?php echo $rowTampilData["id_materi_safety"];?>">
                                     <i class="fas fa-info-circle"></i>

@@ -62,14 +62,23 @@
                         <tr class="text-center">
                             <th>No</th>
                             <th>NIK</th>
-                            <th>Total Nilai</th>
-                            <th>Tanggal Assessment</th>
+                            <th>SMK3</th>
+                            <th>EA-Hira</th>
+                            <th>Movement Forklift</th>
+                            <th>Confined Space</th>
+                            <th>Loto</th>
+                            <th>APD</th>
+                            <th>BBS</th>
+                            <th>Fire Fighting</th>
+                            <th>WAH</th>
+                            <th>Environment</th>
+                            <th>P3K</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT * FROM tabel_materi_safety;
+                        $queryTampilData = "SELECT * FROM tabel_score_safety_detail;
                             ";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -78,11 +87,20 @@
                         if(mysqli_num_rows($resultTampilData) > 0){
                             while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
                     ?>
-                        <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_safety"] ?>">
+                        <tr class="text-center" id-score-safety-detail="<?php echo $rowTampilData["id_score_safety_detail"] ?>">
                             <td ><?php echo $index; ?></td>
                             <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
-                            <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
-                            <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
+                            <td class="judulMateri"><?php echo $rowTampilData["smk3"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["ea-hira"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["movement_forklift"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["confined_space"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["loto"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["apd"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["bbs"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["fire_fighting"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["wah"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["environment"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["p3k"]; ?></td>
                             <td>
                                 <button type="button" class="btn btn-primary edit-dataMateriSafety-admin" data-toggle="modal" data-target="#editDataMateriSafetyModal" id_materiSafetyEdit="<?php echo $rowTampilData["id_materi_safety"];?>">
                                     <i class="fas fa-edit"></i>

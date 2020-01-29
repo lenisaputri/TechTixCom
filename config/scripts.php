@@ -11,7 +11,8 @@
   <!-- Page level plugins -->
   <script src="../vendor/chart.js/Chart.min.js"></script>
 
-  <!-- Page level custom scripts -->
+  <!-- datepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
   <!-- <script src="../js/demo/chart-area-demo.js"></script>
   <script src="../js/demo/chart-pie-demo.js"></script> -->
   <script src="../js/demo/chart-radar-demo.js"></script>

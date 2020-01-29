@@ -16,5 +16,8 @@
 <link rel="stylesheet" href="../css/materiOperator.css">
 
 <link href="../css/techtixcom.min.css" rel="stylesheet">
-  <!-- Custom styles for this page -->
-  <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"> 
+
+<!-- Custom styles for this page -->
+<link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"> 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.css">

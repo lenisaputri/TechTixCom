@@ -75,7 +75,7 @@
         <!-- MENAMPILKAN DATA -->
         <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Materi General HRD Link</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data Materi General Hrd Link</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -137,7 +137,7 @@
 <!-- /.container-fluid -->
 
 <!-- Modal Edit Jabatan-->
-<div class="modal fade" id="editDataMateriGeneralHrdyLinkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editDataMateriGeneralHrdLinkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-center bg-materiGeneralHrdLink border-0">

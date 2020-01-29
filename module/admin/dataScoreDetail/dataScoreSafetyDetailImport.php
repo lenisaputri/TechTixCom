@@ -21,6 +21,7 @@
                     <a href="index.php?module=dataScoreSafetyDetail" >
                     <i class="fas fa-fw fa-info"></i>
                     <span>Data Score Safety Detail</span>
+                    </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     <i class="fas fa-fw fa-arrow-circle-up"></i>
@@ -30,7 +31,7 @@
         </nav>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score Safety</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score Safety Detail Import</h6>
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->

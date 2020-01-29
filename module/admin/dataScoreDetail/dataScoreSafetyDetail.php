@@ -1,5 +1,6 @@
 <?php
   include "../config/connection.php";
+  include "../process/proses_adminDataScoreSafetyDetail.php";
 ?>
 <body>
 <!-- Begin Page Content -->
@@ -30,12 +31,110 @@
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
             <form class="user" action="" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
-                        <div class="col-sm-12">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                <div class ="row">
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="jabatan" style="font-weight: bold">NIK OPERATOR</label>
+                                <?php
+                                    $resultScoreSafety = tampilScoreSafety($con);
+                                ?>
+                               <select class="custom-select-karyawan my-1 mr-sm-2" name="jabatanOperatorAdmin">  <!-- tampilannya belum -->
+                                    <?php
+                                        if(mysqli_num_rows($resultScoreSafety) > 0){
+                                            while($row = mysqli_fetch_assoc($resultScoreSafety)){
+                                                echo "<option value='".$row['id_operator']."'>".$row['nik']."</option>";
+                                            }
+                                        }
+                                    ?>
+                                </select>
+                            </div>
                         </div>
-                </div> 
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="username" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="usernameAdminAdmin" name="usernameAdminAdmin" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="usernameAdminAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
                 <hr>
                 <div class="form-group">
                 <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">

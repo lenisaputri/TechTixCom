@@ -66,8 +66,8 @@
                                 <div class="input-group date" id="datepickerTanggalTraining" data-provide="datepicker">
                                     <input type="text" id="dateSafety" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateSafety">
                                     <div class="input-group-addon">
-                                        <span class="input-group-text form-control form-control-user">
-                                            <i class='far fa-calendar-alt' aria-hidden="true"></i>
+                                        <span class="far fa-calendar-alt input-group-text form-control form-control-user" aria-hidden="true">
+                                            
                                         </span>
                                     </div>
                                 </div>

@@ -4,7 +4,7 @@
 ?>
 <body>
 <!-- Begin Page Content -->
-<div class="container-fluid" id="dataScoreDetail">
+<div class="container-fluid" id="dataScore">
     <nav aria-label="breadcrumb" class="shadow">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -30,7 +30,7 @@
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="" method="POST" enctype="multipart/form-data">
+            <form class="user" action="../process/proses_adminDataScoreSafetyDetail.php?module=dataScoreSafetyDetail&act=tambah" method="POST" enctype="multipart/form-data">
                 <div class ="row">
                     <div class="col-sm-6">
                         <div class="form-group row">
@@ -60,7 +60,7 @@
                                     <?php
                                         if(mysqli_num_rows($resultTampilScoreSafetyDate) > 0){
                                             while($row = mysqli_fetch_assoc($resultTampilScoreSafetyDate)){
-                                                echo "<option value='".$row['id_score_safety']."'>".$row['tanggal_training']."</option>";
+                                                echo "<option value='".$row['tanggal_training']."'>".$row['tanggal_training']."</option>";
                                             }
                                         }
                                     ?>
@@ -78,8 +78,8 @@
                         </div>
                         <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="ea-hiraDetail" style="font-weight: bold">EA-HIRA</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI EA-HIRA" id="ea-hiraDetail" name="ea-hiraDetail" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="eaHiraDetail" style="font-weight: bold">EA-HIRA</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI EA-HIRA" id="eaHiraDetail" name="eaHiraDetail" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="ea-hiraDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -218,7 +218,10 @@
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT * FROM tabel_score_safety_detail;
+                        $queryTampilData = "SELECT tssd.*, tss.*, tp.id_operator, tp.nik 
+                        FROM tabel_score_safety_detail tssd, tabel_score_safety tss, tabel_operator tp 
+                        WHERE tss.id_operator = tp.id_operator
+                        AND tssd.id_score_safety = tss.id_score_safety;
                             ";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -229,9 +232,9 @@
                     ?>
                         <tr class="text-center" id-score-safety-detail="<?php echo $rowTampilData["id_score_safety_detail"] ?>">
                             <td ><?php echo $index; ?></td>
-                            <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
+                            <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
                             <td class="judulMateri"><?php echo $rowTampilData["smk3"]; ?></td>
-                            <td class="fileMateri"><?php echo $rowTampilData["ea-hira"]; ?></td>
+                            <td class="fileMateri"><?php echo $rowTampilData["ea_hira"]; ?></td>
                             <td class="fileMateri"><?php echo $rowTampilData["movement_forklift"]; ?></td>
                             <td class="fileMateri"><?php echo $rowTampilData["confined_space"]; ?></td>
                             <td class="fileMateri"><?php echo $rowTampilData["loto"]; ?></td>
@@ -242,11 +245,11 @@
                             <td class="fileMateri"><?php echo $rowTampilData["environment"]; ?></td>
                             <td class="fileMateri"><?php echo $rowTampilData["p3k"]; ?></td>
                             <td>
-                                <button type="button" class="btn btn-primary edit-dataMateriSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataMateriSafetyModal" id_materiSafetyEdit="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                <button type="button" class="btn btn-primary edit-dataScoreSafetyDetail-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreSafetyDetailModal" id_scoreSafetyDetailEdit="<?php echo $rowTampilData["id_score_safety_detail"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
                                 <p></p>
-                                <button type="button" class="btn btn-danger hapus-dataMateriSafety-admin" data-toggle="modal" data-target="#hapusDataMateriSafetyModal" id_materi_safety="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                <button type="button" class="btn btn-danger hapus-dataScoreSafetyDetail-admin" data-toggle="modal" data-target="#hapusDataScoreSafetyDetailModal" id_score_safety_detail="<?php echo $rowTampilData["id_score_safety_detail"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
@@ -275,19 +278,19 @@
 <!-- /.container-fluid -->
 
 <!-- Modal Edit Jabatan-->
-<div class="modal fade" id="editDataMateriSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editDataScoreSafetyDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
-        <div class="modal-header d-flex justify-content-center bg-materiSafety border-0">
-          <h5 class="modal-title text-white w-100 text-center">Edit Data Materi Safety</h5>
+        <div class="modal-header d-flex justify-content-center bg-scoreSafetyDetail border-0">
+          <h5 class="modal-title text-white w-100 text-center">Edit Data Score Safety Detail</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <form action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=edit" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="id_materi_safety" id="id_materiSafetyUpdate" >
-                <div class="container-fluid" id="edit-dataMateriSafety">
+            <form action="../process/proses_adminDataScoreSafetyDetail.php?module=dataScoreSafetyDetail&act=edit" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="id_score_safety_detail" id="id_scoreSafetyDetailUpdate">
+                <div class="container-fluid" id="edit-dataScoreSafetyDetail">
 
                 </div>
             </form>
@@ -298,18 +301,18 @@
  <!-- End Modal Edit Jabatan -->
 
     <!-- Modal Hapus Jabatan-->
-    <div class="modal fade" id="hapusDataMateriSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="hapusDataScoreSafetyDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <form action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=hapus" method="post">
+          <form action="../process/proses_adminDataScoreSafetyDetail.php?module=dataScoreSafetyDetail&act=hapus" method="post">
             <div class="modal-body pt-5 text-center">
-            <input type="hidden" name="id_materi_safety" id="id_materiSafetyHapus" >
+            <input type="hidden" name="id_score_safety_detail" id="id_scoreSafetyDetailHapus" >
               <strong>Apakah Anda yakin?</strong>
             </div>
             <div class="pb-4 pt-4 d-flex justify-content-around">
               <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
-              <button type="submit" name="hapusDataMateriSafety" class="btn btn-success btn-ok">Ya</button>
+              <button type="submit" name="hapusDataScoreSafetyDetail" class="btn btn-success btn-ok">Ya</button>
             </div>
           </form>
         </div>

@@ -41,7 +41,7 @@ if (isset($_POST["tambahDataScoreGeneralHrd"]) || isset($_POST["editDataScoreGen
         $query10="UPDATE tabel_score_generalhrd
             set
             poin = '$_POST[poinGeneralHrdEdit]',
-            nilai = '$_POST[nilaiGeneralHrdEdit]',
+            nilai = '$_POST[nilaiGeneralHrdyEdit]',
             tanggal_training = '$dateGeneralHrdEdit'
             where id_score_generalhrd='$id_scoreGeneralHrdUpdate';";
 
@@ -95,7 +95,7 @@ if(isset($_POST["editDataScoreGeneralHrd_idScoreGeneralHrd"])){
                                     <input type="number" class="form-control" value="<?=$rowEditScoreGeneralHrd["poin"]?>" id="poinGeneralHrdEdit" name="poinGeneralHrdEdit" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="poinGeneralHrdEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="poinGeneralHrdyEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -140,7 +140,7 @@ if(isset($_POST["editDataScoreGeneralHrd_idScoreGeneralHrd"])){
 
 
   // MODAL EDIT OPERATOR
-if(isset($_POST["infoDataScoreGeneralHrd_idScoreGeneralHrdy"])){
+if(isset($_POST["infoDataScoreGeneralHrd_idScoreGeneralHrd"])){
     $infoScoreGeneralHrd = "SELECT tss.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
     FROM tabel_score_generalhrd tss, tabel_operator tp , tabel_jabatan tj 
     WHERE tss.id_operator = tp.id_operator 

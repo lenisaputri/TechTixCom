@@ -1,7 +1,7 @@
 <?php
     include "../config/connection.php";
 
-    if (isset($_POST["tambahDataMateriLink"]) || isset($_POST["editDataMateriQualityLink"]) || isset($_POST["hapusDataMateriQualityLink"])){
+    if (isset($_POST["tambahDataMateriQualityLink"]) || isset($_POST["editDataMateriQualityLink"]) || isset($_POST["hapusDataMateriQualityLink"])){
         if($_GET["module"]=="dataMateriQualityLink" && $_GET["act"]=="tambah"){
             $query2 = "INSERT INTO tabel_materi_quality (
                 kategori_materi,
@@ -13,10 +13,10 @@
             )
 
             VALUES(  
-                '$_POST[kategoriMateriLink]',
-                '$_POST[judulMateriLink]',
-                '$_POST[keteranganMateriLink]',
-                '$_POST[linkMateri]',
+                '$_POST[kategoriMateriQualityLink]',
+                '$_POST[judulMateriQualityLink]',
+                '$_POST[keteranganMateriQualityLink]',
+                '$_POST[linkMateriQualityLink]',
                 'link',
                 curdate()
             );";
@@ -30,9 +30,9 @@
         }
         else if($_GET["module"]=="dataMateriQualityLink" && $_GET["act"]=="edit"){
             $id_materiQualityLinkUpdate = $_POST["id_materiQualityLinkUpdate"];
-            $query10 = "UPDATE tabel_materi_quality set kategori_materi = '$_POST[kategoriMateriLink2]',
-                judul_materi = '$_POST[judulMateriLink2]', keterangan_materi = '$_POST[keteranganMateriLink2]',
-                file_materi = '$_POST[linkMateriLink2]', tipe = 'link' WHERE id_materi_quality = '$id_materiQualityLinkUpdate'
+            $query10 = "UPDATE tabel_materi_quality set kategori_materi = '$_POST[kategoriMateriQualityLink2]',
+                judul_materi = '$_POST[judulMateriQualityLink2]', keterangan_materi = '$_POST[keteranganMateriQualityLink2]',
+                file_materi = '$_POST[linkMateriQualityLink2]', tipe = 'link' WHERE id_materi_quality = '$id_materiQualityLinkUpdate'
             ";
                 
             if(mysqli_query($con, $query10)){ 
@@ -59,30 +59,30 @@
                 ?>
                     <div class="form-group">
                         <input type="hidden" name="id_materiQualityLinkUpdate" value="<?=$rowEditMateriQuality["id_materi_quality"]?>" > 
-                        <input type="text" class="form-control border-0" id="linkMateriLink2" name="linkMateriLink2" placeholder="Link Materi ..." style="width=100%" value="<?=$rowEditMateriQuality["file_materi"]?>">
+                        <input type="text" class="form-control border-0" id="linkMateriQualityLink2" name="linkMateriQualityLink2" placeholder="Link Materi ..." style="width=100%" value="<?=$rowEditMateriQuality["file_materi"]?>" required>
                             <div class="col-sm-6">
-                                <div id="linkMateriLink2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="linkMateriQualityLinkBlank2" class="small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="judulMateriLink2" name="judulMateriLink2" placeholder="Judul Materi ..." style="width=100%" value="<?=$rowEditMateriQuality["judul_materi"]?>" required>
+                        <input type="text" class="form-control border-0" id="judulMateriQualityLink2" name="judulMateriQualityLink2" placeholder="Judul Materi ..." style="width=100%" value="<?=$rowEditMateriQuality["judul_materi"]?>" required>
                             <div class="col-sm-12">
-                                <div id="judulMateriLink2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="judulMateriQualityLinkBlank2" class="small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="kategoriMateriLink2" name="kategoriMateriLink2" placeholder="Kategori Materi ..." style="width=100%" value="<?=$rowEditMateriQuality["kategori_materi"]?>" required>
+                        <input type="text" class="form-control border-0" id="kategoriMateriQualityLink2" name="kategoriMateriQualityLink2" placeholder="Kategori Materi ..." style="width=100%" value="<?=$rowEditMateriQuality["kategori_materi"]?>" required>
                         <div class="col-sm-12">
-                            <div id="kategoriMateriLink2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="kategoriMateriQualityLinkBlank2" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <textarea id="keteranganMateriLink2" name="keteranganMateriLink2" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"><?=$rowEditMateriQuality["keterangan_materi"]?></textarea>
+                        <textarea id="keteranganMateriQualityLink2" name="keteranganMateriQualityLink2" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required><?=$rowEditMateriQuality["keterangan_materi"]?></textarea>
                         <div class="col-sm-12">
-                            <div id="keteranganMateriLink2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="keteranganMateriQualityLinkBlank2" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>                
@@ -94,7 +94,7 @@
                     <div class="form-group">
                         <div class="modal-footer border-0">
                             <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                            <button class="btn btn-primary" name="editDataMateriQualityLink" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                            <button class="btn btn-primary" name="editDataMateriQualityLink" type="submit" onclick="ValidasiEditDataMateriQualityLink();"><i class="fa fa-check"></i> Simpan</button>
                         </div>
                     </div>
                 <?php

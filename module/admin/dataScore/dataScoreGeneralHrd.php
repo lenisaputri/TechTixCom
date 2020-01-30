@@ -63,11 +63,11 @@
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateGeneralHrd" style="font-weight: bold">TANGGAL ASSESMENT</label>
-                                <div class="input-group date" id="datepickerTanggalTraining" data-provide="datepicker">
+                                <div class="input-group date" id="datepickerTanggalTrainingGeneralHrd" data-provide="datepicker">
                                     <input type="text" id="dateGeneralHrd" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateGeneralHrd">
                                     <div class="input-group-addon">
-                                        <span class="far fa-calendar-alt input-group-text form-control form-control-user" aria-hidden="true">
-                                            
+                                        <span class="input-group-text form-control form-control-user">
+                                            <i class='far fa-calendar-alt' aria-hidden="true"></i>
                                         </span>
                                     </div>
                                 </div>
@@ -184,7 +184,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form action="../process/proses_adminDataScoreGeneralHrd.php?module=dataScoreGeneralHrd&act=edit" method="POST">
+            <form action="../process/proses_adminDataScoreGeneralHrd.php?module=dataScoreGeneralHrd&act=edit" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id_score_generalhrd" id="id_scoreGeneralHrdUpdate" >
                 <div class="container-fluid" id="edit-dataScoreGeneralHrd">
 
@@ -197,7 +197,7 @@
  <!-- End Modal Edit Jabatan -->
 
     <!-- Modal HAPUS Jabatan-->
-    <div class="modal fade" id="hapusDataMateriGeneralHrdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="hapusDataScoreGeneralHrdModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -208,7 +208,7 @@
             </div>
             <div class="pb-4 pt-4 d-flex justify-content-around">
               <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
-              <button type="submit" name="hapusDataMateriGeneralHrd" class="btn btn-success btn-ok">Ya</button>
+              <button type="submit" name="hapusDataScoreGeneralHrd" class="btn btn-success btn-ok">Ya</button>
             </div>
           </form>
         </div>

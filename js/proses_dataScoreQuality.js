@@ -1,9 +1,9 @@
 $(function () {
-  $('#datepickerTanggalTraining').datepicker();
+  $('#datepickerTanggalTrainingQuality').datepicker();
 });
 
 $(function () {
-  $('#datepickerTanggalTrainingEdit').datepicker();
+  $('#datepickerTanggalTrainingQualityEdit').datepicker();
 });
 
 // DATA SCORE Quality EDIT  
@@ -24,52 +24,33 @@ $(".edit-dataScoreQuality-admin").click(function () {
   });
 });
 // DATA SCORE Quality EDIT END
-
 // DATA SCORE Quality HAPUS
 
 $(".hapus-dataScoreQuality-admin").click(function () {
-  var id_score_quality = $(this).attr("id_score_qulity");
+    var id_score_quality = $(this).attr("id_score_quality");
+  
+    $('#id_scoreQualityHapus').val(id_score_quality);
+  
+    $('#hapusDataScoreQualityModal').modal("show");
+  })
+  
+  // DATA SCORE Quality HAPUS END
 
-  $('#id_scoreQualityHapus').val(id_score_quality);
-
-  $('#hapusDataMateriQualityModal').modal("show");
-})
-
-// DATA SCORE Quality HAPUS END
-
-// DATA SCORE Quality LIHAT
+  // DATA SCORE Quality LIHAT
 $(".info-dataScoreQuality-admin").click(function () {
-  var id_scoreQualityInfo = $(this).attr("id_scoreQualityInfo");
-
-  $.ajax({
-      url: "../process/proses_adminDataScoreQuality.php",
-      method: "post",
-      data: {
-          infoDataScoreQuality_idScoreQuality: id_scoreQualityInfo
-      },
-      success: function (data) {
-          $("#info-dataScoreQuality").html(data);
-          $("#infoDataScoreQualityModal").modal("show");
-      }
+    var id_scoreQualityInfo = $(this).attr("id_scoreQualityInfo");
+  
+    $.ajax({
+        url: "../process/proses_adminDataScoreQuality.php",
+        method: "post",
+        data: {
+            infoDataScoreQuality_idScoreQuality: id_scoreQualityInfo
+        },
+        success: function (data) {
+            $("#info-dataScoreQuality").html(data);
+            $("#infoDataScoreQualityModal").modal("show");
+        }
+    });
   });
-});
-// DATA SCORE Quality LIHAT END
-
-// DATA SCORE Quality EDIT DETAIL
-$(".edit-dataScoreQualityDetail-admin").click(function () {
-  var id_scoreQualityDetailEdit = $(this).attr("id_scoreQualityDetailEdit");
-
-  $.ajax({
-      url: "../process/proses_adminDataScoreQualityDetail.php",
-      method: "post",
-      data: {
-          editDataScoreQualityDetail_idScoreQuality: id_scoreQualityDetailEdit
-      },
-      success: function (data) {
-          $("#id_scoreQualityDetailUpdate").val(id_scoreQualityDetailEdit);
-          $("#edit-dataScoreQualityDetail").html(data);
-          $("#editDataScoreQualityDetailModal").modal("show");
-      }
-  });
-});
-// DATA SCORE Quality EDIT DETAIL END
+  // DATA SCORE Quality LIHAT END
+  

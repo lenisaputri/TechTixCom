@@ -92,3 +92,17 @@
   -moz-appearance: none;
   appearance: none;
 }
+
+#editDataScoreQualityModal .bg-scoreQuality{
+  background-color: #0368ca !important;
+}
+
+#edit-dataScoreQuality .form-control{
+  font-size: .8rem;
+  border-radius: 10rem;
+  padding: 1.5rem 1rem;
+}
+
+#infoDataScoreQualityModal .bg-scoreQualityInfo{
+  background-color: #0368ca !important;
+}

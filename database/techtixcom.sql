@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2020 at 02:37 AM
+-- Generation Time: Jan 30, 2020 at 04:57 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -219,6 +219,13 @@ CREATE TABLE `tabel_score_quality` (
   `tanggal_training` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tabel_score_quality`
+--
+
+INSERT INTO `tabel_score_quality` (`id_score_quality`, `id_operator`, `poin`, `nilai`, `tanggal_training`) VALUES
+(1, 5, 123, 2147, '2020-02-08');
+
 -- --------------------------------------------------------
 
 --
@@ -233,6 +240,13 @@ CREATE TABLE `tabel_score_quality_detail` (
   `halal` int(11) NOT NULL,
   `tanggal_training` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tabel_score_quality_detail`
+--
+
+INSERT INTO `tabel_score_quality_detail` (`id_score_quality_detail`, `id_score_quality`, `fss`, `gmp`, `halal`, `tanggal_training`) VALUES
+(1, 1, 89, 90, 90, '2020-02-08');
 
 -- --------------------------------------------------------
 
@@ -284,7 +298,6 @@ CREATE TABLE `tabel_score_safety_detail` (
 --
 
 INSERT INTO `tabel_score_safety_detail` (`id_score_safety_detail`, `id_score_safety`, `smk3`, `ea_hira`, `movement_forklift`, `confined_space`, `loto`, `apd`, `bbs`, `fire_fighting`, `wah`, `environment`, `p3k`, `tanggal_training`) VALUES
-(2, 4, 60, 90, 80, 90, 90, 90, 70, 65, 89, 90, 33, '2020-01-31'),
 (3, 5, 56, 78, 90, 89, 99, 99, 89, 87, 78, 90, 78, '2020-02-03');
 
 -- --------------------------------------------------------
@@ -414,7 +427,8 @@ ALTER TABLE `tabel_score_quality`
 -- Indexes for table `tabel_score_quality_detail`
 --
 ALTER TABLE `tabel_score_quality_detail`
-  ADD PRIMARY KEY (`id_score_quality_detail`);
+  ADD PRIMARY KEY (`id_score_quality_detail`),
+  ADD KEY `id_score_quality` (`id_score_quality`);
 
 --
 -- Indexes for table `tabel_score_safety`
@@ -506,13 +520,13 @@ ALTER TABLE `tabel_score_generalhrd_detail`
 -- AUTO_INCREMENT for table `tabel_score_quality`
 --
 ALTER TABLE `tabel_score_quality`
-  MODIFY `id_score_quality` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_score_quality` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tabel_score_quality_detail`
 --
 ALTER TABLE `tabel_score_quality_detail`
-  MODIFY `id_score_quality_detail` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_score_quality_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tabel_score_safety`
@@ -573,6 +587,12 @@ ALTER TABLE `tabel_score_generalhrd_detail`
 --
 ALTER TABLE `tabel_score_quality`
   ADD CONSTRAINT `tabel_score_quality_ibfk_1` FOREIGN KEY (`id_operator`) REFERENCES `tabel_operator` (`id_operator`);
+
+--
+-- Constraints for table `tabel_score_quality_detail`
+--
+ALTER TABLE `tabel_score_quality_detail`
+  ADD CONSTRAINT `tabel_score_quality_detail_ibfk_1` FOREIGN KEY (`id_score_quality`) REFERENCES `tabel_score_quality` (`id_score_quality`);
 
 --
 -- Constraints for table `tabel_score_safety`

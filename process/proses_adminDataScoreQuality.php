@@ -8,7 +8,7 @@ function tampilOperator($con)
     return $resultTampilOperator;
 }
 
-if (isset($_POST["tambahDataScoreQuality"]) || isset($_POST["editDataScoreQuality"]) || isset($_POST["hapusDataMateriQuality"])){
+if (isset($_POST["tambahDataScoreQuality"]) || isset($_POST["editDataScoreQuality"]) || isset($_POST["hapusDataScoreQuality"])){
 
     if($_GET["module"]=="dataScoreQuality" && $_GET["act"]=="tambah"){
 
@@ -53,7 +53,7 @@ if (isset($_POST["tambahDataScoreQuality"]) || isset($_POST["editDataScoreQualit
             else{            
                 echo("Error description: " . mysqli_error($con));
             }
-    } else if ($_GET["module"]=="dataScoreQuality" && $_GET["act"]=="hapus"){
+    }else if ($_GET["module"]=="dataScoreQuality" && $_GET["act"]=="hapus"){
         $idnya = $_POST['id_score_quality'];
 
         $queryDelete2 = "DELETE FROM tabel_score_quality_detail WHERE id_score_quality='$idnya';";
@@ -72,7 +72,7 @@ if (isset($_POST["tambahDataScoreQuality"]) || isset($_POST["editDataScoreQualit
 
 // MODAL EDIT OPERATOR
 if(isset($_POST["editDataScoreQuality_idScoreQuality"])){
-    $editScoreQuality = "SELECT tss.*, tp.id_operator, tp.nik FROM tabel_score_quality tss, tabel_operator tp WHERE tss.id_operator = tp.id_operator AND tss.id_score_quality = $_POST[editDataScoreQuality_idScoreQuality]";
+    $editScoreQuality = "SELECT tsq.*, tp.id_operator, tp.nik FROM tabel_score_quality tsq, tabel_operator tp WHERE tsq.id_operator = tp.id_operator AND tsq.id_score_quality = $_POST[editDataScoreQuality_idScoreQuality]";
     $resultEditScoreQuality = mysqli_query($con, $editScoreQuality);
   
     if(mysqli_num_rows($resultEditScoreQuality) > 0){
@@ -86,7 +86,7 @@ if(isset($_POST["editDataScoreQuality_idScoreQuality"])){
                                     <input type="number" class="form-control" value="<?=$rowEditScoreQuality["nik"]?>" id="nikQualityEdit" name="nikQualityEdit" disabled>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="nikQualityBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="nikQualityEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -137,15 +137,14 @@ if(isset($_POST["editDataScoreQuality_idScoreQuality"])){
                 </div>
             <?php
   }
-
-
-  // MODAL EDIT OPERATOR
+  
+   // MODAL EDIT OPERATOR
 if(isset($_POST["infoDataScoreQuality_idScoreQuality"])){
-    $infoScoreQuality = "SELECT tss.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
-    FROM tabel_score_quality tss, tabel_operator tp , tabel_jabatan tj 
-    WHERE tss.id_operator = tp.id_operator 
+    $infoScoreQuality = "SELECT tsq.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+    FROM tabel_score_quality tsq, tabel_operator tp , tabel_jabatan tj 
+    WHERE tsq.id_operator = tp.id_operator 
     AND tp.id_jabatan = tj.id_jabatan
-    AND tss.id_score_quality = $_POST[infoDataScoreQuality_idScoreQuality]";
+    AND tsq.id_score_quality = $_POST[infoDataScoreQuality_idScoreQuality]";
     $resultInfoScoreQuality = mysqli_query($con, $infoScoreQuality);
   
     if(mysqli_num_rows($resultInfoScoreQuality) > 0){
@@ -166,11 +165,11 @@ if(isset($_POST["infoDataScoreQuality_idScoreQuality"])){
             <hr>
 
             <?php
-                $infoScoreQualityDetail = "SELECT tss.*, tp.id_operator, tp.nik, tssd.*
-                    FROM tabel_score_quality tss, tabel_operator tp , tabel_score_quality_detail tssd 
-                    WHERE tss.id_operator = tp.id_operator 
-                    AND tss.id_score_quality = tssd.id_score_quality
-                    AND tss.id_score_quality = $_POST[infoDataScoreQuality_idScoreQuality]";
+                $infoScoreQualityDetail = "SELECT tsq.*, tp.id_operator, tp.nik, tsqd.*
+                    FROM tabel_score_quality tsq, tabel_operator tp , tabel_score_quality_detail tsqd 
+                    WHERE tsq.id_operator = tp.id_operator 
+                    AND tsq.id_score_quality = tsqd.id_score_quality
+                    AND tsq.id_score_quality = $_POST[infoDataScoreQuality_idScoreQuality]";
                 
                 $resultInfoScoreQualityDetail = mysqli_query($con, $infoScoreQualityDetail);
                 if(mysqli_num_rows($resultInfoScoreQualityDetail) > 0){
@@ -180,17 +179,9 @@ if(isset($_POST["infoDataScoreQuality_idScoreQuality"])){
                     <thead>
                         <tr style="font-size: .8rem;">
                             <th>No.</th>
-                            <th>SMK3</th>
-                            <th>EA-HIRA</th>
-                            <th>MOVEMENT FORKLIFT</th>
-                            <th>CONFINED SPACE</th>
-                            <th>LOTO</th>
-                            <th>APD</th>
-                            <th>BBS</th>
-                            <th>FIRE FIGHTING</th>
-                            <th>WAH</th>
-                            <th>ENVIRONMENT</th>
-                            <th>P3K</th>
+                            <th>FOOD SAFETY SYSTEM</th>
+                            <th>GMP</th>
+                            <th>HALAL</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -200,17 +191,9 @@ if(isset($_POST["infoDataScoreQuality_idScoreQuality"])){
                     ?>
                     <tr>
                         <td><?php echo $index;?></td>
-                        <td><?php echo $row1["smk3"];?></td>
-                        <td><?php echo $row1["ea_hira"];?></td>
-                        <td><?php echo $row1["movement_forklift"];?></td>
-                        <td><?php echo $row1["confined_space"];?></td>
-                        <td><?php echo $row1["loto"];?></td>
-                        <td><?php echo $row1["apd"];?></td>
-                        <td><?php echo $row1["bbs"];?></td>
-                        <td><?php echo $row1["fire_fighting"];?></td>
-                        <td><?php echo $row1["wah"];?></td>
-                        <td><?php echo $row1["environment"];?></td>
-                        <td><?php echo $row1["p3k"];?></td>
+                        <td><?php echo $row1["fss"];?></td>
+                        <td><?php echo $row1["gmp"];?></td>
+                        <td><?php echo $row1["halal"];?></td>
                     </tr>
                     <?php
                     $index++;
@@ -244,5 +227,4 @@ if(isset($_POST["infoDataScoreQuality_idScoreQuality"])){
                 </div>
             <?php
   }
-    
 ?>

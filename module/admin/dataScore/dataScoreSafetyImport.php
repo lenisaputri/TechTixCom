@@ -24,7 +24,7 @@
         </nav>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score Safety</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score Safety Import</h6>
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->

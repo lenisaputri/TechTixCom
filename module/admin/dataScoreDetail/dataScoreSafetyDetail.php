@@ -1,9 +1,10 @@
 <?php
   include "../config/connection.php";
+  include "../process/proses_adminDataScoreSafetyDetail.php";
 ?>
 <body>
 <!-- Begin Page Content -->
-<div class="container-fluid" id="dataMateri">
+<div class="container-fluid" id="dataScoreDetail">
     <nav aria-label="breadcrumb" class="shadow">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
@@ -29,16 +30,149 @@
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
-                        <div class="col-sm-12">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+            <form class="user" action="" method="POST" enctype="multipart/form-data">
+                <div class ="row">
+                    <div class="col-sm-6">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nikOperatorDetail" style="font-weight: bold">NIK OPERATOR</label>
+                                <?php
+                                    $resultTampilScoreSafety = tampilScoreSafety($con);
+                                ?>
+                               <select class="custom-select-karyawan" name="nikOperatorDetail">  <!-- tampilannya belum -->
+                                    <?php
+                                        if(mysqli_num_rows($resultTampilScoreSafety) > 0){
+                                            while($row = mysqli_fetch_assoc($resultTampilScoreSafety)){
+                                                echo "<option value='".$row['id_score_safety']."'>".$row['nik']."</option>";
+                                            }
+                                        }
+                                    ?>
+                                </select>
+                            </div>
                         </div>
-                </div> 
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingDetail" style="font-weight: bold">TANGGAL TRAINING</label>
+                                <?php
+                                    $resultTampilScoreSafetyDate = tampilScoreSafetyDate($con);
+                                ?>
+                               <select class="custom-select-karyawan" name="tanggalTrainingDetail">  <!-- tampilannya belum -->
+                                    <?php
+                                        if(mysqli_num_rows($resultTampilScoreSafetyDate) > 0){
+                                            while($row = mysqli_fetch_assoc($resultTampilScoreSafetyDate)){
+                                                echo "<option value='".$row['id_score_safety']."'>".$row['tanggal_training']."</option>";
+                                            }
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="smk3Detail" style="font-weight: bold">SMK3</label>
+                                <input type="number" class="form-control form-control-user" placeholder="NILAI SMK3" id="smk3Detail" name="smk3Detail" required>
+                            </div>
+                            <div class="col-sm-12">
+                                <div id="smk3DetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="ea-hiraDetail" style="font-weight: bold">EA-HIRA</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI EA-HIRA" id="ea-hiraDetail" name="ea-hiraDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="ea-hiraDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="movForkliftDetail" style="font-weight: bold">NILAI MOVEMENT FORKLIFT</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI MOVEMENT FORKLIFT" id="movForkliftDetail" name="movForkliftDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="movForkliftDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="conSpaceDetail" style="font-weight: bold">NILAI CONFINED SPACE</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI CONFINED SPACE" id="conSpaceDetail" name="conSpaceDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="conSpaceDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="lotoDetail" style="font-weight: bold">NILAI LOTO</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI LOTO" id="lotoDetail" name="lotoDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="lotoDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="apdDetail" style="font-weight: bold">NILAI APD</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI APD" id="apdDetail" name="apdDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="apdDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="bbsDetail" style="font-weight: bold">NILAI BBS</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI BBS" id="bbsDetail" name="bbsDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="bbsDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fireFightingDetail" style="font-weight: bold">NILAI FIRE FIGHTING</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI FIRE FIGHTING" id="fireFightingDetail" name="fireFightingDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="fireFightingDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="wahDetail" style="font-weight: bold">NILAI WAH</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI WAH" id="wahDetail" name="wahDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="wahDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="environmentDetail" style="font-weight: bold">NILAI ENVIRONMENT</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI ENVIRONMENT" id="environmentDetail" name="environmentDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="environmentDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="p3kDetail" style="font-weight: bold">NILAI P3K</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI P3K" id="p3kDetail" name="p3kDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="p3kDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
                 <hr>
                 <div class="form-group">
-                <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreSafetyDetail">
                         <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                         </span>
@@ -108,9 +242,10 @@
                             <td class="fileMateri"><?php echo $rowTampilData["environment"]; ?></td>
                             <td class="fileMateri"><?php echo $rowTampilData["p3k"]; ?></td>
                             <td>
-                                <button type="button" class="btn btn-primary edit-dataMateriSafety-admin" data-toggle="modal" data-target="#editDataMateriSafetyModal" id_materiSafetyEdit="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                <button type="button" class="btn btn-primary edit-dataMateriSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataMateriSafetyModal" id_materiSafetyEdit="<?php echo $rowTampilData["id_materi_safety"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
+                                <p></p>
                                 <button type="button" class="btn btn-danger hapus-dataMateriSafety-admin" data-toggle="modal" data-target="#hapusDataMateriSafetyModal" id_materi_safety="<?php echo $rowTampilData["id_materi_safety"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>

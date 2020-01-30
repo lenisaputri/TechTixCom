@@ -25,7 +25,17 @@
                 '$dateGeneralHrd'
             );";
         
-            if(mysqli_query($con, $query2)){ 
+        $dateGeneralHrdEdit =  date('Y-m-d', strtotime($_POST[dateGeneralHrdEdit]));
+
+        $query10="UPDATE tabel_score_generalhrd
+            set
+            poin = '$_POST[poinGeneralHrdEdit]',
+            nilai = '$_POST[nilaiGeneralHrdEdit]',
+            tanggal_training = '$dateGeneralHrdEdit'
+            where id_score_generalhrd='$id_scoreGeneralHrdUpdate';";
+
+            if(mysqli_query($con,$query10)){
+
                 header('location:../module/index.php?module=' . $_GET["module"]);
             }
             else{            
@@ -63,52 +73,54 @@
         }
     }
 
-    if(isset($_POST["editDataScoreGeneralHrd_idScoreGeneralHrd"])){
-        $editScoreGeneralHrd = "SELECT tss.*, tp.id_operator, tp.nik FROM tabel_score_generalhrd tss, tabel_operator tp WHERE tss.id_operator = tp.id_operator AND tss.id_score_generalhrd = $_POST[editDataScoreGeneralHrd_idScoreGeneralHrd]";
-        $resultEditScoreGeneralHrd = mysqli_query($con, $editScoreGeneralHrd);
-    
-        if(mysqli_num_rows($resultEditScoreGeneralHrd) > 0){
-            $i = 1;
-            while($rowEditScoreGeneralHrd=mysqli_fetch_assoc($resultEditScoreGeneralHrd)){
-                ?>
-                    <div class="form-group row">
-                        <input type="hidden" name="id_scoreGeneralHrdUpdate" value="<?=$rowEditScoreGeneralHrd["id_score_generalhrd"]?>" > 
-                        <div class="col-sm-12">
-                            <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nikGeneralHrdEdit" style="font-weight: bold">NIK OPERATOR</label>
-                            <input type="number" class="form-control" value="<?=$rowEditScoreGeneralHrd["nik"]?>" id="nikGeneralHrdEdit" name="nikGeneralHrdEdit" disabled>
-                        </div>
-                        <div class="col-sm-12">
-                            <div id="nikGeneralHrdBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-12">
-                            <label class="col-sm-6 small d-flex flex-column justify-content-center" for="poinGeneralHrdEdit" style="font-weight: bold">POIN OPERATOR</label>
-                            <input type="number" class="form-control" value="<?=$rowEditScoreGeneralHrd["poin"]?>" id="poinGeneralHrdEdit" name="poinGeneralHrdEdit" required>
-                        </div>
-                        <div class="col-sm-12">
-                            <div id="poinGeneralHrdEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-12">
-                            <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nilaiGeneralHrdEdit" style="font-weight: bold">TOTAL NILAI</label>
-                            <input type="number" class="form-control" value="<?=$rowEditScoreGeneralHrd["nilai"]?>" id="nilaiGeneralHrdEdit" name="nilaiGeneralHrdEdit" required>
-                        </div>
-                        <div class="col-sm-12">
-                            <div id="nilaiGeneralHrdBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-sm-12">
-                            <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateGeneralHrdEdit" style="font-weight: bold">TANGGAL ASSESMENT</label>
-                            <div class="input-group date" id="datepickerTanggalTrainingEdit" data-provide="datepicker">
-                                <input type="text" id="dateGeneralHrdEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreGeneralHrd["tanggal_training"]?>" name="dateGeneralHrdEdit">
-                                <div class="input-group-addon">
-                                    <span class="input-group-text form-control form-control-user">
-                                        <i class='far fa-calendar-alt' aria-hidden="true"></i>
-                                    </span>
-                                 </div>
+// MODAL EDIT OPERATOR
+if(isset($_POST["editDataScoreGeneralHrd_idScoreGeneralHrd"])){
+    $editScoreGeneralHrd = "SELECT tsg.*, tp.id_operator, tp.nik FROM tabel_score_generalhrd tsg, tabel_operator tp WHERE tsg.id_operator = tp.id_operator AND tsg.id_score_generalhrd = $_POST[editDataScoreGeneralHrd_idScoreGeneralHrd]";
+    $resultEditScoreGeneralHrd = mysqli_query($con, $editScoreGeneralHrd);
+  
+    if(mysqli_num_rows($resultEditScoreGeneralHrd) > 0){
+        $i = 1;
+        while($rowEditScoreGeneralHrd=mysqli_fetch_assoc($resultEditScoreGeneralHrd)){
+            ?>
+            <div class="form-group row">
+                <input type="hidden" name="id_scoreGeneralHrdUpdate" value="<?=$rowEditScoreGeneralHrd["id_score_generalhrd"]?>" > 
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nikGeneralHrdEdit" style="font-weight: bold">NIK OPERATOR</label>
+                                    <input type="number" class="form-control" value="<?=$rowEditScoreGeneralHrd["nik"]?>" id="nikGeneralHrdEdit" name="nikGeneralHrdEdit" disabled>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="nikGeneralHrdBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="poinGeneralHrdEdit" style="font-weight: bold">POIN OPERATOR</label>
+                                    <input type="number" class="form-control" value="<?=$rowEditScoreGeneralHrd["poin"]?>" id="poinGeneralHrdEdit" name="poinGeneralHrdEdit" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="poinGeneralHrdyEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nilaiGeneralHrdEdit" style="font-weight: bold">TOTAL NILAI</label>
+                                    <input type="number" class="form-control" value="<?=$rowEditScoreGeneralHrd["nilai"]?>" id="nilaiGeneralHrdEdit" name="nilaiGeneralHrdEdit" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="nilaiGeneralHrdBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                            <div class="col-sm-12">
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateGeneralHrdEdit" style="font-weight: bold">TANGGAL ASSESMENT</label>
+                                <div class="input-group date" id="datepickerTanggalTrainingEdit" data-provide="datepicker">
+                                    <input type="text" id="dateGeneralHrdEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreGeneralHrd["tanggal_training"]?>" name="dateGeneralHrdEdit">
+                                    <div class="input-group-addon">
+                                        <span class="input-group-text form-control form-control-user">
+                                            <i class='far fa-calendar-alt' aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
@@ -130,16 +142,17 @@
                 <?php
     }
 
-    if(isset($_POST["infoDataScoreGeneralHrd_idScoreGeneralHrdy"])){
-        $infoScoreGeneralHrd = "SELECT tss.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
-            FROM tabel_score_generalhrd tss, tabel_operator tp , tabel_jabatan tj 
-            WHERE tss.id_operator = tp.id_operator 
-            AND tp.id_jabatan = tj.id_jabatan
-            AND tss.id_score_generalhrd = $_POST[infoDataScoreGeneralHrd_idScoreGeneralHrd]";
-        $resultInfoScoreGeneralHrd = mysqli_query($con, $infoScoreGeneralHrd);
-    
-        if(mysqli_num_rows($resultInfoScoreGeneralHrd) > 0){
-            $rowInfoScoreGeneralHrd=mysqli_fetch_assoc($resultInfoScoreGeneralHrd);
+  //MODAL EDIT OPERATOR
+if(isset($_POST["infoDataScoreGeneralHrd_idScoreGeneralHrd"])){
+    $infoScoreGeneralHrd = "SELECT tsg.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+    FROM tabel_score_generalhrd tsg, tabel_operator tp , tabel_jabatan tj 
+    WHERE tsg.id_operator = tp.id_operator 
+    AND tp.id_jabatan = tj.id_jabatan
+    AND tsg.id_score_generalhrd = $_POST[infoDataScoreGeneralHrd_idScoreGeneralHrd]";
+    $resultInfoScoreGeneralHrd = mysqli_query($con, $infoScoreGeneralHrd);
+  
+    if(mysqli_num_rows($resultInfoScoreGeneralHrd) > 0){
+       $rowInfoScoreGeneralHrd=mysqli_fetch_assoc($resultInfoScoreGeneralHrd);
             ?>
                 <div class="row">
                     <div class="col-sm-6">
@@ -155,11 +168,11 @@
                     <p class="row d-flex justify-content-end">TANGGAL TRAINING : <?php echo $rowInfoScoreGeneralHrd["tanggal_training"]; ?></p>
                 <hr>
                 <?php
-                    $infoScoreGeneralHrdDetail = "SELECT tss.*, tp.id_operator, tp.nik, tssd.*
-                        FROM tabel_score_generalhrd tss, tabel_operator tp , tabel_score_generalhrd_detail tssd 
-                        WHERE tss.id_operator = tp.id_operator 
-                        AND tss.id_score_generalhrd = tssd.id_score_generalhrd
-                        AND tss.id_score_generalhrd = $_POST[infoDataScoreGeneralHrd_idScoreGeneralHrd]";
+                    $infoScoreGeneralHrdDetail = "SELECT tsg.*, tp.id_operator, tp.nik, tsgd.*
+                        FROM tabel_score_generalhrd tsg, tabel_operator tp , tabel_score_generalhrd_detail tsgd 
+                        WHERE tsg.id_operator = tp.id_operator 
+                        AND tsg.id_score_generalhrd = tsgd.id_score_generalhrd
+                        AND tsg.id_score_generalhrd = $_POST[infoDataScoreGeneralHrd_idScoreGeneralHrd]";
                     
                     $resultInfoScoreGeneralHrdDetail = mysqli_query($con, $infoScoreGeneralHrdDetail);
                     if(mysqli_num_rows($resultInfoScoreGeneralHrdDetail) > 0){

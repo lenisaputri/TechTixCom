@@ -63,31 +63,6 @@
                             <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
-<<<<<<< HEAD
-                </div>
-                <hr>
-                <div class="form-group">
-                    <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
-                    <div class="col-sm-12">
-                        <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                    </div>
-                </div>
-                <hr>
-                <div class="form-group">
-                <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
-                <span class="icon text-white-50">
-                <i class="fas fa-plus"></i>
-                </span>
-                <span class="text">Tambah Data</span>
-                </button>
-                </div>
-            <div class="form-group">
-                    <div class="row d-flex justify-content-end">
-                        <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateriLink" onclick="location.href='index.php?module=dataMateriTechnicalLink';">
-                        <span class="text">Tambah Data Link</span>
-                    </button>
-                </div>
-=======
                     <hr>
                     <div class="form-group">
                         <div class="row d-flex justify-content-end">
@@ -101,7 +76,6 @@
                         </div>
                     </div>
                 </form>
->>>>>>> ccce6673ec84334ebccc1c941afb1ecbffefbb66
             </div>
         </div>
         <div class="card shadow mb-4">

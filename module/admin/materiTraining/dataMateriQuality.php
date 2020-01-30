@@ -45,7 +45,6 @@
                 </div>
                 <hr>
                 <div class="form-group">
-<<<<<<< HEAD
                     <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
                     <div class="col-sm-12">
                         <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -59,14 +58,6 @@
                 </span>
                 <span class="text">Tambah Data</span>
                 </button>
-=======
-                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-plus"></i>
-                        </span>
-                        <span class="text">Tambah Data</span>
-                    </button>
->>>>>>> ccce6673ec84334ebccc1c941afb1ecbffefbb66
                 </div>
                 <div class="form-group">
                     <div class="row d-flex justify-content-end">

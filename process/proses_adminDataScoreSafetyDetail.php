@@ -42,7 +42,7 @@ function tampilScoreSafetyDateEdit($con)
 
 
 
-if (isset($_POST["tambahDataScoreSafetyDetail"]) || isset($_POST["editDataScoreSafetyDetail"])){
+if (isset($_POST["tambahDataScoreSafetyDetail"]) || isset($_POST["editDataScoreSafetyDetail"]) || isset($_POST["hapusDataScoreSafetyDetail"])){
 
     if($_GET["module"]=="dataScoreSafetyDetail" && $_GET["act"]=="tambah"){
 
@@ -85,16 +85,23 @@ if (isset($_POST["tambahDataScoreSafetyDetail"]) || isset($_POST["editDataScoreS
             echo("Error description: " . mysqli_error($con));
         }
     } else if ($_GET["module"]=="dataScoreSafetyDetail" && $_GET["act"]=="edit"){
-        $id_scoreSafetyUpdate = $_POST["id_scoreSafetyUpdate"];
+        $id_scoreSafetyDetailUpdate = $_POST["id_scoreSafetyDetailUpdate"];
         
-        $dateSafetyEdit =  date('Y-m-d', strtotime($_POST[dateSafetyEdit]));
-
-        $query10="UPDATE tabel_score_safety
+        $query10="UPDATE tabel_score_safety_detail
             set
-            poin = '$_POST[poinSafetyEdit]',
-            nilai = '$_POST[nilaiSafetyEdit]',
-            tanggal_training = '$dateSafetyEdit'
-            where id_score_safety='$id_scoreSafetyUpdate';";
+            smk3 = '$_POST[smk3SafetyEditDetail]',
+            ea_hira = '$_POST[eaHiraSafetyEditDetail]',
+            movement_forklift = '$_POST[movForkliftSafetyEditDetail]',
+            confined_space = '$_POST[conSpaceSafetyEditDetail]',
+            loto = '$_POST[lotoSafetyEditDetail]',
+            apd = '$_POST[apdSafetyEditDetail]',
+            bbs = '$_POST[bbsSafetyEditDetail]',
+            fire_fighting = '$_POST[fireFightingSafetyEditDetail]',
+            wah = '$_POST[wahSafetyEditDetail]',
+            environment = '$_POST[environmentSafetyEditDetail]',
+            p3k = '$_POST[p3kSafetyEditDetail]',
+            tanggal_training = '$_POST[tanggalTrainingSafetyEditDetail]'
+            where id_score_safety_detail='$id_scoreSafetyDetailUpdate';";
 
             if(mysqli_query($con,$query10)){
 
@@ -104,6 +111,19 @@ if (isset($_POST["tambahDataScoreSafetyDetail"]) || isset($_POST["editDataScoreS
             else{            
                 echo("Error description: " . mysqli_error($con));
             }
+    }else if ($_GET["module"]=="dataScoreSafetyDetail" && $_GET["act"]=="hapus"){
+        $idnya = $_POST['id_score_safety_detail'];
+
+        $queryDelete = "DELETE FROM tabel_score_safety_detail WHERE id_score_safety_detail='$idnya';";
+
+        if(mysqli_query($con,$queryDelete)){
+
+            header('location:../module/index.php?module=' . $_GET["module"]);
+        }
+
+        else{            
+            echo("Error description: " . mysqli_error($con));
+        }
     }
 }
 
@@ -135,112 +155,112 @@ if(isset($_POST["editDataScoreSafetyDetail_idScoreSafety"])){
                         </div>
                         <div class='form-group row'>
                     <div class="col-sm-12 mb-3 mb-sm-0">
-                        <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingSafetyEditDetail" style="font-weight: bold">JABATAN</label>
-                        <select class="custom-select" name="jabatanAdminAdmin2"><?=tampilScoreSafetyDateEdit($con,$rowEditScoreSafetyDetail['tanggal_training'])?></select>
+                        <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingSafetyEditDetail" style="font-weight: bold">TANGGAL TRAINING</label>
+                        <select class="custom-select" name="tanggalTrainingSafetyEditDetail"><?=tampilScoreSafetyDateEdit($con,$rowEditScoreSafetyDetail['tanggal_training'])?></select>
                     </div>
                     <div class="col-sm-12">
-                        <div id="jabatanAdminAdminBlank2" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        <div id="tanggalTrainingSafetyEditDetailBlank2" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
                 </div>
                     <div class="form-group row">
                             <div class="col-sm-12">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="smk3Detail" style="font-weight: bold">SMK3</label>
-                                <input type="number" class="form-control" placeholder="NILAI SMK3" id="smk3Detail" name="smk3Detail" value="<?=$rowEditScoreSafetyDetail["smk3"]?>" required>
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="smk3SafetyEditDetail" style="font-weight: bold">SMK3</label>
+                                <input type="number" class="form-control" placeholder="NILAI SMK3" id="smk3SafetyEditDetail" name="smk3SafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["smk3"]?>" required>
                             </div>
                             <div class="col-sm-12">
-                                <div id="smk3DetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="smk3SafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="eaHiraDetail" style="font-weight: bold">EA-HIRA</label>
-                                    <input type="number" class="form-control" placeholder="NILAI EA-HIRA" id="eaHiraDetail" name="eaHiraDetail" value="<?=$rowEditScoreSafetyDetail["ea_hira"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="eaHiraSafetyEditDetail" style="font-weight: bold">EA-HIRA</label>
+                                    <input type="number" class="form-control" placeholder="NILAI EA-HIRA" id="eaHiraSafetyEditDetail" name="eaHiraSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["ea_hira"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="ea-hiraDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="movForkliftDetail" style="font-weight: bold">NILAI MOVEMENT FORKLIFT</label>
-                                    <input type="number" class="form-control" placeholder="NILAI MOVEMENT FORKLIFT" id="movForkliftDetail" name="movForkliftDetail" value="<?=$rowEditScoreSafetyDetail["movement_forklift"]?>" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="movForkliftDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="eaHiraSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="conSpaceDetail" style="font-weight: bold">NILAI CONFINED SPACE</label>
-                                    <input type="number" class="form-control" placeholder="NILAI CONFINED SPACE" id="conSpaceDetail" name="conSpaceDetail" value="<?=$rowEditScoreSafetyDetail["confined_space"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="movForkliftSafetyEditDetail" style="font-weight: bold">NILAI MOVEMENT FORKLIFT</label>
+                                    <input type="number" class="form-control" placeholder="NILAI MOVEMENT FORKLIFT" id="movForkliftSafetyEditDetail" name="movForkliftSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["movement_forklift"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="conSpaceDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="movForkliftSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="lotoDetail" style="font-weight: bold">NILAI LOTO</label>
-                                    <input type="number" class="form-control" placeholder="NILAI LOTO" id="lotoDetail" name="lotoDetail" value="<?=$rowEditScoreSafetyDetail["loto"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="conSpaceSafetyEditDetail" style="font-weight: bold">NILAI CONFINED SPACE</label>
+                                    <input type="number" class="form-control" placeholder="NILAI CONFINED SPACE" id="conSpaceSafetyEditDetail" name="conSpaceSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["confined_space"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="lotoDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="conSpaceSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="lotoSafetyEditDetail" style="font-weight: bold">NILAI LOTO</label>
+                                    <input type="number" class="form-control" placeholder="NILAI LOTO" id="lotoSafetyEditDetail" name="lotoSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["loto"]?>" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="lotoSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                     </div>
                     <div class="col-sm-6">
                     <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="apdDetail" style="font-weight: bold">NILAI APD</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI APD" id="apdDetail" name="apdDetail" value="<?=$rowEditScoreSafetyDetail["apd"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="apdSafetyEditDetail" style="font-weight: bold">NILAI APD</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI APD" id="apdSafetyEditDetail" name="apdSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["apd"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="apdDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="bbsDetail" style="font-weight: bold">NILAI BBS</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI BBS" id="bbsDetail" name="bbsDetail" value="<?=$rowEditScoreSafetyDetail["bbs"]?>" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="bbsDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="apdSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fireFightingDetail" style="font-weight: bold">NILAI FIRE FIGHTING</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI FIRE FIGHTING" id="fireFightingDetail" name="fireFightingDetail" value="<?=$rowEditScoreSafetyDetail["fire_fighting"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="bbsSafetyEditDetail" style="font-weight: bold">NILAI BBS</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI BBS" id="bbsSafetyEditDetail" name="bbsSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["bbs"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="fireFightingDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="wahDetail" style="font-weight: bold">NILAI WAH</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI WAH" id="wahDetail" name="wahDetail" value="<?=$rowEditScoreSafetyDetail["wah"]?>" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="wahDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="bbsSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="environmentDetail" style="font-weight: bold">NILAI ENVIRONMENT</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI ENVIRONMENT" id="environmentDetail" name="environmentDetail" value="<?=$rowEditScoreSafetyDetail["environment"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fireFightingSafetyEditDetail" style="font-weight: bold">NILAI FIRE FIGHTING</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI FIRE FIGHTING" id="fireFightingSafetyEditDetail" name="fireFightingSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["fire_fighting"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="environmentDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="fireFightingSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="p3kDetail" style="font-weight: bold">NILAI P3K</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI P3K" id="p3kDetail" name="p3kDetail" value="<?=$rowEditScoreSafetyDetail["p3k"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="wahSafetyEditDetail" style="font-weight: bold">NILAI WAH</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI WAH" id="wahSafetyEditDetail" name="wahSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["wah"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="p3kDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="wahSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="environmentSafetyEditDetail" style="font-weight: bold">NILAI ENVIRONMENT</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI ENVIRONMENT" id="environmentSafetyEditDetail" name="environmentSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["environment"]?>" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="environmentSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="p3kSafetyEditDetail" style="font-weight: bold">NILAI P3K</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI P3K" id="p3kSafetyEditDetail" name="p3kSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["p3k"]?>" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="p3kSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                     </div>

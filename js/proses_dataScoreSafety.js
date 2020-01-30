@@ -73,3 +73,15 @@ $(".edit-dataScoreSafetyDetail-admin").click(function () {
     });
 });
 // DATA SCORE SAFETY EDIT DETAIL END
+
+// DATA SCORE SAFETY HAPUS DETAIL
+
+$(".hapus-dataScoreSafetyDetail-admin").click(function () {
+    var id_score_safety_detail = $(this).attr("id_score_safety_detail");
+
+    $('#id_scoreSafetyDetailHapus').val(id_score_safety_detail);
+
+    $('#hapusDataScoreSafetyDetailModal').modal("show");
+})
+
+// DATA SCORE SAFETY HAPUS DETAIL END

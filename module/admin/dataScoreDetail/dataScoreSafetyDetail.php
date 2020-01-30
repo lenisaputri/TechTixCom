@@ -249,7 +249,7 @@
                                     <i class="fas fa-edit"></i>
                                 </button>
                                 <p></p>
-                                <button type="button" class="btn btn-danger hapus-dataMateriSafety-admin" data-toggle="modal" data-target="#hapusDataMateriSafetyModal" id_materi_safety="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                <button type="button" class="btn btn-danger hapus-dataScoreSafetyDetail-admin" data-toggle="modal" data-target="#hapusDataScoreSafetyDetailModal" id_score_safety_detail="<?php echo $rowTampilData["id_score_safety_detail"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
@@ -288,7 +288,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form action="../process/proses_adminDataMateriSafetyDetail.php?module=dataMateriSafetyDetail&act=edit" method="POST" enctype="multipart/form-data">
+            <form action="../process/proses_adminDataScoreSafetyDetail.php?module=dataScoreSafetyDetail&act=edit" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id_score_safety_detail" id="id_scoreSafetyDetailUpdate">
                 <div class="container-fluid" id="edit-dataScoreSafetyDetail">
 
@@ -301,18 +301,18 @@
  <!-- End Modal Edit Jabatan -->
 
     <!-- Modal Hapus Jabatan-->
-    <div class="modal fade" id="hapusDataMateriSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="hapusDataScoreSafetyDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-          <form action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=hapus" method="post">
+          <form action="../process/proses_adminDataScoreSafetyDetail.php?module=dataScoreSafetyDetail&act=hapus" method="post">
             <div class="modal-body pt-5 text-center">
-            <input type="hidden" name="id_materi_safety" id="id_materiSafetyHapus" >
+            <input type="hidden" name="id_score_safety_detail" id="id_scoreSafetyDetailHapus" >
               <strong>Apakah Anda yakin?</strong>
             </div>
             <div class="pb-4 pt-4 d-flex justify-content-around">
               <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
-              <button type="submit" name="hapusDataMateriSafety" class="btn btn-success btn-ok">Ya</button>
+              <button type="submit" name="hapusDataScoreSafetyDetail" class="btn btn-success btn-ok">Ya</button>
             </div>
           </form>
         </div>

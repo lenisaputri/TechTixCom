@@ -103,8 +103,8 @@
             <!-- PROSES FORM MENAMBAH DATA SELESAI -->
         </div>
     </div>
-    <!-- MENAMPILKAN DATA -->
-    <div class="card shadow mb-4">
+  <!-- MENAMPILKAN DATA -->
+  <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Data Materi General HRD</h6>
         </div>
@@ -115,15 +115,15 @@
                         <tr class="text-center">
                             <th>No</th>
                             <th>NIK</th>
-                            <th>Total Poin</th>
                             <th>Total Nilai</th>
+                            <th>Total Poin</th>
                             <th>Tanggal Assessment</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT tss.*, tp.id_operator, tp.nik FROM tabel_score_generalhrd tss, tabel_operator tp WHERE tss.id_operator = tp.id_operator;
+                        $queryTampilData = "SELECT tsg.*, tp.id_operator, tp.nik FROM tabel_score_generalhrd tsg, tabel_operator tp WHERE tsg.id_operator = tp.id_operator;
                             ";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -145,7 +145,7 @@
                                 <button type="button" class="btn btn-primary edit-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreGeneralHrdModal" id_scoreGeneralHrdEdit="<?php echo $rowTampilData["id_score_generalhrd"];?>">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger hapus-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataMateriGeneralHrdModal" id_score_generalhrd="<?php echo $rowTampilData["id_score_generalhrd"];?>" >
+                                <button type="button" class="btn btn-danger hapus-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreGeneralHrdModall" id_score_generalhrd="<?php echo $rowTampilData["id_score_generalhrd"];?>">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>

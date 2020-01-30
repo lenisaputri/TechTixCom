@@ -169,17 +169,9 @@
                                     <thead>
                                         <tr style="font-size: .8rem;">
                                             <th>No.</th>
-                                            <th>SMK3</th>
-                                            <th>EA-HIRA</th>
-                                            <th>MOVEMENT FORKLIFT</th>
-                                            <th>CONFINED SPACE</th>
-                                            <th>LOTO</th>
-                                            <th>APD</th>
-                                            <th>BBS</th>
-                                            <th>FIRE FIGHTING</th>
-                                            <th>WAH</th>
-                                            <th>ENVIRONMENT</th>
-                                            <th>P3K</th>
+                                            <th>Food Safety System</th>
+                                            <th>GMP</th>
+                                            <th>Halal</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -189,17 +181,9 @@
                                                 ?>
                                                     <tr>
                                                         <td><?php echo $index;?></td>
-                                                        <td><?php echo $row1["smk3"];?></td>
-                                                        <td><?php echo $row1["ea_hira"];?></td>
-                                                        <td><?php echo $row1["movement_forklift"];?></td>
-                                                        <td><?php echo $row1["confined_space"];?></td>
-                                                        <td><?php echo $row1["loto"];?></td>
-                                                        <td><?php echo $row1["apd"];?></td>
-                                                        <td><?php echo $row1["bbs"];?></td>
-                                                        <td><?php echo $row1["fire_fighting"];?></td>
-                                                        <td><?php echo $row1["wah"];?></td>
-                                                        <td><?php echo $row1["environment"];?></td>
-                                                        <td><?php echo $row1["p3k"];?></td>
+                                                        <td><?php echo $row1["fss"];?></td>
+                                                        <td><?php echo $row1["gmp"];?></td>
+                                                        <td><?php echo $row1["halal"];?></td>
                                                     </tr>
                                                 <?php
                                                 $index++;

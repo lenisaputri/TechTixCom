@@ -102,7 +102,7 @@
                                     <button type="button" class="btn btn-primary edit-dataMateriSafety-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriSafetyModal" id_materiSafetyEdit="<?php echo $rowTampilData["id_materi_safety"];?>">
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <br>
+                                    <p></p>
                                     <button type="button" class="btn btn-danger hapus-dataMateriSafety-admin" data-toggle="modal" data-target="#hapusDataMateriSafetyModal" id_materi_safety="<?php echo $rowTampilData["id_materi_safety"];?>">
                                         <i class="fas fa-trash"></i>
                                     </button>

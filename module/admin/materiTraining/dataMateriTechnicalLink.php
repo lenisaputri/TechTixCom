@@ -25,42 +25,42 @@
         </nav>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Technical</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Technical Link</h6>
             </div>
             <div class="card-body">
                 <!-- FORM MENAMBAH DATA -->
                 <form class="user" action="../process/proses_adminDataMateriTechnicalLink.php?module=dataMateriTechnicalLink&act=tambah" id="formDataMateriAdmin" method="POST">
                 <div class="form-group">
-                            <input type="text" class="form-control border-0" id="linkMateriLink" name="linkMateri" placeholder="Link Materi ..." style="width=100%">
+                            <input type="text" class="form-control border-0" id="linkMateriTechnicalLink" name="linkMateriTechnicalLink" placeholder="Link Materi ..." style="width=100%" required>
                             <div class="col-sm-6">
-                                <div id="linkMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="linkMateriTechnicalLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="judulMateriLink" name="judulMateriLink" placeholder="Judul Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="judulMateriTechnicalLink" name="judulMateriTechnicalLink" placeholder="Judul Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="judulMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="judulMateriTechnicalLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="kategoriMateriLink" name="kategoriMateriLink" placeholder="Kategori Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="kategoriMateriTechnicalLink" name="kategoriMateriTechnicalLink" placeholder="Kategori Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="kategoriMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="kategoriMateriTechnicalLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <textarea id="keteranganMateriLink" name="keteranganMateriLink" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
+                        <textarea id="keteranganMateriTechnicalLink" name="keteranganMateriTechnicalLink" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required></textarea>
                         <div class="col-sm-12">
-                            <div id="keteranganMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="keteranganMateriTechnicalLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriLink" onclick="ValidasiTambahDataMateri();">
+                                <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriTechnicalLink" onclick="ValidasiTambahDataMateriTechnicalLink();">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>
@@ -141,7 +141,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-center bg-materiTechnicalLink border-0">
-          <h5 class="modal-title text-white w-100 text-center">Edit Data Materi Technical</h5>
+          <h5 class="modal-title text-white w-100 text-center">Edit Data Materi Technical Link</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

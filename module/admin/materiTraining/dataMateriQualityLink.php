@@ -93,7 +93,7 @@
                                 if(mysqli_num_rows($resultTampilData) > 0){
                                     while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
                             ?>
-                                <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_quality"] ?>">
+                                <tr class="text-center" id-materi-qualityLink="<?php echo $rowTampilData["id_materi_quality"] ?>">
                                     <td ><?php echo $index; ?></td>
                                     <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
                                     <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>

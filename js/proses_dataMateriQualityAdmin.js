@@ -136,7 +136,7 @@ function ValidasiTambahDataMateriQualityLink() {
     document.getElementById("linkMateriQualityLinkBlank").innerHTML = "*Masukkan Link Quality";
   }
 
-  else if (linkMateriQualityLink!= "") {
+  else if (linkMateriQualityLink != "") {
     document.getElementById("linkMateriQualityLinkBlank").innerHTML = "";
   }
 
@@ -176,7 +176,7 @@ function ValidasiEditDataMateriQualityLink() {
     document.getElementById("linkMateriQualityLinkBlank2").innerHTML = "*Masukkan Link Quality";
   }
 
-  else if (linkMateriQualityLink2!= "") {
+  else if (linkMateriQualityLink2 != "") {
     document.getElementById("linkMateriQualityLinkBlank2").innerHTML = "";
   }
 

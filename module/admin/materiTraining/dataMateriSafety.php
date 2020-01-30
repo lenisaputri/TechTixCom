@@ -24,7 +24,7 @@
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="file" class="form-control border-0" id="fileMateriSafety" name="fileMateriSafety">
+                        <input type="file" class="form-control border-0" id="fileMateriSafety" name="fileMateriSafety" required>
                         <div class="col-sm-6">
                             <div id="fileMateriSafetyBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="form-group">
                         <div class="row d-flex justify-content-end">
-                            <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateriLink" onclick="location.href='index.php?module=dataMateriSafetyLink';">
+                            <button type="button" class="btn btn-info btn-icon-split" onclick="location.href='index.php?module=dataMateriSafetyLink';">
                                 <span class="text">Tambah Data Link</span>
                             </button>
                         </div>

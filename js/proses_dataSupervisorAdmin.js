@@ -1,4 +1,3 @@
-// DATA SUPERVISOR EDIT  
 $(".edit-dataSupervisor-admin").click(function () {
     var id_userEdit = $(this).attr("id_userEdit");
     var id_supervisorEdit = $(this).attr("id_supervisorEdit");
@@ -18,9 +17,6 @@ $(".edit-dataSupervisor-admin").click(function () {
         }
     });
 });
-// DATA SUPERVISOR EDIT END
-
-// DATA SUPERVISOR HAPUS
 
 $(".hapus-dataSupervisor-admin").click(function () {
     var id_user = $(this).attr("id_user");
@@ -30,15 +26,12 @@ $(".hapus-dataSupervisor-admin").click(function () {
     $('#hapusDataSupervisorModal').modal("show");
 })
 
-// DATA SUPERVISOR HAPUS END
-
-// PROSES TAMBAH
-
 function showPasswordSupervisor() {
     var password = document.getElementById("passwordSupervisorAdmin");
     if (password.type == "password") {
         password.type = "text";
-    } else {
+    }
+    else {
         password.type = "password";
     }
 
@@ -46,7 +39,8 @@ function showPasswordSupervisor() {
     if (eye.contains("fa-eye")) {
         eye.remove("fa-eye");
         eye.add("fa-eye-slash");
-    } else {
+    }
+    else {
         eye.remove("fa-eye-slash");
         eye.add("fa-eye");
     }
@@ -69,19 +63,12 @@ function preview_imagesSupervisor22(event) {
 }
 
 function preventDefaultActionSupervisor(event) {
-
     var input, file;
-
     input = document.getElementById("fileid2");
-
     file = input.files[0];
-
     if (file.size > 1000000) {
-
         event = event || window.event;
-
         document.getElementById("fileidSupervisorAdminBlank").innerHTML = "*Ukuran melebihi 1 MB";
-
         if (event.preventDefault) {
             event.preventDefault();
         }
@@ -89,7 +76,6 @@ function preventDefaultActionSupervisor(event) {
             event.returnValue = false;
         }
     }
-
     else if (file.size < 1000000) {
         document.getElementById("fileidSupervisorAdminBlank").innerHTML = "";
     }
@@ -105,7 +91,6 @@ function ValidasiTambahSupervisor() {
     if (usernameSupervisorAdmin == "") {
         document.getElementById("usernameSupervisorAdminBlank").innerHTML = "*Masukkan Username Supervisor";
     }
-
     else if (usernameSupervisorAdmin != "") {
         document.getElementById("usernameSupervisorAdminBlank").innerHTML = "";
     }
@@ -113,7 +98,6 @@ function ValidasiTambahSupervisor() {
     if (passwordSupervisorAdmin == "") {
         document.getElementById("passwordSupervisorAdminBlank").innerHTML = "*Masukkan Password Supervisor";
     }
-
     else if (passwordSupervisorAdmin != "") {
         document.getElementById("passwordSupervisorAdminBlank").innerHTML = "";
     }
@@ -121,16 +105,13 @@ function ValidasiTambahSupervisor() {
     if (fileid2 == "") {
         document.getElementById("fileidSupervisorAdminBlank").innerHTML = "*Upload File Gambar Supervisor";
     }
-
     else if (fileid2 != "") {
         document.getElementById("fileidSupervisorAdminBlank").innerHTML = "";
     }
 
-
     if (nikSupervisorAdmin == "") {
         document.getElementById("nikSupervisorAdminBlank").innerHTML = "*Masukkan NIK Supervisor";
     }
-
     else if (nikSupervisorAdmin != "") {
         document.getElementById("nikSupervisorAdminBlank").innerHTML = "";
     }
@@ -138,15 +119,10 @@ function ValidasiTambahSupervisor() {
     if (namaSupervisorAdmin == "") {
         document.getElementById("namaSupervisorAdminBlank").innerHTML = "*Masukkan Nama Supervisor";
     }
-
     else if (namaSupervisorAdmin != "") {
         document.getElementById("namaSupervisorAdminBlank").innerHTML = "";
     }
 }
-
-// PROSES TAMBAH END
-
-//PROSES EDIT
 
 function setupSupervisor3() {
     document.getElementById('buttonid3').addEventListener('click', openDialog2);
@@ -165,19 +141,12 @@ function preview_imagesSupervisor6(event) {
 }
 
 function preventDefaultActionSupervisor2(event) {
-
     var input2, file2;
-
     input2 = document.getElementById("fileid3");
-
     file2 = input2.files[0];
-
     if (file2.size > 1000000) {
-
         event = event || window.event;
-
         document.getElementById("fileidSupervisorAdminBlank2").innerHTML = "*Ukuran melebihi 1 MB";
-
         if (event.preventDefault) {
             event.preventDefault();
         }
@@ -185,7 +154,6 @@ function preventDefaultActionSupervisor2(event) {
             event.returnValue = false;
         }
     }
-
     else if (file.size < 1000000) {
         document.getElementById("fileidSupervisorAdminBlank2").innerHTML = "";
     }
@@ -195,7 +163,8 @@ function showPasswordSupervisor2() {
     var password = document.getElementById("passwordSupervisorAdmin2");
     if (password.type == "password") {
         password.type = "text";
-    } else {
+    }
+    else {
         password.type = "password";
     }
 
@@ -203,7 +172,8 @@ function showPasswordSupervisor2() {
     if (eye.contains("fa-eye")) {
         eye.remove("fa-eye");
         eye.add("fa-eye-slash");
-    } else {
+    }
+    else {
         eye.remove("fa-eye-slash");
         eye.add("fa-eye");
     }
@@ -219,7 +189,6 @@ function ValidasiEditSupervisor() {
     if (usernameSupervisorAdmin2 == "") {
         document.getElementById("usernameSupervisorAdminBlank2").innerHTML = "*Masukkan Username Supervisor";
     }
-
     else if (usernameSupervisorAdmin2 != "") {
         document.getElementById("usernameSupervisorAdminBlank2").innerHTML = "";
     }
@@ -227,7 +196,6 @@ function ValidasiEditSupervisor() {
     if (passwordSupervisorAdmin2 == "") {
         document.getElementById("passwordSupervisorAdminBlank2").innerHTML = "*Masukkan Password Supervisor";
     }
-
     else if (passwordSupervisorAdmin2 != "") {
         document.getElementById("passwordSupervisorAdminBlank2").innerHTML = "";
     }
@@ -235,7 +203,6 @@ function ValidasiEditSupervisor() {
     if (nikSupervisorAdmin2 == "") {
         document.getElementById("nikSupervisorAdminBlank2").innerHTML = "*Masukkan NIK Supervisor";
     }
-
     else if (nikSupervisorAdmin2 != "") {
         document.getElementById("nikSupervisorAdminBlank2").innerHTML = "";
     }
@@ -243,10 +210,7 @@ function ValidasiEditSupervisor() {
     if (namaSupervisorAdmin2 == "") {
         document.getElementById("namaSupervisorAdminBlank2").innerHTML = "*Masukkan Nama Supervisor";
     }
-
     else if (namaSupervisorAdmin2 != "") {
         document.getElementById("namaSupervisorAdminBlank2").innerHTML = "";
     }
 }
-
-//PROSES EDIT END

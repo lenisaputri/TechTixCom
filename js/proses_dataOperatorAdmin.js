@@ -1,4 +1,3 @@
-// DATA OPERATOR EDIT  
 $(".edit-dataOperator-admin").click(function () {
     var id_userEdit = $(this).attr("id_userEdit");
     var id_operatorEdit = $(this).attr("id_operatorEdit");
@@ -18,9 +17,6 @@ $(".edit-dataOperator-admin").click(function () {
         }
     });
 });
-// DATA OPERATOR EDIT END
-
-// DATA OPERATOR HAPUS
 
 $(".hapus-dataOperator-admin").click(function () {
     var id_user = $(this).attr("id_user");
@@ -30,10 +26,6 @@ $(".hapus-dataOperator-admin").click(function () {
     $('#hapusDataOperatorModal').modal("show");
 })
 
-// DATA OPERATOR HAPUS END
-
-// DATA OPERATOR MENGAMBIL GAMBAR DI PROSES TAMBAH
-
 function setupOperator2() {
     document.getElementById('buttonid2').addEventListener('click', openDialog);
     function openDialog() {
@@ -41,20 +33,12 @@ function setupOperator2() {
     }
 }
 
-// DATA OPERATOR MENGAMBIL GAMBAR DI PROSES TAMBAH END
-
-// DATA OPERATOR MENGAMBIL GAMBAR DI PROSES EDIT
-
 function setupOperator3() {
     document.getElementById('buttonid3').addEventListener('click', openDialog2);
     function openDialog2() {
         document.getElementById('fileid3').click();
     }
 }
-
-// DATA OPERATOR MENGAMBIL GAMBAR DI PROSES EDIT END
-
-// DATA OPERATOR MENAMPILKAN GAMBAR DI PROSES TAMBAH
 
 function preview_imagesOperator22(event) {
     var reader = new FileReader();
@@ -65,10 +49,6 @@ function preview_imagesOperator22(event) {
     reader.readAsDataURL(event.target.files[0]);
 }
 
-// DATA OPERATOR MENAMPILKAN GAMBAR DI PROSES TAMBAH END
-
-// DATA OPERATOR MENAMPILKAN GAMBAR DI PROSES EDIT
-
 function preview_imagesOperator6(event) {
     var reader = new FileReader();
     reader.onload = function () {
@@ -78,22 +58,13 @@ function preview_imagesOperator6(event) {
     reader.readAsDataURL(event.target.files[0]);
 }
 
-// DATA OPERATOR MENAMPILKAN GAMBAR DI PROSES EDIT END
-
 function preventDefaultActionOperator(event) {
-
     var input, file;
-
     input = document.getElementById("fileid2");
-
     file = input.files[0];
-
     if (file.size > 1000000) {
-
         event = event || window.event;
-
         document.getElementById("fileidOperatorAdminBlank").innerHTML = "*Ukuran melebihi 1 MB";
-
         if (event.preventDefault) {
             event.preventDefault();
         }
@@ -101,26 +72,18 @@ function preventDefaultActionOperator(event) {
             event.returnValue = false;
         }
     }
-
     else if (file.size < 1000000) {
         document.getElementById("fileidOperatorAdminBlank").innerHTML = "";
     }
 }
 
 function preventDefaultActionOperator2(event) {
-
     var input2, file2;
-
-    input2 = document.getElementById("fileid3");
-
+    input2 = document.getElementById("fileid3")
     file2 = input2.files[0];
-
     if (file2.size > 1000000) {
-
         event = event || window.event;
-
         document.getElementById("fileidOperatorAdminBlank2").innerHTML = "*Ukuran melebihi 1 MB";
-
         if (event.preventDefault) {
             event.preventDefault();
         }
@@ -128,18 +91,17 @@ function preventDefaultActionOperator2(event) {
             event.returnValue = false;
         }
     }
-
     else if (file.size < 1000000) {
         document.getElementById("fileidOperatorAdminBlank2").innerHTML = "";
     }
 }
 
-// show password
 function showPasswordOperator() {
     var password = document.getElementById("passwordOperatorAdmin");
     if (password.type == "password") {
         password.type = "text";
-    } else {
+    } 
+    else {
         password.type = "password";
     }
 
@@ -147,18 +109,19 @@ function showPasswordOperator() {
     if (eye.contains("fa-eye")) {
         eye.remove("fa-eye");
         eye.add("fa-eye-slash");
-    } else {
+    } 
+    else {
         eye.remove("fa-eye-slash");
         eye.add("fa-eye");
     }
 }
 
-// show password2
 function showPasswordOperator2() {
     var password = document.getElementById("passwordOperatorAdmin2");
     if (password.type == "password") {
         password.type = "text";
-    } else {
+    } 
+    else {
         password.type = "password";
     }
 
@@ -166,13 +129,13 @@ function showPasswordOperator2() {
     if (eye.contains("fa-eye")) {
         eye.remove("fa-eye");
         eye.add("fa-eye-slash");
-    } else {
+    } 
+    else {
         eye.remove("fa-eye-slash");
         eye.add("fa-eye");
     }
 }
 
-//VALIDASI TAMBAH
 function ValidasiTambahOperator() {
     var usernameOperatorAdmin = document.getElementById("usernameOperatorAdmin").value;
     var passwordOperatorAdmin = document.getElementById("passwordOperatorAdmin").value;
@@ -183,7 +146,6 @@ function ValidasiTambahOperator() {
     if (usernameOperatorAdmin == "") {
         document.getElementById("usernameOperatorAdminBlank").innerHTML = "*Masukkan Username Operator";
     }
-
     else if (usernameOperatorAdmin != "") {
         document.getElementById("usernameOperatorAdminBlank").innerHTML = "";
     }
@@ -191,7 +153,6 @@ function ValidasiTambahOperator() {
     if (passwordOperatorAdmin == "") {
         document.getElementById("passwordOperatorAdminBlank").innerHTML = "*Masukkan Password Operator";
     }
-
     else if (passwordOperatorAdmin != "") {
         document.getElementById("passwordOperatorAdminBlank").innerHTML = "";
     }
@@ -199,7 +160,6 @@ function ValidasiTambahOperator() {
     if (fileid2 == "") {
         document.getElementById("fileidOperatorAdminBlank").innerHTML = "*Upload File Gambar Operator";
     }
-
     else if (fileid2 != "") {
         document.getElementById("fileidOperatorAdminBlank").innerHTML = "";
     }
@@ -208,7 +168,6 @@ function ValidasiTambahOperator() {
     if (nikOperatorAdmin == "") {
         document.getElementById("nikOperatorAdminBlank").innerHTML = "*Masukkan NIK Operator";
     }
-
     else if (nikOperatorAdmin != "") {
         document.getElementById("nikOperatorAdminBlank").innerHTML = "";
     }
@@ -216,24 +175,20 @@ function ValidasiTambahOperator() {
     if (namaOperatorAdmin == "") {
         document.getElementById("namaOperatorAdminBlank").innerHTML = "*Masukkan Nama Operator";
     }
-
     else if (namaOperatorAdmin != "") {
         document.getElementById("namaOperatorAdminBlank").innerHTML = "";
     }
 }
 
-//VALIDASI EDIT
 function ValidasiEditOperator() {
     var usernameOperatorAdmin2 = document.getElementById("usernameOperatorAdmin2").value;
     var passwordOperatorAdmin2 = document.getElementById("passwordOperatorAdmin2").value;
-
     var nikOperatorAdmin2 = document.getElementById("nikOperatorAdmin2").value;
     var namaOperatorAdmin2 = document.getElementById("namaOperatorAdmin2").value;
 
     if (usernameOperatorAdmin2 == "") {
         document.getElementById("usernameOperatorAdminBlank2").innerHTML = "*Masukkan Username Operator";
     }
-
     else if (usernameOperatorAdmin2 != "") {
         document.getElementById("usernameOperatorAdminBlank2").innerHTML = "";
     }
@@ -241,7 +196,6 @@ function ValidasiEditOperator() {
     if (passwordOperatorAdmin2 == "") {
         document.getElementById("passwordOperatorAdminBlank2").innerHTML = "*Masukkan Password Operator";
     }
-
     else if (passwordOperatorAdmin2 != "") {
         document.getElementById("passwordOperatorAdminBlank2").innerHTML = "";
     }
@@ -249,7 +203,6 @@ function ValidasiEditOperator() {
     if (nikOperatorAdmin2 == "") {
         document.getElementById("nikOperatorAdminBlank2").innerHTML = "*Masukkan NIK Operator";
     }
-
     else if (nikOperatorAdmin2 != "") {
         document.getElementById("nikOperatorAdminBlank2").innerHTML = "";
     }
@@ -257,7 +210,6 @@ function ValidasiEditOperator() {
     if (namaOperatorAdmin2 == "") {
         document.getElementById("namaOperatorAdminBlank2").innerHTML = "*Masukkan Nama Operator";
     }
-
     else if (namaOperatorAdmin2 != "") {
         document.getElementById("namaOperatorAdminBlank2").innerHTML = "";
     }

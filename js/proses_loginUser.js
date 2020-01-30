@@ -1,9 +1,9 @@
-// show password
 function showPassword() {
   var password = document.getElementById("password");
   if (password.type == "password") {
     password.type = "text";
-  } else {
+  }
+  else {
     password.type = "password";
   }
 
@@ -11,13 +11,13 @@ function showPassword() {
   if (eye.contains("fa-eye")) {
     eye.remove("fa-eye");
     eye.add("fa-eye-slash");
-  } else {
+  }
+  else {
     eye.remove("fa-eye-slash");
     eye.add("fa-eye");
   }
 }
 
-// Login form validation
 function validateUsername(input) {
   if (input.value == "") {
     document.getElementById("error-handling").classList.remove("d-none");
@@ -30,16 +30,6 @@ function validateUsername(input) {
     }
     return false;
   }
-  // else if (!/^[0-9]+$/.test(input.value)) {
-  //   document.getElementById("error-handling").classList.remove("d-none");
-  //   document.getElementById("error-handling").classList.add("d-flex");
-  //   document.getElementById("error-handling").innerHTML = "*Username Invalid";
-  //   if (getUrl("error") == undefined || getUrl("error") != "") {
-  //     document.getElementById("error-handling2").classList.add("d-none");
-  //     document.getElementById("error-handling2").classList.remove("d-flex");
-  //   }
-  //   return false;
-  // } 
   else {
     document.getElementById("error-handling").classList.add("d-none");
     document.getElementById("error-handling").classList.remove("d-flex");
@@ -63,7 +53,8 @@ function validatePassword(input) {
       document.getElementById("error-handling2").classList.remove("d-flex");
     }
     return false;
-  } else {
+  }
+  else {
     document.getElementById("error-handling").classList.add("d-none");
     document.getElementById("error-handling").classList.remove("d-flex");
     document.getElementById("error-handling").innerHTML = "";
@@ -96,4 +87,3 @@ function getUrl(variable) {
   }
   return false;
 }
-// End login form validation

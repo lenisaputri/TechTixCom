@@ -24,7 +24,7 @@
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataMateriGeneralHrd.php?module=dataMateriGeneralHrd&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="file" class="form-control border-0" id="inputGroupFile02" name="fileMateri">
+                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
                         <div class="col-sm-6">
                             <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
@@ -45,9 +45,16 @@
                     </div>
                     <hr>
                     <div class="form-group">
+                        <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
+                        <div class="col-sm-12">
+                            <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
                         <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
                             <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
+                            <i class="fas fa-plus"></i>
                             </span>
                             <span class="text">Tambah Data</span>
                         </button>
@@ -79,38 +86,38 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
-                            $queryTampilData = "SELECT * FROM tabel_materi_generalhrd WHERE tipe LIKE '%file%';";
-                            $resultTampilData = mysqli_query($con, $queryTampilData);
-                            $index = 1;
-
-                            if(mysqli_num_rows($resultTampilData) > 0){
-                                while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                        ?>
+                            <?php
+                                $queryTampilData = "SELECT * FROM tabel_materi_generalhrd WHERE tipe LIKE '%file%';";
+                                $resultTampilData = mysqli_query($con, $queryTampilData);
+                                $index = 1;
+                                if(mysqli_num_rows($resultTampilData) > 0){
+                                    while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
+                            ?>
                             <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_generalhrd"] ?>">
                                 <td ><?php echo $index; ?></td>
                                 <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
                                 <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
                                 <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
                                 <td>
-                                    <button type="button" class="btn btn-primary edit-dataMateriGeneralHrd-admin" data-toggle="modal" data-target="#editDataMateriGeneralHrdModal" id_materiGeneralHrdEdit="<?php echo $rowTampilData["id_materi_generalhrd"];?>">
+                                    <button type="button" class="btn btn-primary edit-dataMateriGeneralHrd-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriGeneralHrdModal" id_materiGeneralHrdEdit="<?php echo $rowTampilData["id_materi_generalhrd"];?>">
                                         <i class="fas fa-edit"></i>
                                     </button>
+                                    <br>
                                     <button type="button" class="btn btn-danger hapus-dataMateriGeneralHrd-admin" data-toggle="modal" data-target="#hapusDataMateriGeneralHrdModal" id_materi_generalhrd="<?php echo $rowTampilData["id_materi_generalhrd"];?>">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </td>
                             </tr>
-                        <?php 
-                            $index++;
-                            }
-                        ?>
-                        <?php
-                            }   else{
-                        ?>
-                        <?php
-                            }
-                        ?>
+                            <?php 
+                                $index++;
+                                }
+                            ?>
+                            <?php
+                                }   else{
+                            ?>
+                            <?php
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -121,10 +128,10 @@
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-materiGeneralHrd border-0">
-                    <h5 class="modal-title text-white w-100 text-center">Edit Data Materi GeneralHrd</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <h5 class="modal-title text-white w-100 text-center">Edit Data Materi General HRD</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
                 </div>
                 <div class="modal-body">
                     <form action="../process/proses_adminDataMateriGeneralHrd.php?module=dataMateriGeneralHrd&act=edit" method="POST" enctype="multipart/form-data">
@@ -145,6 +152,7 @@
                     </div>
                     <div class="pb-4 pt-4 d-flex justify-content-around">
                         <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
+                        <p></p>
                         <button type="submit" name="hapusDataMateriGeneralHrd" class="btn btn-success btn-ok">Ya</button>
                     </div>
                 </form>

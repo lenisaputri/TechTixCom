@@ -45,7 +45,6 @@
                 </div>
                 <hr>
                 <div class="form-group">
-<<<<<<< HEAD
                     <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
                     <div class="col-sm-12">
                         <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -59,14 +58,6 @@
                 </span>
                 <span class="text">Tambah Data</span>
                 </button>
-=======
-                    <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-plus"></i>
-                        </span>
-                        <span class="text">Tambah Data</span>
-                    </button>
->>>>>>> ccce6673ec84334ebccc1c941afb1ecbffefbb66
                 </div>
                 <div class="form-group">
                     <div class="row d-flex justify-content-end">
@@ -112,6 +103,7 @@
                                     <button type="button" class="btn btn-primary edit-dataMateriQuality-admin" data-toggle="modal" data-target="#editDataMateriQualityModal" id_materiQualityEdit="<?php echo $rowTampilData["id_materi_quality"];?>">
                                         <i class="fas fa-edit"></i>
                                     </button>
+                                    <p></p>
                                     <button type="button" class="btn btn-danger hapus-dataMateriQuality-admin" data-toggle="modal" data-target="#hapusDataMateriQualityModal" id_materi_quality="<?php echo $rowTampilData["id_materi_quality"];?>">
                                         <i class="fas fa-trash"></i>
                                     </button>

@@ -1,4 +1,3 @@
-// DATA ADMIN EDIT  
 $(".edit-dataAdmin-admin").click(function () {
     var id_userEdit = $(this).attr("id_userEdit");
     var id_adminEdit = $(this).attr("id_adminEdit");
@@ -18,9 +17,6 @@ $(".edit-dataAdmin-admin").click(function () {
         }
     });
 });
-// DATA ADMIN EDIT END
-
-// DATA ADMIN HAPUS
 
 $(".hapus-dataAdmin-admin").click(function () {
     var id_user = $(this).attr("id_user");
@@ -30,15 +26,12 @@ $(".hapus-dataAdmin-admin").click(function () {
     $('#hapusDataAdminModal').modal("show");
 })
 
-// DATA ADMIN HAPUS END
-
-// PROSES TAMBAH
-
 function showPasswordAdmin() {
     var password = document.getElementById("passwordAdminAdmin");
     if (password.type == "password") {
         password.type = "text";
-    } else {
+    } 
+    else {
         password.type = "password";
     }
 
@@ -46,7 +39,8 @@ function showPasswordAdmin() {
     if (eye.contains("fa-eye")) {
         eye.remove("fa-eye");
         eye.add("fa-eye-slash");
-    } else {
+    } 
+    else {
         eye.remove("fa-eye-slash");
         eye.add("fa-eye");
     }
@@ -69,19 +63,12 @@ function preview_imagesAdmin22(event) {
 }
 
 function preventDefaultActionAdmin(event) {
-
     var input, file;
-
     input = document.getElementById("fileid2");
-
     file = input.files[0];
-
     if (file.size > 1000000) {
-
         event = event || window.event;
-
         document.getElementById("fileidAdminAdminBlank").innerHTML = "*Ukuran melebihi 1 MB";
-
         if (event.preventDefault) {
             event.preventDefault();
         }
@@ -89,7 +76,6 @@ function preventDefaultActionAdmin(event) {
             event.returnValue = false;
         }
     }
-
     else if (file.size < 1000000) {
         document.getElementById("fileidAdminAdminBlank").innerHTML = "";
     }
@@ -101,19 +87,16 @@ function ValidasiTambahAdmin() {
     var fileid2 = document.getElementById("fileid2").value;
     var nikAdminAdmin = document.getElementById("nikAdminAdmin").value;
     var namaAdminAdmin = document.getElementById("namaAdminAdmin").value;
-
     if (usernameAdminAdmin == "") {
         document.getElementById("usernameAdminAdminBlank").innerHTML = "*Masukkan Username Admin";
     }
-
     else if (usernameAdminAdmin != "") {
         document.getElementById("usernameAdminAdminBlank").innerHTML = "";
     }
-
+    
     if (passwordAdminAdmin == "") {
         document.getElementById("passwordAdminAdminBlank").innerHTML = "*Masukkan Password Admin";
     }
-
     else if (passwordAdminAdmin != "") {
         document.getElementById("passwordAdminAdminBlank").innerHTML = "";
     }
@@ -121,16 +104,13 @@ function ValidasiTambahAdmin() {
     if (fileid2 == "") {
         document.getElementById("fileidAdminAdminBlank").innerHTML = "*Upload File Gambar Admin";
     }
-
     else if (fileid2 != "") {
         document.getElementById("fileidAdminAdminBlank").innerHTML = "";
     }
-
-
+    
     if (nikAdminAdmin == "") {
         document.getElementById("nikAdminAdminBlank").innerHTML = "*Masukkan NIK Admin";
     }
-
     else if (nikAdminAdmin != "") {
         document.getElementById("nikAdminAdminBlank").innerHTML = "";
     }
@@ -138,15 +118,10 @@ function ValidasiTambahAdmin() {
     if (namaAdminAdmin == "") {
         document.getElementById("namaAdminAdminBlank").innerHTML = "*Masukkan Nama Admin";
     }
-
     else if (namaAdminAdmin != "") {
         document.getElementById("namaAdminAdminBlank").innerHTML = "";
     }
 }
-
-// PROSES TAMBAH END
-
-//PROSES EDIT
 
 function setupAdmin3() {
     document.getElementById('buttonid3').addEventListener('click', openDialog2);
@@ -165,19 +140,12 @@ function preview_imagesAdmin6(event) {
 }
 
 function preventDefaultActionAdmin2(event) {
-
     var input2, file2;
-
     input2 = document.getElementById("fileid3");
-
     file2 = input2.files[0];
-
     if (file2.size > 1000000) {
-
         event = event || window.event;
-
         document.getElementById("fileidAdminAdminBlank2").innerHTML = "*Ukuran melebihi 1 MB";
-
         if (event.preventDefault) {
             event.preventDefault();
         }
@@ -185,7 +153,6 @@ function preventDefaultActionAdmin2(event) {
             event.returnValue = false;
         }
     }
-
     else if (file.size < 1000000) {
         document.getElementById("fileidAdminAdminBlank2").innerHTML = "";
     }
@@ -195,7 +162,8 @@ function showPasswordAdmin2() {
     var password = document.getElementById("passwordAdminAdmin2");
     if (password.type == "password") {
         password.type = "text";
-    } else {
+    } 
+    else {
         password.type = "password";
     }
 
@@ -203,7 +171,8 @@ function showPasswordAdmin2() {
     if (eye.contains("fa-eye")) {
         eye.remove("fa-eye");
         eye.add("fa-eye-slash");
-    } else {
+    } 
+    else {
         eye.remove("fa-eye-slash");
         eye.add("fa-eye");
     }
@@ -212,14 +181,12 @@ function showPasswordAdmin2() {
 function ValidasiEditAdmin() {
     var usernameAdminAdmin2 = document.getElementById("usernameAdminAdmin2").value;
     var passwordAdminAdmin2 = document.getElementById("passwordAdminAdmin2").value;
-
     var nikAdminAdmin2 = document.getElementById("nikAdminAdmin2").value;
     var namaAdminAdmin2 = document.getElementById("namaAdminAdmin2").value;
 
     if (usernameAdminAdmin2 == "") {
         document.getElementById("usernameAdminAdminBlank2").innerHTML = "*Masukkan Username Admin";
     }
-
     else if (usernameAdminAdmin2 != "") {
         document.getElementById("usernameAdminAdminBlank2").innerHTML = "";
     }
@@ -227,7 +194,6 @@ function ValidasiEditAdmin() {
     if (passwordAdminAdmin2 == "") {
         document.getElementById("passwordAdminAdminBlank2").innerHTML = "*Masukkan Password Admin";
     }
-
     else if (passwordAdminAdmin2 != "") {
         document.getElementById("passwordAdminAdminBlank2").innerHTML = "";
     }
@@ -235,7 +201,6 @@ function ValidasiEditAdmin() {
     if (nikAdminAdmin2 == "") {
         document.getElementById("nikAdminAdminBlank2").innerHTML = "*Masukkan NIK Admin";
     }
-
     else if (nikAdminAdmin2 != "") {
         document.getElementById("nikAdminAdminBlank2").innerHTML = "";
     }
@@ -243,10 +208,7 @@ function ValidasiEditAdmin() {
     if (namaAdminAdmin2 == "") {
         document.getElementById("namaAdminAdminBlank2").innerHTML = "*Masukkan Nama Admin";
     }
-
     else if (namaAdminAdmin2 != "") {
         document.getElementById("namaAdminAdminBlank2").innerHTML = "";
     }
 }
-
-  //PROSES EDIT END

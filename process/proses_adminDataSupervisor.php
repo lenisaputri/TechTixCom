@@ -2,22 +2,16 @@
     include "../config/connection.php";
 
     function linkFotoSupervisor($Foto){
-
         $ling = "";
 
         if($Foto == null){
             $ling = "../attachment/img/avatar.jpeg";
         }
-
         else if($Foto != null){
             $link = "../attachment/img/";
-
-            $ling = ($link . $Foto);
-            
+            $ling = ($link . $Foto);           
         }
-
-        return $ling;    
-        
+        return $ling;           
     }
 
     function tampilJabatan($con){
@@ -29,7 +23,6 @@
     function tampilJabatanEdit($con, $id_jabatanEdit){
         $jabatan = "SELECT * FROM tabel_jabatan";
         $resultJabatan = mysqli_query($con, $jabatan);
-
         $output="";
 
         if(mysqli_num_rows($resultJabatan) > 0){
@@ -37,13 +30,11 @@
                 if($rowJabatan["id_jabatan"]==$id_jabatanEdit){
                     $output.="<option value='$rowJabatan[id_jabatan]' selected>".$rowJabatan["nama"]."</option>";
                 }
-
                 else{
                     $output.="<option value='$rowJabatan[id_jabatan]'>$rowJabatan[nama]</option>";
                 }
             }
         }
-
         return $output;
     }
 
@@ -54,31 +45,31 @@
             $nama_file = $_FILES["fileid2"]["name"];
             move_uploaded_file($tmp, "../attachment/$nama_folder/$nama_file");
 
-        $query1 = "INSERT INTO tabel_user (username, password, level) values (
-            '$_POST[usernameSupervisorAdmin]',
-            '$_POST[passwordSupervisorAdmin]',
-            'supervisor'
-        ); ";
+            $query1 = "INSERT INTO tabel_user (username, password, level) values (
+                '$_POST[usernameSupervisorAdmin]',
+                '$_POST[passwordSupervisorAdmin]',
+                'supervisor'
+            ); ";
 
-        $query2 = "INSERT INTO tabel_supervisor (
-            id_user,
-            id_jabatan,
-            nama,
-            nik,
-            foto,
-            jenis_kelamin,
-            waktu_tambah
-        )
+            $query2 = "INSERT INTO tabel_supervisor (
+                id_user,
+                id_jabatan,
+                nama,
+                nik,
+                foto,
+                jenis_kelamin,
+                waktu_tambah
+            )
 
-        values
-        (  (select id_user from tabel_user where username='$_POST[usernameSupervisorAdmin]'),
-            '$_POST[jabatanSupervisorAdmin]',
-            '$_POST[namaSupervisorAdmin]',
-            '$_POST[nikSupervisorAdmin]',
-            '$nama_file',
-            '$_POST[jkSupervisorAdmin]',
-            curdate()
-        );";
+            values(  
+                (select id_user from tabel_user where username='$_POST[usernameSupervisorAdmin]'),
+                '$_POST[jabatanSupervisorAdmin]',
+                '$_POST[namaSupervisorAdmin]',
+                '$_POST[nikSupervisorAdmin]',
+                '$nama_file',
+                '$_POST[jkSupervisorAdmin]',
+                curdate()
+            );";
         
             if(mysqli_query($con, $query1) AND mysqli_query($con, $query2)){ 
                 header('location:../module/index.php?module=' . $_GET["module"]);
@@ -87,11 +78,9 @@
                 echo("Error description: " . mysqli_error($con));
             }
         } 
-
         else if($_GET["module"] =="dataSupervisor" && $_GET["act"]=="edit"){
             $update = $_POST["id_userUpdate"];
-            $id_supervisorUpdate = $_POST["id_supervisorUpdate"];
-            
+            $id_supervisorUpdate = $_POST["id_supervisorUpdate"];            
             $nama_folder = "img";
             $tmp = $_FILES["fileid3"]["tmp_name"];
             $namanya_file = $_FILES["fileid3"]["name"];
@@ -99,23 +88,22 @@
 
             if($namanya_file!=""){                
                 $query9 = "UPDATE tabel_user 
-                set username='$_POST[usernameSupervisorAdmin2]',
-                password='$_POST[passwordSupervisorAdmin2]'
-                where id_user= '$update';";
+                    set username='$_POST[usernameSupervisorAdmin2]',
+                    password='$_POST[passwordSupervisorAdmin2]'
+                    where id_user= '$update';";
 
                 $query10="UPDATE tabel_supervisor
-                set id_jabatan = '$_POST[jabatanSupervisorAdmin2]',
-                nama = '$_POST[namaSupervisorAdmin2]',
-                nik = '$_POST[nikSupervisorAdmin2]',
-                foto = '$namanya_file',
-                jenis_kelamin = '$_POST[jkSupervisorAdmin2]',
-                waktu_edit = curdate()
-                where id_user='$update';";
+                    set id_jabatan = '$_POST[jabatanSupervisorAdmin2]',
+                    nama = '$_POST[namaSupervisorAdmin2]',
+                    nik = '$_POST[nikSupervisorAdmin2]',
+                    foto = '$namanya_file',
+                    jenis_kelamin = '$_POST[jkSupervisorAdmin2]',
+                    waktu_edit = curdate()
+                    where id_user='$update';";
 
                 if(mysqli_query($con,$query9) && mysqli_query($con,$query10)){
                     header('location:../module/index.php?module=' . $_GET["module"]);
                 }
-
                 else{            
                     echo("Error description: " . mysqli_error($con));
                 }
@@ -123,40 +111,35 @@
 
             else if($namanya_file == ""){
                 $query9 = "UPDATE tabel_user 
-                set username='$_POST[usernameSupervisorAdmin2]',
-                password='$_POST[passwordSupervisorAdmin2]'
-                where id_user= '$update';";
+                    set username='$_POST[usernameSupervisorAdmin2]',
+                    password='$_POST[passwordSupervisorAdmin2]'
+                    where id_user= '$update';";
 
                 $query10="UPDATE tabel_supervisor
-                set id_jabatan = '$_POST[jabatanSupervisorAdmin2]',
-                nama = '$_POST[namaSupervisorAdmin2]',
-                nik = '$_POST[nikSupervisorAdmin2]',
-                jenis_kelamin = '$_POST[jkSupervisorAdmin2]',
-                waktu_edit = curdate()
-                where id_user='$update';";
+                    set id_jabatan = '$_POST[jabatanSupervisorAdmin2]',
+                    nama = '$_POST[namaSupervisorAdmin2]',
+                    nik = '$_POST[nikSupervisorAdmin2]',
+                    jenis_kelamin = '$_POST[jkSupervisorAdmin2]',
+                    waktu_edit = curdate()
+                    where id_user='$update';";
 
                 if(mysqli_query($con,$query9) && mysqli_query($con,$query10)){
-
                     header('location:../module/index.php?module=' . $_GET["module"]);
                 }
-
                 else{            
                     echo("Error description: " . mysqli_error($con));
                 }
             }
         }
-
         else if($_GET["module"] =="dataSupervisor" && $_GET["act"]=="hapus"){
             $delete=$_POST['id_user'];
             $idnya = $_POST['id_supervisor'];
-
             $queryDeleteSupervisor = "DELETE FROM tabel_supervisor WHERE id_supervisor='$idnya';";
             $queryDeleteUser = "DELETE FROM tabel_user WHERE id_user='$delete';";
 
             if(mysqli_query($con,$queryDeleteSupervisor) && mysqli_query($con,$queryDeleteUser)){
                 header('location:../module/index.php?module=' . $_GET["module"]);
             }
-
             else{            
                 echo("Error description: " . mysqli_error($con));
             }
@@ -165,14 +148,13 @@
 
     if(isset($_POST["editDataSupervisor_idSupervisor"])){
         $editSupervisor = "SELECT ts.*, ts.id_supervisor ,ts.nama AS nama_lengkap ,tj.*, tj.nama AS nama_jabatan, tu.* FROM tabel_supervisor ts,tabel_jabatan tj,tabel_user tu 
-        WHERE ts.id_jabatan = tj.id_jabatan
-        AND ts.id_user = tu.id_user 
-        AND ts.id_supervisor = $_POST[editDataSupervisor_idSupervisor]";
+            WHERE ts.id_jabatan = tj.id_jabatan
+            AND ts.id_user = tu.id_user 
+            AND ts.id_supervisor = $_POST[editDataSupervisor_idSupervisor]";
         $resultEditSupervisor = mysqli_query($con, $editSupervisor);
     
         if(mysqli_num_rows($resultEditSupervisor) > 0){
-            $rowEditSupervisor=mysqli_fetch_assoc($resultEditSupervisor);
-            
+            $rowEditSupervisor=mysqli_fetch_assoc($resultEditSupervisor);            
             $output="";
             $output.="      
             <div class='row' id='modail'>
@@ -286,11 +268,11 @@
                 }
             </script>
             ";
-        echo $output;    
+            echo $output;    
         }
 
         else{
-        echo $output.="Data Kosong";
+            echo $output.="Data Kosong";
         }
     }
 ?>

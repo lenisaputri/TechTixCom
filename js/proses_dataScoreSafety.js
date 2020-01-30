@@ -6,7 +6,6 @@ $(function () {
     $('#datepickerTanggalTrainingEdit').datepicker();
 });
 
-// DATA SCORE SAFETY EDIT  
 $(".edit-dataScoreSafety-admin").click(function () {
     var id_scoreSafetyEdit = $(this).attr("id_scoreSafetyEdit");
 
@@ -23,9 +22,6 @@ $(".edit-dataScoreSafety-admin").click(function () {
         }
     });
 });
-// DATA SCORE SAFETY EDIT END
-
-// DATA SCORE SAFETY HAPUS
 
 $(".hapus-dataScoreSafety-admin").click(function () {
     var id_score_safety = $(this).attr("id_score_safety");
@@ -35,9 +31,6 @@ $(".hapus-dataScoreSafety-admin").click(function () {
     $('#hapusDataMateriSafetyModal').modal("show");
 })
 
-// DATA SCORE SAFETY HAPUS END
-
-// DATA SCORE SAFETY LIHAT
 $(".info-dataScoreSafety-admin").click(function () {
     var id_scoreSafetyInfo = $(this).attr("id_scoreSafetyInfo");
 
@@ -53,9 +46,7 @@ $(".info-dataScoreSafety-admin").click(function () {
         }
     });
 });
-// DATA SCORE SAFETY LIHAT END
 
-// DATA SCORE SAFETY EDIT DETAIL
 $(".edit-dataScoreSafetyDetail-admin").click(function () {
     var id_scoreSafetyDetailEdit = $(this).attr("id_scoreSafetyDetailEdit");
 
@@ -72,9 +63,6 @@ $(".edit-dataScoreSafetyDetail-admin").click(function () {
         }
     });
 });
-// DATA SCORE SAFETY EDIT DETAIL END
-
-// DATA SCORE SAFETY HAPUS DETAIL
 
 $(".hapus-dataScoreSafetyDetail-admin").click(function () {
     var id_score_safety_detail = $(this).attr("id_score_safety_detail");
@@ -83,5 +71,3 @@ $(".hapus-dataScoreSafetyDetail-admin").click(function () {
 
     $('#hapusDataScoreSafetyDetailModal').modal("show");
 })
-
-// DATA SCORE SAFETY HAPUS DETAIL END

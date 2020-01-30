@@ -1,4 +1,3 @@
-// JABATAN EDIT  
 $(".edit-jabatan").click(function () {
   var id_jabatan = $(this).attr("id-jabatan");
 
@@ -14,17 +13,13 @@ $(".edit-jabatan").click(function () {
     }
   });
 });
-// JABATAN EDIT END
 
-//JABATAN HAPUS
 $(".hapus-jabatan").click(function () {
   var id_jabatan = $(this).attr("id-jabatan");
   $("#id_jabatanHapus").val(id_jabatan);
   $("#hapusJabatanModal").modal("show");
 });
-//JABATAN HAPUS END
 
-//VALIDASI TAMBAH
 function ValidasiTambahJabatan() {
   var nama = document.getElementById("nama").value;
 
@@ -37,7 +32,6 @@ function ValidasiTambahJabatan() {
   }
 }
 
-//VALIDASI EDIT
 function ValidasiEditJabatan() {
   var nama2 = document.getElementById("nama2").value;
 

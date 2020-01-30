@@ -1,7 +1,5 @@
-// DATA MATERI GENERAL HRD EDIT  
 $(".edit-dataMateriGeneralHrd-admin").click(function () {
   var id_materiGeneralHrdEdit = $(this).attr("id_materiGeneralHrdEdit");
-
   $.ajax({
     url: "../process/proses_adminDataMateriGeneralHrd.php",
     method: "post",
@@ -15,9 +13,6 @@ $(".edit-dataMateriGeneralHrd-admin").click(function () {
     }
   });
 });
-// DATA MATERI GeneralHrd EDIT END
-
-// DATA MATERI GeneralHrd HAPUS
 
 $(".hapus-dataMateriGeneralHrd-admin").click(function () {
   var id_materi_generalhrd = $(this).attr("id_materi_generalhrd");
@@ -26,9 +21,6 @@ $(".hapus-dataMateriGeneralHrd-admin").click(function () {
   $('#hapusDataMateriGeneralHrdModal').modal("show");
 })
 
-// DATA MATERI GeneralHrd HAPUS END
-
-// DATA MATERI GeneralHrd Link EDIT  
 $(".edit-dataMateriGeneralHrdLink-admin").click(function () {
   var id_materiGeneralHrdLinkEdit = $(this).attr("id_materiGeneralHrdLinkEdit");
 
@@ -45,9 +37,6 @@ $(".edit-dataMateriGeneralHrdLink-admin").click(function () {
     }
   });
 });
-// DATA MATERI GeneralHrd EDIT Link END
-
-// DATA MATERI Quality Link HAPUS
 
 $(".hapus-dataMateriQualityLink-admin").click(function () {
   var id_materi_quality = $(this).attr("id_materi_quality");
@@ -55,5 +44,3 @@ $(".hapus-dataMateriQualityLink-admin").click(function () {
   $('#id_materiQualityLinkHapus').val(id_materi_quality);
   $('#hapusDataMateriQualityLinkModal').modal("show");
 })
-
-// DATA MATERI Quality Link HAPUS END

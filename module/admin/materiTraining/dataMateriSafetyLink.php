@@ -24,40 +24,40 @@
         </nav>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Safety</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Safety Link</h6>
             </div>
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataMateriSafetyLink.php?module=dataMateriSafetyLink&act=tambah" id="formDataMateriAdmin" method="POST">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="linkMateriLink" name="linkMateri" placeholder="Link Materi ..." style="width=100%">
+                        <input type="text" class="form-control border-0" id="linkMateriSafetyLink" name="linkMateriSafety" placeholder="Link Materi ..." style="width=100%">
                         <div class="col-sm-6">
-                            <div id="linkMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="linkMateriSafetyLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>   
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="judulMateriLink" name="judulMateriLink" placeholder="Judul Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="judulMateriSafetyLink" name="judulMateriSafetyLink" placeholder="Judul Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="judulMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="judulMateriSafetyLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="kategoriMateriLink" name="kategoriMateriLink" placeholder="Kategori Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="kategoriMateriSafetyLink" name="kategoriMateriSafetyLink" placeholder="Kategori Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="kategoriMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="kategoriMateriSafetyLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <textarea id="keteranganMateriLink" name="keteranganMateriLink" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
+                        <textarea id="keteranganMateriSafetyLink" name="keteranganMateriSafetyLink" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required></textarea>
                         <div class="col-sm-12">
-                            <div id="keteranganMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="keteranganMateriSafetyLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriLink" onclick="ValidasiTambahDataMateri();">
+                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriSafetyLink" onclick="ValidasiTambahDataMateriSafetyLink();">
                                 <span class="icon text-white-50">
                                 <i class="fas fa-plus"></i>
                             </span>

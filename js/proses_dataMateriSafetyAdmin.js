@@ -134,7 +134,7 @@ function ValidasiTambahDataMateriSafetyLink() {
   var keteranganMateriSafetyLink = document.getElementById("keteranganMateriSafetyLink").value;
 
   if (linkMateriSafetyLink == "") {
-    document.getElementById("linkMateriSafetyLinkBlank").innerHTML = "*Masukkan File Safety";
+    document.getElementById("linkMateriSafetyLinkBlank").innerHTML = "*Masukkan Link Safety";
   }
 
   else if (linkMateriSafetyLink!= "") {
@@ -174,7 +174,7 @@ function ValidasiEditDataMateriSafetyLink() {
   var keteranganMateriSafetyLink2 = document.getElementById("keteranganMateriSafetyLink2").value;
 
   if (linkMateriSafetyLink2 == "") {
-    document.getElementById("linkMateriSafetyLink2Blank").innerHTML = "*Masukkan File Safety";
+    document.getElementById("linkMateriSafetyLink2Blank").innerHTML = "*Masukkan Link Safety";
   }
 
   else if (linkMateriSafetyLink2!= "") {

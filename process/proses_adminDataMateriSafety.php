@@ -86,7 +86,7 @@
                         <input type="hidden" name="id_materiSafetyUpdate" value="<?=$rowEditMateriSafety["id_materi_safety"]?>" > 
                         <div class="row">
                             <div class="col-sm-12">
-                                <input type="file" class="form-control border-0" id="fileMateriSafety2" name="fileMateriSafety2">
+                                <input type="file" class="form-control border-0" id="fileMateriSafety2" name="fileMateriSafety2" required>
                                 <label class="custom-file-label" for="fileMateriSafety2"><?php echo $rowEditMateriSafety['file_materi']; ?></label>
                             </div>
                         </div>

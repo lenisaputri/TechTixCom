@@ -24,35 +24,35 @@
         <div class="card-body">
             <form class="user" action="../process/proses_adminDataMateriQuality.php?module=dataMateriQuality&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="file" class="form-control border-0" id="inputGroupFile02" name="fileMateri">
+                    <input type="file" class="form-control border-0" id="fileMateriQuality" name="fileMateriQuality" required>
                     <div class="col-sm-6">
-                        <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        <div id="fileMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
                 </div> 
                 <hr>
                 <div class="form-group">
-                    <input type="text" class="form-control border-0" id="judulMateri" name="judulMateri" placeholder="Judul Materi ..." style="width=100%" required>
+                    <input type="text" class="form-control border-0" id="judulMateriQuality" name="judulMateriQuality" placeholder="Judul Materi ..." style="width=100%" required>
                     <div class="col-sm-12">
-                        <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        <div id="judulMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
                 </div>
                 <hr>
                 <div class="form-group">
-                    <input type="text" class="form-control border-0" id="kategoriMateri" name="kategoriMateri" placeholder="Kategori Materi ..." style="width=100%" required>
+                    <input type="text" class="form-control border-0" id="kategoriMateriQuality" name="kategoriMateriQuality" placeholder="Kategori Materi ..." style="width=100%" required>
                     <div class="col-sm-12">
-                        <div id="kategoriMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        <div id="kategoriMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
                 </div>
                 <hr>
                 <div class="form-group">
-                    <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
+                    <textarea id="keteranganMateriQuality" name="keteranganMateriQuality" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required></textarea>
                     <div class="col-sm-12">
-                        <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        <div id="keteranganMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
                 </div>
                 <hr>
                 <div class="form-group">
-                <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriQuality" onclick="ValidasiTambahDataMateriQuality();">
                 <span class="icon text-white-50">
                 <i class="fas fa-plus"></i>
                 </span>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="form-group">
                     <div class="row d-flex justify-content-end">
-                        <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateriLink" onclick="location.href='index.php?module=dataMateriQualityLink';">
+                        <button type="button" class="btn btn-info btn-icon-split" onclick="location.href='index.php?module=dataMateriQualityLink';">
                             <span class="text">Tambah Data Link</span>
                         </button>
                     </div>

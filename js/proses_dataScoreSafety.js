@@ -54,3 +54,22 @@ $(".info-dataScoreSafety-admin").click(function () {
     });
 });
 // DATA SCORE SAFETY LIHAT END
+
+// DATA SCORE SAFETY EDIT DETAIL
+$(".edit-dataScoreSafetyDetail-admin").click(function () {
+    var id_scoreSafetyDetailEdit = $(this).attr("id_scoreSafetyDetailEdit");
+
+    $.ajax({
+        url: "../process/proses_adminDataScoreSafetyDetail.php",
+        method: "post",
+        data: {
+            editDataScoreSafetyDetail_idScoreSafety: id_scoreSafetyDetailEdit
+        },
+        success: function (data) {
+            $("#id_scoreSafetyDetailUpdate").val(id_scoreSafetyDetailEdit);
+            $("#edit-dataScoreSafetyDetail").html(data);
+            $("#editDataScoreSafetyDetailModal").modal("show");
+        }
+    });
+});
+// DATA SCORE SAFETY EDIT DETAIL END

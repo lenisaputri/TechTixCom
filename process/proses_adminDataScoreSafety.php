@@ -201,7 +201,7 @@ if(isset($_POST["infoDataScoreSafety_idScoreSafety"])){
                     <tr>
                         <td><?php echo $index;?></td>
                         <td><?php echo $row1["smk3"];?></td>
-                        <td><?php echo $row1["ea-hira"];?></td>
+                        <td><?php echo $row1["ea_hira"];?></td>
                         <td><?php echo $row1["movement_forklift"];?></td>
                         <td><?php echo $row1["confined_space"];?></td>
                         <td><?php echo $row1["loto"];?></td>

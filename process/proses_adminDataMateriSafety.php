@@ -17,12 +17,12 @@
         return $ling;            
     }
 
-    if (isset($_POST["tambahDataMateri"]) || isset($_POST["editDataMateriSafety"]) || isset($_POST["hapusDataMateriSafety"])){
+    if (isset($_POST["tambahDataMateriSafety"]) || isset($_POST["editDataMateriSafety"]) || isset($_POST["hapusDataMateriSafety"])){
         if($_GET["module"]=="dataMateriSafety" && $_GET["act"]=="tambah"){
             $tipe = "";
             $nama_folder = "file";
-            $tmp = $_FILES["fileMateri"]["tmp_name"];
-            $nama_file = $_FILES["fileMateri"]["name"];
+            $tmp = $_FILES["fileMateriSafety"]["tmp_name"];
+            $nama_file = $_FILES["fileMateriSafety"]["name"];
             move_uploaded_file($tmp, "../attachment/$nama_folder/$nama_file");            
             $query2 = "INSERT INTO tabel_materi_safety (
                 kategori_materi,
@@ -34,9 +34,9 @@
             )
             
             values(  
-                '$_POST[kategoriMateri]',
-                '$_POST[judulMateri]',
-                '$_POST[keteranganMateri]',
+                '$_POST[kategoriMateriSafety]',
+                '$_POST[judulMateriSafety]',
+                '$_POST[keteranganMateriSafety]',
                 '$nama_file',
                 'file',
                 curdate()
@@ -52,11 +52,11 @@
         else if($_GET["module"]=="dataMateriSafety" && $_GET["act"]=="edit"){
             $id_materiSafetyUpdate = $_POST["id_materiSafetyUpdate"];
             $nama_folder = "file";
-            $tmp = $_FILES["fileMateri2"]["tmp_name"];
-            $namanya_file = $_FILES["fileMateri2"]["name"];
+            $tmp = $_FILES["fileMateriSafety2"]["tmp_name"];
+            $namanya_file = $_FILES["fileMateriSafety2"]["name"];
             move_uploaded_file($tmp, "../attachment/$nama_folder/$nama_file");
-            $query9 = "UPDATE tabel_materi_safety set kategori_materi = '$_POST[kategoriMateri2]',
-                judul_materi = '$_POST[judulMateri2]', keterangan_materi = '$_POST[keteranganMateri2]',
+            $query9 = "UPDATE tabel_materi_safety set kategori_materi = '$_POST[kategoriMateriSafety2]',
+                judul_materi = '$_POST[judulMateriSafety2]', keterangan_materi = '$_POST[keteranganMateriSafety2]',
                 file_materi = '$namanya_file', tipe = 'file' WHERE id_materi_safety = '$id_materiSafetyUpdate'
             ";
             
@@ -86,30 +86,33 @@
                         <input type="hidden" name="id_materiSafetyUpdate" value="<?=$rowEditMateriSafety["id_materi_safety"]?>" > 
                         <div class="row">
                             <div class="col-sm-12">
-                                <input type="file" class="form-control border-0" id="fileMateri2" name="fileMateri2">
-                                <label class="custom-file-label" for="validatedCustomFile"><?php echo $rowEditMateriSafety['file_materi']; ?></label>
+                                <input type="file" class="form-control border-0" id="fileMateriSafety2" name="fileMateriSafety2">
+                                <label class="custom-file-label" for="fileMateriSafety2"><?php echo $rowEditMateriSafety['file_materi']; ?></label>
                             </div>
                         </div>
-                    </div>
-                    <hr>
-                    <div class="form-group">
-                        <input type="text" class="form-control border-0" id="judulMateri2" name="judulMateri2" placeholder="Judul Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["judul_materi"]?>" required>
                         <div class="col-sm-12">
-                            <div id="judulMateri2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="fileMateriSafety2Blank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="kategoriMateri2" name="kategoriMateri2" placeholder="Kategori Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["kategori_materi"]?>" required>
+                        <input type="text" class="form-control border-0" id="judulMateriSafety2" name="judulMateriSafety2" placeholder="Judul Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["judul_materi"]?>" required>
                         <div class="col-sm-12">
-                            <div id="kategoriMateri2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="judulMateriSafety2Blank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <textarea id="keteranganMateri2" name="keteranganMateri2" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"><?=$rowEditMateriSafety["keterangan_materi"]?></textarea>
+                        <input type="text" class="form-control border-0" id="kategoriMateriSafety2" name="kategoriMateriSafety2" placeholder="Kategori Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["kategori_materi"]?>" required>
                         <div class="col-sm-12">
-                            <div id="keteranganMateri2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="kategoriMateriSafety2Blank" class="small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <textarea id="keteranganMateriSafety2" name="keteranganMateriSafety2" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required><?=$rowEditMateriSafety["keterangan_materi"]?></textarea>
+                        <div class="col-sm-12">
+                            <div id="keteranganMateriSafety2Blank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>                
@@ -121,7 +124,7 @@
                     <div class="form-group">
                         <div class="modal-footer border-0">
                             <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                            <button class="btn btn-primary" name="editDataMateriSafety" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                            <button class="btn btn-primary" name="editDataMateriSafety" type="submit" onclick="ValidasiEditDataMateriSafety();"><i class="fa fa-check"></i> Simpan</button>
                         </div>
                     </div>
                 <?php

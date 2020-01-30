@@ -19,40 +19,40 @@
         </nav>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Safety</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Safety File</h6>
             </div>
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataMateriSafety.php?module=dataMateriSafety&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
+                        <input type="file" class="form-control border-0" id="fileMateriSafety" name="fileMateriSafety">
                         <div class="col-sm-6">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="fileMateriSafetyBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div> 
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="judulMateri" name="judulMateri" placeholder="Judul Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="judulMateriSafety" name="judulMateriSafety" placeholder="Judul Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="judulMateriSafetyBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="kategoriMateri" name="kategoriMateri" placeholder="Kategori Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="kategoriMateriSafety" name="kategoriMateriSafety" placeholder="Kategori Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="kategoriMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="kategoriMateriSafetyBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
+                        <textarea id="keteranganMateriSafety" name="keteranganMateriSafety" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required></textarea>
                         <div class="col-sm-12">
-                            <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="keteranganMateriSafetyBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriSafety" onclick="ValidasiTambahDataMateriSafety();">
                             <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                             </span>
@@ -71,7 +71,7 @@
         </div>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Data Materi Safety</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Data Materi Safety File</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -128,7 +128,7 @@
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-materiSafety border-0">
-                <h5 class="modal-title text-white w-100 text-center">Edit Data Materi Safety</h5>
+                <h5 class="modal-title text-white w-100 text-center">Edit Data Materi Safety File</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

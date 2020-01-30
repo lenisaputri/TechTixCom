@@ -1,7 +1,7 @@
 <?php
     include "../config/connection.php";
 
-    if (isset($_POST["tambahDataMateriLink"]) || isset($_POST["editDataMateriSafetyLink"]) || isset($_POST["hapusDataMateriSafetyLink"])){
+    if (isset($_POST["tambahDataMateriSafetyLink"]) || isset($_POST["editDataMateriSafetyLink"]) || isset($_POST["hapusDataMateriSafetyLink"])){
         if($_GET["module"]=="dataMateriSafetyLink" && $_GET["act"]=="tambah"){           
             $query2 = "INSERT INTO tabel_materi_safety (
                 kategori_materi,
@@ -13,10 +13,10 @@
             )
             
             VALUES(  
-                '$_POST[kategoriMateriLink]',
-                '$_POST[judulMateriLink]',
-                '$_POST[keteranganMateriLink]',
-                '$_POST[linkMateri]',
+                '$_POST[kategoriMateriSafetyLink]',
+                '$_POST[judulMateriSafetyLink]',
+                '$_POST[keteranganMateriSafetyLink]',
+                '$_POST[linkMateriSafety]',
                 'link',
                 curdate()
             );";
@@ -30,9 +30,9 @@
         }
         else if($_GET["module"]=="dataMateriSafetyLink" && $_GET["act"]=="edit"){
             $id_materiSafetyLinkUpdate = $_POST["id_materiSafetyLinkUpdate"];
-            $query10 = "UPDATE tabel_materi_safety set kategori_materi = '$_POST[kategoriMateriLink2]',
-                judul_materi = '$_POST[judulMateriLink2]', keterangan_materi = '$_POST[keteranganMateriLink2]',
-                file_materi = '$_POST[linkMateriLink2]', tipe = 'link' WHERE id_materi_safety = '$id_materiSafetyLinkUpdate'
+            $query10 = "UPDATE tabel_materi_safety set kategori_materi = '$_POST[kategoriMateriSafetyLink2]',
+                judul_materi = '$_POST[judulMateriSafetyLink2]', keterangan_materi = '$_POST[keteranganMateriSafetyLink2]',
+                file_materi = '$_POST[linkMateriSafetyLink2]', tipe = 'link' WHERE id_materi_safety = '$id_materiSafetyLinkUpdate'
             ";
             
             if(mysqli_query($con, $query10)){ 
@@ -59,30 +59,30 @@
                 ?>
                     <div class="form-group">
                         <input type="hidden" name="id_materiSafetyLinkUpdate" value="<?=$rowEditMateriSafety["id_materi_safety"]?>" > 
-                        <input type="text" class="form-control border-0" id="linkMateriLink2" name="linkMateriLink2" placeholder="Link Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["file_materi"]?>">
+                        <input type="text" class="form-control border-0" id="linkMateriSafetyLink2" name="linkMateriSafetyLink2" placeholder="Link Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["file_materi"]?>" required>
                         <div class="col-sm-6">
-                            <div id="linkMateriLink2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="linkMateriSafetyLink2Blank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="judulMateriLink2" name="judulMateriLink2" placeholder="Judul Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["judul_materi"]?>" required>
+                        <input type="text" class="form-control border-0" id="judulMateriSafetyLink2" name="judulMateriSafetyLink2" placeholder="Judul Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["judul_materi"]?>" required>
                         <div class="col-sm-12">
-                            <div id="judulMateriLink2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="judulMateriSafetyLink2Blank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="kategoriMateriLink2" name="kategoriMateriLink2" placeholder="Kategori Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["kategori_materi"]?>" required>
+                        <input type="text" class="form-control border-0" id="kategoriMateriSafetyLink2" name="kategoriMateriSafetyLink2" placeholder="Kategori Materi ..." style="width=100%" value="<?=$rowEditMateriSafety["kategori_materi"]?>" required>
                         <div class="col-sm-12">
-                            <div id="kategoriMateriLink2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="kategoriMateriSafetyLink2Blank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <textarea id="keteranganMateriLink2" name="keteranganMateriLink2" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"><?=$rowEditMateriSafety["keterangan_materi"]?></textarea>
+                        <textarea id="keteranganMateriSafetyLink2" name="keteranganMateriSafetyLink2" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required><?=$rowEditMateriSafety["keterangan_materi"]?></textarea>
                         <div class="col-sm-12">
-                            <div id="keteranganMateriLink2Blank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="keteranganMateriSafetyLink2Blank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>                
@@ -94,7 +94,7 @@
                     <div class="form-group">
                         <div class="modal-footer border-0">
                             <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                            <button class="btn btn-primary" name="editDataMateriSafetyLink" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                            <button class="btn btn-primary" name="editDataMateriSafetyLink" type="submit" onclick="ValidasiEditDataMateriSafetyLink();"><i class="fa fa-check"></i> Simpan</button>
                         </div>
                     </div>
                 <?php

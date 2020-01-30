@@ -24,7 +24,15 @@
                 '$_POST[nilaiGeneralHrd]',
                 '$dateGeneralHrd'
             );";
-        
+         if(mysqli_query($con, $query2)){ 
+            header('location:../module/index.php?module=' . $_GET["module"]);
+        }
+        else{            
+            echo("Error description: " . mysqli_error($con));
+        }
+    } 
+    else if ($_GET["module"]=="dataScoreGeneralHrd" && $_GET["act"]=="edit"){
+        $id_scoreQualityUpdate = $_POST["id_scoreGeneralHrdUpdate"]; 
         $dateGeneralHrdEdit =  date('Y-m-d', strtotime($_POST[dateGeneralHrdEdit]));
 
         $query10="UPDATE tabel_score_generalhrd
@@ -41,23 +49,6 @@
             else{            
                 echo("Error description: " . mysqli_error($con));
             }
-        } 
-        else if ($_GET["module"]=="dataScoreGeneralHrd" && $_GET["act"]=="edit"){
-            $id_scoreGeneralHrdUpdate = $_POST["id_scoreGeneralHrdUpdate"];            
-            $dateGeneralHrdEdit =  date('Y-m-d', strtotime($_POST[dateGeneralHrdEdit]));
-            $query10="UPDATE tabel_score_generalhrd
-                set
-                poin = '$_POST[poinGeneralHrdEdit]',
-                nilai = '$_POST[nilaiGeneralHrdEdit]',
-                tanggal_training = '$dateGeneralHrdEdit'
-                where id_score_generalhrd='$id_scoreGeneralHrdUpdate';";
-
-                if(mysqli_query($con,$query10)){
-                    header('location:../module/index.php?module=' . $_GET["module"]);
-                }
-                else{            
-                    echo("Error description: " . mysqli_error($con));
-                }
         } 
         else if ($_GET["module"]=="dataScoreGeneralHrd" && $_GET["act"]=="hapus"){
             $idnya = $_POST['id_score_generalhrd'];
@@ -113,7 +104,7 @@ if(isset($_POST["editDataScoreGeneralHrd_idScoreGeneralHrd"])){
                             <div class="form-group row">
                             <div class="col-sm-12">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateGeneralHrdEdit" style="font-weight: bold">TANGGAL ASSESMENT</label>
-                                <div class="input-group date" id="datepickerTanggalTrainingEdit" data-provide="datepicker">
+                                <div class="input-group date" id="datepickerTanggalTrainingGeneralHrdEdit" data-provide="datepicker">
                                     <input type="text" id="dateGeneralHrdEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreGeneralHrd["tanggal_training"]?>" name="dateGeneralHrdEdit">
                                     <div class="input-group-addon">
                                         <span class="input-group-text form-control form-control-user">

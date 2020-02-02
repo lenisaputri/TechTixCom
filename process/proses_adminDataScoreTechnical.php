@@ -64,7 +64,7 @@
     }
 
     if(isset($_POST["editDataScoreTechnical_idScoreTechnical"])){
-        $editScoreTechnical = "SELECT tss.*, tp.id_operator, tp.nik FROM tabel_score_technical tss, tabel_operator tp WHERE tss.id_operator = tp.id_operator AND tss.id_score_technical = $_POST[editDataScoreTechnical_idScoreTechnical]";
+        $editScoreTechnical = "SELECT tst.*, tp.id_operator, tp.nik FROM tabel_score_technical tst, tabel_operator tp WHERE tst.id_operator = tp.id_operator AND tst.id_score_technical = $_POST[editDataScoreTechnical_idScoreTechnical]";
         $resultEditScoreTechnical = mysqli_query($con, $editScoreTechnical);
     
         if(mysqli_num_rows($resultEditScoreTechnical) > 0){
@@ -102,7 +102,7 @@
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateTechnicalEdit" style="font-weight: bold">TANGGAL ASSESMENT</label>
-                            <div class="input-group date" id="datepickerTanggalTrainingEdit" data-provide="datepicker">
+                            <div class="input-group date" id="datepickerTanggalTrainingTechnicalEdit" data-provide="datepicker">
                                 <input type="text" id="dateTechnicalEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreTechnical["tanggal_training"]?>" name="dateTechnicalEdit">
                                 <div class="input-group-addon">
                                     <span class="input-group-text form-control form-control-user">
@@ -130,11 +130,11 @@
     }
 
     if(isset($_POST["infoDataScoreTechnical_idScoreTechnical"])){
-        $infoScoreTechnical = "SELECT tss.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
-            FROM tabel_score_technical tss, tabel_operator tp , tabel_jabatan tj 
-            WHERE tss.id_operator = tp.id_operator 
+        $infoScoreTechnical = "SELECT tst.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+            FROM tabel_score_technical tst, tabel_operator tp , tabel_jabatan tj 
+            WHERE tst.id_operator = tp.id_operator 
             AND tp.id_jabatan = tj.id_jabatan
-            AND tss.id_score_technical = $_POST[infoDataScoreTechnical_idScoreTechnical]";
+            AND tst.id_score_technical = $_POST[infoDataScoreTechnical_idScoreTechnical]";
         $resultInfoScoreTechnical = mysqli_query($con, $infoScoreTechnical);
     
         if(mysqli_num_rows($resultInfoScoreTechnical) > 0){
@@ -154,11 +154,11 @@
                     <p class="row d-flex justify-content-end">TANGGAL TRAINING : <?php echo $rowInfoScoreTechnical["tanggal_training"]; ?></p>
                     <hr>
                 <?php
-                    $infoScoreTechnicalDetail = "SELECT tss.*, tp.id_operator, tp.nik, tssd.*
-                        FROM tabel_score_technical tss, tabel_operator tp , tabel_score_technical_detail tssd 
-                        WHERE tss.id_operator = tp.id_operator 
-                        AND tss.id_score_technical = tssd.id_score_technical
-                        AND tss.id_score_technical = $_POST[infoDataScoreTechnical_idScoreTechnical]";
+                    $infoScoreTechnicalDetail = "SELECT tst.*, tp.id_operator, tp.nik, tstd.*
+                        FROM tabel_score_technical tst, tabel_operator tp , tabel_score_technical_detail tstd 
+                        WHERE tst.id_operator = tp.id_operator 
+                        AND tst.id_score_technical = tstd.id_score_technical
+                        AND tst.id_score_technical = $_POST[infoDataScoreTechnical_idScoreTechnical]";
                     
                     $resultInfoScoreTechnicalDetail = mysqli_query($con, $infoScoreTechnicalDetail);
                     if(mysqli_num_rows($resultInfoScoreTechnicalDetail) > 0){
@@ -168,17 +168,11 @@
                                     <thead>
                                         <tr style="font-size: .8rem;">
                                             <th>No.</th>
-                                            <th>SMK3</th>
-                                            <th>EA-HIRA</th>
-                                            <th>MOVEMENT FORKLIFT</th>
-                                            <th>CONFINED SPACE</th>
-                                            <th>LOTO</th>
-                                            <th>APD</th>
-                                            <th>BBS</th>
-                                            <th>FIRE FIGHTING</th>
-                                            <th>WAH</th>
-                                            <th>ENVIRONMENT</th>
-                                            <th>P3K</th>
+                                            <th>Safety Procedure</th>
+                                            <th>Equipment List</th>
+                                            <th>Operasional Parameter</th>
+                                            <th>Maintenance Parameter</th>
+                                            <th>Trouble Shooting</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -193,12 +187,6 @@
                                                         <td><?php echo $row1["movement_forklift"];?></td>
                                                         <td><?php echo $row1["confined_space"];?></td>
                                                         <td><?php echo $row1["loto"];?></td>
-                                                        <td><?php echo $row1["apd"];?></td>
-                                                        <td><?php echo $row1["bbs"];?></td>
-                                                        <td><?php echo $row1["fire_fighting"];?></td>
-                                                        <td><?php echo $row1["wah"];?></td>
-                                                        <td><?php echo $row1["environment"];?></td>
-                                                        <td><?php echo $row1["p3k"];?></td>
                                                     </tr>
                                             <?php
                                             $index++;

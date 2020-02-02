@@ -63,11 +63,11 @@
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateTechnical" style="font-weight: bold">TANGGAL ASSESMENT</label>
-                                <div class="input-group date" id="datepickerTanggalTraining" data-provide="datepicker">
+                                <div class="input-group date" id="datepickerTanggalTrainingTechnical" data-provide="datepicker">
                                     <input type="text" id="dateTechnical" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateTechnical">
                                     <div class="input-group-addon">
-                                        <span class="far fa-calendar-alt input-group-text form-control form-control-user" aria-hidden="true">
-                                            
+                                        <span class="input-group-text form-control form-control-user">
+                                            <i class='far fa-calendar-alt' aria-hidden="true"></i>
                                         </span>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
                     </thead>
                     <tbody>
                     <?php
-                        $queryTampilData = "SELECT tss.*, tp.id_operator, tp.nik FROM tabel_score_technical tss, tabel_operator tp WHERE tss.id_operator = tp.id_operator;
+                        $queryTampilData = "SELECT tst.*, tp.id_operator, tp.nik FROM tabel_score_technical tst, tabel_operator tp WHERE tst.id_operator = tp.id_operator;
                             ";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);

@@ -1,6 +1,6 @@
 <?php
   include "../config/connection.php";
-  include "../process/proses_adminDataScoreQualityDetail.php";
+  include "../process/proses_adminDataScoreGeneralHrdDetail.php";
 ?>
 <body>
 <!-- Begin Page Content -->
@@ -13,14 +13,14 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item" aria-current="page">
-                    <a href="index.php?module=dataScoreQuality" >
+                    <a href="index.php?module=dataScoreGeneralHrd" >
                     <i class="fas fa-fw fa-trophy"></i>
-                        <span>Data Score Quality</span>
+                        <span>Data Score General Hrd</span>
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     <i class="fas fa-fw fa-info"></i>
-                    <span>Data Score Quality Detail</span>
+                    <span>Data Score General Hrd Detail</span>
                 </li>
             </ol>
         </nav>

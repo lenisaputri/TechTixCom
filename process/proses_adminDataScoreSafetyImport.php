@@ -3,7 +3,7 @@
   include "../process/excel_reader2.php";
 
   if (isset($_POST["importDataScoreSafety"])){
-    if($_GET["module"]=="dataScoreSafety" && $_GET["act"]=="import"){
+    if($_GET["module"]=="dataScoreSafetyImport" && $_GET["act"]=="import"){
         // upload file xls
 $target = basename($_FILES['importScoreSafety']['name']) ;
 move_uploaded_file($_FILES['importScoreSafety']['tmp_name'], $target);

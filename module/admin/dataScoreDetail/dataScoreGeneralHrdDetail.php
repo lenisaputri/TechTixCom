@@ -57,7 +57,7 @@
                                 <select class="custom-select-karyawan" name="tanggalTrainingDetail">
                                         <?php
                                             if(mysqli_num_rows($resultTampilScoreGeneralHrdDate) > 0){
-                                                while($row = mysqli_fetch_assoc($resultTampilScoreQualityDate)){
+                                                while($row = mysqli_fetch_assoc($resultTampilScoreGeneralHrdDate)){
                                                     echo "<option value='".$row['tanggal_training']."'>".$row['tanggal_training']."</option>";
                                                 }
                                             }
@@ -65,7 +65,9 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                        </div>
+                        <div class="col-sm-6">
+                        <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="cocDetail" style="font-weight: bold">CODE OF CONDUCT</label>
                                     <input type="number" class="form-control form-control-user" placeholder="Nilai Code Of Conduct" id="cocDetail" name="cocDetail" required>
@@ -122,17 +124,19 @@
                         <thead>
                             <tr class="text-center">
                                 <th>No</th>
+                                <th>NIK</th>
                                 <th>Code Of Conduct</th>
                                 <th>PKB & Compensation And Benefit</th>
                                 <th>Peraturan Perusahaan</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                                 $queryTampilData = "SELECT tsgd.*, tsg.*, tp.id_operator, tp.nik 
-                                    FROM tabel_score_generalhrd_detail tssd, tabel_score_generalhrd tsg, tabel_operator tp 
+                                    FROM tabel_score_generalhrd_detail tsgd, tabel_score_generalhrd tsg, tabel_operator tp 
                                     WHERE tsg.id_operator = tp.id_operator
-                                    AND tsgd.id_score_generalhrd = tsg.id_score_generalhrd;
+                                    AND tsgd.id_score_generalHrd = tsg.id_score_generalHrd;
                                         ";
                                 
                                 $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -141,18 +145,18 @@
                                 if(mysqli_num_rows($resultTampilData) > 0){
                                     while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
                                         ?>
-                                            <tr class="text-center" id-score-quality-detail="<?php echo $rowTampilData["id_score_generalhrd_detail"] ?>">
+                                            <tr class="text-center" id-score-quality-detail="<?php echo $rowTampilData["id_score_generalHrd_detail"] ?>">
                                                 <td ><?php echo $index; ?></td>
                                                 <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
                                                 <td class="judulMateri"><?php echo $rowTampilData["coc"]; ?></td>
                                                 <td class="fileMateri"><?php echo $rowTampilData["pkb_cab"]; ?></td>
                                                 <td class="fileMateri"><?php echo $rowTampilData["perperus"]; ?></td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary edit-dataScoreGeneralHrdDetail-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreGeneralHrdDetailModal" id_scoregeneralhrdDetailEdit="<?php echo $rowTampilData["id_score_generalhrd_detail"];?>">
+                                                    <button type="button" class="btn btn-primary edit-dataScoreGeneralHrdDetail-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreGeneralHrdDetailModal" id_scoreGeneralhrdDetailEdit="<?php echo $rowTampilData["id_score_generalHrd_detail"];?>">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
                                                     <p></p>
-                                                    <button type="button" class="btn btn-danger hapus-dataScoreGeneralHrdDetail-admin" data-toggle="modal" data-target="#hapusDataScoreGeneralHrdDetailModal" id_score_generalhrd_detail="<?php echo $rowTampilData["id_score_generalhrd_detail"];?>">
+                                                    <button type="button" class="btn btn-danger hapus-dataScoreGeneralHrdDetail-admin" data-toggle="modal" data-target="#hapusDataScoreGeneralHrdDetailModal" id_score_generalHrd_detail="<?php echo $rowTampilData["id_score_generalHrd_detail"];?>">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
                                                 </td>
@@ -186,8 +190,8 @@
                 </div>
                 <div class="modal-body">
                     <form action="../process/proses_adminDataScoreGeneralHrdDetail.php?module=dataScoreGeneralHrdDetail&act=edit" method="POST" enctype="multipart/form-data">
-                        <input type="hidden" name="id_score_generalhrd_detail" id="id_scoreGeneralHrdDetailUpdate">
-                        <div class="container-fluid" id="edit-dataScoregeneralhrdDetail"></div>
+                        <input type="hidden" name="id_score_generalHrd_detail" id="id_scoreGeneralHrdDetailUpdate">
+                        <div class="container-fluid" id="edit-dataScoreGeneralHrdDetail"></div>
                     </form>
                 </div>
             </div>
@@ -198,7 +202,7 @@
             <div class="modal-content">
                 <form action="../process/proses_adminDataScoreGeneralHrdDetail.php?module=dataScoreGeneralHrdDetail&act=hapus" method="post">
                     <div class="modal-body pt-5 text-center">
-                        <input type="hidden" name="id_score_generalhrd_detail" id="id_scoreGeneralHrdDetailHapus" >
+                        <input type="hidden" name="id_score_generalHrd_detail" id="id_scoreGeneralHrdDetailHapus" >
                         <strong>Apakah Anda yakin?</strong>
                     </div>
                     <div class="pb-4 pt-4 d-flex justify-content-around">

@@ -13,7 +13,7 @@ $(".edit-dataScoreGeneralHrd-admin").click(function () {
     url: "../process/proses_adminDataScoreGeneralHrd.php",
     method: "post",
     data: {
-      editDataScoreGeneralHrd_idScoreGeneralHrd : id_scoreGeneralHrdEdit
+      editDataScoreGeneralHrd_idScoreGeneralHrd: id_scoreGeneralHrdEdit
     },
     success: function (data) {
       $("#id_scoreGeneralHrdUpdate").val(id_scoreGeneralHrdEdit);
@@ -54,7 +54,7 @@ $(".edit-dataScoreGeneralHrdDetail-admin").click(function () {
     url: "../process/proses_adminDataScoreGeneralHrdDetail.php",
     method: "post",
     data: {
-      editDataScoreGeneralHrdDetail_idScoreGeneralHrd: id_scoreGeneralHrdDetailEdit
+      editDataScoreGeneralHrdDetail_idScoreGeneralHrd : id_scoreGeneralHrdDetailEdit
     },
     success: function (data) {
       $("#id_scoreGeneralHrdDetailUpdate").val(id_scoreGeneralHrdDetailEdit);
@@ -65,9 +65,9 @@ $(".edit-dataScoreGeneralHrdDetail-admin").click(function () {
 });
 
 $(".hapus-dataScoreGeneralHrdDetail-admin").click(function () {
-  var id_score_generalhrd_detail = $(this).attr("id_score_generalhrd_detail");
+  var id_score_generalHrd_detail = $(this).attr("id_score_generalHrd_detail");
 
-  $('#id_scoreGeneralHrdDetailHapus').val(id_score_generalhrd_detail);
+  $('#id_scoreGeneralHrdDetailHapus').val(id_score_generalHrd_detail);
 
   $('#hapusDataScoreGeneralHrdDetailModal').modal("show");
 })

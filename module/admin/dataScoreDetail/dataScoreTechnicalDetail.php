@@ -75,40 +75,41 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        <label class="col-sm-6 small d-flex flex-column justify-content-center" for="equipmentDetail" style="font-weight: bold">EQUIPMENT</label>
-                                        <input type="number" class="form-control form-control-user" placeholder="NILAI EQUIPMENT" id="equipmentDetail" name="equipmentDetail" required>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div id="equipmentDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                    </div>
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="equipmentDetail" style="font-weight: bold">EQUIPMENT</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI EQUIPMENT" id="equipmentDetail" name="equipmentDetail" required>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        <label class="col-sm-6 small d-flex flex-column justify-content-center" for="operationalDetail" style="font-weight: bold">NILAI OPERATIONAL PARAMETER</label>
-                                        <input type="number" class="form-control form-control-user" placeholder="NILAI OPERATIONAL PARAMETER" id="operationalDetail" name="operationalDetail" required>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div id="operationalDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                    </div>
+                                <div class="col-sm-12">
+                                    <div id="equipmentDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        <label class="col-sm-6 small d-flex flex-column justify-content-center" for="maintenDetail" style="font-weight: bold">NILAI MAINTENANCE PARAMETER</label>
-                                        <input type="number" class="form-control form-control-user" placeholder="NILAI MAINTENANCE PARAMETER" id="maintenDetail" name="maintenDetail" required>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div id="maintenDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">                            
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="operationalDetail" style="font-weight: bold">NILAI OPERATIONAL PARAMETER</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI OPERATIONAL PARAMETER" id="operationalDetail" name="operationalDetail" required>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-12">
-                                        <label class="col-sm-6 small d-flex flex-column justify-content-center" for="troubleDetail" style="font-weight: bold">NILAI TROUBLE SHOOTING</label>
-                                        <input type="number" class="form-control form-control-user" placeholder="NILAI TROUBLE SHOOTING" id="troubleDetail" name="troubleDetail" required>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div id="troubleDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                    </div>
+                                <div class="col-sm-12">
+                                    <div id="operationalDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="maintenDetail" style="font-weight: bold">NILAI MAINTENANCE PARAMETER</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI MAINTENANCE PARAMETER" id="maintenDetail" name="maintenDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="maintenDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="troubleDetail" style="font-weight: bold">NILAI TROUBLE SHOOTING</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI TROUBLE SHOOTING" id="troubleDetail" name="troubleDetail" required>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div id="troubleDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +154,7 @@
                                 $queryTampilData = "SELECT tstd.*, tst.*, tp.id_operator, tp.nik 
                                     FROM tabel_score_technical_detail tstd, tabel_score_technical tst, tabel_operator tp 
                                     WHERE tst.id_operator = tp.id_operator
-                                    AND tstd.id_score_technical = tss.id_score_technical;
+                                    AND tstd.id_score_technical = tst.id_score_technical;
                                         ";
                                 
                                 $resultTampilData = mysqli_query($con, $queryTampilData);

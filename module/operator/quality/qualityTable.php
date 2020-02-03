@@ -4,31 +4,31 @@ include "../process/proses_operatorScoreQuality.php";
 ?>
 <!-- Begin Page Content -->
 <div class="container-fluid" id="safety">
-
-<?php 
-        $resultTampilProfilOperator = tampilProfilOperator($con, $idUser);
-        if (mysqli_num_rows($resultTampilProfilOperator) > 0){
-          while ($row = mysqli_fetch_assoc($resultTampilProfilOperator)) {
-            ?>
-<!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800"><?= $row["nik"]?> / <?= $row["nama"]?></h1>
-<?php
-          } 
-        }
-        ?>
+  <?php 
+  $resultTampilProfilOperator = tampilProfilOperator($con, $idUser);
+    if (mysqli_num_rows($resultTampilProfilOperator) > 0){
+      while ($row = mysqli_fetch_assoc($resultTampilProfilOperator)) {
+  ?>
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800"><?= $row["nik"]?> / <?= $row["nama"]?></h1>
+  <?php
+  } 
+}
+?>
 <nav aria-label="breadcrumb" class="shadow">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
-                        <span>Beranda</span>
-                    </a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-fw fa-certificate"></i>
-                    <span>Data Score Quality</span>
-                </li>
-            </ol>
-        </nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="index.php?module=home" >
+        <i class="fas fa-fw fa-home"></i>
+        <span>Beranda</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <i class="fas fa-fw fa-certificate"></i>
+        <span>Data Score Quality</span>
+    </li>
+  </ol>
+</nav>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -62,26 +62,28 @@ include "../process/proses_operatorScoreQuality.php";
             <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
             <td>
               <button type="submit" class="btn btn-warning btn-icon-split mb-2 mb-sm-0" onclick="location.href='index.php?module=qualityTableDetail';">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-info"></i>
-                        </span>
-                        <span class="text">Detail Score</span>
-                        </button></td>
+                <span class="icon text-white-50">
+                  <i class="fas fa-info"></i>
+                </span>
+                <span class="text">Detail Score</span>
+              </button>
+            </td>
           </tr>
           <?php
           $index++;
           }
           ?>
           <?php
-                    }   else{
-                    ?>
-                        <!-- <div>
-                            <p>Data Operator tidak tersedia</p>
-                        </div> -->
-                    <?php
-                    }
-                    ?>
-        </tbody>
+          }   
+          else{
+            ?>
+            <!-- <div>
+            <p>Data Operator tidak tersedia</p>
+            </div> -->
+            <?php
+            }
+            ?>
+          </tbody>
       </table>
     </div>
   </div>

@@ -134,13 +134,13 @@
                                 <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                                 <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                                 <td> 
-                                    <button type="button" class="btn btn-warning info-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataScoreGeneralHrdModal" id_scoreGeneralHrdInfo="<?php echo $rowTampilData["id_score_generalhrd"];?>">
+                                    <button type="button" class="btn btn-warning info-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataScoreGeneralHrdModal" id_scoreGeneralHrdInfo="<?php echo $rowTampilData["id_score_generalHrd"];?>">
                                         <i class="fas fa-info-circle"></i>
                                     </button>
-                                    <button type="button" class="btn btn-primary edit-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreGeneralHrdModal" id_scoreGeneralHrdEdit="<?php echo $rowTampilData["id_score_generalhrd"];?>">
+                                    <button type="button" class="btn btn-primary edit-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreGeneralHrdModal" id_scoreGeneralHrdEdit="<?php echo $rowTampilData["id_score_generalHrd"];?>">
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <button type="button" class="btn btn-danger hapus-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreGeneralHrdModall" id_score_generalhrd="<?php echo $rowTampilData["id_score_generalhrd"];?>">
+                                    <button type="button" class="btn btn-danger hapus-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreGeneralHrdModall" id_score_generalHrd="<?php echo $rowTampilData["id_score_generalHrd"];?>">
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </td>
@@ -186,7 +186,7 @@
             <div class="modal-content">
                 <form action="../process/proses_adminDataScoreGeneralHrd.php?module=dataScoreGeneralHrd&act=hapus" method="post">
                     <div class="modal-body pt-5 text-center">
-                        <input type="hidden" name="id_score_generalhrd" id="id_scoreGeneralHrdHapus" >
+                        <input type="hidden" name="id_score_generalHrd" id="id_scoreGeneralHrdHapus" >
                         <strong>Apakah Anda yakin?</strong>
                     </div>
                     <div class="pb-4 pt-4 d-flex justify-content-around">

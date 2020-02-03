@@ -93,6 +93,12 @@
   appearance: none;
 }
 
+#edit-dataScoreGeneralHrd .form-control{
+  font-size: .8rem;
+  border-radius: 10rem;
+  padding: 1.5rem 1rem;
+}
+
 #editDataScoreQualityModal .bg-scoreQuality{
   background-color: #0368ca !important;
 }
@@ -104,5 +110,13 @@
 }
 
 #infoDataScoreQualityModal .bg-scoreQualityInfo{
+  background-color: #0368ca !important;
+}
+
+#editDataScoreGeneralHrdModal .bg-scoreGeneralHrd{
+  background-color: #0368ca !important;
+}
+
+#infoDataScoreGeneralHrdModal .bg-scoreGeneralHrdInfo{
   background-color: #0368ca !important;
 }

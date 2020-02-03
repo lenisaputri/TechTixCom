@@ -8,7 +8,7 @@
         return $resultTampilOperator;
     }
 
-    if (isset($_POST["tambahDataScoreGeneralHrd"]) || isset($_POST["editDataScoreGeneralHrd"]) || isset($_POST["hapusDataMateriGeneralHrd"])){
+    if (isset($_POST["tambahDataScoreGeneralHrd"]) || isset($_POST["editDataScoreGeneralHrd"]) || isset($_POST["hapusDataScoreGeneralHrd"])){
         if($_GET["module"]=="dataScoreGeneralHrd" && $_GET["act"]=="tambah"){
             $dateGeneralHrd =  date('Y-m-d', strtotime($_POST[dateGeneralHrd]));
             $query2 = "INSERT INTO tabel_score_generalhrd (
@@ -32,14 +32,14 @@
         }
     } 
     else if ($_GET["module"]=="dataScoreGeneralHrd" && $_GET["act"]=="edit"){
-        $id_scoreQualityUpdate = $_POST["id_scoreGeneralHrdUpdate"]; 
+        $id_scoreGeneralHrdUpdate = $_POST["id_scoreGeneralHrdUpdate"]; 
         $dateGeneralHrdEdit =  date('Y-m-d', strtotime($_POST[dateGeneralHrdEdit]));
         $query10="UPDATE tabel_score_generalhrd
             set
             poin = '$_POST[poinGeneralHrdEdit]',
             nilai = '$_POST[nilaiGeneralHrdEdit]',
             tanggal_training = '$dateGeneralHrdEdit'
-            where id_score_generalhrd='$id_scoreGeneralHrdUpdate';";
+            where id_score_generalHrd='$id_scoreGeneralHrdUpdate';";
 
             if(mysqli_query($con,$query10)){
 
@@ -50,9 +50,9 @@
             }
         } 
         else if ($_GET["module"]=="dataScoreGeneralHrd" && $_GET["act"]=="hapus"){
-            $idnya = $_POST['id_score_generalhrd'];
-            $queryDelete2 = "DELETE FROM tabel_score_generalhrd_detail WHERE id_score_generalhrd='$idnya';";
-            $queryDelete = "DELETE FROM tabel_score_generalhrd WHERE id_score_generalhrd='$idnya';";
+            $idnya = $_POST['id_score_generalHrd'];
+            $queryDelete2 = "DELETE FROM tabel_score_generalhrd_detail WHERE id_score_generalHrd='$idnya';";
+            $queryDelete = "DELETE FROM tabel_score_generalhrd WHERE id_score_generalHrd='$idnya';";
 
             if(mysqli_query($con,$queryDelete2) && mysqli_query($con,$queryDelete)){
                 header('location:../module/index.php?module=' . $_GET["module"]);
@@ -64,7 +64,7 @@
     }
 
     if(isset($_POST["editDataScoreGeneralHrd_idScoreGeneralHrd"])){
-        $editScoreGeneralHrd = "SELECT tsg.*, tp.id_operator, tp.nik FROM tabel_score_generalhrd tsg, tabel_operator tp WHERE tsg.id_operator = tp.id_operator AND tsg.id_score_generalhrd = $_POST[editDataScoreGeneralHrd_idScoreGeneralHrd]";
+        $editScoreGeneralHrd = "SELECT tsg.*, tp.id_operator, tp.nik FROM tabel_score_generalhrd tsg, tabel_operator tp WHERE tsg.id_operator = tp.id_operator AND tsg.id_score_generalHrd = $_POST[editDataScoreGeneralHrd_idScoreGeneralHrd]";
         $resultEditScoreGeneralHrd = mysqli_query($con, $editScoreGeneralHrd);
     
         if(mysqli_num_rows($resultEditScoreGeneralHrd) > 0){
@@ -72,7 +72,7 @@
             while($rowEditScoreGeneralHrd=mysqli_fetch_assoc($resultEditScoreGeneralHrd)){
                 ?>
                     <div class="form-group row">
-                        <input type="hidden" name="id_scoreGeneralHrdUpdate" value="<?=$rowEditScoreGeneralHrd["id_score_generalhrd"]?>" > 
+                        <input type="hidden" name="id_scoreGeneralHrdUpdate" value="<?=$rowEditScoreGeneralHrd["id_score_generalHrd"]?>" > 
                         <div class="col-sm-12">
                             <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nikGeneralHrdEdit" style="font-weight: bold">NIK OPERATOR</label>
                             <input type="number" class="form-control" value="<?=$rowEditScoreGeneralHrd["nik"]?>" id="nikGeneralHrdEdit" name="nikGeneralHrdEdit" disabled>
@@ -135,7 +135,7 @@
         FROM tabel_score_generalhrd tsg, tabel_operator tp , tabel_jabatan tj 
         WHERE tsg.id_operator = tp.id_operator 
         AND tp.id_jabatan = tj.id_jabatan
-        AND tsg.id_score_generalhrd = $_POST[infoDataScoreGeneralHrd_idScoreGeneralHrd]";
+        AND tsg.id_score_generalHrd = $_POST[infoDataScoreGeneralHrd_idScoreGeneralHrd]";
         $resultInfoScoreGeneralHrd = mysqli_query($con, $infoScoreGeneralHrd);
     
         if(mysqli_num_rows($resultInfoScoreGeneralHrd) > 0){

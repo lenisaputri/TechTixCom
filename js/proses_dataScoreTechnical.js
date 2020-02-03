@@ -1,9 +1,9 @@
 $(function () {
-  $('#datepickerTanggalTraining').datepicker();
+  $('#datepickerTanggalTrainingTechnical').datepicker();
 });
 
 $(function () {
-  $('#datepickerTanggalTrainingEdit').datepicker();
+  $('#datepickerTanggalTrainingTechnicalEdit').datepicker();
 });
 
 $(".edit-dataScoreTechnical-admin").click(function () {
@@ -24,7 +24,7 @@ $(".edit-dataScoreTechnical-admin").click(function () {
 });
 
 $(".hapus-dataScoreTechnical-admin").click(function () {
-  var id_score_technical = $(this).attr("id_score_qulity");
+  var id_score_technical = $(this).attr("id_score_technical");
 
   $('#id_scoreTechnicalHapus').val(id_score_technical);
 
@@ -63,3 +63,11 @@ $(".edit-dataScoreTechnicalDetail-admin").click(function () {
     }
   });
 });
+
+$(".hapus-dataScoreTechnicalDetail-admin").click(function () {
+  var id_score_technical_detail = $(this).attr("id_score_technical_detail");
+
+  $('#id_scoreTechnicalDetailHapus').val(id_score_technical_detail);
+
+  $('#hapusDataScoreTechnicalDetailModal').modal("show");
+})

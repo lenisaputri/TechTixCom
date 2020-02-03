@@ -42,5 +42,6 @@
   <script src="../js/proses_dataScoreSafety.js"></script>
   <script src="../js/proses_dataScoreQuality.js"></script>
   <script src="../js/proses_dataScoreGeneralHrd.js"></script>
+  <script src="../js/proses_dataScoreTechnical.js"></script>
 
   <script src="../js/materiOperator.js"></script>

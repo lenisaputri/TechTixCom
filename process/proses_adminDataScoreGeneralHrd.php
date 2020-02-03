@@ -32,14 +32,14 @@
         }
     } 
     else if ($_GET["module"]=="dataScoreGeneralHrd" && $_GET["act"]=="edit"){
-        $id_scoreQualityUpdate = $_POST["id_scoreGeneralHrdUpdate"]; 
+        $id_scoreGeneralHrdUpdate = $_POST["id_scoreGeneralHrdUpdate"]; 
         $dateGeneralHrdEdit =  date('Y-m-d', strtotime($_POST[dateGeneralHrdEdit]));
         $query10="UPDATE tabel_score_generalhrd
             set
             poin = '$_POST[poinGeneralHrdEdit]',
             nilai = '$_POST[nilaiGeneralHrdEdit]',
             tanggal_training = '$dateGeneralHrdEdit'
-            where id_score_generalhrd='$id_scoreGeneralHrdUpdate';";
+            where id_score_generalHrd='$id_scoreGeneralHrdUpdate';";
 
             if(mysqli_query($con,$query10)){
 

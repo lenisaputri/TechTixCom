@@ -66,8 +66,10 @@
                                     ?>
                                 </select>
                             </div>
-                        </div>
-                        <div class="form-group row">
+                        </div> 
+                    </div>
+                    <div class="col-sm-6">
+                    <div class="form-group row">
                             <div class="col-sm-12">
                                 <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fssDetail" style="font-weight: bold">Food Safety System</label>
                                 <input type="number" class="form-control form-control-user" placeholder="NILAI Food Safety System" id="fssDetail" name="fssDetail" required>
@@ -93,7 +95,7 @@
                                 <div class="col-sm-12">
                                     <div id="halalDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
-                            </div>
+                            </div> 
                     </div>
                 </div>
                 <hr>

@@ -69,103 +69,29 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-12">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="smk3Detail" style="font-weight: bold">SMK3</label>
-                                <input type="number" class="form-control form-control-user" placeholder="NILAI SMK3" id="smk3Detail" name="smk3Detail" required>
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fssDetail" style="font-weight: bold">Food Safety System</label>
+                                <input type="number" class="form-control form-control-user" placeholder="NILAI Food Safety System" id="fssDetail" name="fssDetail" required>
                             </div>
                             <div class="col-sm-12">
-                                <div id="smk3DetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="fssDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                         </div>
                         <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="eaHiraDetail" style="font-weight: bold">EA-HIRA</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI EA-HIRA" id="eaHiraDetail" name="eaHiraDetail" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gmpDetail" style="font-weight: bold">GMP</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI GMP" id="gmpDetail" name="gmpDetail" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="ea-hiraDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="movForkliftDetail" style="font-weight: bold">NILAI MOVEMENT FORKLIFT</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI MOVEMENT FORKLIFT" id="movForkliftDetail" name="movForkliftDetail" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="movForkliftDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="gmpDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="conSpaceDetail" style="font-weight: bold">NILAI CONFINED SPACE</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI CONFINED SPACE" id="conSpaceDetail" name="conSpaceDetail" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="halalDetail" style="font-weight: bold">HALAL</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI HALAL" id="halalDetail" name="halalDetail" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="conSpaceDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="lotoDetail" style="font-weight: bold">NILAI LOTO</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI LOTO" id="lotoDetail" name="lotoDetail" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="lotoDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="col-sm-6">
-                    <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="apdDetail" style="font-weight: bold">NILAI APD</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI APD" id="apdDetail" name="apdDetail" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="apdDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="bbsDetail" style="font-weight: bold">NILAI BBS</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI BBS" id="bbsDetail" name="bbsDetail" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="bbsDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fireFightingDetail" style="font-weight: bold">NILAI FIRE FIGHTING</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI FIRE FIGHTING" id="fireFightingDetail" name="fireFightingDetail" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="fireFightingDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="wahDetail" style="font-weight: bold">NILAI WAH</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI WAH" id="wahDetail" name="wahDetail" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="wahDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="environmentDetail" style="font-weight: bold">NILAI ENVIRONMENT</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI ENVIRONMENT" id="environmentDetail" name="environmentDetail" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="environmentDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="p3kDetail" style="font-weight: bold">NILAI P3K</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI P3K" id="p3kDetail" name="p3kDetail" required>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div id="p3kDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="halalDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                     </div>
@@ -202,24 +128,16 @@
                         <tr class="text-center">
                             <th>No</th>
                             <th>NIK</th>
-                            <th>SMK3</th>
-                            <th>EA-Hira</th>
-                            <th>Movement Forklift</th>
-                            <th>Confined Space</th>
-                            <th>Loto</th>
-                            <th>APD</th>
-                            <th>BBS</th>
-                            <th>Fire Fighting</th>
-                            <th>WAH</th>
-                            <th>Environment</th>
-                            <th>P3K</th>
+                            <th>Food Safety System</th>
+                            <th>GMP</th>
+                            <th>Halal</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
                         $queryTampilData = "SELECT tsqd.*, tsq.*, tp.id_operator, tp.nik 
-                        FROM tabel_score_quality_detail tssd, tabel_score_quality tsq, tabel_operator tp 
+                        FROM tabel_score_quality_detail tsqd, tabel_score_quality tsq, tabel_operator tp 
                         WHERE tsq.id_operator = tp.id_operator
                         AND tsqd.id_score_quality = tss.id_score_quality;
                             ";
@@ -304,7 +222,7 @@
             </div>
             <div class="pb-4 pt-4 d-flex justify-content-around">
               <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>
-              <button type="submit" name="hapusDataScoreSafetyDetail" class="btn btn-success btn-ok">Ya</button>
+              <button type="submit" name="hapusDataScoreQualityDetail" class="btn btn-success btn-ok">Ya</button>
             </div>
           </form>
         </div>

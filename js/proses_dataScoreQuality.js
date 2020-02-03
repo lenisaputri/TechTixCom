@@ -46,3 +46,28 @@ $(".info-dataScoreQuality-admin").click(function () {
     }
   });
 });
+
+$(".edit-dataScoreQualityDetail-admin").click(function () {
+  var id_scoreQualityDetailEdit = $(this).attr("id_scoreQualityDetailEdit");
+
+  $.ajax({
+    url: "../proses_adminDataScoreQualityDetail.php",
+    method: "post",
+    data: {
+      editDataScoreQuality_idScoreQuality: id_scoreQualityDetailEdit
+    },
+    success: function (data) {
+      $("#id_scoreQualityDetailUpdate").val(id_scoreQualityDetailEdit);
+      $("#edit-dataScoreSafetyDetail").html(data);
+      $("editDataScoreSafetyDetailModal").modal("show");
+    }
+  });
+});
+
+$(".hapus-dataScoreQualityDetail-admin").click(function () {
+  var id_score_quality_detail = $(this).attr("id_score_quality_detail");
+
+  $('#id_scoreQualityHapus').val(id_score_quality_detail);
+
+  $('#hapusDataScoreQualityDetailModel').modal("show");
+})

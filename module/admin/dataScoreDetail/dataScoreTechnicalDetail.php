@@ -112,6 +112,7 @@
                                     <div id="troubleDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
+                                        </div>
                         </div>
                         <hr>
                         <div class="form-group">

@@ -39,64 +39,73 @@
                                 ?>
                             </select>
                         </div>
-                    </div>
-                    <div class="form-group row">
                         <div class="col-sm-12">
-                            <label class="col-sm-6 small d-flex flex-column justify-content-center" for="poinTechnical" style="font-weight: bold">TOTAL POIN</label>
-                                <input type="number" class="form-control form-control-user" placeholder="TOTAL POIN" id="poinTechnical" name="poinTechnical" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="poinTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
+                            <label class="col-sm-6 small d-flex flex-column justify-content-center" for="kategoriTechnical" style="font-weight: bold">KATEGORI TECHNICAL</label>
+                            <input type="number" class="form-control form-control-user" placeholder="KATEGORI TECHNICAL" id="kategoriTechnical" name="kategoriTechnical" required>
                         </div>
-                        <div class="form-group row">
                             <div class="col-sm-12">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nilaiTechnical" style="font-weight: bold">TOTAL NILAI</label>
-                                <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="nilaiTechnical" name="nilaiTechnical" required>
+                                <div id="kategoriTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
-                            <div class="col-sm-12">
-                                <div id="nilaiTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateTechnical" style="font-weight: bold">TANGGAL ASSESMENT</label>
-                                <div class="input-group date" id="datepickerTanggalTrainingTechnical" data-provide="datepicker">
-                                    <input type="text" id="dateTechnical" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateTechnical">
-                                    <div class="input-group-addon">
-                                        <span class="input-group-text form-control form-control-user">
-                                            <i class='far fa-calendar-alt' aria-hidden="true"></i>
+                        </div>                                   
+                            <div class="form-group row">                        
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="poinTechnical" style="font-weight: bold">TOTAL POIN</label>
+                                        <input type="number" class="form-control form-control-user" placeholder="TOTAL POIN" id="poinTechnical" name="poinTechnical" required>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div id="poinTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nilaiTechnical" style="font-weight: bold">TOTAL NILAI</label>
+                                        <input type="number" class="form-control form-control-user" placeholder="TOTAL NILAI" id="nilaiTechnical" name="nilaiTechnical" required>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div id="nilaiTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateTechnical" style="font-weight: bold">TANGGAL ASSESMENT</label>
+                                        <div class="input-group date" id="datepickerTanggalTrainingTechnical" data-provide="datepicker">
+                                            <input type="text" id="dateTechnical" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateTechnical">
+                                            <div class="input-group-addon">
+                                                <span class="input-group-text form-control form-control-user">
+                                                    <i class='far fa-calendar-alt' aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div id="dateTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreTechnical">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-plus"></i>
                                         </span>
+                                        <span class="text">Tambah Data</span>
+                                    </button>
+                                    <button type="button" class="btn btn-warning btn-icon-split" onclick="location.href='index.php?module=dataScoreTechnicalImport';">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-arrow-circle-up"></i>
+                                        </span>
+                                        <span class="text">Import xlxs</span>
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row d-flex justify-content-end">
+                                        <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateri" onclick="location.href='index.php?module=dataScoreTechnicalDetail';">
+                                            <span class="text">Tambah Data Detail</span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-12">
-                                <div id="dateTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
                         </div>
-                        <hr>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreTechnical">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Tambah Data</span>
-                            </button>
-                            <button type="button" class="btn btn-warning btn-icon-split" onclick="location.href='index.php?module=dataScoreTechnicalImport';">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-arrow-circle-up"></i>
-                                </span>
-                                <span class="text">Import xlxs</span>
-                            </button>
-                        </div>
-                        <div class="form-group">
-                            <div class="row d-flex justify-content-end">
-                                <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateri" onclick="location.href='index.php?module=dataScoreTechnicalDetail';">
-                                    <span class="text">Tambah Data Detail</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    </div>    
                 </form>
             </div>
         </div>

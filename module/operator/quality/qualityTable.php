@@ -24,7 +24,7 @@ include "../process/proses_operatorScoreQuality.php";
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-fw fa-trophy"></i>
+                    <i class="fas fa-fw fa-certificate"></i>
                     <span>Data Score Quality</span>
                 </li>
             </ol>

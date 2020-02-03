@@ -24,13 +24,13 @@ include "../process/proses_operatorScoreQuality.php";
                     </a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="index.php?module=safetyTable" ><i class="fas fa-fw fa-home"></i>
-                        <span>Data Score Safety</span>
+                    <a href="index.php?module=qualityTable" ><i class="fas fa-fw fa-certificate"></i>
+                        <span>Data Score Quality</span>
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-fw fa-trophy"></i>
-                    <span>Data Score Safety Detail</span>
+                    <i class="fas fa-fw fa-info"></i>
+                    <span>Data Score Quality Detail</span>
                 </li>
             </ol>
         </nav>
@@ -38,7 +38,7 @@ include "../process/proses_operatorScoreQuality.php";
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Detail Score Safety Training</h6>
+    <h6 class="m-0 font-weight-bold text-primary">Detail Score Quality Training</h6>
   </div>
   <div class="card-body">
   <?php 

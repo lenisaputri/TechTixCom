@@ -24,12 +24,12 @@ include "../process/proses_operatorScoreSafety.php";
                     </a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="index.php?module=safetyTable" ><i class="fas fa-fw fa-home"></i>
+                    <a href="index.php?module=safetyTable" ><i class="fas fa-fw fa-shield-alt"></i>
                         <span>Data Score Safety</span>
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-fw fa-trophy"></i>
+                    <i class="fas fa-fw fa-info"></i>
                     <span>Data Score Safety Detail</span>
                 </li>
             </ol>

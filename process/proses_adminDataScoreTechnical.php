@@ -39,7 +39,7 @@
             $dateTechnicalEdit =  date('Y-m-d', strtotime($_POST[dateTechnicalEdit]));
             $query10="UPDATE tabel_score_technical
                 set
-                kategori = '$_POST[kategoriTechnicalEdit]',
+                kategori_technical = '$_POST[kategoriTechnicalEdit]',
                 poin = '$_POST[poinTechnicalEdit]',
                 nilai = '$_POST[nilaiTechnicalEdit]',
                 tanggal_training = '$dateTechnicalEdit'
@@ -88,7 +88,7 @@
                         <input type="hidden" name="id_scoreTechnicalUpdate" value="<?=$rowEditScoreTechnical["id_score_technical"]?>" > 
                         <div class="col-sm-12">
                             <label class="col-sm-6 small d-flex flex-column justify-content-center" for="kategoriTechnicalEdit" style="font-weight: bold">KATEGORI TECHNICAL</label>
-                            <input type="number" class="form-control" value="<?=$rowEditScoreTechnical["kategori"]?>" id="kategoriTechnicalEdit" name="kategoriTechnicalEdit" disabled>
+                            <input type="text" class="form-control" value="<?=$rowEditScoreTechnical["kategori_technical"]?>" id="kategoriTechnicalEdit" name="kategoriTechnicalEdit">
                         </div>
                         <div class="col-sm-12">
                             <div id="kategoriTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>

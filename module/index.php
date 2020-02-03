@@ -486,17 +486,26 @@ switch ($level) {
                   case "safetySpider":
                     include "supervisor/safety/safetySpider.php";
                     break;
+                  case "safetyTableDetail":
+                    include "supervisor/safety/safetyTableDetail.php";
+                    break;
                   case "generalHrdTable":
                     include "supervisor/generalHrd/generalHrdTable.php";
                     break;
                   case "generalHrdSpider":
                     include "supervisor/generalHrd/generalHrdSpider.php";
                     break;
+                  case "generalHrdTableDetail":
+                    include "supervisor/generalHrd/generalHrdTableDetail.php";
+                    break;
                   case "qualityTable":
                     include "supervisor/quality/qualityTable.php";
                     break;
                   case "qualitySpider":
                     include "supervisor/quality/qualitySpider.php";
+                    break;
+                  case "qualityTableDetail":
+                    include "supervisor/quality/qualityTableDetail.php";
                     break;
                   case "technical":
                     include "supervisor/technical.php";

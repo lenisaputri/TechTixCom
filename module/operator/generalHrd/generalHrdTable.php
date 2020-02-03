@@ -3,7 +3,7 @@ include "../config/connection.php";
 include "../process/proses_operatorScoreGeneralHrd.php";
 ?>
 <!-- Begin Page Content -->
-<div class="container-fluid" id="safety">
+<div class="container-fluid" id="generalHrd">
 
 <?php 
         $resultTampilProfilOperator = tampilProfilOperator($con, $idUser);
@@ -24,7 +24,7 @@ include "../process/proses_operatorScoreGeneralHrd.php";
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-fw fa-trophy"></i>
+                    <i class="fas fa-fw fa-users"></i>
                     <span>Data Score GeneralHRD</span>
                 </li>
             </ol>

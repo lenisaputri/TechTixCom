@@ -24,12 +24,12 @@ include "../process/proses_operatorScoreGeneralHrd.php";
                     </a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="index.php?module=safetyTable" ><i class="fas fa-fw fa-home"></i>
+                    <a href="index.php?module=safetyTable" ><i class="fas fa-fw fa-users"></i>
                         <span>Data Score GeneralHrd</span>
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-fw fa-trophy"></i>
+                    <i class="fas fa-fw fa-info"></i>
                     <span>Data Score GeneralHrd Detail</span>
                 </li>
             </ol>

@@ -24,7 +24,7 @@ include "../process/proses_operatorScoreSafety.php";
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <i class="fas fa-fw fa-trophy"></i>
+                    <i class="fas fa-fw fa-shield-alt"></i>
                     <span>Data Score Safety</span>
                 </li>
             </ol>

@@ -151,7 +151,7 @@
                                                     <button type="button" class="btn btn-primary edit-dataScoreTechnical-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreTechnicalModal" id_scoreTechnicalEdit="<?php echo $rowTampilData["id_score_technical"];?>">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-danger hapus-dataScoreTechnical-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreTechnicalModall" id_score_technical="<?php echo $rowTampilData["id_score_technical"];?>">
+                                                    <button type="button" class="btn btn-danger hapus-dataScoreTechnical-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreTechnicalModal" id_score_technical="<?php echo $rowTampilData["id_score_technical"];?>">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
                                                 </td>
@@ -174,7 +174,7 @@
         </div>
     </div>
     <div class="modal fade" id="editDataScoreTechnicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-scoreTechnical border-0">
                     <h5 class="modal-title text-white w-100 text-center">Edit Data Score Technical</h5>
@@ -206,7 +206,8 @@
                 </form>
             </div>
         </div>
-        <div class="modal fade" id="infoDataScoreTechnicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    </div>
+    <div class="modal fade" id="infoDataScoreTechnicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                     <div class="modal-header d-flex justify-content-center bg-scoreTechnicalInfo border-0">
@@ -221,5 +222,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </body>

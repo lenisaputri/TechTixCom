@@ -8,7 +8,7 @@
         return $resultTampilOperator;
     }
 
-    if (isset($_POST["tambahDataScoreTechnical"]) || isset($_POST["editDataScoreTechnical"]) || isset($_POST["hapusDataMateriTechnical"])){
+    if (isset($_POST["tambahDataScoreTechnical"]) || isset($_POST["editDataScoreTechnical"]) || isset($_POST["hapusDataScoreTechnical"])){
         if($_GET["module"]=="dataScoreTechnical" && $_GET["act"]=="tambah"){
             $dateTechnical =  date('Y-m-d', strtotime($_POST[dateTechnical]));
             $query2 = "INSERT INTO tabel_score_technical (
@@ -230,7 +230,6 @@
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                    <button class="btn btn-primary" name="editDataScoreTechnical" type="submit"><i class="fa fa-check"></i> Simpan</button>
                 </div>
             </div>
         <?php

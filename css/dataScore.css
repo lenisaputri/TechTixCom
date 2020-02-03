@@ -153,3 +153,17 @@
 #editDataScoreGeneralHrdDetailModal .bg-scoreGeneralHrdDetail{
   background-color: #0368ca !important;
 }
+
+#editDataScoreTechnicalModal .bg-scoreTechnical{
+  background-color: #0368ca !important;
+}
+
+#editDataScoreTechnicalModal .form-control{
+  font-size: .8rem;
+  border-radius: 10rem;
+  padding: 1.5rem 1rem;
+}
+
+#infoDataScoreTechnicalModal .bg-scoreTechnicalInfo{
+  background-color: #0368ca !important;
+}

@@ -115,13 +115,13 @@
                         </div>
                         <hr>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreSafetyDetail">
+                            <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreTechnicalDetail">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>
                                 <span class="text">Tambah Data</span>
                             </button>
-                            <button type="button" class="btn btn-warning btn-icon-split" onclick="location.href='index.php?module=dataScoreSafetyDetailImport';">
+                            <button type="button" class="btn btn-warning btn-icon-split" onclick="location.href='index.php?module=dataScoreTechnicalDetailImport';">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-arrow-circle-up"></i>
                                 </span>
@@ -142,11 +142,13 @@
                         <thead>
                             <tr class="text-center">
                                 <th>No</th>
+                                <th>NIK</th>
                                 <th>Safety Procedure</th>
                                 <th>Equipment List</th>
                                 <th>Operasional Parameter</th>
                                 <th>Maintenance Parameter</th>
                                 <th>Trouble Shooting</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -146,8 +146,8 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="perperusGeneralHrdEditDetail" style="font-weight: bold">NILAI MOVEMENT FORKLIFT</label>
-                                    <input type="number" class="form-control" placeholder="NILAI Peraturan Perpustakaan" id="perperusGeneralHrdEditDetail" name="perperusGeneralHrdEditDetail" value="<?=$rowEditScoreGeneralHrdDetail["perperus"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="perperusGeneralHrdEditDetail" style="font-weight: bold">NILAI Peraturan Perusahaan</label>
+                                    <input type="number" class="form-control" placeholder="NILAI Peraturan Perusahaan" id="perperusGeneralHrdEditDetail" name="perperusGeneralHrdEditDetail" value="<?=$rowEditScoreGeneralHrdDetail["perperus"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="perperusGeneralHrdEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>

@@ -427,6 +427,9 @@ switch ($level) {
                   case "qualitySpider":
                     include "operator/quality/qualitySpider.php";
                     break;
+                  case "qualityTableDetail":
+                    include "operator/quality/qualityTableDetail.php";
+                    break;
                   case "technical":
                     include "operator/technical.php";
                     break;

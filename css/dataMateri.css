@@ -16,6 +16,10 @@
     background-color: #0368ca !important;
 }
 
+#editDataMateriSafetyLinkModal .bg-materiSafetyLink {
+    background-color: #0368ca !important;
+}
+
 #editDataMateriQualityModal .bg-materiQuality {
     background-color: #0368ca !important;
 }
@@ -28,11 +32,15 @@
     background-color: #0368ca !important;
 }
 
+#editDataMateriGeneralHrdLinkModal .bg-materiGeneralHrdLink{
+    background-color: #0368ca !important;
+}
+
 #editDataMateriTechnicalModal .bg-materiTechnical {
     background-color: #0368ca !important;
 }
 
-#editDataMateriSafetyLinkModal .bg-materiSafetyLink {
+#editDataMateriTechnicalLinkModal .bg-materiTechnicalLink{
     background-color: #0368ca !important;
 }
 

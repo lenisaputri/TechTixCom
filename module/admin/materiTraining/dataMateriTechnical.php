@@ -24,35 +24,35 @@
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataMateriTechnical.php?module=dataMateriTechnical&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
+                        <input type="file" class="form-control border-0" id="fileMateriTechnical" name="fileMateriTechnical" required>
                         <div class="col-sm-6">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="fileMateriTechnicalBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div> 
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="judulMateri" name="judulMateri" placeholder="Judul Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="judulMateriTechnical" name="judulMateriTechnical" placeholder="Judul Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="judulMateriTechnicalBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="kategoriMateri" name="kategoriMateri" placeholder="Kategori Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="kategoriMateriTechnical" name="kategoriMateriTechnical" placeholder="Kategori Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="kategoriMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="kategoriMateriTechnicalBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
+                        <textarea id="keteranganMateriTechnical" name="keteranganMateriTechnical" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required></textarea>
                         <div class="col-sm-12">
-                            <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="keteranganMateriTechnicalBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriTechnical" onclick="ValidasiTambahDataMateriTechnical();">
                             <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                             </span>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="form-group">
                         <div class="row d-flex justify-content-end">
-                            <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateriLink" onclick="location.href='index.php?module=dataMateriTechnicalLink';">
+                            <button type="button" class="btn btn-info btn-icon-split" onclick="location.href='index.php?module=dataMateriTechnicalLink';">
                                 <span class="text">Tambah Data Link</span>
                             </button>
                         </div>

@@ -24,35 +24,35 @@
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataMateriGeneralHrd.php?module=dataMateriGeneralHrd&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
+                        <input type="file" class="form-control border-0" id="fileMateriGeneralHrd" name="fileMateriGeneralHrd" required>
                         <div class="col-sm-6">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="fileMateriGeneralHrdBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div> 
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="judulMateri" name="judulMateri" placeholder="Judul Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="judulMateriGeneralHrd" name="judulMateriGeneralHrd" placeholder="Judul Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="judulMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="judulMateriGeneralHrdBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="kategoriMateri" name="kategoriMateri" placeholder="Kategori Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="kategoriMateriGeneralHrd" name="kategoriMateriGeneralHrd" placeholder="Kategori Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="kategoriMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="kategoriMateriGeneralHrdBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <textarea id="keteranganMateri" name="keteranganMateri" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
+                        <textarea id="keteranganMateriGeneralHrd" name="keteranganMateriGeneralHrd" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required></textarea>
                         <div class="col-sm-12">
-                            <div id="keteranganMateriBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="keteranganMateriGeneralHrdBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriGeneralHrd" onclick="ValidasiTambahDataMateriGeneralHrd();">
                             <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                             </span>
@@ -93,7 +93,7 @@
                                 if(mysqli_num_rows($resultTampilData) > 0){
                                     while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
                             ?>
-                            <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_generalhrd"] ?>">
+                            <tr class="text-center" id-materi-generalHrd="<?php echo $rowTampilData["id_materi_generalhrd"] ?>">
                                 <td ><?php echo $index; ?></td>
                                 <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
                                 <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
@@ -102,7 +102,7 @@
                                     <button type="button" class="btn btn-primary edit-dataMateriGeneralHrd-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriGeneralHrdModal" id_materiGeneralHrdEdit="<?php echo $rowTampilData["id_materi_generalhrd"];?>">
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <br>
+                                    <p></p>
                                     <button type="button" class="btn btn-danger hapus-dataMateriGeneralHrd-admin" data-toggle="modal" data-target="#hapusDataMateriGeneralHrdModal" id_materi_generalhrd="<?php echo $rowTampilData["id_materi_generalhrd"];?>">
                                         <i class="fas fa-trash"></i>
                                     </button>

@@ -29,7 +29,7 @@
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataMateriSafetyLink.php?module=dataMateriSafetyLink&act=tambah" id="formDataMateriAdmin" method="POST">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="linkMateriSafetyLink" name="linkMateriSafety" placeholder="Link Materi ..." style="width=100%">
+                        <input type="text" class="form-control border-0" id="linkMateriSafetyLink" name="linkMateriSafety" placeholder="Link Materi ..." style="width=100%" required>
                         <div class="col-sm-6">
                             <div id="linkMateriSafetyLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>   
@@ -93,7 +93,7 @@
                                 if(mysqli_num_rows($resultTampilData) > 0){
                                     while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
                             ?>
-                                <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_safety"] ?>">
+                                <tr class="text-center" id-materi-safetyLink="<?php echo $rowTampilData["id_materi_safety"] ?>">
                                     <td ><?php echo $index; ?></td>
                                     <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
                                     <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>

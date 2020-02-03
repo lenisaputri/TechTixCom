@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2020 at 04:57 AM
+-- Generation Time: Feb 03, 2020 at 03:51 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -190,6 +190,15 @@ CREATE TABLE `tabel_score_generalhrd` (
   `tanggal_training` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tabel_score_generalhrd`
+--
+
+INSERT INTO `tabel_score_generalhrd` (`id_score_generalHrd`, `id_operator`, `poin`, `nilai`, `tanggal_training`) VALUES
+(1, 4, 11, 11, '2020-01-13'),
+(2, 4, 1, 1, '2020-02-24'),
+(3, 4, 1, 1, '2020-02-02');
+
 -- --------------------------------------------------------
 
 --
@@ -224,7 +233,7 @@ CREATE TABLE `tabel_score_quality` (
 --
 
 INSERT INTO `tabel_score_quality` (`id_score_quality`, `id_operator`, `poin`, `nilai`, `tanggal_training`) VALUES
-(1, 5, 123, 2147, '2020-02-08');
+(1, 4, 12, 12, '2020-02-02');
 
 -- --------------------------------------------------------
 
@@ -240,13 +249,6 @@ CREATE TABLE `tabel_score_quality_detail` (
   `halal` int(11) NOT NULL,
   `tanggal_training` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tabel_score_quality_detail`
---
-
-INSERT INTO `tabel_score_quality_detail` (`id_score_quality_detail`, `id_score_quality`, `fss`, `gmp`, `halal`, `tanggal_training`) VALUES
-(1, 1, 89, 90, 90, '2020-02-08');
 
 -- --------------------------------------------------------
 
@@ -267,8 +269,7 @@ CREATE TABLE `tabel_score_safety` (
 --
 
 INSERT INTO `tabel_score_safety` (`id_score_safety`, `id_operator`, `poin`, `nilai`, `tanggal_training`) VALUES
-(4, 5, 34444, 325, '2020-01-31'),
-(5, 4, 677777, 89, '2020-02-03');
+(4, 5, 34444, 323, '2020-01-31');
 
 -- --------------------------------------------------------
 
@@ -290,15 +291,46 @@ CREATE TABLE `tabel_score_safety_detail` (
   `wah` int(11) NOT NULL,
   `environment` int(11) NOT NULL,
   `p3k` int(11) NOT NULL,
-  `tanggal_training` date NOT NULL
+  `tanggal_upload` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tabel_score_safety_detail`
 --
 
-INSERT INTO `tabel_score_safety_detail` (`id_score_safety_detail`, `id_score_safety`, `smk3`, `ea_hira`, `movement_forklift`, `confined_space`, `loto`, `apd`, `bbs`, `fire_fighting`, `wah`, `environment`, `p3k`, `tanggal_training`) VALUES
-(3, 5, 56, 78, 90, 89, 99, 99, 89, 87, 78, 90, 78, '2020-02-03');
+INSERT INTO `tabel_score_safety_detail` (`id_score_safety_detail`, `id_score_safety`, `smk3`, `ea_hira`, `movement_forklift`, `confined_space`, `loto`, `apd`, `bbs`, `fire_fighting`, `wah`, `environment`, `p3k`, `tanggal_upload`) VALUES
+(2, 4, 60, 90, 80, 90, 90, 90, 70, 65, 89, 90, 33, '2020-01-31');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tabel_score_technical`
+--
+
+CREATE TABLE `tabel_score_technical` (
+  `id_score_technical` int(11) NOT NULL,
+  `id_operator` int(11) NOT NULL,
+  `poin` int(15) NOT NULL,
+  `nilai` int(11) NOT NULL,
+  `tanggal_training` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tabel_score_technical_detail`
+--
+
+CREATE TABLE `tabel_score_technical_detail` (
+  `id_score_technical_detail` int(11) NOT NULL,
+  `id_score_technical` int(11) NOT NULL,
+  `sftp` int(11) NOT NULL,
+  `equipment` int(11) NOT NULL,
+  `operational` int(11) NOT NULL,
+  `mainten` int(11) NOT NULL,
+  `trouble` int(11) NOT NULL,
+  `tanggal_training` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -445,6 +477,19 @@ ALTER TABLE `tabel_score_safety_detail`
   ADD KEY `id_score_safety` (`id_score_safety`);
 
 --
+-- Indexes for table `tabel_score_technical`
+--
+ALTER TABLE `tabel_score_technical`
+  ADD PRIMARY KEY (`id_score_technical`);
+
+--
+-- Indexes for table `tabel_score_technical_detail`
+--
+ALTER TABLE `tabel_score_technical_detail`
+  ADD PRIMARY KEY (`id_score_technical_detail`),
+  ADD KEY `id_score_technical` (`id_score_technical`);
+
+--
 -- Indexes for table `tabel_supervisor`
 --
 ALTER TABLE `tabel_supervisor`
@@ -508,7 +553,7 @@ ALTER TABLE `tabel_operator`
 -- AUTO_INCREMENT for table `tabel_score_generalhrd`
 --
 ALTER TABLE `tabel_score_generalhrd`
-  MODIFY `id_score_generalHrd` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_score_generalHrd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tabel_score_generalhrd_detail`
@@ -526,19 +571,31 @@ ALTER TABLE `tabel_score_quality`
 -- AUTO_INCREMENT for table `tabel_score_quality_detail`
 --
 ALTER TABLE `tabel_score_quality_detail`
-  MODIFY `id_score_quality_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_score_quality_detail` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tabel_score_safety`
 --
 ALTER TABLE `tabel_score_safety`
-  MODIFY `id_score_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_score_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tabel_score_safety_detail`
 --
 ALTER TABLE `tabel_score_safety_detail`
-  MODIFY `id_score_safety_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_score_safety_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tabel_score_technical`
+--
+ALTER TABLE `tabel_score_technical`
+  MODIFY `id_score_technical` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tabel_score_technical_detail`
+--
+ALTER TABLE `tabel_score_technical_detail`
+  MODIFY `id_score_technical_detail` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tabel_supervisor`
@@ -605,6 +662,12 @@ ALTER TABLE `tabel_score_safety`
 --
 ALTER TABLE `tabel_score_safety_detail`
   ADD CONSTRAINT `tabel_score_safety_detail_ibfk_1` FOREIGN KEY (`id_score_safety`) REFERENCES `tabel_score_safety` (`id_score_safety`);
+
+--
+-- Constraints for table `tabel_score_technical_detail`
+--
+ALTER TABLE `tabel_score_technical_detail`
+  ADD CONSTRAINT `tabel_score_technical_detail_ibfk_1` FOREIGN KEY (`id_score_technical`) REFERENCES `tabel_score_technical` (`id_score_technical`);
 
 --
 -- Constraints for table `tabel_supervisor`

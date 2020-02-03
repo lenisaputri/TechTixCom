@@ -41,19 +41,18 @@
             $namanya_file = $_FILES["fileMateriQuality2"]["name"];
             move_uploaded_file($tmp, "../attachment/$nama_folder/$nama_file");
 
-            if (isset($namanya_file)){
-                $query9 = "UPDATE tabel_materi_quality set kategori_materi = '$_POST[kategoriMateriQuality2]',
+            $query9 = "UPDATE tabel_materi_quality set kategori_materi = '$_POST[kategoriMateriQuality2]',
                     judul_materi = '$_POST[judulMateriQuality2]', keterangan_materi = '$_POST[keteranganMateriQuality2]',
                     file_materi = '$namanya_file', tipe = 'file' WHERE id_materi_quality = '$id_materiQualityUpdate'
-                ";
+            ";
             
-                if(mysqli_query($con, $query9)){ 
-                    header('location:../module/index.php?module=' . $_GET["module"]);
-                }
-                else{            
-                    echo("Error description: " . mysqli_error($con));           
-                }
-            } 
+            if(mysqli_query($con, $query9)){ 
+                header('location:../module/index.php?module=' . $_GET["module"]);
+            }
+            else{            
+                echo("Error description: " . mysqli_error($con));           
+            }
+     
         } 
         else if($_GET["module"]=="dataMateriQuality" && $_GET["act"]=="hapus"){
             $HapusMateriQualityQuery="DELETE FROM tabel_materi_quality WHERE id_materi_quality ='$_POST[id_materi_quality]'";

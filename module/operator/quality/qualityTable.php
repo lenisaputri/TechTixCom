@@ -1,11 +1,34 @@
 <?php
 include "../config/connection.php";
+include "../process/proses_operatorScoreQuality.php";
 ?>
-         <!-- Begin Page Content -->
-          <div class="container-fluid">
+<!-- Begin Page Content -->
+<div class="container-fluid" id="safety">
 
+<?php 
+        $resultTampilProfilOperator = tampilProfilOperator($con, $idUser);
+        if (mysqli_num_rows($resultTampilProfilOperator) > 0){
+          while ($row = mysqli_fetch_assoc($resultTampilProfilOperator)) {
+            ?>
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Score Training General HRD</h1>
+<h1 class="h3 mb-2 text-gray-800"><?= $row["nik"]?> / <?= $row["nama"]?></h1>
+<?php
+          } 
+        }
+        ?>
+<nav aria-label="breadcrumb" class="shadow">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
+                        <span>Beranda</span>
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <i class="fas fa-fw fa-trophy"></i>
+                    <span>Data Score Quality</span>
+                </li>
+            </ol>
+        </nav>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -16,27 +39,48 @@ include "../config/connection.php";
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
-          <tr>
+          <tr class="text-center">
             <th>No.</th>
-            <th>NIK</th>
-            <th>Total Nilai</th>
-            <th>Tanggal Mulai</th>
-            <th>Detail</th>
+            <th>Poin</th>
+            <th>Nilai</th>
+            <th>Tanggal</th>
+            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
+        <?php 
+        $resultTampilScoreQualityOperator = tampilScoreQualityOperator($con, $idUser);
+        $index = 1;
+
+        if (mysqli_num_rows($resultTampilScoreQualityOperator) > 0){
+          while ($rowTampilData = mysqli_fetch_assoc($resultTampilScoreQualityOperator)) {
+            ?>
+          <tr class="text-center">
+            <td><?php echo $index; ?></td>
+            <td><?php echo $rowTampilData["poin"]; ?></td>
+            <td><?php echo $rowTampilData["nilai"]; ?></td>
+            <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
+            <td>
+              <button type="submit" class="btn btn-warning btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreSafety">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-info"></i>
+                        </span>
+                        <span class="text">Detail Score</span>
+                        </button></td>
           </tr>
-          <tr>
-            <td>Garrett Winters</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td>63</td>
-          </tr>
+          <?php
+          $index++;
+          }
+          ?>
+          <?php
+                    }   else{
+                    ?>
+                        <!-- <div>
+                            <p>Data Operator tidak tersedia</p>
+                        </div> -->
+                    <?php
+                    }
+                    ?>
         </tbody>
       </table>
     </div>

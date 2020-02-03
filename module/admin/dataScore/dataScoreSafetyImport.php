@@ -1,6 +1,8 @@
 <?php
   include "../config/connection.php";
+  include "../process/proses_adminDataScoreSafetyImport.php";
 ?>
+
 <body>
 <!-- Begin Page Content -->
 <div class="container-fluid" id="dataMateri">
@@ -28,16 +30,16 @@
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
+            <form class="user" action="../process/proses_adminDataScoreSafetyImport.php?module=dataScoreSafetyImport&act=import" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                        <input type="file" class="form-control border-0" id="inputFile" name="fileMateri">
+                        <input type="file" class="form-control border-0" id="importScoreSafety" name="importScoreSafety" required>
                         <div class="col-sm-12">
-                            <div id="fileMateriAdminBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="importScoreSafetyBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                 </div> 
                 <hr>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataMateri" onclick="ValidasiTambahDataMateri();">
+                    <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="importDataScoreSafety">
                         <span class="icon text-white-50">
                             <i class="fas fa-plus"></i>
                         </span>

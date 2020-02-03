@@ -29,35 +29,35 @@
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataMateriGeneralHrdLink.php?module=dataMateriGeneralHrdLink&act=tambah" id="formDataMateriAdmin" method="POST">
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="linkMateriLink" name="linkMateri" placeholder="Link Materi ..." style="width=100%">
+                        <input type="text" class="form-control border-0" id="linkMateriLinkGeneralHrdLink" name="linkMateriLinkGeneralHrdLink" placeholder="Link Materi ..." style="width=100%" required>
                             <div class="col-sm-6">
-                                <div id="linkMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="linkMateriLinkGeneralHrdLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                             </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="judulMateriLink" name="judulMateriLink" placeholder="Judul Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="judulMateriGeneralHrdLink" name="judulMateriGeneralHrdLink" placeholder="Judul Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="judulMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="judulMateriGeneralHrdLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <input type="text" class="form-control border-0" id="kategoriMateriLink" name="kategoriMateriLink" placeholder="Kategori Materi ..." style="width=100%" required>
+                        <input type="text" class="form-control border-0" id="kategoriMateriGeneralHrdLink" name="kategoriMateriGeneralHrdLink" placeholder="Kategori Materi ..." style="width=100%" required>
                         <div class="col-sm-12">
-                            <div id="kategoriMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="kategoriMateriGeneralHrdLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <textarea id="keteranganMateriLink" name="keteranganMateriLink" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0"></textarea>
+                        <textarea id="keteranganMateriGeneralHrdLink" name="keteranganMateriGeneralHrdLink" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required></textarea>
                         <div class="col-sm-12">
-                            <div id="keteranganMateriLinkBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="keteranganMateriGeneralHrdLinkBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriLink" onclick="ValidasiTambahDataMateri();">
+                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriGeneralHrdLink" onclick="ValidasiTambahDataMateriGeneralHrdLink();">
                             <span class="icon text-white-50">
                                 <i class="fas fa-plus"></i>
                             </span>
@@ -93,7 +93,7 @@
                                 if(mysqli_num_rows($resultTampilData) > 0){
                                     while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
                             ?>
-                                <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_generalhrd"] ?>">
+                                <tr class="text-center" id-materi-generalHrdLink="<?php echo $rowTampilData["id_materi_generalhrd"] ?>">
                                     <td ><?php echo $index; ?></td>
                                     <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
                                     <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
@@ -123,11 +123,11 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="editDataMateriGeneralHrdyLinkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editDataMateriGeneralHrdLinkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-materiGeneralHrdLink border-0">
-                    <h5 class="modal-title text-white w-100 text-center">Edit Data Materi General HRD</h5>
+                    <h5 class="modal-title text-white w-100 text-center">Edit Data Materi General HRD Link</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

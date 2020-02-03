@@ -61,26 +61,26 @@ include "../process/proses_operatorScoreSafety.php";
             <td><?php echo $rowTampilData["nilai"]; ?></td>
             <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
             <td>
-              <button type="submit" class="btn btn-warning btn-icon-split mb-2 mb-sm-0" onclick="location.href='index.php?module=safetyTableDetail';">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-info"></i>
-                        </span>
-                        <span class="text">Detail Score</span>
-                        </button></td>
+            <button type="submit" class="btn btn-warning btn-icon-split mb-2 mb-sm-0" onclick="location.href='index.php?module=safetyTableDetail';">
+            <span class="icon text-white-50">
+              <i class="fas fa-info"></i>
+            </span>
+            <span class="text">Detail Score</span>
+            </button></td>
           </tr>
           <?php
           $index++;
           }
           ?>
           <?php
-                    }   else{
-                    ?>
-                        <!-- <div>
-                            <p>Data Operator tidak tersedia</p>
-                        </div> -->
-                    <?php
-                    }
-                    ?>
+          }   else{
+            ?>
+            <!-- <div>
+            <p>Data Operator tidak tersedia</p>
+            </div> -->
+            <?php
+            }
+            ?>
         </tbody>
       </table>
     </div>

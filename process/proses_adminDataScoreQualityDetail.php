@@ -126,7 +126,9 @@
                                     <div id="tanggalTrainingQualityEditDetailBlank2" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                        </div>
+                        <div class="col-sm-6">
+                        <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fssQualityEditDetail" style="font-weight: bold">Food Safety System</label>
                                     <input type="number" class="form-control" placeholder="NILAI FSS" id="fssQualityEditDetail" name="fssQualityEditDetail" value="<?=$rowEditScoreQualityDetail["fss"]?>" required>

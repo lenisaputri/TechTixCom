@@ -182,11 +182,11 @@
                                                 ?>
                                                     <tr>
                                                         <td><?php echo $index;?></td>
-                                                        <td><?php echo $row1["smk3"];?></td>
-                                                        <td><?php echo $row1["ea_hira"];?></td>
-                                                        <td><?php echo $row1["movement_forklift"];?></td>
-                                                        <td><?php echo $row1["confined_space"];?></td>
-                                                        <td><?php echo $row1["loto"];?></td>
+                                                        <td><?php echo $row1["sftp"];?></td>
+                                                        <td><?php echo $row1["equipment"];?></td>
+                                                        <td><?php echo $row1["operational"];?></td>
+                                                        <td><?php echo $row1["mainten"];?></td>
+                                                        <td><?php echo $row1["trouble"];?></td>
                                                     </tr>
                                             <?php
                                             $index++;

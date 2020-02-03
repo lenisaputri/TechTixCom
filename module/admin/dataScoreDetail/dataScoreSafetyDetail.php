@@ -3,7 +3,6 @@
   include "../process/proses_adminDataScoreSafetyDetail.php";
 ?>
 <body>
-<!-- Begin Page Content -->
 <div class="container-fluid" id="dataScore">
     <nav aria-label="breadcrumb" class="shadow">
             <ol class="breadcrumb">

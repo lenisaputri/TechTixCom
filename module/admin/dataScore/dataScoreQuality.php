@@ -175,7 +175,7 @@
 
 <!-- Modal Edit Jabatan-->
 <div class="modal fade" id="editDataScoreQualityModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-center bg-scoreQuality border-0">
           <h5 class="modal-title text-white w-100 text-center">Edit Data Score Quality</h5>

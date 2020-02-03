@@ -80,8 +80,8 @@
                 }
         }
         else if ($_GET["module"]=="dataScoreGeneralHrdDetail" && $_GET["act"]=="hapus"){
-            $idnya = $_POST['id_score_generalhrd_detail'];
-            $queryDelete = "DELETE FROM tabel_score_generalhrd_detail WHERE id_score_generalhrd_detail='$idnya';";
+            $idnya = $_POST['id_score_generalHrd_detail'];
+            $queryDelete = "DELETE FROM tabel_score_generalhrd_detail WHERE id_score_generalHrd_detail='$idnya';";
 
             if(mysqli_query($con,$queryDelete)){
                 header('location:../module/index.php?module=' . $_GET["module"]);
@@ -93,11 +93,11 @@
     }
 
     if(isset($_POST["editDataScoreGeneralHrdDetail_idScoreGeneralHrd"])){
-        $editScoreGeneralHrdDetail = "SELECT tssd.*, tsg.*, tp.id_operator, tp.nik 
+        $editScoreGeneralHrdDetail = "SELECT tsgd.*, tsg.*, tp.id_operator, tp.nik 
             FROM tabel_score_generalhrd_detail tsgd, tabel_score_generalhrd tsg, tabel_operator tp 
             WHERE tsg.id_operator = tp.id_operator
-            AND tsgd.id_score_generalhrd = tsg.id_score_generalhrd
-            AND tsgd.id_score_generalhrd_detail = $_POST[editDataScoreGeneralHrdDetail_idScoreGeneralHrd]";
+            AND tsgd.id_score_generalHrd = tsg.id_score_generalHrd
+            AND tsgd.id_score_generalHrd_detail = $_POST[editDataScoreGeneralHrdDetail_idScoreGeneralHrd]";
 
         $resultEditScoreGeneralHrdDetail = mysqli_query($con, $editScoreGeneralHrdDetail);
     
@@ -108,7 +108,7 @@
                     <div class ="row">
                         <div class="col-sm-6">
                             <div class="form-group row">
-                                <input type="hidden" name="id_scoreGeneralHrdDetailUpdate" value="<?=$rowEditScoreGeneralHrdDetail["id_score_generalhrd_detail"]?>" > 
+                                <input type="hidden" name="id_scoreGeneralHrdDetailUpdate" value="<?=$rowEditScoreGeneralHrdDetail["id_score_generalHrd_detail"]?>" > 
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nikGeneralHrdEditDetail" style="font-weight: bold">NIK OPERATOR</label>
                                     <input type="number" class="form-control" placeholder="NIK OPERATOR" id="nikGeneralHrdEditDetail" name="nikGeneralHrdEditDetail" value="<?=$rowEditScoreGeneralHrdDetail["nik"]?>" disabled>
@@ -126,7 +126,9 @@
                                     <div id="tanggalTrainingGeneralHrdEditDetailBlank2" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                        </div>
+                        <div class="col-sm-6">
+                        <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="cocGeneralHrdEditDetail" style="font-weight: bold">Code Of Conduct</label>
                                     <input type="number" class="form-control" placeholder="Nilai Code Of Conduct" id="cocGeneralHrdEditDetail" name="cocGeneralHrdEditDetail" value="<?=$rowEditScoreGeneralHrdDetail["coc"]?>" required>

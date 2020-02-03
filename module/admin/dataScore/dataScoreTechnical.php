@@ -208,18 +208,18 @@
         </div>
     </div>
     <div class="modal fade" id="infoDataScoreTechnicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl" role="document">
-                <div class="modal-content">
-                    <div class="modal-header d-flex justify-content-center bg-scoreTechnicalInfo border-0">
-                        <h5 class="modal-title text-white w-100 text-center">Data Score Technical Detail</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid" id="info-dataScoreTechnical"></div>
-                    </div>
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center bg-scoreTechnicalInfo border-0">
+                    <h5 class="modal-title text-white w-100 text-center">Data Score Technical Detail</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid" id="info-dataScoreTechnical"></div>
                 </div>
             </div>
         </div>
+    </div>
 </body>

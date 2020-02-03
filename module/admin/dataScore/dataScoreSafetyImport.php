@@ -4,9 +4,8 @@
 ?>
 
 <body>
-<!-- Begin Page Content -->
-<div class="container-fluid" id="dataMateri">
-    <nav aria-label="breadcrumb" class="shadow">
+    <div class="container-fluid" id="dataMateri">
+        <nav aria-label="breadcrumb" class="shadow">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
@@ -24,33 +23,29 @@
                 </li>
             </ol>
         </nav>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score Safety Import</h6>
-        </div>
-        <div class="card-body">
-            <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="../process/proses_adminDataScoreSafetyImport.php?module=dataScoreSafetyImport&act=import" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score Safety Import</h6>
+            </div>
+            <div class="card-body">
+                <form class="user" action="../process/proses_adminDataScoreSafetyImport.php?module=dataScoreSafetyImport&act=import" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
                         <input type="file" class="form-control border-0" id="importScoreSafety" name="importScoreSafety" required>
                         <div class="col-sm-12">
                             <div id="importScoreSafetyBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
-                </div> 
-                <hr>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="importDataScoreSafety">
-                        <span class="icon text-white-50">
-                            <i class="fas fa-plus"></i>
-                        </span>
-                        <span class="text">Tambah Data</span>
+                    </div> 
+                    <hr>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="importDataScoreSafety">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                            <span class="text">Tambah Data</span>
                         </button>
-                </div>
-                <!-- NANTI DIGANTI TYPE BUTTON TAMBAH BUKA A HREF -->
-            </form>
-            <!-- PROSES FORM MENAMBAH DATA SELESAI -->
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<!-- /.container-fluid -->
 </body>

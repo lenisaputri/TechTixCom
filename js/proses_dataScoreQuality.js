@@ -1,25 +1,25 @@
 $(function () {
-  $('#datepickerTanggalTrainingQuality').datepicker();
+  $('#datepickerTanggalTraining').datepicker();
 });
 
 $(function () {
-  $('#datepickerTanggalTrainingQualityEdit').datepicker();
+  $('#datepickerTanggalTrainingEdit').datepicker();
 });
 
 $(".edit-dataScoreQuality-admin").click(function () {
   var id_scoreQualityEdit = $(this).attr("id_scoreQualityEdit");
 
   $.ajax({
-    url: "../process/proses_adminDataScoreQuality.php",
-    method: "post",
-    data: {
-      editDataScoreQuality_idScoreQuality: id_scoreQualityEdit
-    },
-    success: function (data) {
-      $("#id_scoreQualityUpdate").val(id_scoreQualityEdit);
-      $("#edit-dataScoreQuality").html(data);
-      $("#editDataScoreQualityModal").modal("show");
-    }
+      url: "../process/proses_adminDataScoreQuality.php",
+      method: "post",
+      data: {
+          editDataScoreQuality_idScoreQuality: id_scoreQualityEdit
+      },
+      success: function (data) {
+          $("#id_scoreQualityUpdate").val(id_scoreQualityEdit);
+          $("#edit-dataScoreQuality").html(data);
+          $("#editDataScoreQualityModal").modal("show");
+      }
   });
 });
 
@@ -35,15 +35,15 @@ $(".info-dataScoreQuality-admin").click(function () {
   var id_scoreQualityInfo = $(this).attr("id_scoreQualityInfo");
 
   $.ajax({
-    url: "../process/proses_adminDataScoreQuality.php",
-    method: "post",
-    data: {
-      infoDataScoreQuality_idScoreQuality: id_scoreQualityInfo
-    },
-    success: function (data) {
-      $("#info-dataScoreQuality").html(data);
-      $("#infoDataScoreQualityModal").modal("show");
-    }
+      url: "../process/proses_adminDataScoreQuality.php",
+      method: "post",
+      data: {
+          infoDataScoreQuality_idScoreQuality: id_scoreQualityInfo
+      },
+      success: function (data) {
+          $("#info-dataScoreQuality").html(data);
+          $("#infoDataScoreQualityModal").modal("show");
+      }
   });
 });
 
@@ -51,23 +51,23 @@ $(".edit-dataScoreQualityDetail-admin").click(function () {
   var id_scoreQualityDetailEdit = $(this).attr("id_scoreQualityDetailEdit");
 
   $.ajax({
-    url: "../proses_adminDataScoreQualityDetail.php",
-    method: "post",
-    data: {
-      editDataScoreQuality_idScoreQuality: id_scoreQualityDetailEdit
-    },
-    success: function (data) {
-      $("#id_scoreQualityDetailUpdate").val(id_scoreQualityDetailEdit);
-      $("#edit-dataScoreSafetyDetail").html(data);
-      $("editDataScoreSafetyDetailModal").modal("show");
-    }
+      url: "../process/proses_adminDataScoreQualityDetail.php",
+      method: "post",
+      data: {
+          editDataScoreQualityDetail_idScoreQuality: id_scoreQualityDetailEdit
+      },
+      success: function (data) {
+          $("#id_scoreQualityDetailUpdate").val(id_scoreQualityDetailEdit);
+          $("#edit-dataScoreQualityDetail").html(data);
+          $("#editDataScoreQualityDetailModal").modal("show");
+      }
   });
 });
 
 $(".hapus-dataScoreQualityDetail-admin").click(function () {
   var id_score_quality_detail = $(this).attr("id_score_quality_detail");
 
-  $('#id_scoreQualityHapus').val(id_score_quality_detail);
+  $('#id_scoreQualityDetailHapus').val(id_score_quality_detail);
 
-  $('#hapusDataScoreQualityDetailModel').modal("show");
+  $('#hapusDataScoreQualityDetailModal').modal("show");
 })

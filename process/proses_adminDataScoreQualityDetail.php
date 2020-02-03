@@ -66,9 +66,9 @@
             $id_scoreQualityDetailUpdate = $_POST["id_scoreQualityDetailUpdate"];            
             $query10="UPDATE tabel_score_quality_detail
                 set
-                smk3 = '$_POST[fssQualityEditDetail]',
-                ea_hira = '$_POST[gmpQualityEditDetail]',
-                movement_forklift = '$_POST[halalQualityEditDetail]',
+                fss = '$_POST[fssQualityEditDetail]',
+                gmp = '$_POST[gmpQualityEditDetail]',
+                halal = '$_POST[halalQualityEditDetail]',
                 tanggal_training = '$_POST[tanggalTrainingQualityEditDetail]'
                 where id_score_quality_detail='$id_scoreQualityDetailUpdate';";
 

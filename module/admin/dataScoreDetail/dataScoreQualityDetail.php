@@ -139,7 +139,7 @@
                         $queryTampilData = "SELECT tsqd.*, tsq.*, tp.id_operator, tp.nik 
                         FROM tabel_score_quality_detail tsqd, tabel_score_quality tsq, tabel_operator tp 
                         WHERE tsq.id_operator = tp.id_operator
-                        AND tsqd.id_score_quality = tss.id_score_quality;
+                        AND tsqd.id_score_quality = tsq.id_score_quality;
                             ";
                         
                         $resultTampilData = mysqli_query($con, $queryTampilData);

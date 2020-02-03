@@ -37,7 +37,7 @@
         return $output;
     }
 
-    if (isset($_POST["tambahDataScoreQualityyDetail"]) || isset($_POST["editDataScoreQualityDetail"]) || isset($_POST["hapusDataScoreQualityDetail"])){
+    if (isset($_POST["tambahDataScoreQualityDetail"]) || isset($_POST["editDataScoreQualityDetail"]) || isset($_POST["hapusDataScoreQualityDetail"])){
         if($_GET["module"]=="dataScoreQualityDetail" && $_GET["act"]=="tambah"){
             $query2 = "INSERT INTO tabel_score_quality_detail (
                 id_score_quality,
@@ -51,7 +51,7 @@
                 '$_POST[nikOperatorDetail]',
                 '$_POST[fssDetail]',
                 '$_POST[gmpDetail]',
-                '$_POST[halaDetail]',
+                '$_POST[halalDetail]',
                 '$_POST[tanggalTrainingDetail]'
             );";
         
@@ -129,7 +129,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fssQualityEditDetail" style="font-weight: bold">Food Safety System</label>
-                                    <input type="number" class="form-control" placeholder="NILAI Food Safety System" id="fssQualityEditDetail" name="fssQualityEditDetail" value="<?=$rowEditScoreQualityDetail["fss"]?>" required>
+                                    <input type="number" class="form-control" placeholder="NILAI FSS" id="fssQualityEditDetail" name="fssQualityEditDetail" value="<?=$rowEditScoreQualityDetail["fss"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="fssQualityEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -137,8 +137,8 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gmpQualityEditDetail" style="font-weight: bold">EA-HIRA</label>
-                                    <input type="number" class="form-control" placeholder="NILAI GMP" id="gmpQualityEditDetail" name="gmpQualityEditDetail" value="<?=$rowEditScoreQualityDetail["ea_hira"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gmpQualityEditDetail" style="font-weight: bold">GMP</label>
+                                    <input type="number" class="form-control" placeholder="NILAI GMP" id="gmpQualityEditDetail" name="gmpQualityEditDetail" value="<?=$rowEditScoreQualityDetail["gmp"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="gmpQualityEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -146,8 +146,8 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="halalQualityEditDetail" style="font-weight: bold">NILAI MOVEMENT FORKLIFT</label>
-                                    <input type="number" class="form-control" placeholder="NILAI HALAL" id="halalQualityEditDetail" name="halalQualityEditDetail" value="<?=$rowEditScoreQualityDetail["movement_forklift"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="halalQualityEditDetail" style="font-weight: bold">HALAL</label>
+                                    <input type="number" class="form-control" placeholder="NILAI HALAL" id="halalQualityEditDetail" name="halalQualityEditDetail" value="<?=$rowEditScoreQualityDetail["halal"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="halalQualityEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -164,7 +164,7 @@
                 <div class="form-group">
                     <div class="modal-footer border-0">
                         <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                         <button class="btn btn-primary" name="editDataScoreQualityDetail" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                        <button class="btn btn-primary" name="editDataScoreQualityDetail" type="submit"><i class="fa fa-check"></i> Simpan</button>
                     </div>
                 </div>
             <?php

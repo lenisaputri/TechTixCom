@@ -28,7 +28,7 @@ $(".hapus-dataScoreSafety-admin").click(function () {
 
     $('#id_scoreSafetyHapus').val(id_score_safety);
 
-    $('#hapusDataMateriSafetyModal').modal("show");
+    $('#hapusDataScoreSafetyModal').modal("show");
 })
 
 $(".info-dataScoreSafety-admin").click(function () {

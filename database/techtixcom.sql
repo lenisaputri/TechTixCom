@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2020 at 02:37 AM
+-- Generation Time: Feb 03, 2020 at 03:51 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -459,7 +459,8 @@ ALTER TABLE `tabel_score_quality`
 -- Indexes for table `tabel_score_quality_detail`
 --
 ALTER TABLE `tabel_score_quality_detail`
-  ADD PRIMARY KEY (`id_score_quality_detail`);
+  ADD PRIMARY KEY (`id_score_quality_detail`),
+  ADD KEY `id_score_quality` (`id_score_quality`);
 
 --
 -- Indexes for table `tabel_score_safety`
@@ -485,7 +486,8 @@ ALTER TABLE `tabel_score_technical`
 -- Indexes for table `tabel_score_technical_detail`
 --
 ALTER TABLE `tabel_score_technical_detail`
-  ADD PRIMARY KEY (`id_score_technical_detail`);
+  ADD PRIMARY KEY (`id_score_technical_detail`),
+  ADD KEY `id_score_technical` (`id_score_technical`);
 
 --
 -- Indexes for table `tabel_supervisor`
@@ -644,6 +646,12 @@ ALTER TABLE `tabel_score_quality`
   ADD CONSTRAINT `tabel_score_quality_ibfk_1` FOREIGN KEY (`id_operator`) REFERENCES `tabel_operator` (`id_operator`);
 
 --
+-- Constraints for table `tabel_score_quality_detail`
+--
+ALTER TABLE `tabel_score_quality_detail`
+  ADD CONSTRAINT `tabel_score_quality_detail_ibfk_1` FOREIGN KEY (`id_score_quality`) REFERENCES `tabel_score_quality` (`id_score_quality`);
+
+--
 -- Constraints for table `tabel_score_safety`
 --
 ALTER TABLE `tabel_score_safety`
@@ -654,6 +662,12 @@ ALTER TABLE `tabel_score_safety`
 --
 ALTER TABLE `tabel_score_safety_detail`
   ADD CONSTRAINT `tabel_score_safety_detail_ibfk_1` FOREIGN KEY (`id_score_safety`) REFERENCES `tabel_score_safety` (`id_score_safety`);
+
+--
+-- Constraints for table `tabel_score_technical_detail`
+--
+ALTER TABLE `tabel_score_technical_detail`
+  ADD CONSTRAINT `tabel_score_technical_detail_ibfk_1` FOREIGN KEY (`id_score_technical`) REFERENCES `tabel_score_technical` (`id_score_technical`);
 
 --
 -- Constraints for table `tabel_supervisor`

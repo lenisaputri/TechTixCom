@@ -2,6 +2,7 @@
   include "../config/connection.php";
   include "../process/proses_adminDataScoreSafetyImport.php";
 ?>
+
 <body>
 <!-- Begin Page Content -->
 <div class="container-fluid" id="dataMateri">
@@ -29,7 +30,7 @@
         </div>
         <div class="card-body">
             <!-- FORM MENAMBAH DATA -->
-            <form class="user" action="../process/proses_adminDataScoreSafetyImport.php?module=dataScoreSafety&act=import" method="POST" enctype="multipart/form-data">
+            <form class="user" action="../process/proses_adminDataScoreSafetyImport.php?module=dataScoreSafetyImport&act=import" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                         <input type="file" class="form-control border-0" id="importScoreSafety" name="importScoreSafety" required>
                         <div class="col-sm-12">

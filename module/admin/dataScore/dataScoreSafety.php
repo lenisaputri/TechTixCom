@@ -197,7 +197,7 @@
  <!-- End Modal Edit Jabatan -->
 
     <!-- Modal HAPUS Jabatan-->
-    <div class="modal fade" id="hapusDataMateriSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="hapusDataScoreSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

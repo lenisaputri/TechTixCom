@@ -112,8 +112,7 @@
                                     <div id="troubleDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
-                                        </div>
-                        </div>
+                        </div></div>
                         <hr>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreTechnicalDetail">
@@ -129,7 +128,7 @@
                                 <span class="text">Import xlxs</span>
                             </button>
                         </div>
-                    </div>
+                    
                 </form>
             </div>
         </div>

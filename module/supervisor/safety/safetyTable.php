@@ -38,12 +38,12 @@ include "../config/connection.php";
                       <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                       <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                       <td>
-                        <button type="button" class="btn btn-warning info-dataScoreSafety-admin mb-2 mb-sm-0" onclick="location.href='index.php?module=safetyTableDetail';" >
+                        <a type="button" class="btn btn-warning mb-2 mb-sm-0" href="index.php?module=safetyTableDetail?id_score_safety=<?php echo $rowTampilData['id_score_safety'];?>" >
                         <span class="icon text-white-50">
                             <i class="fas fa-info"></i>
                         </span>
                         <span class="text">Detail Score Safety</span>
-                        </button>
+                        </a>
                       </td>
                     </tr>
                     <?php

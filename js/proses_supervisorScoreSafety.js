@@ -1,15 +1,14 @@
-$(".info-dataScoreSafety-supervisor").click(function () {
-    var id_scoreSafetyInfo = $(this).attr("id_scoreSafetyInfo");
+$(".info-detailScoreSafety-supervisor").click(function () {
+    var id_scoreSafetySupervisor = $(this).attr("id_scoreSafetySupervisor");
 
     $.ajax({
-        url: "../process/proses_adminDataScoreSafety.php",
+        url: "../process/proses_supervisorScoreSafety.php",
         method: "post",
         data: {
-            infoDataScoreSafety_idScoreSafety: id_scoreSafetyInfo
+            infoDetailScoreSafetySupervisor_idScoreSafety: id_scoreSafetySupervisor
         },
         success: function (data) {
             $("#info-dataScoreSafety").html(data);
-            $("#infoDataScoreSafetyModal").modal("show");
         }
     });
 });

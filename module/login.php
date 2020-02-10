@@ -24,12 +24,14 @@
             </div>
             <form class="user" action="../process/loginProcess.php" action="../process/loginProcess.php" method="post" onsubmit="return validateOnSubmit();">
                 <div class="row form-group"style="color:#ffff;">
+                    <span><i class="fas fa-user"></i></span>
                     <label class="d-flex flex-column justify-content-center" for="password">Username</label>
                     <div class="input-group">
                         <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Username" onkeyup="validateUsername(this)">
                     </div>
                 </div>
                 <div class="row form-group" style="margin-top: 15px; color:#ffff;">
+                    <span><i class="fas fa-lock"></i></span>
                     <label class="d-flex flex-column justify-content-center" for="password">Password</label>
                     <div class="input-group">
                         <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password" onkeyup="validatePassword(this)">
@@ -55,11 +57,6 @@
                     </div>
                 </div>
                 <input type="submit" name="submit" class="col-md-4-center btn btn-primary btn-user btn-block text-center" style="margin-top: 35px;" id="masuk" value="Login">
-            </form>
-            <form action="../process/loginProcess.php" method="post" style="margin-top: 35px;">
-                <input type="submit" name="operator" class="btn btn-primary align-self-end shadow-none mr-3" value="Operator">
-                <input type="submit" name="supervisor" class="btn btn-secondary align-self-end shadow-none mr-3" value="Supervisor">
-                <input type="submit" name="admin" class="btn btn-warning align-self-end shadow-none mr-3" value="Admin">
             </form>
         <?php
             include "../config/scripts.php";

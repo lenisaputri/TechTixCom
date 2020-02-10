@@ -37,19 +37,19 @@
                       <div class="text-md font-weight-bold text-success text-uppercase mb-1">Data Operator</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
                       <?php
-            $operator = jumlah($con, "tabel_operator");
-            $rowOperator = mysqli_fetch_assoc($operator);
-            echo $rowOperator["jumlah"];
-          ?>
+                      $operator = jumlah($con, "tabel_operator");
+                      $rowOperator = mysqli_fetch_assoc($operator);
+                      echo $rowOperator["jumlah"];
+                      ?>
                       </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-users fa-2x text-gray-300"></i>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-users fa-2x text-gray-300"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-warning shadow h-100 py-2">
@@ -74,7 +74,7 @@
             </div>  
             
             <!-- Earnings (Monthly) Card Example -->
-<div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -95,10 +95,10 @@
                 </div>
               </div>
             </div>
-</div>
-<div class="row">
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+          </div>
+          <div class="row">
+          <!-- Earnings (Monthly) Card Example -->
+          <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-danger shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -142,9 +142,8 @@
                 </div>
               </div>
             </div>
-
-<!-- Earnings (Monthly) Card Example -->
-<div class="col-xl-3 col-md-6 mb-4">
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -156,25 +155,24 @@
             $rowMateriGeneralHrd = mysqli_fetch_assoc($materiGeneralHrd);
             echo $rowMateriGeneralHrd["jumlah"];
           ?>
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-users fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>  
-            
-            <!-- Earnings (Monthly) Card Example -->
-<div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-danger shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-md font-weight-bold text-danger text-uppercase mb-1">materi technical</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">
-                      <?php
+          </div>
+        </div>
+        <div class="col-auto">
+          <i class="fas fa-users fa-2x text-gray-300"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-danger shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-md font-weight-bold text-danger text-uppercase mb-1">materi technical</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+            <?php
             $materiTechnical = jumlah($con, "tabel_materi_technical");
             $rowMateriTechnical = mysqli_fetch_assoc($materiTechnical);
             echo $rowMateriTechnical["jumlah"];
@@ -188,17 +186,17 @@
                 </div>
               </div>
             </div>
-</div>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary text-uppercase">Profil Karyawan</h6>   
-        </div>
-        <div class="card-body">
-        <?php 
-        $resultTampilProfilAdmin = tampilProfilAdmin($con, $idUser);
-        if (mysqli_num_rows($resultTampilProfilAdmin) > 0){
-          while ($row = mysqli_fetch_assoc($resultTampilProfilAdmin)) {
-            ?>
+          </div>
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary text-uppercase">Profil Karyawan</h6>   
+            </div>
+          <div class="card-body">
+          <?php 
+          $resultTampilProfilAdmin = tampilProfilAdmin($con, $idUser);
+          if (mysqli_num_rows($resultTampilProfilAdmin) > 0){
+            while ($row = mysqli_fetch_assoc($resultTampilProfilAdmin)) {
+          ?>
         <div class="row">
         <div class="col-lg-4">
         <center><img src="../attachment/img/<?php echo ($row['foto'] == null)? 'avatar.jpeg' : $row['foto'] ; ?>" height="250px" width="250px;"></center>

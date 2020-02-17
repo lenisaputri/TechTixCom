@@ -2,14 +2,6 @@
 include "../config/connection.php";
 
 // include "../process/proses_supervisorScoreSafety.php";
-// Cek apakah parameter ID ada
-if (isset($_GET['id_score_safety'])) {
-    // jika ada ambil nilai id
-    $id_score_safety = $_GET['id_score_safety'];
-  } else {
-    // jika tidak ada redirect ke index.php
-    header('Location:index.php?module=safetyTable');
-  }
 ?>
 <!-- Begin Page Content -->
 <div class="container-fluid" id="safety">
@@ -45,7 +37,7 @@ if (isset($_GET['id_score_safety'])) {
   AND tp.id_jabatan = tj.id_jabatan
   AND tss.id_score_safety = '$id_score_safety'";
 
-        $resultTampilScoreSafetyDetailSupervisor = mysqli_query($con, $tampilScoreSafetyDetailSupervisor;
+        $resultTampilScoreSafetyDetailSupervisor = mysqli_query($con, $tampilScoreSafetyDetailSupervisor);
 
         if (mysqli_num_rows($resultTampilScoreSafetyDetailSupervisor) > 0){
           while ($rowDetailData = mysqli_fetch_assoc($resultTampilScoreSafetyDetailSupervisor)) {
@@ -64,6 +56,7 @@ if (isset($_GET['id_score_safety'])) {
                     <p class="row d-flex justify-content-end">TANGGAL TRAINING : <?php echo $rowDetailData["tanggal_training"]; ?></p>
                 <hr>
                 <?php 
+$id_score_safety = $_GET["id_score_safety"];
 
 $tampilScoreSafetyDetailNilaiSupervisor = "SELECT tss.*, tp.id_operator, tp.nik, tssd.*
 FROM tabel_score_safety tss, tabel_operator tp , tabel_score_safety_detail tssd

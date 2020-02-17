@@ -38,7 +38,7 @@ include "../config/connection.php";
                       <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                       <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                       <td>
-                        <a type="button" class="btn btn-warning mb-2 mb-sm-0" href="index.php?module=safetyTableDetail?id_score_safety=<?php echo $rowTampilData['id_score_safety'];?>" >
+                        <a type="button" class="btn btn-warning info-detailScoreSafety-supervisor mb-2 mb-sm-0" href="index.php?module=safetyTableDetail"  id_scoreSafetySupervisor="<?php echo $rowTampilData["id_scoreSafetySupervisor"];?>">
                         <span class="icon text-white-50">
                             <i class="fas fa-info"></i>
                         </span>

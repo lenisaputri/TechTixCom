@@ -82,12 +82,6 @@
                             </span>
                             <span class="text">Tambah Data</span>
                             </button>
-                        <button type="button" class="btn btn-warning btn-icon-split" onclick="location.href='index.php?module=dataScoreQualityImport';">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-arrow-circle-up"></i>
-                                    </span>
-                                    <span class="text">Import xlxs</span>
-                                </button>
                     </div>
                     <div class="form-group">
                         <div class="row d-flex justify-content-end">

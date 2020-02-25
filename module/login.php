@@ -22,17 +22,18 @@
             <div class="text-center">
                 <h2>Online Result Training</h2>
             </div>
+            <br>
             <form class="user" action="../process/loginProcess.php" action="../process/loginProcess.php" method="post" onsubmit="return validateOnSubmit();">
                 <div class="row form-group"style="color:#ffff;">
-                    <span><i class="fas fa-user"></i></span>
-                    <label class="d-flex flex-column justify-content-center" for="password">Username</label>
+                    <span><i class="fas fa-user"></i></span>&nbsp
+                    <label class="d-flex flex-column justify-content-center" for="password"> Username</label>
                     <div class="input-group">
                         <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Username" onkeyup="validateUsername(this)">
                     </div>
                 </div>
                 <div class="row form-group" style="margin-top: 15px; color:#ffff;">
-                    <span><i class="fas fa-lock"></i></span>
-                    <label class="d-flex flex-column justify-content-center" for="password">Password</label>
+                    <span><i class="fas fa-lock"></i></span>&nbsp
+                    <label class="d-flex flex-column justify-content-center" for="password"> Password</label>
                     <div class="input-group">
                         <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Password" onkeyup="validatePassword(this)">
                         <div class="input-group-append">
@@ -56,6 +57,7 @@
                             </small>
                     </div>
                 </div>
+                <br>
                 <input type="submit" name="submit" class="col-md-4-center btn btn-primary btn-user btn-block text-center" style="margin-top: 35px;" id="masuk" value="Login">
             </form>
         <?php

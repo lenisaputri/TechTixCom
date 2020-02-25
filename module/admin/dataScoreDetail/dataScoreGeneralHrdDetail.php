@@ -48,26 +48,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingDetail" style="font-weight: bold">TANGGAL TRAINING</label>
-                                    <?php
-                                        $resultTampilScoreGeneralHrdDate = tampilScoreGeneralHrdDate($con);
-                                    ?>
-                                    <select class="custom-select-karyawan" name="tanggalTrainingDetail"> 
-                                        <?php
-                                            if(mysqli_num_rows($resultTampilScoreGeneralHrdDate) > 0){
-                                                while($row = mysqli_fetch_assoc($resultTampilScoreGeneralHrdDate)){
-                                                    echo "<option value='".$row['tanggal_training']."'>".$row['tanggal_training']."</option>";
-                                                }
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="col-sm-6">
-                        <div class="form-group row">
+                            <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="cocDetail" style="font-weight: bold">CODE OF CONDUCT</label>
                                     <input type="number" class="form-control form-control-user" placeholder="Nilai Code Of Conduct" id="cocDetail" name="cocDetail" required>
@@ -76,6 +57,8 @@
                                     <div id="cocDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-sm-6">
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="pkbcabDetail" style="font-weight: bold">PKB, COMPENSATION & BENEFIT</label>

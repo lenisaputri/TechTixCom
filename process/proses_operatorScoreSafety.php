@@ -11,7 +11,7 @@
 
     function tampilScoreSafetyOperator($con, $idUser){
         $tampilScoreSafetyOperator = "SELECT tss.*, tp.id_operator, tp.nik, tu.* FROM tabel_score_safety tss, 
-        tabel_operator tp, tabel_user tu WHERE tss.id_operator = tp.id_operator AND tu.username = tp.nik AND tu.id_user = '$idUser'";
+        tabel_operator tp, tabel_user tu WHERE tss.id_operator = tp.id_operator AND tu.username = tp.nik AND tu.id_user = '$idUser' ORDER BY tss.tanggal_training ASC";
         $resultTampilScoreSafetyOperator = mysqli_query($con, $tampilScoreSafetyOperator);
         return $resultTampilScoreSafetyOperator;
     }

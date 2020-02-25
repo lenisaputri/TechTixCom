@@ -3,8 +3,8 @@
 
     function tampilScoreSafety($con)
     {
-        $tampilScoreSafety="SELECT DISTINCT(tss.id_operator), tss.id_score_safety ,tss.*, tp.id_operator, tp.nik FROM tabel_score_safety tss, tabel_operator tp
-        WHERE tss.id_operator = tp.id_operator GROUP BY tss.id_operator";
+        $tampilScoreSafety="SELECT tss.id_operator, tss.id_score_safety ,tss.*, tp.id_operator, tp.nik FROM tabel_score_safety tss, tabel_operator tp
+        WHERE tss.id_operator = tp.id_operator";
         $resultTampilScoreSafety=mysqli_query($con, $tampilScoreSafety);
         return $resultTampilScoreSafety;
     }
@@ -51,8 +51,7 @@
                 fire_fighting,
                 wah,
                 environment,
-                p3k,
-                tanggal_training
+                p3k
             )
 
             values(  
@@ -67,8 +66,7 @@
                 '$_POST[fireFightingDetail]',
                 '$_POST[wahDetail]',
                 '$_POST[environmentDetail]',
-                '$_POST[p3kDetail]',
-                '$_POST[tanggalTrainingDetail]'
+                '$_POST[p3kDetail]'
             );";
         
             if(mysqli_query($con, $query2)){ 
@@ -92,8 +90,7 @@
                 fire_fighting = '$_POST[fireFightingSafetyEditDetail]',
                 wah = '$_POST[wahSafetyEditDetail]',
                 environment = '$_POST[environmentSafetyEditDetail]',
-                p3k = '$_POST[p3kSafetyEditDetail]',
-                tanggal_training = '$_POST[tanggalTrainingSafetyEditDetail]'
+                p3k = '$_POST[p3kSafetyEditDetail]'
                 where id_score_safety_detail='$id_scoreSafetyDetailUpdate';";
 
                 if(mysqli_query($con,$query10)){
@@ -117,7 +114,7 @@
     }
 
     if(isset($_POST["editDataScoreSafetyDetail_idScoreSafety"])){
-        $editScoreSafetyDetail = "SELECT tssd.*, tss.*, tp.id_operator, tp.nik 
+        $editScoreSafetyDetail = "SELECT tssd.*, tss.*, tss.tanggal_training, tp.id_operator, tp.nik 
             FROM tabel_score_safety_detail tssd, tabel_score_safety tss, tabel_operator tp 
             WHERE tss.id_operator = tp.id_operator
             AND tssd.id_score_safety = tss.id_score_safety
@@ -141,13 +138,13 @@
                                     <div id="nikSafetyEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
-                            <div class='form-group row'>
-                                <div class="col-sm-12 mb-3 mb-sm-0">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingSafetyEditDetail" style="font-weight: bold">TANGGAL TRAINING</label>
-                                    <select class="custom-select" name="tanggalTrainingSafetyEditDetail"><?=tampilScoreSafetyDateEdit($con,$rowEditScoreSafetyDetail['tanggal_training'])?></select>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingDetail" style="font-weight: bold">TANGGAL TRAINING</label>
+                                    <input type="text" class="form-control" placeholder="TANGGAL TRAINING" id="tanggalTrainingDetail" name="tanggalTrainingDetail" value="<?=$rowEditScoreSafetyDetail["tanggal_training"]?>" disabled>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="tanggalTrainingSafetyEditDetailBlank2" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="tanggalTrainingDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">

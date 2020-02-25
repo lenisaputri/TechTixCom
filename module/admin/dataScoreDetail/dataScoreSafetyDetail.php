@@ -41,14 +41,14 @@
                                         <?php
                                             if(mysqli_num_rows($resultTampilScoreSafety) > 0){
                                                 while($row = mysqli_fetch_assoc($resultTampilScoreSafety)){
-                                                    echo "<option value='".$row['id_score_safety']."'>".$row['nik']."</option>";
+                                                    echo "<option value='".$row['id_score_safety']."'>".$row['nik']." - ".$row['tanggal_training']."</option>";
                                                 }
                                             }
                                         ?>
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingDetail" style="font-weight: bold">TANGGAL TRAINING</label>
                                     <?php
@@ -64,7 +64,7 @@
                                         ?>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="smk3Detail" style="font-weight: bold">SMK3</label>

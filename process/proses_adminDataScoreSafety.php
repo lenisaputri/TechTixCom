@@ -64,7 +64,7 @@
     }
 
     if(isset($_POST["editDataScoreSafety_idScoreSafety"])){
-        $editScoreSafety = "SELECT tss.*, tp.id_operator, tp.nik FROM tabel_score_safety tss, tabel_operator tp WHERE tss.id_operator = tp.id_operator AND tss.id_score_safety = $_POST[editDataScoreSafety_idScoreSafety]";
+        $editScoreSafety = "SELECT tss.*, tp.id_operator, tp.nik, tp.nama AS nama_operator FROM tabel_score_safety tss, tabel_operator tp WHERE tss.id_operator = tp.id_operator AND tss.id_score_safety = $_POST[editDataScoreSafety_idScoreSafety]";
         $resultEditScoreSafety = mysqli_query($con, $editScoreSafety);
     
         if(mysqli_num_rows($resultEditScoreSafety) > 0){
@@ -79,6 +79,15 @@
                         </div>
                         <div class="col-sm-12">
                             <div id="nikSafetyBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <label class="col-sm-6 small d-flex flex-column justify-content-center" for="namaOperatoreEdit" style="font-weight: bold">NAMA OPERATOR</label>
+                            <input type="text" class="form-control" value="<?=$rowEditScoreSafety["nama_operator"]?>" id="namaOperatoreEdit" name="namaOperatoreEdit" disabled>
+                        </div>
+                        <div class="col-sm-12">
+                            <div id="namaOperatoreEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <div class="form-group row">

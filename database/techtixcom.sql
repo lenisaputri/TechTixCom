@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Feb 2020 pada 08.42
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.2
+-- Generation Time: Feb 25, 2020 at 07:05 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_admin`
+-- Table structure for table `tabel_admin`
 --
 
 CREATE TABLE `tabel_admin` (
@@ -41,7 +41,7 @@ CREATE TABLE `tabel_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_admin`
+-- Dumping data for table `tabel_admin`
 --
 
 INSERT INTO `tabel_admin` (`id_admin`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `jenis_kelamin`, `waktu_tambah`, `waktu_edit`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `tabel_admin` (`id_admin`, `id_user`, `id_jabatan`, `nama`, `nik`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_jabatan`
+-- Table structure for table `tabel_jabatan`
 --
 
 CREATE TABLE `tabel_jabatan` (
@@ -61,7 +61,7 @@ CREATE TABLE `tabel_jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_jabatan`
+-- Dumping data for table `tabel_jabatan`
 --
 
 INSERT INTO `tabel_jabatan` (`id_jabatan`, `nama`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `tabel_jabatan` (`id_jabatan`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_materi_generalhrd`
+-- Table structure for table `tabel_materi_generalhrd`
 --
 
 CREATE TABLE `tabel_materi_generalhrd` (
@@ -94,7 +94,7 @@ CREATE TABLE `tabel_materi_generalhrd` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_materi_quality`
+-- Table structure for table `tabel_materi_quality`
 --
 
 CREATE TABLE `tabel_materi_quality` (
@@ -110,7 +110,7 @@ CREATE TABLE `tabel_materi_quality` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_materi_safety`
+-- Table structure for table `tabel_materi_safety`
 --
 
 CREATE TABLE `tabel_materi_safety` (
@@ -124,7 +124,7 @@ CREATE TABLE `tabel_materi_safety` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_materi_safety`
+-- Dumping data for table `tabel_materi_safety`
 --
 
 INSERT INTO `tabel_materi_safety` (`id_materi_safety`, `kategori_materi`, `judul_materi`, `keterangan_materi`, `file_materi`, `tipe`, `tanggal_upload`) VALUES
@@ -137,7 +137,7 @@ INSERT INTO `tabel_materi_safety` (`id_materi_safety`, `kategori_materi`, `judul
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_materi_technical`
+-- Table structure for table `tabel_materi_technical`
 --
 
 CREATE TABLE `tabel_materi_technical` (
@@ -153,7 +153,7 @@ CREATE TABLE `tabel_materi_technical` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_operator`
+-- Table structure for table `tabel_operator`
 --
 
 CREATE TABLE `tabel_operator` (
@@ -169,7 +169,7 @@ CREATE TABLE `tabel_operator` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_operator`
+-- Dumping data for table `tabel_operator`
 --
 
 INSERT INTO `tabel_operator` (`id_operator`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `jenis_kelamin`, `waktu_tambah`, `waktu_edit`) VALUES
@@ -179,7 +179,7 @@ INSERT INTO `tabel_operator` (`id_operator`, `id_user`, `id_jabatan`, `nama`, `n
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_score_generalhrd`
+-- Table structure for table `tabel_score_generalhrd`
 --
 
 CREATE TABLE `tabel_score_generalhrd` (
@@ -191,18 +191,18 @@ CREATE TABLE `tabel_score_generalhrd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_score_generalhrd`
+-- Dumping data for table `tabel_score_generalhrd`
 --
 
 INSERT INTO `tabel_score_generalhrd` (`id_score_generalHrd`, `id_operator`, `poin`, `nilai`, `tanggal_training`) VALUES
-(1, 4, 11, 11, '2020-01-13'),
+(1, 4, 11, 90, '2020-01-13'),
 (2, 4, 1, 1, '2020-02-24'),
 (3, 4, 1, 1, '2020-02-02');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_score_generalhrd_detail`
+-- Table structure for table `tabel_score_generalhrd_detail`
 --
 
 CREATE TABLE `tabel_score_generalhrd_detail` (
@@ -210,14 +210,21 @@ CREATE TABLE `tabel_score_generalhrd_detail` (
   `id_score_generalHrd` int(11) NOT NULL,
   `coc` int(11) NOT NULL,
   `pkb_cab` int(11) NOT NULL,
-  `perperus` int(11) NOT NULL,
-  `tanggal_training` date NOT NULL
+  `perperus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tabel_score_generalhrd_detail`
+--
+
+INSERT INTO `tabel_score_generalhrd_detail` (`id_score_generalHrd_detail`, `id_score_generalHrd`, `coc`, `pkb_cab`, `perperus`) VALUES
+(1, 1, 89, 99, 99),
+(2, 1, 89, 99, 99);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_score_quality`
+-- Table structure for table `tabel_score_quality`
 --
 
 CREATE TABLE `tabel_score_quality` (
@@ -229,7 +236,7 @@ CREATE TABLE `tabel_score_quality` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_score_quality`
+-- Dumping data for table `tabel_score_quality`
 --
 
 INSERT INTO `tabel_score_quality` (`id_score_quality`, `id_operator`, `poin`, `nilai`, `tanggal_training`) VALUES
@@ -238,7 +245,7 @@ INSERT INTO `tabel_score_quality` (`id_score_quality`, `id_operator`, `poin`, `n
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_score_quality_detail`
+-- Table structure for table `tabel_score_quality_detail`
 --
 
 CREATE TABLE `tabel_score_quality_detail` (
@@ -246,21 +253,20 @@ CREATE TABLE `tabel_score_quality_detail` (
   `id_score_quality` int(11) NOT NULL,
   `fss` int(11) NOT NULL,
   `gmp` int(11) NOT NULL,
-  `halal` int(11) NOT NULL,
-  `tanggal_training` date NOT NULL
+  `halal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_score_quality_detail`
+-- Dumping data for table `tabel_score_quality_detail`
 --
 
-INSERT INTO `tabel_score_quality_detail` (`id_score_quality_detail`, `id_score_quality`, `fss`, `gmp`, `halal`, `tanggal_training`) VALUES
-(1, 1, 1, 1, 1, '2020-02-02');
+INSERT INTO `tabel_score_quality_detail` (`id_score_quality_detail`, `id_score_quality`, `fss`, `gmp`, `halal`) VALUES
+(1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_score_safety`
+-- Table structure for table `tabel_score_safety`
 --
 
 CREATE TABLE `tabel_score_safety` (
@@ -272,16 +278,18 @@ CREATE TABLE `tabel_score_safety` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_score_safety`
+-- Dumping data for table `tabel_score_safety`
 --
 
 INSERT INTO `tabel_score_safety` (`id_score_safety`, `id_operator`, `poin`, `nilai`, `tanggal_training`) VALUES
-(4, 5, 34444, 323, '2020-01-31');
+(4, 5, 34444, 323, '2020-01-31'),
+(5, 4, 566, 778, '2020-02-29'),
+(7, 4, 5000, 70000, '2020-02-22');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_score_safety_detail`
+-- Table structure for table `tabel_score_safety_detail`
 --
 
 CREATE TABLE `tabel_score_safety_detail` (
@@ -297,21 +305,22 @@ CREATE TABLE `tabel_score_safety_detail` (
   `fire_fighting` int(11) NOT NULL,
   `wah` int(11) NOT NULL,
   `environment` int(11) NOT NULL,
-  `p3k` int(11) NOT NULL,
-  `tanggal_upload` date NOT NULL
+  `p3k` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_score_safety_detail`
+-- Dumping data for table `tabel_score_safety_detail`
 --
 
-INSERT INTO `tabel_score_safety_detail` (`id_score_safety_detail`, `id_score_safety`, `smk3`, `ea_hira`, `movement_forklift`, `confined_space`, `loto`, `apd`, `bbs`, `fire_fighting`, `wah`, `environment`, `p3k`, `tanggal_upload`) VALUES
-(2, 4, 60, 90, 80, 90, 90, 90, 70, 65, 89, 90, 33, '2020-01-31');
+INSERT INTO `tabel_score_safety_detail` (`id_score_safety_detail`, `id_score_safety`, `smk3`, `ea_hira`, `movement_forklift`, `confined_space`, `loto`, `apd`, `bbs`, `fire_fighting`, `wah`, `environment`, `p3k`) VALUES
+(2, 4, 60, 90, 80, 90, 90, 90, 70, 65, 89, 90, 33),
+(3, 5, 45, 66, 78, 90, 89, 77, 88, 88, 99, 89, 90),
+(7, 7, 77, 89, 8, 8, 8, 8, 8, 84, 85, 86, 80);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_score_technical`
+-- Table structure for table `tabel_score_technical`
 --
 
 CREATE TABLE `tabel_score_technical` (
@@ -324,7 +333,7 @@ CREATE TABLE `tabel_score_technical` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_score_technical`
+-- Dumping data for table `tabel_score_technical`
 --
 
 INSERT INTO `tabel_score_technical` (`id_score_technical`, `id_operator`, `kategori_technical`, `poin`, `nilai`, `tanggal_training`) VALUES
@@ -335,7 +344,7 @@ INSERT INTO `tabel_score_technical` (`id_score_technical`, `id_operator`, `kateg
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_score_technical_detail`
+-- Table structure for table `tabel_score_technical_detail`
 --
 
 CREATE TABLE `tabel_score_technical_detail` (
@@ -345,14 +354,20 @@ CREATE TABLE `tabel_score_technical_detail` (
   `equipment` int(11) NOT NULL,
   `operational` int(11) NOT NULL,
   `mainten` int(11) NOT NULL,
-  `trouble` int(11) NOT NULL,
-  `tanggal_training` date NOT NULL
+  `trouble` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tabel_score_technical_detail`
+--
+
+INSERT INTO `tabel_score_technical_detail` (`id_score_technical_detail`, `id_score_technical`, `sftp`, `equipment`, `operational`, `mainten`, `trouble`) VALUES
+(1, 4, 89, 88, 88, 90, 99);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_supervisor`
+-- Table structure for table `tabel_supervisor`
 --
 
 CREATE TABLE `tabel_supervisor` (
@@ -368,7 +383,7 @@ CREATE TABLE `tabel_supervisor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_supervisor`
+-- Dumping data for table `tabel_supervisor`
 --
 
 INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `jenis_kelamin`, `waktu_tambah`, `waktu_edit`) VALUES
@@ -378,7 +393,7 @@ INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_user`
+-- Table structure for table `tabel_user`
 --
 
 CREATE TABLE `tabel_user` (
@@ -389,7 +404,7 @@ CREATE TABLE `tabel_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_user`
+-- Dumping data for table `tabel_user`
 --
 
 INSERT INTO `tabel_user` (`id_user`, `username`, `password`, `level`) VALUES
@@ -399,14 +414,14 @@ INSERT INTO `tabel_user` (`id_user`, `username`, `password`, `level`) VALUES
 (11, '12', '12', 'operator'),
 (22, '10000', 'rrr', 'admin'),
 (23, '1333', 'v', 'admin'),
-(26, 'aaaa', 'aaaa', 'operator');
+(26, '1', 'aaaa', 'operator');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tabel_admin`
+-- Indexes for table `tabel_admin`
 --
 ALTER TABLE `tabel_admin`
   ADD PRIMARY KEY (`id_admin`),
@@ -414,37 +429,37 @@ ALTER TABLE `tabel_admin`
   ADD KEY `id_jabatan` (`id_jabatan`);
 
 --
--- Indeks untuk tabel `tabel_jabatan`
+-- Indexes for table `tabel_jabatan`
 --
 ALTER TABLE `tabel_jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indeks untuk tabel `tabel_materi_generalhrd`
+-- Indexes for table `tabel_materi_generalhrd`
 --
 ALTER TABLE `tabel_materi_generalhrd`
   ADD PRIMARY KEY (`id_materi_generalhrd`);
 
 --
--- Indeks untuk tabel `tabel_materi_quality`
+-- Indexes for table `tabel_materi_quality`
 --
 ALTER TABLE `tabel_materi_quality`
   ADD PRIMARY KEY (`id_materi_quality`);
 
 --
--- Indeks untuk tabel `tabel_materi_safety`
+-- Indexes for table `tabel_materi_safety`
 --
 ALTER TABLE `tabel_materi_safety`
   ADD PRIMARY KEY (`id_materi_safety`);
 
 --
--- Indeks untuk tabel `tabel_materi_technical`
+-- Indexes for table `tabel_materi_technical`
 --
 ALTER TABLE `tabel_materi_technical`
   ADD PRIMARY KEY (`id_materi_technical`);
 
 --
--- Indeks untuk tabel `tabel_operator`
+-- Indexes for table `tabel_operator`
 --
 ALTER TABLE `tabel_operator`
   ADD PRIMARY KEY (`id_operator`),
@@ -452,62 +467,62 @@ ALTER TABLE `tabel_operator`
   ADD KEY `id_jabatan` (`id_jabatan`);
 
 --
--- Indeks untuk tabel `tabel_score_generalhrd`
+-- Indexes for table `tabel_score_generalhrd`
 --
 ALTER TABLE `tabel_score_generalhrd`
   ADD PRIMARY KEY (`id_score_generalHrd`),
   ADD KEY `id_operator` (`id_operator`);
 
 --
--- Indeks untuk tabel `tabel_score_generalhrd_detail`
+-- Indexes for table `tabel_score_generalhrd_detail`
 --
 ALTER TABLE `tabel_score_generalhrd_detail`
   ADD PRIMARY KEY (`id_score_generalHrd_detail`),
   ADD KEY `id_score_generalHrd` (`id_score_generalHrd`);
 
 --
--- Indeks untuk tabel `tabel_score_quality`
+-- Indexes for table `tabel_score_quality`
 --
 ALTER TABLE `tabel_score_quality`
   ADD PRIMARY KEY (`id_score_quality`),
   ADD KEY `id_operator` (`id_operator`);
 
 --
--- Indeks untuk tabel `tabel_score_quality_detail`
+-- Indexes for table `tabel_score_quality_detail`
 --
 ALTER TABLE `tabel_score_quality_detail`
   ADD PRIMARY KEY (`id_score_quality_detail`),
   ADD KEY `id_score_quality` (`id_score_quality`);
 
 --
--- Indeks untuk tabel `tabel_score_safety`
+-- Indexes for table `tabel_score_safety`
 --
 ALTER TABLE `tabel_score_safety`
   ADD PRIMARY KEY (`id_score_safety`),
   ADD KEY `id_operator` (`id_operator`);
 
 --
--- Indeks untuk tabel `tabel_score_safety_detail`
+-- Indexes for table `tabel_score_safety_detail`
 --
 ALTER TABLE `tabel_score_safety_detail`
   ADD PRIMARY KEY (`id_score_safety_detail`),
   ADD KEY `id_score_safety` (`id_score_safety`);
 
 --
--- Indeks untuk tabel `tabel_score_technical`
+-- Indexes for table `tabel_score_technical`
 --
 ALTER TABLE `tabel_score_technical`
   ADD PRIMARY KEY (`id_score_technical`);
 
 --
--- Indeks untuk tabel `tabel_score_technical_detail`
+-- Indexes for table `tabel_score_technical_detail`
 --
 ALTER TABLE `tabel_score_technical_detail`
   ADD PRIMARY KEY (`id_score_technical_detail`),
   ADD KEY `id_score_technical` (`id_score_technical`);
 
 --
--- Indeks untuk tabel `tabel_supervisor`
+-- Indexes for table `tabel_supervisor`
 --
 ALTER TABLE `tabel_supervisor`
   ADD PRIMARY KEY (`id_supervisor`),
@@ -515,179 +530,179 @@ ALTER TABLE `tabel_supervisor`
   ADD KEY `id_jabatan` (`id_jabatan`);
 
 --
--- Indeks untuk tabel `tabel_user`
+-- Indexes for table `tabel_user`
 --
 ALTER TABLE `tabel_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_admin`
+-- AUTO_INCREMENT for table `tabel_admin`
 --
 ALTER TABLE `tabel_admin`
   MODIFY `id_admin` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_jabatan`
+-- AUTO_INCREMENT for table `tabel_jabatan`
 --
 ALTER TABLE `tabel_jabatan`
   MODIFY `id_jabatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_materi_generalhrd`
+-- AUTO_INCREMENT for table `tabel_materi_generalhrd`
 --
 ALTER TABLE `tabel_materi_generalhrd`
   MODIFY `id_materi_generalhrd` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_materi_quality`
+-- AUTO_INCREMENT for table `tabel_materi_quality`
 --
 ALTER TABLE `tabel_materi_quality`
   MODIFY `id_materi_quality` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_materi_safety`
+-- AUTO_INCREMENT for table `tabel_materi_safety`
 --
 ALTER TABLE `tabel_materi_safety`
   MODIFY `id_materi_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_materi_technical`
+-- AUTO_INCREMENT for table `tabel_materi_technical`
 --
 ALTER TABLE `tabel_materi_technical`
   MODIFY `id_materi_technical` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_operator`
+-- AUTO_INCREMENT for table `tabel_operator`
 --
 ALTER TABLE `tabel_operator`
   MODIFY `id_operator` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_score_generalhrd`
+-- AUTO_INCREMENT for table `tabel_score_generalhrd`
 --
 ALTER TABLE `tabel_score_generalhrd`
   MODIFY `id_score_generalHrd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_score_generalhrd_detail`
+-- AUTO_INCREMENT for table `tabel_score_generalhrd_detail`
 --
 ALTER TABLE `tabel_score_generalhrd_detail`
-  MODIFY `id_score_generalHrd_detail` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_score_generalHrd_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_score_quality`
+-- AUTO_INCREMENT for table `tabel_score_quality`
 --
 ALTER TABLE `tabel_score_quality`
   MODIFY `id_score_quality` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_score_quality_detail`
+-- AUTO_INCREMENT for table `tabel_score_quality_detail`
 --
 ALTER TABLE `tabel_score_quality_detail`
   MODIFY `id_score_quality_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_score_safety`
+-- AUTO_INCREMENT for table `tabel_score_safety`
 --
 ALTER TABLE `tabel_score_safety`
-  MODIFY `id_score_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_score_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_score_safety_detail`
+-- AUTO_INCREMENT for table `tabel_score_safety_detail`
 --
 ALTER TABLE `tabel_score_safety_detail`
-  MODIFY `id_score_safety_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_score_safety_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_score_technical`
+-- AUTO_INCREMENT for table `tabel_score_technical`
 --
 ALTER TABLE `tabel_score_technical`
   MODIFY `id_score_technical` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_score_technical_detail`
+-- AUTO_INCREMENT for table `tabel_score_technical_detail`
 --
 ALTER TABLE `tabel_score_technical_detail`
-  MODIFY `id_score_technical_detail` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_score_technical_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_supervisor`
+-- AUTO_INCREMENT for table `tabel_supervisor`
 --
 ALTER TABLE `tabel_supervisor`
   MODIFY `id_supervisor` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_user`
+-- AUTO_INCREMENT for table `tabel_user`
 --
 ALTER TABLE `tabel_user`
   MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `tabel_admin`
+-- Constraints for table `tabel_admin`
 --
 ALTER TABLE `tabel_admin`
   ADD CONSTRAINT `tabel_admin_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tabel_user` (`id_user`),
   ADD CONSTRAINT `tabel_admin_ibfk_2` FOREIGN KEY (`id_jabatan`) REFERENCES `tabel_jabatan` (`id_jabatan`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_operator`
+-- Constraints for table `tabel_operator`
 --
 ALTER TABLE `tabel_operator`
   ADD CONSTRAINT `tabel_operator_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tabel_user` (`id_user`),
   ADD CONSTRAINT `tabel_operator_ibfk_2` FOREIGN KEY (`id_jabatan`) REFERENCES `tabel_jabatan` (`id_jabatan`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_score_generalhrd`
+-- Constraints for table `tabel_score_generalhrd`
 --
 ALTER TABLE `tabel_score_generalhrd`
   ADD CONSTRAINT `tabel_score_generalhrd_ibfk_1` FOREIGN KEY (`id_operator`) REFERENCES `tabel_operator` (`id_operator`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_score_generalhrd_detail`
+-- Constraints for table `tabel_score_generalhrd_detail`
 --
 ALTER TABLE `tabel_score_generalhrd_detail`
   ADD CONSTRAINT `tabel_score_generalhrd_detail_ibfk_1` FOREIGN KEY (`id_score_generalHrd`) REFERENCES `tabel_score_generalhrd` (`id_score_generalHrd`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_score_quality`
+-- Constraints for table `tabel_score_quality`
 --
 ALTER TABLE `tabel_score_quality`
   ADD CONSTRAINT `tabel_score_quality_ibfk_1` FOREIGN KEY (`id_operator`) REFERENCES `tabel_operator` (`id_operator`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_score_quality_detail`
+-- Constraints for table `tabel_score_quality_detail`
 --
 ALTER TABLE `tabel_score_quality_detail`
   ADD CONSTRAINT `tabel_score_quality_detail_ibfk_1` FOREIGN KEY (`id_score_quality`) REFERENCES `tabel_score_quality` (`id_score_quality`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_score_safety`
+-- Constraints for table `tabel_score_safety`
 --
 ALTER TABLE `tabel_score_safety`
   ADD CONSTRAINT `tabel_score_safety_ibfk_1` FOREIGN KEY (`id_operator`) REFERENCES `tabel_operator` (`id_operator`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_score_safety_detail`
+-- Constraints for table `tabel_score_safety_detail`
 --
 ALTER TABLE `tabel_score_safety_detail`
   ADD CONSTRAINT `tabel_score_safety_detail_ibfk_1` FOREIGN KEY (`id_score_safety`) REFERENCES `tabel_score_safety` (`id_score_safety`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_score_technical_detail`
+-- Constraints for table `tabel_score_technical_detail`
 --
 ALTER TABLE `tabel_score_technical_detail`
   ADD CONSTRAINT `tabel_score_technical_detail_ibfk_1` FOREIGN KEY (`id_score_technical`) REFERENCES `tabel_score_technical` (`id_score_technical`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_supervisor`
+-- Constraints for table `tabel_supervisor`
 --
 ALTER TABLE `tabel_supervisor`
   ADD CONSTRAINT `tabel_supervisor_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tabel_user` (`id_user`),

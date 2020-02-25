@@ -2,6 +2,7 @@
 include "../config/connection.php";
 include "../process/proses_operatorScoreSafety.php";
 ?>
+<body>
 <!-- Begin Page Content -->
 <div class="container-fluid" id="safety">
 
@@ -25,7 +26,7 @@ include "../process/proses_operatorScoreSafety.php";
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     <i class="fas fa-fw fa-shield-alt"></i>
-                    <span>Data Score Safety</span>
+                    <span>Data Nilai Safety</span>
                 </li>
             </ol>
         </nav>
@@ -61,12 +62,11 @@ include "../process/proses_operatorScoreSafety.php";
             <td><?php echo $rowTampilData["nilai"]; ?></td>
             <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
             <td>
-            <button type="submit" class="btn btn-warning btn-icon-split mb-2 mb-sm-0" onclick="location.href='index.php?module=safetyTableDetail';">
-            <span class="icon text-white-50">
-              <i class="fas fa-info"></i>
-            </span>
-            <span class="text">Detail Score</span>
-            </button></td>
+            <button type="button" class="btn btn-warning info-dataNilaiSafety-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiSafetyOperatorModal" id_nilaiSafetyOperatotInfo="<?php echo $rowTampilData["id_score_safety"];?>" tanggalTrainingOperator="<?php echo $rowTampilData["tanggal_training"];?>">
+                                                    <i class="fas fa-info-circle"></i>
+                                                    <span>Detail Nilai</span>
+                                                </button>
+            </td>
           </tr>
           <?php
           $index++;
@@ -87,4 +87,21 @@ include "../process/proses_operatorScoreSafety.php";
   </div>
 </div>
 </div>
+
+<div class="modal fade" id="infoDataNilaiSafetyOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center bg-nilaiSafetyOperatorInfo border-0">
+                <h5 class="modal-title text-white w-100 text-center">Edit Data Nilai Safety</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid" id="info-dataNilaiSafetyOperator"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 <!-- /.container-fluid -->
+</body>

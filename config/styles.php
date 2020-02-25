@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="../css/dataMateri.css">
 <link rel="stylesheet" href="../css/materiOperator.css">
 
+<link rel="stylesheet" href="../css/dataScoreOperator.css">
+
 <link href="../css/techtixcom.min.css" rel="stylesheet">
 
 <!-- Custom styles for this page -->

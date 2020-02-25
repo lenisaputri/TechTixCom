@@ -73,6 +73,7 @@
                     <div class="col-sm-12">
                         <div id="dateSafetyBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                     </div>
+                    </div>
                     <hr>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreSafety">
@@ -81,7 +82,7 @@
                             </span>
                             <span class="text">Tambah Data</span>
                         </button>
-                    </div></div>
+                    </div>
                     <div class="form-group">
                         <div class="row d-flex justify-content-end">
                             <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateri" onclick="location.href='index.php?module=dataScoreSafetyDetail';">
@@ -103,6 +104,7 @@
                             <tr class="text-center">
                                 <th>No</th>
                                 <th>NIK</th>
+                                <th>Nama</th>
                                 <th>Total Poin</th>
                                 <th>Total Nilai</th>
                                 <th>Tanggal Assessment</th>
@@ -111,7 +113,7 @@
                         </thead>
                         <tbody>
                         <?php
-                            $queryTampilData = "SELECT tss.*, tp.id_operator, tp.nik FROM tabel_score_safety tss, tabel_operator tp WHERE tss.id_operator = tp.id_operator;
+                            $queryTampilData = "SELECT tss.*, tp.id_operator, tp.nik, tp.nama AS nama_operator FROM tabel_score_safety tss, tabel_operator tp WHERE tss.id_operator = tp.id_operator;
                                 ";
                             
                             $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -123,6 +125,7 @@
                                         <tr class="text-center" id-score-safety="<?php echo $rowTampilData["id_score_safety"] ?>">
                                             <td ><?php echo $index; ?></td>
                                             <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
+                                            <td class="kategoriMateri"><?php echo $rowTampilData["nama_operator"]; ?></td>
                                             <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
                                             <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                                             <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>

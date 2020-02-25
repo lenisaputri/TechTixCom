@@ -93,7 +93,7 @@
     }
 
     if(isset($_POST["editDataScoreGeneralHrdDetail_idScoreGeneralHrd"])){
-        $editScoreGeneralHrdDetail = "SELECT tsgd.*, tsg.*, tp.id_operator, tp.nik 
+        $editScoreGeneralHrdDetail = "SELECT tsgd.*, tsg.*, tsg.tanggal_training, tp.id_operator, tp.nik 
             FROM tabel_score_generalhrd_detail tsgd, tabel_score_generalhrd tsg, tabel_operator tp 
             WHERE tsg.id_operator = tp.id_operator
             AND tsgd.id_score_generalHrd = tsg.id_score_generalHrd
@@ -119,11 +119,11 @@
                             </div>
                             <div class='form-group row'>
                                 <div class="col-sm-12 mb-3 mb-sm-0">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingGeneralHrdEditDetail" style="font-weight: bold">TANGGAL TRAINING</label>
-                                    <select class="custom-select" name="tanggalTrainingGeneralHrdEditDetail"><?=tampilScoreGeneralHrdDateEdit($con,$rowEditScoreGeneralHrdDetail['tanggal_training'])?></select>
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingDetail" style="font-weight: bold">TANGGAL TRAINING</label>
+                                    <input type="text" class="form-control" placeholder="TANGGAL TRAINING" id="tanggalTrainingDetail" name="tanggalTrainingDetail" value="<?=$rowEditScoreGeneralHrdDetail["tanggal_training"]?>" disabled>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="tanggalTrainingGeneralHrdEditDetailBlank2" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="tanggalTrainingDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                         </div>

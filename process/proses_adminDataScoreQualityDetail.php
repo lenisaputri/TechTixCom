@@ -93,7 +93,7 @@
     }
 
     if(isset($_POST["editDataScoreQualityDetail_idScoreQuality"])){
-        $editScoreQualityDetail = "SELECT tsqd.*, tsq.*, tp.id_operator, tp.nik 
+        $editScoreQualityDetail = "SELECT tsqd.*, tsq.*, tsq.tanggal_training, tp.id_operator, tp.nik 
             FROM tabel_score_quality_detail tsqd, tabel_score_quality tsq, tabel_operator tp 
             WHERE tsq.id_operator = tp.id_operator
             AND tsqd.id_score_quality = tsq.id_score_quality
@@ -119,11 +119,11 @@
                             </div>
                             <div class='form-group row'>
                                 <div class="col-sm-12 mb-3 mb-sm-0">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingQualityEditDetail" style="font-weight: bold">TANGGAL TRAINING</label>
-                                    <select class="custom-select" name="tanggalTrainingQualityEditDetail"><?=tampilScoreQualityDateEdit($con,$rowEditScoreQualityDetail['tanggal_training'])?></select>
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingDetail" style="font-weight: bold">TANGGAL TRAINING</label>
+                                    <input type="text" class="form-control" placeholder="TANGGAL TRAINING" id="tanggalTrainingDetail" name="tanggalTrainingDetail" value="<?=$rowEditScoreQualityDetail["tanggal_training"]?>" disabled>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="tanggalTrainingQualityEditDetailBlank2" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="tanggalTrainingDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                         </div>

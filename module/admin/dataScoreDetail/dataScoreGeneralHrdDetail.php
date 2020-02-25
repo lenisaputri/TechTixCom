@@ -38,23 +38,23 @@
                                         $resultTampilScoreGeneralHrd = tampilScoreGeneralHrd($con);
                                     ?>
                                     <select class="custom-select-karyawan" name="nikOperatorDetail">
-                                        <?php
+                                    <?php
                                             if(mysqli_num_rows($resultTampilScoreGeneralHrd) > 0){
                                                 while($row = mysqli_fetch_assoc($resultTampilScoreGeneralHrd)){
-                                                    echo "<option value='".$row['id_score_generalhrd']."'>".$row['nik']."</option>";
+                                                    echo "<option value='".$row['id_score_generalhrd']."'>".$row['nik']." - ".$row['tanggal_training']."</option>";
                                                 }
                                             }
                                         ?>
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingDetail" style="font-weight: bold">TANGGAL TRAINING</label>
                                     <?php
                                         $resultTampilScoreGeneralHrdDate = tampilScoreGeneralHrdDate($con);
                                     ?>
-                                <select class="custom-select-karyawan" name="tanggalTrainingDetail">
+                                    <select class="custom-select-karyawan" name="tanggalTrainingDetail"> 
                                         <?php
                                             if(mysqli_num_rows($resultTampilScoreGeneralHrdDate) > 0){
                                                 while($row = mysqli_fetch_assoc($resultTampilScoreGeneralHrdDate)){
@@ -64,7 +64,7 @@
                                         ?>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-sm-6">
                         <div class="form-group row">

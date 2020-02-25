@@ -104,6 +104,7 @@
                             <tr class="text-center">
                                 <th>No</th>
                                 <th>NIK</th>
+                                <th>Nama</th>
                                 <th>Total Nilai</th>
                                 <th>Total Poin</th>
                                 <th>Tanggal Assessment</th>
@@ -112,7 +113,7 @@
                         </thead>
                         <tbody>
                         <?php
-                            $queryTampilData = "SELECT tsq.*, tp.id_operator, tp.nik FROM tabel_score_quality tsq, tabel_operator tp WHERE tsq.id_operator = tp.id_operator;
+                            $queryTampilData = "SELECT tsq.*, tp.id_operator, tp.nik, tp.nama AS nama_operator FROM tabel_score_quality tsq, tabel_operator tp WHERE tsq.id_operator = tp.id_operator;
                                 ";
                             
                             $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -124,6 +125,7 @@
                                         <tr class="text-center" id-score-quality="<?php echo $rowTampilData["id_score_quality"] ?>">
                                             <td ><?php echo $index; ?></td>
                                             <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
+                                            <td class="kategoriMateri"><?php echo $rowTampilData["nama_operator"]; ?></td>
                                             <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
                                             <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                                             <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>

@@ -99,7 +99,7 @@
     }
 
     if(isset($_POST["editDataScoreTechnicalDetail_idScoreTechnical"])){
-        $editScoreTechnicalDetail = "SELECT tstd.*, tst.*, tp.id_operator, tp.nik 
+        $editScoreTechnicalDetail = "SELECT tstd.*, tst.*, tst.tanggal_training, tp.id_operator, tp.nik 
             FROM tabel_score_technical_detail tstd, tabel_score_technical tst, tabel_operator tp 
             WHERE tst.id_operator = tp.id_operator
             AND tstd.id_score_technical = tst.id_score_technical
@@ -125,11 +125,11 @@
                             </div>
                             <div class='form-group row'>
                                 <div class="col-sm-12 mb-3 mb-sm-0">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingTechnicalEditDetail" style="font-weight: bold">TANGGAL TRAINING</label>
-                                    <select class="custom-select" name="tanggalTrainingTechnicalEditDetail"><?=tampilScoreTechnicalDateEdit($con,$rowEditScoreTechnicalDetail['tanggal_training'])?></select>
+                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingDetail" style="font-weight: bold">TANGGAL TRAINING</label>
+                                    <input type="text" class="form-control" placeholder="TANGGAL TRAINING" id="tanggalTrainingDetail" name="tanggalTrainingDetail" value="<?=$rowEditScoreTechnicalDetail["tanggal_training"]?>" disabled>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="tanggalTrainingTechnicalEditDetailBlank2" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="tanggalTrainingDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">

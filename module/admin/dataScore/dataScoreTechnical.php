@@ -50,14 +50,14 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                            <div class="col-sm-12">
-                                <label class="col-sm-6 small d-flex flex-column justify-content-center" for="poinTechnical" style="font-weight: bold">TOTAL POIN</label>
-                                <input type="number" class="form-control form-control-user" placeholder="TOTAL POIN" id="poinTechnical" name="poinTechnical" required>
-                            </div>
-                            <div class="col-sm-12">
-                                <div id="poinTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
-                            </div>
+                        <div class="col-sm-12">
+                            <label class="col-sm-6 small d-flex flex-column justify-content-center" for="poinTechnical" style="font-weight: bold">TOTAL POIN</label>
+                            <input type="number" class="form-control form-control-user" placeholder="TOTAL POIN" id="poinTechnical" name="poinTechnical" required>
                         </div>
+                        <div class="col-sm-12">
+                            <div id="poinTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <label class="col-sm-6 small d-flex flex-column justify-content-center" for="nilaiTechnical" style="font-weight: bold">TOTAL NILAI</label>
@@ -113,6 +113,7 @@
                             <tr class="text-center">
                                 <th>No</th>
                                 <th>NIK</th>
+                                <th>Nama</th>
                                 <th>Kategori Technical</th>
                                 <th>Total Nilai</th>
                                 <th>Total Poin</th>
@@ -122,7 +123,7 @@
                         </thead>
                         <tbody>
                             <?php
-                                $queryTampilData = "SELECT tst.*, tp.id_operator, tp.nik FROM tabel_score_technical tst, tabel_operator tp WHERE tst.id_operator = tp.id_operator;
+                                $queryTampilData = "SELECT tst.*, tp.id_operator, tp.nik, tp.nama AS nama_operator FROM tabel_score_technical tst, tabel_operator tp WHERE tst.id_operator = tp.id_operator;
                                     ";
                                 
                                 $resultTampilData = mysqli_query($con, $queryTampilData);
@@ -134,6 +135,7 @@
                                             <tr class="text-center" id-score-technical="<?php echo $rowTampilData["id_score_technical"] ?>">
                                                 <td ><?php echo $index; ?></td>
                                                 <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
+                                                <td class="kategoriMateri"><?php echo $rowTampilData["nama_operator"]; ?></td>
                                                 <td class="fileMateri"><?php echo $rowTampilData["kategori_technical"]; ?></td>
                                                 <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
                                                 <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>

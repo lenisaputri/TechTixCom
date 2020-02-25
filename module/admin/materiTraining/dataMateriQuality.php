@@ -4,123 +4,125 @@
 ?>
 <body>
     <div class="container-fluid" id="dataMateri">
-    <nav aria-label="breadcrumb" class="shadow">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
-                    <span>Beranda</span>
-                </a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">
-                <i class="fas fa-fw fa-file"></i>
-                <span>Materi Quality</span>
-            </li>
-        </ol>
-    </nav>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Quality</h6>
-        </div>
-        <div class="card-body">
-            <form class="user" action="../process/proses_adminDataMateriQuality.php?module=dataMateriQuality&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <input type="file" class="form-control border-0" id="fileMateriQuality" name="fileMateriQuality" required>
-                    <div class="col-sm-6">
-                        <div id="fileMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
+        <nav aria-label="breadcrumb" class="shadow">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
+                        <span>Beranda</span>
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <i class="fas fa-fw fa-file"></i>
+                    <span>Materi Quality</span>
+                </li>
+            </ol>
+        </nav>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Materi Quality</h6>
+            </div>
+            <div class="card-body">
+                <form class="user" action="../process/proses_adminDataMateriQuality.php?module=dataMateriQuality&act=tambah" id="formDataMateriAdmin" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="file" class="form-control border-0" id="fileMateriQuality" name="fileMateriQuality" required>
+                        <div class="col-sm-6">
+                            <div id="fileMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
+                    </div> 
+                    <hr>
+                    <div class="form-group">
+                        <input type="text" class="form-control border-0" id="judulMateriQuality" name="judulMateriQuality" placeholder="Judul Materi ..." style="width=100%" required>
+                        <div class="col-sm-12">
+                            <div id="judulMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
                     </div>
-                </div> 
-                <hr>
-                <div class="form-group">
-                    <input type="text" class="form-control border-0" id="judulMateriQuality" name="judulMateriQuality" placeholder="Judul Materi ..." style="width=100%" required>
-                    <div class="col-sm-12">
-                        <div id="judulMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
+                    <hr>
+                    <div class="form-group">
+                        <input type="text" class="form-control border-0" id="kategoriMateriQuality" name="kategoriMateriQuality" placeholder="Kategori Materi ..." style="width=100%" required>
+                        <div class="col-sm-12">
+                            <div id="kategoriMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <div class="form-group">
-                    <input type="text" class="form-control border-0" id="kategoriMateriQuality" name="kategoriMateriQuality" placeholder="Kategori Materi ..." style="width=100%" required>
-                    <div class="col-sm-12">
-                        <div id="kategoriMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
+                    <hr>
+                    <div class="form-group">
+                        <textarea id="keteranganMateriQuality" name="keteranganMateriQuality" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required></textarea>
+                        <div class="col-sm-12">
+                            <div id="keteranganMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
                     </div>
-                </div>
-                <hr>
-                <div class="form-group">
-                    <textarea id="keteranganMateriQuality" name="keteranganMateriQuality" cols="30" rows="6" placeholder="Keterangan ..." class="form-control border-0" required></textarea>
-                    <div class="col-sm-12">
-                        <div id="keteranganMateriQualityBlank" class="small d-flex flex-column justify-content-center text-danger"></div>
-                    </div>
-                </div>
-                <hr>
-                <div class="form-group">
-                <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriQuality" onclick="ValidasiTambahDataMateriQuality();">
-                <span class="icon text-white-50">
-                <i class="fas fa-plus"></i>
-                </span>
-                <span class="text">Tambah Data</span>
-                </button>
-                </div>
-                <div class="form-group">
-                    <div class="row d-flex justify-content-end">
-                        <button type="button" class="btn btn-info btn-icon-split" onclick="location.href='index.php?module=dataMateriQualityLink';">
-                            <span class="text">Tambah Data Link</span>
+                    <hr>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-icon-split" name="tambahDataMateriQuality" onclick="ValidasiTambahDataMateriQuality();">
+                            <span class="icon text-white-50">
+                            <i class="fas fa-plus"></i>
+                            </span>
+                            <span class="text">Tambah Data</span>
                         </button>
                     </div>
-                </div>
-            </form>
+                    <div class="form-group">
+                        <div class="row d-flex justify-content-end">
+                            <button type="button" class="btn btn-info btn-icon-split" onclick="location.href='index.php?module=dataMateriQualityLink';">
+                                <span class="text">Tambah Data Link</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Materi General HRD</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr class="text-center">
-                            <th>No</th>
-                            <th>Kategori Materi</th>
-                            <th>Judul</th>
-                            <th>File</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            $queryTampilData = "SELECT * FROM tabel_materi_quality WHERE tipe LIKE '%file%';";
-                            $resultTampilData = mysqli_query($con, $queryTampilData);
-                            $index = 1;
-
-                            if(mysqli_num_rows($resultTampilData) > 0){
-                                while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                        ?>
-                            <tr class="text-center" id-materi-quality="<?php echo $rowTampilData["id_materi_quality"] ?>">
-                                <td ><?php echo $index; ?></td>
-                                <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
-                                <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
-                                <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-primary edit-dataMateriQuality-admin" data-toggle="modal" data-target="#editDataMateriQualityModal" id_materiQualityEdit="<?php echo $rowTampilData["id_materi_quality"];?>">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <p></p>
-                                    <button type="button" class="btn btn-danger hapus-dataMateriQuality-admin" data-toggle="modal" data-target="#hapusDataMateriQualityModal" id_materi_quality="<?php echo $rowTampilData["id_materi_quality"];?>">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Data Materi General HRD</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr class="text-center">
+                                <th>No</th>
+                                <th>Kategori Materi</th>
+                                <th>Judul</th>
+                                <th>File</th>
+                                <th>Aksi</th>
                             </tr>
-                        <?php 
-                            $index++;
-                            }
-                        ?>
-                        <?php
-                            }   else{
-                        ?>
-                        <?php
-                            }
-                        ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $queryTampilData = "SELECT * FROM tabel_materi_quality WHERE tipe LIKE '%file%';";
+                                $resultTampilData = mysqli_query($con, $queryTampilData);
+                                $index = 1;
+
+                                if(mysqli_num_rows($resultTampilData) > 0){
+                                    while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
+                                        ?>
+                                            <tr class="text-center" id-materi-quality="<?php echo $rowTampilData["id_materi_quality"] ?>">
+                                                <td ><?php echo $index; ?></td>
+                                                <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
+                                                <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
+                                                <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary edit-dataMateriQuality-admin" data-toggle="modal" data-target="#editDataMateriQualityModal" id_materiQualityEdit="<?php echo $rowTampilData["id_materi_quality"];?>">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <p></p>
+                                                    <button type="button" class="btn btn-danger hapus-dataMateriQuality-admin" data-toggle="modal" data-target="#hapusDataMateriQualityModal" id_materi_quality="<?php echo $rowTampilData["id_materi_quality"];?>">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <?php 
+                                        $index++;
+                                    }
+                                    ?>
+                                    <?php
+                                }   
+                                else{
+                                    ?>
+                                    <?php
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

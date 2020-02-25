@@ -64,7 +64,9 @@
                             <div class="input-group date" id="datepickerTanggalTraining" data-provide="datepicker">
                                 <input type="text" id="dateSafety" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateSafety">
                                 <div class="input-group-addon">
-                                    <span class="far fa-calendar-alt input-group-text form-control form-control-user" aria-hidden="true"></span>
+                                    <span class="far fa-calendar-alt input-group-text form-control form-control-user" aria-hidden="true">
+                                    <!-- <i class='far fa-calendar-alt' aria-hidden="true"></i> -->
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +81,7 @@
                             </span>
                             <span class="text">Tambah Data</span>
                         </button>
-                    </div>
+                    </div></div>
                     <div class="form-group">
                         <div class="row d-flex justify-content-end">
                             <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateri" onclick="location.href='index.php?module=dataScoreSafetyDetail';">

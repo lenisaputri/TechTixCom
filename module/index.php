@@ -127,18 +127,18 @@ switch ($level) {
       <hr class="sidebar-divider">
 
       <!-- Heading (Main Isi Menu 1)-->
-      <div class="sidebar-heading">Score Assasment</div>
+      <div class="sidebar-heading">Nilai Assasment</div>
 
       <!-- Nav Item - Safety (Sub Isi Menu)-->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#"  data-toggle="collapse" data-target="#collapseSafety" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-shield-alt"></i>
-          <span>Score Safety</span>
+          <span>Nilai Safety</span>
         </a>
         <div id="collapseSafety" class="collapse" aria-labelledby="headingSafety" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=safetyTable">Table Score</a>
-            <a class="collapse-item" href="index.php?module=safetySpider">Spider Score</a>
+            <a class="collapse-item" href="index.php?module=safetyTable">Tabel Nilai</a>
+            <a class="collapse-item" href="index.php?module=safetySpider">Spider Nilai</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -148,12 +148,12 @@ switch ($level) {
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGeneralHRD" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-users"></i>
-          <span>Score General HRD</span>
+          <span>Nilai General HRD</span>
         </a>
         <div id="collapseGeneralHRD" class="collapse" aria-labelledby="headingGeneralHRD" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=generalHrdTable">Table Score</a>
-            <a class="collapse-item" href="index.php?module=generalHrdSpider">Spider Score</a>
+            <a class="collapse-item" href="index.php?module=generalHrdTable">Tabel Nilai</a>
+            <a class="collapse-item" href="index.php?module=generalHrdSpider">Spider Nilai</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -163,11 +163,11 @@ switch ($level) {
       <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQuality" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-certificate"></i>
-          <span>Score Quality</span></a>
+          <span>Nilai Quality</span></a>
           <div id="collapseQuality" class="collapse" aria-labelledby="headingQuality" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=qualityTable">Table Score</a>
-            <a class="collapse-item" href="index.php?module=qualitySpider">Spider Score</a>
+            <a class="collapse-item" href="index.php?module=qualityTable">Tabel Nilai</a>
+            <a class="collapse-item" href="index.php?module=qualitySpider">Spider Nilai</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -177,7 +177,7 @@ switch ($level) {
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-cogs"></i>
-          <span>Score Technical</span>
+          <span>Nilai Technical</span>
         </a>
         <div id="collapseUtilities" class="collapse list-group" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <a href="#sub-menu1" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu1">Body Welder Operator<span class="caret"></span></a>
@@ -324,20 +324,20 @@ switch ($level) {
       <hr class="sidebar-divider">
 
        <!-- Heading (Main Isi Menu 4)-->
-       <div class="sidebar-heading">SCORE ASSESSMENT</div>
+       <div class="sidebar-heading">NILAI ASSESSMENT</div>
       
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseScore" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-trophy"></i>
-          <span>Data Score Assessment</span>
+          <span>Data Nilai Assessment</span>
         </a>
         
         <div id="collapseScore" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=dataScoreSafety">Data Score Safety</a>
-            <a class="collapse-item" href="index.php?module=dataScoreQuality">Data Score Quality</a>
-            <a class="collapse-item" href="index.php?module=dataScoreGeneralHrd">Data Score General HRD</a>
-            <a class="collapse-item" href="index.php?module=dataScoreTechnical">Data Score Technical</a>
+            <a class="collapse-item" href="index.php?module=dataScoreSafety">Data Nilai Safety</a>
+            <a class="collapse-item" href="index.php?module=dataScoreQuality">Data Nilai Quality</a>
+            <a class="collapse-item" href="index.php?module=dataScoreGeneralHrd">Data Nilai General HRD</a>
+            <a class="collapse-item" href="index.php?module=dataScoreTechnical">Data Nilai Technical</a>
             <div class="collapse-divider"></div>
           </div>
         </div>

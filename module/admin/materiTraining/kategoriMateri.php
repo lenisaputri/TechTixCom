@@ -44,48 +44,49 @@ include "../process/proses_adminKategoriMateri.php";
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                <?php
-                    $resultTampilKategoriMateri=tampilKategoriMateri($con);
-                    $index=1;
-                    if (mysqli_num_rows($resultTampilKategoriMateri) > 0){
-                ?>
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr class="text-center">
-                                <th>No.</th>
-                                <th>Kategori Materi</th>
-                                <th>Proses</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-                            while ($row = mysqli_fetch_assoc($resultTampilKategoriMateri)) {
-                        ?>
-                            <tr>
-                                <td class="text-center"><?= $index?></td>
-                                <td><?= $row["kategori_materi"]?></td>
-                                <td class="text-center">
-                                    <button type="button" class="btn btn-primary edit-kategoriMateri" data-toggle="modal" data-target="#editKategoriMateriModal" id-kategori-materi="<?php echo $row["id_kategori_materi"];?>">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger hapus-kategoriMateri" data-toggle="modal" data-target="#hapusKategoriMateriModal" id-kategori-materi="<?php echo $row["id_kategori_materi"];?>">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        <?php
-                            $index++;
-                            }
-                        ?>
-                        </tbody>
-                    </table>
                     <?php
-                        }else{
-                    ?>
-                        <div class="text-center">
-                            <p class="text-muted">Data Kategori Materi kosong</p>
-                        </div>
-                    <?php
+                        $resultTampilKategoriMateri=tampilKategoriMateri($con);
+                        $index=1;
+                        if (mysqli_num_rows($resultTampilKategoriMateri) > 0){
+                            ?>
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>No.</th>
+                                            <th>Kategori Materi</th>
+                                            <th>Proses</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            while ($row = mysqli_fetch_assoc($resultTampilKategoriMateri)) {
+                                                ?>
+                                                    <tr>
+                                                        <td class="text-center"><?= $index?></td>
+                                                        <td><?= $row["kategori_materi"]?></td>
+                                                        <td class="text-center">
+                                                            <button type="button" class="btn btn-primary edit-kategoriMateri" data-toggle="modal" data-target="#editKategoriMateriModal" id-kategori-materi="<?php echo $row["id_kategori_materi"];?>">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                            <button type="button" class="btn btn-danger hapus-kategoriMateri" data-toggle="modal" data-target="#hapusKategoriMateriModal" id-kategori-materi="<?php echo $row["id_kategori_materi"];?>">
+                                                                <i class="fas fa-trash"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                $index++;
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            <?php
+                        }
+                        else{
+                            ?>
+                                <div class="text-center">
+                                    <p class="text-muted">Data Kategori Materi kosong</p>
+                                </div>
+                            <?php
                         }
                     ?>
                 </div>

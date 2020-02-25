@@ -3,7 +3,6 @@
   include "../process/proses_dashboardAdmin.php";
 ?>
 
-<!-- Begin Page Content -->
 <div class="container-fluid" id="dataKaryawan">
 <div class="row">
     <!-- Earnings (Monthly) Card Example -->

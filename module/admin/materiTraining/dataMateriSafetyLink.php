@@ -92,29 +92,30 @@
 
                                 if(mysqli_num_rows($resultTampilData) > 0){
                                     while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                            ?>
-                                <tr class="text-center" id-materi-safetyLink="<?php echo $rowTampilData["id_materi_safety"] ?>">
-                                    <td ><?php echo $index; ?></td>
-                                    <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
-                                    <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
-                                    <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary edit-dataMateriSafetyLink-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriSafetyLinkModal" id_materiSafetyLinkEdit="<?php echo $rowTampilData["id_materi_safety"];?>">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger hapus-dataMateriSafetyLink-admin" data-toggle="modal" data-target="#hapusDataMateriSafetyLinkModal" id_materi_safety="<?php echo $rowTampilData["id_materi_safety"];?>">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            <?php 
-                                $index++;
-                                }
-                            ?>
-                            <?php
-                                }   else{
-                            ?>
-                            <?php
+                                        ?>
+                                            <tr class="text-center" id-materi-safetyLink="<?php echo $rowTampilData["id_materi_safety"] ?>">
+                                                <td ><?php echo $index; ?></td>
+                                                <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
+                                                <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
+                                                <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary edit-dataMateriSafetyLink-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriSafetyLinkModal" id_materiSafetyLinkEdit="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger hapus-dataMateriSafetyLink-admin" data-toggle="modal" data-target="#hapusDataMateriSafetyLinkModal" id_materi_safety="<?php echo $rowTampilData["id_materi_safety"];?>">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <?php 
+                                        $index++;
+                                    }
+                                    ?>
+                                    <?php
+                                }   
+                                else{
+                                    ?>
+                                    <?php
                                 }
                             ?>
                         </tbody>

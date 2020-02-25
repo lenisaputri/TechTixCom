@@ -92,31 +92,32 @@
 
                             if(mysqli_num_rows($resultTampilData) > 0){
                                 while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                        ?>
-                            <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_technical"] ?>">
-                                <td ><?php echo $index; ?></td>
-                                <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
-                                <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
-                                <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-primary edit-dataMateriTechnicalLink-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriTechnicalLinkModal" id_materiTechnicalLinkEdit="<?php echo $rowTampilData["id_materi_technical"];?>">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger hapus-dataMateriTechnicalLink-admin" data-toggle="modal" data-target="#hapusDataMateriTechnicalLinkModal" id_materi_technical="<?php echo $rowTampilData["id_materi_technical"];?>">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        <?php 
-                            $index++;
+                                    ?>
+                                        <tr class="text-center" id-materi="<?php echo $rowTampilData["id_materi_technical"] ?>">
+                                            <td ><?php echo $index; ?></td>
+                                            <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
+                                            <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
+                                            <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary edit-dataMateriTechnicalLink-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriTechnicalLinkModal" id_materiTechnicalLinkEdit="<?php echo $rowTampilData["id_materi_technical"];?>">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger hapus-dataMateriTechnicalLink-admin" data-toggle="modal" data-target="#hapusDataMateriTechnicalLinkModal" id_materi_technical="<?php echo $rowTampilData["id_materi_technical"];?>">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    <?php 
+                                        $index++;
+                                }
+                                ?>
+                                <?php
+                            }   
+                            else{
+                                ?>
+                                <?php
                             }
-                        ?>
-                        <?php
-                        }   else{
-                        ?>
-                        <?php
-                        }
-                        ?>
+                            ?>
                         </tbody>
                     </table>
                 </div>

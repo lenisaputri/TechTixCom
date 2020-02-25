@@ -92,29 +92,30 @@
 
                                 if(mysqli_num_rows($resultTampilData) > 0){
                                     while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                            ?>
-                                <tr class="text-center" id-materi-qualityLink="<?php echo $rowTampilData["id_materi_quality"] ?>">
-                                    <td ><?php echo $index; ?></td>
-                                    <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
-                                    <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
-                                    <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary edit-dataMateriQualityLink-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriQualityLinkModal" id_materiQualityLinkEdit="<?php echo $rowTampilData["id_materi_quality"];?>">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-danger hapus-dataMateriQualityLink-admin" data-toggle="modal" data-target="#hapusDataMateriQualityLinkModal" id_materi_quality="<?php echo $rowTampilData["id_materi_quality"];?>">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            <?php 
-                                $index++;
-                                }
-                            ?>
-                            <?php
-                                }   else{
-                            ?>
-                            <?php
+                                        ?>
+                                            <tr class="text-center" id-materi-qualityLink="<?php echo $rowTampilData["id_materi_quality"] ?>">
+                                                <td ><?php echo $index; ?></td>
+                                                <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
+                                                <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
+                                                <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary edit-dataMateriQualityLink-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriQualityLinkModal" id_materiQualityLinkEdit="<?php echo $rowTampilData["id_materi_quality"];?>">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger hapus-dataMateriQualityLink-admin" data-toggle="modal" data-target="#hapusDataMateriQualityLinkModal" id_materi_quality="<?php echo $rowTampilData["id_materi_quality"];?>">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <?php 
+                                            $index++;
+                                    }
+                                    ?>
+                                    <?php
+                                }   
+                                else{
+                                    ?>
+                                    <?php
                                 }
                             ?>
                         </tbody>

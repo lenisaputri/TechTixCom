@@ -137,8 +137,8 @@ switch ($level) {
         </a>
         <div id="collapseSafety" class="collapse" aria-labelledby="headingSafety" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=safetyTable">Tabel Nilai</a>
-            <a class="collapse-item" href="index.php?module=safetySpider">Spider Nilai</a>
+            <a class="collapse-item" href="index.php?module=safetyTable">Tabel Nilai Online Training</a>
+            <a class="collapse-item" href="index.php?module=safetySpider">Spider Nilai Safety</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -152,8 +152,8 @@ switch ($level) {
         </a>
         <div id="collapseGeneralHRD" class="collapse" aria-labelledby="headingGeneralHRD" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=generalHrdTable">Tabel Nilai</a>
-            <a class="collapse-item" href="index.php?module=generalHrdSpider">Spider Nilai</a>
+            <a class="collapse-item" href="index.php?module=generalHrdTable">Tabel Nilai Online Training</a>
+            <a class="collapse-item" href="index.php?module=generalHrdSpider">Spider Nilai General HRD</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
@@ -166,76 +166,27 @@ switch ($level) {
           <span>Nilai Quality</span></a>
           <div id="collapseQuality" class="collapse" aria-labelledby="headingQuality" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=qualityTable">Tabel Nilai</a>
-            <a class="collapse-item" href="index.php?module=qualitySpider">Spider Nilai</a>
+            <a class="collapse-item" href="index.php?module=qualityTable">Tabel Nilai Online Training</a>
+            <a class="collapse-item" href="index.php?module=qualitySpider">Spider Nilai Quality</a>
             <div class="collapse-divider"></div>
           </div>
         </div>
       </li>
       
-      <!-- Nav Item - Technical(Sub Isi Menu)-->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-cogs"></i>
-          <span>Nilai Technical</span>
-        </a>
-        <div id="collapseUtilities" class="collapse list-group" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-            <a href="#sub-menu1" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu1">Body Welder Operator<span class="caret"></span></a>
-            <div class="collapse list-group" id="sub-menu1">
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="index.php?module=bodyWelderTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
-            </div>
-            <a href="#sub-menu2" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu2">Can O Mat Operator<span class="caret"></span></a>
-            <div class="collapse list-group" id="sub-menu2">
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="index.php?module=canOmatTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
-            </div>
-            <a href="#sub-menu3" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu3">End O Mat Operator<span class="caret"></span></a>
-            <div class="collapse list-group" id="sub-menu3">
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="index.php?module=endOmatTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
-            </div>
-            <a href="#sub-menu4" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu4">Palleteizer Operator<span class="caret"></span></a>
-            <div class="collapse list-group" id="sub-menu4">
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="index.php?module=palleteizerTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
-            </div>
-            <a href="#sub-menu5" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu5">Area Engineer Technician<span class="caret"></span></a>
-            <div class="collapse list-group" id="sub-menu5">
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="index.php?module=technicianTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
-            </div>
-            <a href="#sub-menu6" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu6">Admin SAP<span class="caret"></span></a>
-            <div class="collapse list-group" id="sub-menu6">
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="index.php?module=adminSapTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
-            </div>
-            <a href="#sub-menu7" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu7">Production SPV<span class="caret"></span></a>
-            <div class="collapse list-group" id="sub-menu7">
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="index.php?module=productionSpvTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
-            </div>
-            <a href="#sub-menu8" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu8">Area Engineer SPV<span class="caret"></span></a>
-            <div class="collapse list-group" id="sub-menu8">
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="index.php?module=engineerSpvTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
-            </div>
-            <a href="#sub-menu9" class="collapse-item nav-link collapsed" data-toggle="collapse" aria-expanded="true" data-parent="#sub-menu9">Can Making Manager<span class="caret"></span></a>
-            <div class="collapse list-group" id="sub-menu9">
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Observasi</a>
-              <a href="index.php?module=canMakingManagerTable" class="list-group-item" data-parent="#sub-menu">Online Training</a>
-              <a href="#" class="list-group-item" data-parent="#sub-menu">Praktek</a>
-            </div>
-        </div>
+      <!-- Nav Item - Technical(Sub Isi Menu) -->
 
+      <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTechnical" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-certificate"></i>
+          <span>Nilai Technical</span></a>
+          <div id="collapseTechnical" class="collapse" aria-labelledby="headingTechnical" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="index.php?module=###">Tabel Nilai Observasi</a>
+            <a class="collapse-item" href="index.php?module=###">Tabel Nilai Online Training</a>
+            <a class="collapse-item" href="index.php?module=###">Tabel Nilai Praktek</a>
+            <div class="collapse-divider"></div>
+          </div>
+        </div>
       </li>
       <!-- Divider (Garis Pembagi)-->
       <hr class="sidebar-divider d-none d-md-block">

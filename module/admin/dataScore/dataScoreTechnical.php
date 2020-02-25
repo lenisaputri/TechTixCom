@@ -141,13 +141,13 @@
                                                 <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                                                 <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                                                 <td> 
-                                                    <button type="button" class="btn btn-warning info-dataScoreTechnical-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataScoreTechnicalModal" id_scoreTechnicalInfo="<?php echo $rowTampilData["id_score_technical"];?>">
+                                                    <button type="button" class="btn btn-warning info-dataScoreTechnical-admin mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataScoreTechnicalModal" id_scoreTechnicalInfo="<?php echo $rowTampilData["id_score_technical"];?>">
                                                         <i class="fas fa-info-circle"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-primary edit-dataScoreTechnical-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreTechnicalModal" id_scoreTechnicalEdit="<?php echo $rowTampilData["id_score_technical"];?>">
+                                                    <button type="button" class="btn btn-primary edit-dataScoreTechnical-admin mb-2 mb-sm-2" data-toggle="modal" data-target="#editDataScoreTechnicalModal" id_scoreTechnicalEdit="<?php echo $rowTampilData["id_score_technical"];?>">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-danger hapus-dataScoreTechnical-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreTechnicalModal" id_score_technical="<?php echo $rowTampilData["id_score_technical"];?>">
+                                                    <button type="button" class="btn btn-danger hapus-dataScoreTechnical-admin mb-2 mb-sm-2" data-toggle="modal" data-target="#hapusDataScoreTechnicalModal" id_score_technical="<?php echo $rowTampilData["id_score_technical"];?>">
                                                         <i class="fas fa-trash"></i>
                                                     </button>
                                                 </td>

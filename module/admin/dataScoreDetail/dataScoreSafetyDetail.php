@@ -48,23 +48,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingDetail" style="font-weight: bold">TANGGAL TRAINING</label>
-                                    <?php
-                                        $resultTampilScoreSafetyDate = tampilScoreSafetyDate($con);
-                                    ?>
-                                    <select class="custom-select-karyawan" name="tanggalTrainingDetail"> 
-                                        <?php
-                                            if(mysqli_num_rows($resultTampilScoreSafetyDate) > 0){
-                                                while($row = mysqli_fetch_assoc($resultTampilScoreSafetyDate)){
-                                                    echo "<option value='".$row['tanggal_training']."'>".$row['tanggal_training']."</option>";
-                                                }
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div> -->
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="smk3Detail" style="font-weight: bold">SMK3</label>

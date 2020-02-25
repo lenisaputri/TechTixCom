@@ -357,17 +357,11 @@ switch ($level) {
                   case "safetyTable":
                     include "operator/safety/safetyTable.php";
                     break;
-                  case "safetyTableDetail":
-                    include "operator/safety/safetyTableDetail.php";
-                    break;
                   case "safetySpider":
                     include "operator/safety/safetySpider.php";
                     break;
                   case "generalHrdTable":
                     include "operator/generalHrd/generalHrdTable.php";
-                    break;
-                  case "generalHrdTableDetail":
-                    include "operator/generalHrd/generalHrdTableDetail.php";
                     break;
                   case "generalHrdSpider":
                     include "operator/generalHrd/generalHrdSpider.php";
@@ -378,38 +372,14 @@ switch ($level) {
                   case "qualitySpider":
                     include "operator/quality/qualitySpider.php";
                     break;
-                  case "qualityTableDetail":
-                    include "operator/quality/qualityTableDetail.php";
+                  case "technical":
+                    include "operator/technical/technicalScoreObservasi.php";
                     break;
                   case "technical":
-                    include "operator/technical.php";
-                    break;
-                  case "adminSapTable":
-                    include "operator/technical/adminSapTable.php";
+                    include "operator/technical/technicalScoreOnlineTraining.php";
                     break;
                   case "technical":
-                    include "operator/technical/bodyWelderTable.php";
-                    break;
-                  case "technical":
-                    include "operator/technical/canMakingManagerTable.php";
-                    break;
-                  case "technical":
-                    include "operator/technical/canOmatTable.php";
-                    break;
-                  case "technical":
-                    include "operator/technical/endOmatTable.php";
-                    break;
-                  case "technical":
-                    include "operator/technical/engineerSpvTable.php";
-                    break;
-                  case "technical":
-                    include "operator/technical/palleteizerTable.php";
-                    break;
-                  case "technical":
-                    include "operator/technical/productionSpvTable.php";
-                    break;
-                  case "technical":
-                    include "operator/technical/technicianTable.php";
+                    include "operator/technical/technicalScorePraktek.php";
                     break;
                   case "materiSafety":
                     include "operator/materiOperator/materiSafety.php";

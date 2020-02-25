@@ -181,8 +181,8 @@ switch ($level) {
           <span>Nilai Technical</span></a>
           <div id="collapseTechnical" class="collapse" aria-labelledby="headingTechnical" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="index.php?module=###">Tabel Nilai Observasi</a>
-            <a class="collapse-item" href="index.php?module=###">Tabel Nilai Online Training</a>
+            <a class="collapse-item" href="index.php?module=technicalNilaiOnlineTraining">Tabel Nilai Observasi</a>
+            <a class="collapse-item" href="index.php?module=technicalNilaiOnlineTraining">Tabel Nilai Online Training</a>
             <a class="collapse-item" href="index.php?module=###">Tabel Nilai Praktek</a>
             <div class="collapse-divider"></div>
           </div>
@@ -375,8 +375,8 @@ switch ($level) {
                   case "technical":
                     include "operator/technical/technicalScoreObservasi.php";
                     break;
-                  case "technical":
-                    include "operator/technical/technicalScoreOnlineTraining.php";
+                  case "technicalNilaiOnlineTraining":
+                    include "operator/technical/technicalOnlineTable.php";
                     break;
                   case "technical":
                     include "operator/technical/technicalScorePraktek.php";

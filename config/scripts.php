@@ -45,5 +45,9 @@
   <script src="../js/proses_dataScoreTechnical.js"></script>
 
   <script src="../js/proses_operatorScoreSafety.js"></script>
+  <script src="../js/proses_operatorScoreGeneralHrd.js"></script>
+  <script src="../js/proses_operatorScoreQuality.js"></script>
+  <script src="../js/proses_operatorScoreTechnicalOnline.js"></script>
+
 
   <script src="../js/materiOperator.js"></script>

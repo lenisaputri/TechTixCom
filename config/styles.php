@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/home.css">
 <link rel="stylesheet" href="../css/safety.css">
+<link rel="stylesheet" href="../css/technical.css">
 <link rel="stylesheet" href="../css/dataKaryawan.css">
 <link rel="stylesheet" href="../css/dataScore.css">
 <link rel="stylesheet" href="../css/jabatan.css">

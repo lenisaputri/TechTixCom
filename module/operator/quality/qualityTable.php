@@ -2,6 +2,8 @@
 include "../config/connection.php";
 include "../process/proses_operatorScoreQuality.php";
 ?>
+
+<body>
 <!-- Begin Page Content -->
 <div class="container-fluid" id="safety">
   <?php 
@@ -61,12 +63,10 @@ include "../process/proses_operatorScoreQuality.php";
             <td><?php echo $rowTampilData["nilai"]; ?></td>
             <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
             <td>
-              <button type="submit" class="btn btn-warning btn-icon-split mb-2 mb-sm-0" onclick="location.href='index.php?module=qualityTableDetail';">
-                <span class="icon text-white-50">
-                  <i class="fas fa-info"></i>
-                </span>
-                <span class="text">Detail Score</span>
-              </button>
+            <button type="button" class="btn btn-warning info-dataNilaiQuality-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiQualityOperatorModal" id_nilaiQualityOperatorInfo="<?php echo $rowTampilData["id_score_quality"];?>">
+                                                    <i class="fas fa-info-circle"></i>
+                                                    <span>Detail Nilai</span>
+                                                </button>
             </td>
           </tr>
           <?php
@@ -89,4 +89,22 @@ include "../process/proses_operatorScoreQuality.php";
   </div>
 </div>
 </div>
+
+<div class="modal fade" id="infoDataNilaiQualityOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center bg-nilaiQualityOperatorInfo border-0">
+                <h5 class="modal-title text-white w-100 text-center">Data Nilai Online Training Quality</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid" id="info-dataNilaiQualityOperator"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 <!-- /.container-fluid -->
+
+</body>

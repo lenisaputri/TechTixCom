@@ -1,4 +1,18 @@
-#infoDataNilaiSafetyOperatorModal .bg-nilaiSafetyOperatorInfo{
-    background-color: #0368ca !important;
-  }
+#infoDataNilaiSafetyOperatorModal .bg-nilaiSafetyOperatorInfo
+{
+  background-color: #0368ca !important;
+}
+
+#infoDataNilaiGeneralHrdOperatorModal .bg-nilaiGeneralHrdOperatorInfo
+{
+  background-color: #0368ca !important;
+}
+  
+#infoDataNilaiQualityOperatorModal .bg-nilaiQualityOperatorInfo{
+  background-color: #0368ca !important;
+}
+
+#infoDataNilaiTechnicalOnlineOperatorModal .bg-nilaiTechnicalOnlineOperatorInfo{
+  background-color: #0368ca !important;
+}
   

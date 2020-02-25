@@ -48,25 +48,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="tanggalTrainingDetail" style="font-weight: bold">TANGGAL TRAINING</label>
-                                    <?php
-                                        $resultTampilScoreQualityDate = tampilScoreQualityDate($con);
-                                    ?>
-                                    <select class="custom-select-karyawan" name="tanggalTrainingDetail"> 
-                                        <?php
-                                            if(mysqli_num_rows($resultTampilScoreQualityDate) > 0){
-                                                while($row = mysqli_fetch_assoc($resultTampilScoreQualityDate)){
-                                                    echo "<option value='".$row['tanggal_training']."'>".$row['tanggal_training']."</option>";
-                                                }
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="col-sm-6">
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fssDetail" style="font-weight: bold">Food Safety System</label>
@@ -76,6 +57,8 @@
                                     <div id="fssDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-sm-6">
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gmpDetail" style="font-weight: bold">GMP</label>

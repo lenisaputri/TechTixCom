@@ -2,6 +2,8 @@
 include "../config/connection.php";
 include "../process/proses_operatorScoreGeneralHrd.php";
 ?>
+
+<body>
 <!-- Begin Page Content -->
 <div class="container-fluid" id="generalHrd">
   <?php
@@ -60,12 +62,10 @@ include "../process/proses_operatorScoreGeneralHrd.php";
                   <td><?php echo $rowTampilData["nilai"]; ?></td>
                   <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
                   <td>
-                    <button type="submit" class="btn btn-warning btn-icon-split mb-2 mb-sm-0" onclick="location.href='index.php?module=generalHrdTableDetail';">
-                      <span class="icon text-white-50">
-                        <i class="fas fa-info"></i>
-                      </span>
-                      <span class="text">Detail Score</span>
-                    </button>
+                  <button type="button" class="btn btn-warning info-dataNilaiGeneralHrd-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiGeneralHrdOperatorModal" id_nilaiGeneralHrdOperatorInfo="<?php echo $rowTampilData["id_score_generalHrd"];?>">
+                                                    <i class="fas fa-info-circle"></i>
+                                                    <span>Detail Nilai</span>
+                                                </button>
                   </td>
                 </tr>
               <?php
@@ -88,4 +88,21 @@ include "../process/proses_operatorScoreGeneralHrd.php";
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="infoDataNilaiGeneralHrdOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center bg-nilaiGeneralHrdOperatorInfo border-0">
+                <h5 class="modal-title text-white w-100 text-center">Data Nilai Online Training GeneralHrd</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid" id="info-dataNilaiGeneralHrdOperator"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 <!-- /.container-fluid -->
+</body>

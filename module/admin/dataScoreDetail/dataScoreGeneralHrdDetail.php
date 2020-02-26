@@ -139,13 +139,12 @@
                                                 </td>
                                             </tr>
                                         <?php 
-                                            $index++;
+                                        $index++;
                                     }
                                     ?>
                                     <?php
                                 }   
-                                else
-                                {
+                                else{
                                     ?>
                                     <?php
                                 }

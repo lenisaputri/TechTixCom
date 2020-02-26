@@ -112,46 +112,46 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
-                            $queryTampilData = "SELECT tsq.*, tp.id_operator, tp.nik, tp.nama AS nama_operator FROM tabel_score_quality tsq, tabel_operator tp WHERE tsq.id_operator = tp.id_operator;
-                                ";
-                            
-                            $resultTampilData = mysqli_query($con, $queryTampilData);
-                            $index = 1;
+                            <?php
+                                $queryTampilData = "SELECT tsq.*, tp.id_operator, tp.nik, tp.nama AS nama_operator FROM tabel_score_quality tsq, tabel_operator tp WHERE tsq.id_operator = tp.id_operator;
+                                    ";
+                                
+                                $resultTampilData = mysqli_query($con, $queryTampilData);
+                                $index = 1;
 
-                            if(mysqli_num_rows($resultTampilData) > 0){
-                                while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                                    ?>
-                                        <tr class="text-center" id-score-quality="<?php echo $rowTampilData["id_score_quality"] ?>">
-                                            <td ><?php echo $index; ?></td>
-                                            <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
-                                            <td class="kategoriMateri"><?php echo $rowTampilData["nama_operator"]; ?></td>
-                                            <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
-                                            <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
-                                            <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
-                                            <td> 
-                                                <button type="button" class="btn btn-warning info-dataScoreQuality-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataScoreQualityModal" id_scoreQualityInfo="<?php echo $rowTampilData["id_score_quality"];?>">
-                                                    <i class="fas fa-info-circle"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-primary edit-dataScoreQuality-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreQualityModal" id_scoreQualityEdit="<?php echo $rowTampilData["id_score_quality"];?>">
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-danger hapus-dataScoreQuality-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreQualityModall" id_score_quality="<?php echo $rowTampilData["id_score_quality"];?>">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    <?php 
+                                if(mysqli_num_rows($resultTampilData) > 0){
+                                    while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
+                                        ?>
+                                            <tr class="text-center" id-score-quality="<?php echo $rowTampilData["id_score_quality"] ?>">
+                                                <td ><?php echo $index; ?></td>
+                                                <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
+                                                <td class="kategoriMateri"><?php echo $rowTampilData["nama_operator"]; ?></td>
+                                                <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
+                                                <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
+                                                <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
+                                                <td> 
+                                                    <button type="button" class="btn btn-warning info-dataScoreQuality-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataScoreQualityModal" id_scoreQualityInfo="<?php echo $rowTampilData["id_score_quality"];?>">
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary edit-dataScoreQuality-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreQualityModal" id_scoreQualityEdit="<?php echo $rowTampilData["id_score_quality"];?>">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger hapus-dataScoreQuality-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreQualityModall" id_score_quality="<?php echo $rowTampilData["id_score_quality"];?>">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <?php 
                                         $index++;
+                                    }
+                                    ?>
+                                    <?php
+                                }   
+                                else{
+                                    ?>
+                                    <?php
                                 }
-                                ?>
-                                <?php
-                            }   
-                            else{
-                                ?>
-                                <?php
-                            }
-                        ?>
+                            ?>
                         </tbody>
                     </table>
                 </div>

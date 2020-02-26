@@ -121,36 +121,35 @@
 
                                 if(mysqli_num_rows($resultTampilData) > 0){
                                     while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                            ?>
-                            <tr class="text-center" id-score-generalhrd="<?php echo $rowTampilData["id_score_generalhrd"] ?>">
-                                <td ><?php echo $index; ?></td>
-                                <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
-                                <td class="kategoriMateri"><?php echo $rowTampilData["nama_operator"]; ?></td>
-                                <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
-                                <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
-                                <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
-                                <td> 
-                                    <button type="button" class="btn btn-warning info-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataScoreGeneralHrdModal" id_scoreGeneralHrdInfo="<?php echo $rowTampilData["id_score_generalHrd"];?>">
-                                        <i class="fas fa-info-circle"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-primary edit-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreGeneralHrdModal" id_scoreGeneralHrdEdit="<?php echo $rowTampilData["id_score_generalHrd"];?>">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger hapus-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreGeneralHrdModall" id_score_generalHrd="<?php echo $rowTampilData["id_score_generalHrd"];?>">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <?php 
-                                $index++;
-                                }
-                            ?>
-                            <?php
+                                        ?>
+                                            <tr class="text-center" id-score-generalhrd="<?php echo $rowTampilData["id_score_generalhrd"] ?>">
+                                                <td ><?php echo $index; ?></td>
+                                                <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
+                                                <td class="kategoriMateri"><?php echo $rowTampilData["nama_operator"]; ?></td>
+                                                <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
+                                                <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
+                                                <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
+                                                <td> 
+                                                    <button type="button" class="btn btn-warning info-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataScoreGeneralHrdModal" id_scoreGeneralHrdInfo="<?php echo $rowTampilData["id_score_generalHrd"];?>">
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary edit-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreGeneralHrdModal" id_scoreGeneralHrdEdit="<?php echo $rowTampilData["id_score_generalHrd"];?>">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger hapus-dataScoreGeneralHrd-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreGeneralHrdModall" id_score_generalHrd="<?php echo $rowTampilData["id_score_generalHrd"];?>">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <?php 
+                                        $index++;
+                                    }
+                                    ?>
+                                    <?php
                                 }   
-                                else
-                                {
-                            ?>
-                            <?php
+                                else{
+                                    ?>
+                                    <?php
                                 }
                             ?>
                         </tbody>

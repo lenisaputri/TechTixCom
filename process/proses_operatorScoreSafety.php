@@ -17,10 +17,11 @@
     }
 
     if(isset($_POST["infoDataScoreSafetyOperator_idScoreSafety"])){
-        $infoScoreSafety = "SELECT tss.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
-            FROM tabel_score_safety tss, tabel_operator tp , tabel_jabatan tj 
+        $infoScoreSafety = "SELECT tss.*, tssd.*, tssd.id_score_safety_detail,tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+            FROM tabel_score_safety tss, tabel_operator tp , tabel_jabatan tj, tabel_score_safety_detail tssd
             WHERE tss.id_operator = tp.id_operator 
             AND tp.id_jabatan = tj.id_jabatan
+            AND tss.id_score_safety = tssd.id_score_safety
             AND tss.id_score_safety = $_POST[infoDataScoreSafetyOperator_idScoreSafety]";
         $resultInfoScoreSafety = mysqli_query($con, $infoScoreSafety);
     
@@ -29,9 +30,15 @@
             ?>
                 <div class="form-group">
                     <div class="modal-footer border-0">
-                        <button class="btn btn-success"><i class="fa fa-print"></i> Cetak Nilai</button>
+                        <a class="btn btn-success" href="../process/proses_print_safetyOperator.php?id_score_safety_detail=<?=$rowInfoScoreSafety["id_score_safety_detail"]?>">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-fw fa-print"></i>
+                            </span>
+                            <span class="text">Cetak Nilai</span>
+                        </a>
                     </div>
                 </div>
+                
                 <div class="row">
                     <div class="col-sm-6">
                         <p>NAMA : <?php echo $rowInfoScoreSafety["nama_lengkap"]; ?></p>

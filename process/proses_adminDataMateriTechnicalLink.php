@@ -91,13 +91,13 @@
                 $i++;
             }
         }
-                ?>                
-                    <div class="form-group">
-                        <div class="modal-footer border-0">
-                            <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                            <button class="btn btn-primary" name="editDataMateriTechnicalLink" type="submit" onclick="ValidasiEditDataMateriTechnicalLink();"><i class="fa fa-check"></i> Simpan</button>
-                        </div>
-                    </div>
-                <?php
+        ?>                
+            <div class="form-group">
+                <div class="modal-footer border-0">
+                    <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+                    <button class="btn btn-primary" name="editDataMateriTechnicalLink" type="submit" onclick="ValidasiEditDataMateriTechnicalLink();"><i class="fa fa-check"></i> Simpan</button>
+                </div>
+            </div>
+        <?php
     }
 ?>

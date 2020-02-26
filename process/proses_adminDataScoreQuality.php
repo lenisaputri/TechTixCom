@@ -210,12 +210,12 @@
                 <div class="text-center text-muted">Data Tidak Ditemukan</div>
             <?php
         }
-            ?>    
-                <div class="form-group">
-                    <div class="modal-footer border-0">
-                        <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                    </div>
+        ?>    
+            <div class="form-group">
+                <div class="modal-footer border-0">
+                    <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
                 </div>
-            <?php
+            </div>
+        <?php
     }    
 ?>

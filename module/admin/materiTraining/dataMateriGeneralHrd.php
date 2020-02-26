@@ -92,30 +92,31 @@
                                 $index = 1;
                                 if(mysqli_num_rows($resultTampilData) > 0){
                                     while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                            ?>
-                            <tr class="text-center" id-materi-generalHrd="<?php echo $rowTampilData["id_materi_generalhrd"] ?>">
-                                <td ><?php echo $index; ?></td>
-                                <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
-                                <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
-                                <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-primary edit-dataMateriGeneralHrd-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriGeneralHrdModal" id_materiGeneralHrdEdit="<?php echo $rowTampilData["id_materi_generalhrd"];?>">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <p></p>
-                                    <button type="button" class="btn btn-danger hapus-dataMateriGeneralHrd-admin" data-toggle="modal" data-target="#hapusDataMateriGeneralHrdModal" id_materi_generalhrd="<?php echo $rowTampilData["id_materi_generalhrd"];?>">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <?php 
-                                $index++;
-                                }
-                            ?>
-                            <?php
-                                }   else{
-                            ?>
-                            <?php
+                                        ?>
+                                        <tr class="text-center" id-materi-generalHrd="<?php echo $rowTampilData["id_materi_generalhrd"] ?>">
+                                            <td ><?php echo $index; ?></td>
+                                            <td class="kategoriMateri"><?php echo $rowTampilData["kategori_materi"]; ?></td>
+                                            <td class="judulMateri"><?php echo $rowTampilData["judul_materi"]; ?></td>
+                                            <td class="fileMateri"><?php echo $rowTampilData["file_materi"]; ?></td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary edit-dataMateriGeneralHrd-admin mb-3 mb-sm-0" data-toggle="modal" data-target="#editDataMateriGeneralHrdModal" id_materiGeneralHrdEdit="<?php echo $rowTampilData["id_materi_generalhrd"];?>">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                <p></p>
+                                                <button type="button" class="btn btn-danger hapus-dataMateriGeneralHrd-admin" data-toggle="modal" data-target="#hapusDataMateriGeneralHrdModal" id_materi_generalhrd="<?php echo $rowTampilData["id_materi_generalhrd"];?>">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <?php 
+                                            $index++;
+                                    }
+                                    ?>
+                                    <?php
+                                }   
+                                else{
+                                    ?>
+                                    <?php
                                 }
                             ?>
                         </tbody>

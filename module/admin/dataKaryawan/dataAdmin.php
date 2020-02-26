@@ -152,46 +152,47 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
-                            $queryTampilData = "SELECT ta.*, ta.nama AS nama_lengkap ,tj.*, tj.nama AS nama_jabatan, tu.* FROM tabel_admin ta,tabel_jabatan tj,tabel_user tu WHERE ta.id_jabatan = tj.id_jabatan
-                                AND ta.id_user = tu.id_user;
-                                ";
-                        
-                            $resultTampilData = mysqli_query($con, $queryTampilData);
-                            $index = 1;
+                            <?php
+                                $queryTampilData = "SELECT ta.*, ta.nama AS nama_lengkap ,tj.*, tj.nama AS nama_jabatan, tu.* FROM tabel_admin ta,tabel_jabatan tj,tabel_user tu WHERE ta.id_jabatan = tj.id_jabatan
+                                    AND ta.id_user = tu.id_user;
+                                    ";
+                            
+                                $resultTampilData = mysqli_query($con, $queryTampilData);
+                                $index = 1;
 
-                            if(mysqli_num_rows($resultTampilData) > 0){
-                                while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
-                        ?>
-                            <tr class="text-center" id-admin="<?php echo $rowTampilData["id_admin"] ?>">
-                                <td ><?php echo $index; ?></td>
-                                <td class="usernameAdmin"><?php echo $rowTampilData["username"]; ?></td>
-                                <td class="passwordAdmin">**********</td>
-                                <td class="fotoAdmin"><img src="../attachment/img/<?php echo ($rowTampilData['foto'] == null)? 'avatar.jpeg' : $rowTampilData['foto'] ; ?>" style="width:50px;height:50px;border-radius:50%;"></td>
-                                <td class="nikAdmin"><?php echo $rowTampilData["nik"]; ?></td>
-                                <td class="namaAdmin"><?php echo $rowTampilData["nama_lengkap"]; ?></td>
-                                <td class="jkAdmin"><?php echo $rowTampilData["jenis_kelamin"]; ?></td>
-                                <td class="jabatanAdmin"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-primary edit-dataAdmin-admin" data-toggle="modal" data-target="#editDataAdminModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_adminEdit="<?php echo $rowTampilData["id_admin"];?>">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <p></p>
-                                    <button type="button" class="btn btn-danger hapus-dataAdmin-admin" data-toggle="modal" data-target="#hapusDataAdminModal" id_user="<?php echo $rowTampilData["id_user"];?>" id_admin="<?php echo $rowTampilData["id_admin"];?>">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        <?php 
-                            $index++;
-                            }
-                        ?>
-                        <?php
-                            }   else{
-                        ?>
-                        <?php
-                            }
-                        ?>
+                                if(mysqli_num_rows($resultTampilData) > 0){
+                                    while($rowTampilData = mysqli_fetch_assoc($resultTampilData)){
+                                        ?>
+                                            <tr class="text-center" id-admin="<?php echo $rowTampilData["id_admin"] ?>">
+                                                <td ><?php echo $index; ?></td>
+                                                <td class="usernameAdmin"><?php echo $rowTampilData["username"]; ?></td>
+                                                <td class="passwordAdmin">**********</td>
+                                                <td class="fotoAdmin"><img src="../attachment/img/<?php echo ($rowTampilData['foto'] == null)? 'avatar.jpeg' : $rowTampilData['foto'] ; ?>" style="width:50px;height:50px;border-radius:50%;"></td>
+                                                <td class="nikAdmin"><?php echo $rowTampilData["nik"]; ?></td>
+                                                <td class="namaAdmin"><?php echo $rowTampilData["nama_lengkap"]; ?></td>
+                                                <td class="jkAdmin"><?php echo $rowTampilData["jenis_kelamin"]; ?></td>
+                                                <td class="jabatanAdmin"><?php echo $rowTampilData["nama_jabatan"]; ?></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary edit-dataAdmin-admin" data-toggle="modal" data-target="#editDataAdminModal" id_userEdit="<?php echo $rowTampilData["id_user"];?>" id_adminEdit="<?php echo $rowTampilData["id_admin"];?>">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <p></p>
+                                                    <button type="button" class="btn btn-danger hapus-dataAdmin-admin" data-toggle="modal" data-target="#hapusDataAdminModal" id_user="<?php echo $rowTampilData["id_user"];?>" id_admin="<?php echo $rowTampilData["id_admin"];?>">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <?php 
+                                        $index++;
+                                    }
+                                    ?>
+                                    <?php
+                                }   
+                                else{
+                                    ?>
+                                    <?php
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -224,7 +225,7 @@
                     <div class="modal-body pt-5 text-center">
                         <input type="hidden" name="id_user" id="id_userHapus" >
                         <input type="hidden" name="id_admin" id="id_adminHapus" >
-                            <strong>Apakah Anda yakin?</strong>
+                        <strong>Apakah Anda yakin?</strong>
                     </div>
                     <div class="pb-4 pt-4 d-flex justify-content-around">
                         <button type="button" class="btn btn-danger mr-4 btn-batal" data-dismiss="modal">Tidak</button>

@@ -1,5 +1,5 @@
 <?php
-include "../config/connection.php";
+  include "../config/connection.php";
 ?>
 
 <div class="container-fluid" id="generalHrd">
@@ -55,16 +55,12 @@ include "../config/connection.php";
                   <?php
                   } else {
                     ?>
-                    <!-- <div>
-                    <p>Data Operator tidak tersedia</p>
-                    </div> -->
-                    <?php
-                    }
-                    ?>
-              </tbody>
-          </table>
-        </div>
+                <?php
+              }
+            ?>
+          </tbody>
+        </table>
       </div>
     </div>
+  </div>
 </div>
-<!-- /.container-fluid -->

@@ -37,12 +37,12 @@ include "../process/proses_operatorScoreTechnical.php";
             <div class="col-sm-6">
               <div class="form-group row">
                 <div class="col-sm-12 mb-3 mb-sm-0">
-                  <select class="custom-select-karyawan my-1 mr-sm-2" name="jabatanAdminAdmin">
+                  <select class="custom-select-karyawan my-1 mr-sm-2" name="kategoriTechnical">
                     <option value="0" class="text">Pilih Kategori Technical</option>
                       <?php
-                        $resultTampilKategoriTechnical = tampilKategoriTechnical($con, $idUser);
-                        if(mysqli_num_rows($resultTampilKategoriTechnical) > 0){
-                            while($row = mysqli_fetch_assoc($resultTampilKategoriTechnical)){
+                        $resultKategoriTechnical = kategoriTechnical($con);
+                        if(mysqli_num_rows($resultKategoriTechnical) > 0){
+                            while($row = mysqli_fetch_assoc($resultKategoriTechnical)){
                                 echo "<option value='".$row['id_score_technical']."'>".$row['kategori_technical']."</option>";
                             }
                         } 
@@ -59,7 +59,7 @@ include "../process/proses_operatorScoreTechnical.php";
             <div class="col-sm-6">
               <div class="form-group">
                 <button type="submit" class="btn btn-success mb-2 mb-sm-0" name="cariKategoriTechnical">
-                  <span class="text">Search</span>
+                  <span class="text">Cari</span>
                 </button>
               </div>
             </div>
@@ -68,101 +68,104 @@ include "../process/proses_operatorScoreTechnical.php";
         <div class="table-responsive">
           <?php
             if(isset($_POST["cariKategoriTechnical"])){
-              $result=tampilScoreTechnicalOperator($con, $idUser);
-            }
-              if (mysqli_num_rows($result) > 0){
-                ?>
+                $result=tampilScoreTechnicalKategoriOperator($con,$_POST["kategoriTechnical"]);
+              }
+              else{
+                $result=tampilScoreTechnicalOperator($con, $idUser);
+              }
+            if (mysqli_num_rows($result) > 0){
+            ?>
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                       <tr class="text-center">
                         <th>No.</th>
                         <th>Poin</th>
                         <th>Nilai</th>
+                        <th>Kategori Technical</th>
                         <th>Tanggal</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <?php 
-                        if(mysqli_num_rows($result) > 0){
-                          $index=1;
-                            while($row = mysqli_fetch_assoc($result)){
-                              if(tampilScoreTechnicalOperator($con, $row["kategori_technical"]!=0){
-                                ?>
-                                  <tr class="text-center">
-                                    <td><?php echo $index; ?></td>
-                                    <td><?php echo $row["poin"]; ?></td>
-                                    <td><?php echo $row["nilai"]; ?></td>
-                                    <td><?php echo $row["tanggal_training"]; ?></td>
-                                    <td>
-                                      <button type="button" class="btn btn-warning info-dataNilaiSafety-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiSafetyOperatorModal" id_nilaiSafetyOperatotInfo="<?php echo $rowTampilData["id_score_safety"];?>">
-                                        <i class="fas fa-info-circle"></i>
-                                        <span>Detail Nilai</span>
-                                      </button>
-                                    </td>
-                                  </tr>
-                                <?php
-                              }
-                              else if(tampilScoreTechnicalOperator($con, $row["kategori_technical"]==0){
-                                ?>
-                                  <tr class="text-center">
-                                    <td><?php echo $index; ?></td>
-                                    <td><?php echo $row["poin"]; ?></td>
-                                    <td><?php echo $row["nilai"]; ?></td>
-                                    <td><?php echo $row["tanggal_training"]; ?></td>
-                                    <td>
-                                      <button type="button" class="btn btn-warning info-dataNilaiSafety-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiSafetyOperatorModal" id_nilaiSafetyOperatotInfo="<?php echo $rowTampilData["id_score_safety"];?>">
-                                        <i class="fas fa-info-circle"></i>
-                                        <span>Detail Nilai</span>
-                                      </button>
-                                    </td>
-                                  </tr>
-                                <?php
-                              }
-                              $index++;
-                            }
+                    <?php
+                      if(mysqli_num_rows($result) > 0){
+                        $index=1;
+                          while($rowTampilData = mysqli_fetch_assoc($result)){
+                            if(tampilScoreTechnicalOperator($con, $idUser)!=NULL){
                       ?>
+                      <tr class="text-center">
+                        <td><?php echo $index; ?></td>
+                        <td><?php echo $rowTampilData["poin"]; ?></td>
+                        <td><?php echo $rowTampilData["nilai"]; ?></td>
+                        <td><?php echo $rowTampilData["kategori_technical"]; ?></td>
+                        <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
+                        <td>
+                          <button type="button" class="btn btn-warning info-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorInfo="<?php echo $rowTampilData["id_score_technical"];?>">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Detail Nilai</span>
+                          </button>
+                        </td>
+                      </tr>
+                      <?php
+                        } else if(tampilScoreTechnicalOperator($con, $idUser)==NULL){
+                      ?>
+                      <tr class="text-center">
+                        <td><?php echo $index; ?></td>
+                        <td><?php echo $rowTampilData["poin"]; ?></td>
+                        <td><?php echo $rowTampilData["nilai"]; ?></td>
+                        <td><?php echo $rowTampilData["kategori_technical"]; ?></td>
+                        <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
+                        <td>
+                        <button type="button" class="btn btn-warning info-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorInfo="<?php echo $rowTampilData["id_score_technical"];?>">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Detail Nilai</span>
+                          </button>
+                        </td>
+                      </tr>
+                      <?php
+                                                    }
+                                                $index++;
+                                                }
+                                                ?>
                     </tbody>
-                      <?php
-                        }   
-                        else{
-                      ?>
-                        <div class="text-center">
-                          <img src="../img/magnifier.svg" alt="pencarian" class="p-3">
-                          <p class="text-muted">Mahasiswa Tidak Ditemukan</p>
-                        </div>
-                      <?php
-                    }
-                  ?>
+                    <?php
+                                        } else{
+                                        ?>
+                                        <div class="text-center">
+                                            <img src="../img/magnifier.svg" alt="pencarian" class="p-3">
+                                            <p class="text-muted">Nilai Kategori Tidak Ditemukan</p>
+                                        </div>
+                                        <?php
+                                        }
+                                        ?>
                   </table>
-                <?php
-                } 
-                else{
-                  ?>
-                    <div class="text-center">
-                      <img src="../img/magnifier.svg" alt="pencarian" class="p-3">
-                      <p class="text-muted">Data Mahasiswa Per-Kelas Tidak Ditemukan</p>
-                    </div>
                   <?php
-                }
+            } else{
             ?>
+            <div class="text-center">
+                                        <img src="../img/magnifier.svg" alt="pencarian" class="p-3">
+                                        <p class="text-muted">Data Nilai Per-Kategori Tidak Ditemukan</p>
+                                    </div>
+                                    <?php
+                                    }
+                                    ?>
           </div>
           <div>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal fade" id="infoDataNilaiSafetyOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="infoDataNilaiTechnicalOnlineOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
-        <div class="modal-header d-flex justify-content-center bg-nilaiSafetyOperatorInfo border-0">
-          <h5 class="modal-title text-white w-100 text-center">Data Nilai Online Training Safety</h5>
+        <div class="modal-header d-flex justify-content-center bg-nilaiTechnicalOnlineOperatorInfo border-0">
+          <h5 class="modal-title text-white w-100 text-center">Data Nilai Online Training Technical Online</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div class="container-fluid" id="info-dataNilaiSafetyOperator"></div>
+          <div class="container-fluid" id="info-dataNilaiTechnicalOnlineOperator"></div>
         </div>
       </div>
     </div>

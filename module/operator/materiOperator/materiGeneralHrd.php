@@ -2,7 +2,6 @@
   include "../config/connection.php";
   include "../process/proses_materiGeneralHrdOperator.php";
 ?>
-
 <div class="container-fluid" id="materiOperator">
     <nav aria-label="breadcrumb" class="shadow">
         <ol class="breadcrumb">
@@ -73,11 +72,11 @@
                                                                 <?php
                                                             } 
                                                             else if($row["tipe"] == "link"){
-                                                            ?>
-                                                                <div class="embed-responsive embed-responsive-16by9 mb-3">
-                                                                    <iframe class="embed-responsive-item" src="<?= $row["file_materi"]?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                                </div>
-                                                            <?php
+                                                                ?>
+                                                                    <div class="embed-responsive embed-responsive-16by9 mb-3">
+                                                                        <iframe class="embed-responsive-item" src="<?= $row["file_materi"]?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                    </div>
+                                                                <?php
                                                             }
                                                         ?>
                                                     </div>

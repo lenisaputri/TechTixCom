@@ -15,6 +15,7 @@ include "../config/connection.php";
               <tr class="text-center">
                 <th>No.</th>
                 <th>Nik</th>
+                <th>Nama</th>
                 <th>Total Point</th>
                 <th>Total Nilai</th>
                 <th>Tanggal Training</th>
@@ -23,7 +24,7 @@ include "../config/connection.php";
             </thead>
               <tbody>
               <?php
-              $queryTampilData = "SELECT tsg.*, tp.id_operator, tp.nik FROM tabel_score_generalhrd tsg, tabel_operator tp WHERE tsg.id_operator = tp.id_operator;
+              $queryTampilData = "SELECT tsg.*, tp.id_operator, tp.nik, tp.nama AS nama_lengkap FROM tabel_score_generalhrd tsg, tabel_operator tp WHERE tsg.id_operator = tp.id_operator;
               ";
               $resultTampilData = mysqli_query($con, $queryTampilData);
               $index = 1;
@@ -34,6 +35,7 @@ include "../config/connection.php";
                     <tr class="text-center" id-score-generalHrd="<?php echo $rowTampilData["id_score_generalhrd"] ?>">
                       <td ><?php echo $index; ?></td>
                       <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
+                      <td class="kategoriMateri"><?php echo $rowTampilData["nama_lengkap"]; ?></td>
                       <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
                       <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                       <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>

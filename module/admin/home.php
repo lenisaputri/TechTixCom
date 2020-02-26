@@ -187,7 +187,7 @@
                         ?>
                           <div class="row">
                             <div class="col-lg-4">
-                            <center><img src="../attachment/img/<?php echo ($row['foto'] == null)? 'avatar.jpeg' : $row['foto'] ; ?>" height="250px" width="250px;"></center>
+                              <center><img src="../attachment/img/<?php echo ($row['foto'] == null)? 'avatar.jpeg' : $row['foto'] ; ?>" height="250px" width="250px;"></center>
                             </div>
                             <div class="col-lg-5">
                               <div class="p-5">
@@ -208,8 +208,8 @@
                           </div>
                         <?php
                       } 
-                      }
-                    ?>
-        </div>
-    </div>
+                    }
+                  ?>
+                </div>
+      </div>
 </div>

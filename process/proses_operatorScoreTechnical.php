@@ -16,4 +16,11 @@
         $resultTampilKategoriTechnical = mysqli_query($con, $tampilKategoriTechnical);
         return $resultTampilKategoriTechnical;
     }
+
+    function tampilScoreTechnicalOperator($con, $idUser){
+        $tampilScoreTechnicalOperator = "SELECT tst.*, tp.id_operator, tp.nik, tu.* FROM tabel_score_technical tst, 
+        tabel_operator tp, tabel_user tu WHERE tst.id_operator = tp.id_operator AND tu.username = tp.nik AND tu.id_user = '$idUser'";
+        $resultTampilScoreTechnicalOperator = mysqli_query($con, $tampilScoreTechnicalOperator);
+        return $resultTampilScoreTechnicalOperator;
+    }
 ?>

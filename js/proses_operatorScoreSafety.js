@@ -1,4 +1,3 @@
-
 $(".info-dataNilaiSafety-operator").click(function () {
     var id_nilaiSafetyOperatotInfo = $(this).attr("id_nilaiSafetyOperatotInfo");
 

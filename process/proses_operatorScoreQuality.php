@@ -39,11 +39,12 @@
     }
 
     if(isset($_POST["infoDataScoreQualityOperator_idScoreQuality"])){
-        $infoScoreQuality = "SELECT tsq.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
-            FROM tabel_score_quality tsq, tabel_operator tp , tabel_jabatan tj 
-            WHERE tsq.id_operator = tp.id_operator 
-            AND tp.id_jabatan = tj.id_jabatan
-            AND tsq.id_score_quality = $_POST[infoDataScoreQualityOperator_idScoreQuality]";
+        $infoScoreQuality = "SELECT tsq.*, tsqd.*, tsqd.id_score_quality_detail,tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+        FROM tabel_score_quality tsq, tabel_operator tp , tabel_jabatan tj, tabel_score_quality_detail tsqd
+        WHERE tsq.id_operator = tp.id_operator 
+        AND tp.id_jabatan = tj.id_jabatan
+        AND tsq.id_score_quality = tsqd.id_score_quality
+        AND tsq.id_score_quality = $_POST[infoDataScoreQualityOperator_idScoreQuality]";
         $resultInfoScoreQuality = mysqli_query($con, $infoScoreQuality);
     
         if(mysqli_num_rows($resultInfoScoreQuality) > 0){
@@ -51,7 +52,12 @@
             ?>
                 <div class="form-group">
                     <div class="modal-footer border-0">
-                        <button class="btn btn-success"><i class="fa fa-print"></i> Cetak Nilai</button>
+                        <a class="btn btn-success" href="../process/proses_print_qualityOperator.php?id_score_quality_detail=<?=$rowInfoScoreQuality["id_score_quality_detail"]?>">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-fw fa-print"></i>
+                            </span>
+                            <span class="text">Cetak Nilai</span>
+                        </a>
                     </div>
                 </div>
                 <div class="row">
@@ -83,9 +89,9 @@
                                     <thead>
                                         <tr style="font-size: .8rem;">
                                             <th>No.</th>
-                                            <th>SMK3</th>
-                                            <th>EA-HIRA</th>
-                                            <th>MOVEMENT FORKLIFT</th>
+                                            <th>Food Safety System</th>
+                                            <th>GMP</th>
+                                            <th>Halal</th>
                                         </tr>
                                     </thead>
                                     <tbody>

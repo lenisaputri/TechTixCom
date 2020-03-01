@@ -1,8 +1,22 @@
 <?php
   include "../config/connection.php";
+  include "../process/proses_supervisorScoreGeneralHrd.php";
 ?>
+<body>
 <div class="container-fluid" id="generalHrd">
-  <h1 class="h3 mb-2 text-gray-800">Score Training General HRD</h1>
+<nav aria-label="breadcrumb" class="shadow">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
+            <span>Beranda</span>
+          </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <i class="fas fa-fw fa-users"></i>
+            <span>Data Score GeneralHRD</span>
+        </li>
+      </ol>
+    </nav>
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Hasil Nilai Training</h6>
@@ -39,12 +53,10 @@
                       <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                       <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                       <td>
-                        <button type="button" class="btn btn-warning info-dataScoreGeneralHrd-admin mb-2 mb-sm-0" onclick="location.href='index.php?module=generalHrdTableDetail';">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-info"></i>
-                          </span>
-                          <span class="text">Detail Score General HRD</span>
-                        </button>
+                      <button type="button" class="btn btn-warning info-dataNilaiGeneralHrd-supervisor mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiGeneralHrdSupervisorModal" id_nilaiGeneralHrdSupervisorInfo="<?php echo $rowTampilData["id_score_generalHrd"];?>">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Detail Nilai</span>
+                          </button>
                       </td>
                     </tr>
                   <?php
@@ -64,3 +76,19 @@
     </div>
   </div>
 </div>
+<div class="modal fade" id="infoDataNilaiGeneralHrdSupervisorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-nilaiGeneralHrdSupervisorInfo border-0">
+          <h5 class="modal-title text-white w-100 text-center">Data Nilai Online Training General Hrd</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" id="info-dataNilaiGeneralHrdSupervisor"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

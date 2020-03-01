@@ -23,7 +23,7 @@
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           <i class="fas fa-fw fa-users"></i>
-            <span>Data Score GeneralHRD</span>
+            <span>Data Nilai General HRD</span>
         </li>
       </ol>
     </nav>

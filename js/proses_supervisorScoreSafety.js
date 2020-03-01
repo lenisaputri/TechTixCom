@@ -1,14 +1,15 @@
-$(".info-detailScoreSafety-supervisor").click(function () {
-    var id_scoreSafetySupervisor = $(this).attr("id_scoreSafetySupervisor");
+$(".info-dataNilaiSafety-supervisor").click(function () {
+    var id_nilaiSafetySupervisorInfo = $(this).attr("id_nilaiSafetySupervisorInfo");
 
     $.ajax({
         url: "../process/proses_supervisorScoreSafety.php",
         method: "post",
         data: {
-            infoDetailScoreSafetySupervisor_idScoreSafety: id_scoreSafetySupervisor
+            infoDataScoreSafetySupervisor_idScoreSupervisor: id_nilaiSafetySupervisorInfo
         },
         success: function (data) {
-            $("#info-dataScoreSafety").html(data);
+            $("#info-dataNilaiSafetySupervisor").html(data);
+            $("#infoDataNilaiSafetySupervisorModal").modal("show");
         }
     });
 });

@@ -37,12 +37,12 @@ $pdf->Line(10,33,200,33);
 $pdf->Line(10,34,200,34);  
 $pdf->Ln(1);
 
-$query=mysqli_query($con,"SELECT tss.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan,tssd.* 
-FROM tabel_score_safety tss, tabel_operator tp , tabel_score_safety_detail tssd, tabel_jabatan tj 
-WHERE tss.id_operator = tp.id_operator 
+$query=mysqli_query($con,"SELECT tsq.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan,tsqd.* 
+FROM tabel_score_quality tsq, tabel_operator tp , tabel_score_quality_detail tsqd, tabel_jabatan tj 
+WHERE tsq.id_operator = tp.id_operator 
 AND tp.id_jabatan = tj.id_jabatan 
-AND tss.id_score_safety = tssd.id_score_safety 
-AND tssd.id_score_safety_detail = '".$_GET['id_score_safety_detail']."'");
+AND tsq.id_score_quality = tsqd.id_score_quality
+AND tsqd.id_score_quality_detail = '".$_GET['id_score_quality_detail']."'");
 while($row=mysqli_fetch_array($query)){
 
 
@@ -51,7 +51,7 @@ $pdf->Cell(189 ,10,'',0,1);//end of line
 
 //billing address
 $pdf->SetFont('Arial','B',12);
-$pdf->Cell(190 ,7,'HASIL NILAI SAFETY ONLINE TRAINING',0,1,'C');//end of line
+$pdf->Cell(190 ,7,'HASIL NILAI QUALITY ONLINE TRAINING',0,1,'C');//end of line
 $pdf->Cell(100 ,5,'',0,1);//end of line
 
 $pdf->SetFont('Arial','', 11);
@@ -90,48 +90,16 @@ $pdf->Cell(50,6,'NILAI PER-KATEGORI',1,1, 'C');
 
 $pdf->SetFont('Arial','',11);
 $pdf->Cell(15,6,'1',1,0, 'C');
-$pdf->Cell(125,6,'SMK3',1,0);
-$pdf->Cell(50,6,$row['smk3'],1,1, 'C');
+$pdf->Cell(125,6,'Food Safety System',1,0);
+$pdf->Cell(50,6,$row['fss'],1,1, 'C');
 
 $pdf->Cell(15,6,'2',1,0, 'C');
-$pdf->Cell(125,6,'EA-HIRA',1,0);
-$pdf->Cell(50,6,$row['ea_hira'],1,1, 'C');
+$pdf->Cell(125,6,'GMP',1,0);
+$pdf->Cell(50,6,$row['gmp'],1,1, 'C');
 
 $pdf->Cell(15,6,'3',1,0, 'C');
-$pdf->Cell(125,6,'MOVEMENT FORKLIFT',1,0);
-$pdf->Cell(50,6,$row['movement_forklift'],1,1, 'C');
-
-$pdf->Cell(15,6,'4',1,0, 'C');
-$pdf->Cell(125,6,'CONFINED SPACE',1,0);
-$pdf->Cell(50,6,$row['confined_space'],1,1, 'C'); 
-
-$pdf->Cell(15,6,'5',1,0, 'C');
-$pdf->Cell(125,6,'LOTO',1,0);
-$pdf->Cell(50,6,$row['loto'],1,1, 'C');
-
-$pdf->Cell(15,6,'6',1,0, 'C');
-$pdf->Cell(125,6,'APD',1,0);
-$pdf->Cell(50,6,$row['apd'],1,1, 'C');
-
-$pdf->Cell(15,6,'7',1,0, 'C');
-$pdf->Cell(125,6,'BBS',1,0);
-$pdf->Cell(50,6,$row['bbs'],1,1, 'C');
-
-$pdf->Cell(15,6,'8',1,0, 'C');
-$pdf->Cell(125,6,'FIRE FIGHTING',1,0);
-$pdf->Cell(50,6,$row['fire_fighting'],1,1, 'C');
-
-$pdf->Cell(15,6,'9',1,0, 'C');
-$pdf->Cell(125,6,'WAH',1,0);
-$pdf->Cell(50,6,$row['wah'],1,1, 'C');
-
-$pdf->Cell(15,6,'10',1,0, 'C');
-$pdf->Cell(125,6,'ENVIRONMENT',1,0);
-$pdf->Cell(50,6,$row['environment'],1,1, 'C');
-
-$pdf->Cell(15,6,'11',1,0, 'C');
-$pdf->Cell(125,6,'P3K',1,0);
-$pdf->Cell(50,6,$row['p3k'],1,1, 'C');
+$pdf->Cell(125,6,'Halal',1,0);
+$pdf->Cell(50,6,$row['halal'],1,1, 'C');
 
 //make a dummy empty cell as a vertical spacer
 $pdf->Cell(189 ,10,'',0,1);//end of line
@@ -141,5 +109,5 @@ $pdf->Cell(182,4,"Di Cetak Pada : ".date("D-d/m/Y"),0,0,'R');
 
 }
 
-$pdf->Output("Laporan-Nilai-Safety-Online-Training.pdf","I");
+$pdf->Output("Laporan-Nilai-Quality-Online-Training.pdf","I");
 ?>

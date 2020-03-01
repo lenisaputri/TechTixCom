@@ -39,11 +39,12 @@
     }
 
     if(isset($_POST["infoDataScoreGeneralHrdOperator_idScoreGeneralHrd"])){
-        $infoScoreGeneralHrd = "SELECT tsg.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
-            FROM tabel_score_generalHrd tsg, tabel_operator tp , tabel_jabatan tj 
-            WHERE tsg.id_operator = tp.id_operator 
-            AND tp.id_jabatan = tj.id_jabatan
-            AND tsg.id_score_generalHrd = $_POST[infoDataScoreGeneralHrdOperator_idScoreGeneralHrd]";
+        $infoScoreGeneralHrd = "SELECT tsg.*, tsgd.*, tsgd.id_score_generalHrd_detail ,tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+        FROM tabel_score_generalHrd tsg, tabel_operator tp , tabel_jabatan tj, tabel_score_generalHrd_detail tsgd
+        WHERE tsg.id_operator = tp.id_operator 
+        AND tp.id_jabatan = tj.id_jabatan
+        AND tsg.id_score_generalHrd = tsgd.id_score_generalHrd
+        AND tsg.id_score_generalHrd = $_POST[infoDataScoreGeneralHrdOperator_idScoreGeneralHrd]";
         $resultInfoScoreGeneralHrd = mysqli_query($con, $infoScoreGeneralHrd);
     
         if(mysqli_num_rows($resultInfoScoreGeneralHrd) > 0){
@@ -51,7 +52,12 @@
             ?>
                 <div class="form-group">
                     <div class="modal-footer border-0">
-                        <button class="btn btn-success"><i class="fa fa-print"></i> Cetak Nilai</button>
+                        <a class="btn btn-success" href="../process/proses_print_generalHrdOperator.php?id_score_generalHrd_detail=<?=$rowInfoScoreGeneralHrd["id_score_generalHrd_detail"]?>">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-fw fa-print"></i>
+                            </span>
+                            <span class="text">Cetak Nilai</span>
+                        </a>
                     </div>
                 </div>
                 <div class="row">
@@ -83,9 +89,9 @@
                                     <thead>
                                         <tr style="font-size: .8rem;">
                                             <th>No.</th>
-                                            <th>SMK3</th>
-                                            <th>EA-HIRA</th>
-                                            <th>MOVEMENT FORKLIFT</th>
+                                            <th>Code Of Conduct</th>
+                                            <th>PKB & Compensation And Benefit</th>
+                                            <th>Peraturan Perusahaan</th>
                                         </tr>
                                     </thead>
                                     <tbody>

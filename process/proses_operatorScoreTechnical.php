@@ -33,11 +33,12 @@
     }
 
     if(isset($_POST["infoDataScoreTechnicalOnlineOperator_idScoreTechnicalOnline"])){
-        $infoScoreTechnicalOnline = "SELECT tst.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
-            FROM tabel_score_technical tst, tabel_operator tp , tabel_jabatan tj 
-            WHERE tst.id_operator = tp.id_operator 
-            AND tp.id_jabatan = tj.id_jabatan
-            AND tst.id_score_technical = $_POST[infoDataScoreTechnicalOnlineOperator_idScoreTechnicalOnline]";
+        $infoScoreTechnicalOnline = "SELECT tst.*, tstd.*, tstd.id_score_technical_detail,tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+        FROM tabel_score_technical tst, tabel_operator tp , tabel_jabatan tj, tabel_score_technical_detail tstd
+        WHERE tst.id_operator = tp.id_operator 
+        AND tp.id_jabatan = tj.id_jabatan
+        AND tst.id_score_technical = tstd.id_score_technical
+        AND tst.id_score_technical = $_POST[infoDataScoreTechnicalOnlineOperator_idScoreTechnicalOnline]";
         $resultInfoScoreTechnicalOnline = mysqli_query($con, $infoScoreTechnicalOnline);
     
         if(mysqli_num_rows($resultInfoScoreTechnicalOnline) > 0){
@@ -45,7 +46,12 @@
             ?>
                 <div class="form-group">
                     <div class="modal-footer border-0">
-                        <button class="btn btn-success"><i class="fa fa-print"></i> Cetak Nilai</button>
+                        <a class="btn btn-success" href="../process/proses_print_technicalOperator.php?id_score_technical_detail=<?=$rowInfoScoreTechnicalOnline["id_score_technical_detail"]?>">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-fw fa-print"></i>
+                            </span>
+                            <span class="text">Cetak Nilai</span>
+                        </a>
                     </div>
                 </div>
                 <div class="row">
@@ -77,11 +83,11 @@
                                     <thead>
                                         <tr style="font-size: .8rem;">
                                             <th>No.</th>
-                                            <th>SMK3</th>
-                                            <th>EQUIPMENT</th>
-                                            <th>OPERATIONAL</th>
-                                            <th>CONFINED SPACE</th>
-                                            <th>LOTO</th>
+                                            <th>Safety Procedure</th>
+                                            <th>Equipment List</th>
+                                            <th>Operasional Parameter</th>
+                                            <th>Maintenance Parameter</th>
+                                            <th>Trouble Shooting</th>
                                         </tr>
                                     </thead>
                                     <tbody>

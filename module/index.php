@@ -352,6 +352,9 @@
                   case "technical":
                     include "supervisor/technical.php";
                     break;
+                  case "technicalNilaiOnlineTraining":
+                    include "supervisor/technical/technicalOnlineTable.php";
+                    break;
                   default:
                     include "404.php";
                 }

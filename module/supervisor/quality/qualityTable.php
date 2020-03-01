@@ -1,9 +1,24 @@
 <?php
 include "../config/connection.php";
+include "../process/proses_supervisorScoreQuality.php";
 ?>
 
+<body>
 <div class="container-fluid" id="quality">
-  <h1 class="h3 mb-2 text-gray-800">Score Training Quality</h1>
+<nav aria-label="breadcrumb" class="shadow">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="index.php?module=home" >
+        <i class="fas fa-fw fa-home"></i>
+        <span>Beranda</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <i class="fas fa-fw fa-certificate"></i>
+        <span>Data Score Quality</span>
+    </li>
+  </ol>
+</nav>
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Hasil Nilai Training</h6>
@@ -40,12 +55,10 @@ include "../config/connection.php";
                       <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                       <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                       <td>
-                        <button type="button" class="btn btn-warning info-dataScoreQuality-admin mb-2 mb-sm-0" onclick="location.href='index.php?module=qualityTableDetail';">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-info"></i>
-                          </span>
-                          <span class="text">Detail Score Quality</span>
-                        </button>
+                      <button type="button" class="btn btn-warning info-dataNilaiQuality-supervisor mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiQualitySupervisorModal" id_nilaiQualitySupervisorInfo="<?php echo $rowTampilData["id_score_quality"];?>">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Detail Nilai</span>
+                          </button>
                       </td>
                     </tr>
                   <?php
@@ -65,3 +78,19 @@ include "../config/connection.php";
     </div>
   </div>
 </div>
+<div class="modal fade" id="infoDataNilaiQualitySupervisorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-nilaiQualitySupervisorInfo border-0">
+          <h5 class="modal-title text-white w-100 text-center">Data Nilai Online Training Quality</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" id="info-dataNilaiQualitySupervisor"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+            </body>

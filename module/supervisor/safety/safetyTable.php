@@ -1,9 +1,22 @@
 <?php
 include "../config/connection.php";
+include "../process/proses_supervisorScoreSafety.php";
 ?>
-
+<body>
 <div class="container-fluid" id="safety">
-  <h1 class="h3 mb-2 text-gray-800">Score Training Safety</h1>
+<nav aria-label="breadcrumb" class="shadow">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.php?module=home" ><i class="fas fa-fw fa-home"></i>
+            <span>Beranda</span>
+          </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <i class="fas fa-fw fa-shield-alt"></i>
+          <span>Data Nilai Safety</span>
+        </li>
+      </ol>
+    </nav>
   <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Hasil Nilai Training</h6>
@@ -40,12 +53,10 @@ include "../config/connection.php";
                       <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                       <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                       <td>
-                        <a type="button" class="btn btn-warning info-detailScoreSafety-supervisor mb-2 mb-sm-0" href="index.php?module=safetyTableDetail"  id_scoreSafetySupervisor="<?php echo $rowTampilData["id_scoreSafetySupervisor"];?>">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-info"></i>
-                          </span>
-                          <span class="text">Detail Score Safety</span>
-                        </a>
+                        <button type="button" class="btn btn-warning info-dataNilaiSafety-supervisor mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiSafetySupervisorModal" id_nilaiSafetySupervisorInfo="<?php echo $rowTampilData["id_score_safety"];?>">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Detail Nilai</span>
+                          </button>
                       </td>
                     </tr>
                   <?php
@@ -65,3 +76,19 @@ include "../config/connection.php";
     </div>
   </div>
 </div>
+<div class="modal fade" id="infoDataNilaiSafetySupervisorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-nilaiSafetySupervisorInfo border-0">
+          <h5 class="modal-title text-white w-100 text-center">Data Nilai Online Training Safety</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" id="info-dataNilaiSafetySupervisor"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

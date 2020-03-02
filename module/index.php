@@ -235,6 +235,21 @@
           </div>
         </li>
         <hr class="sidebar-divider">
+       <div class="sidebar-heading">TECHNICAL PRAKTEK & OBSERVASI</div>      
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTechnical" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-cogs"></i>
+            <span>Praktek & Observasi</span>
+          </a>        
+          <div id="collapseTechnical" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="index.php?module=technicalNilaiPraktek">Data Nilai Praktek</a>
+              <a class="collapse-item" href="index.php?module=technicalNilaiObservasi">Data Nilai Observasi</a>
+              <div class="collapse-divider"></div>
+            </div>
+          </div>
+        </li>
+        <hr class="sidebar-divider">
         <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
@@ -370,6 +385,13 @@
                     include "admin/jabatan/jabatan.php";
                     break;
 
+                  case "technicalNilaiObservasi":
+                    include "admin/dataScoreTechnical/technicalScoreObservasi.php";
+                    break;
+                  case "technicalNilaiPraktek":
+                    include "admin/dataScoreTechnical/technicalScorePraktek.php";
+                    break;
+
                   case "dataMateriSafety":
                     include "admin/materiTraining/dataMateriSafety.php";
                     break;
@@ -397,9 +419,6 @@
                   case "dataScoreSafetyDetail":
                     include "admin/dataScoreDetail/dataScoreSafetyDetail.php";
                     break;
-                  case "dataScoreSafetyDetailImport":
-                    include "admin/dataScoreDetail/dataScoreSafetyDetailImport.php";
-                    break;
                   case "dataScoreQualityDetail":
                     include "admin/dataScoreDetail/dataScoreQualityDetail.php";
                     break;
@@ -420,9 +439,6 @@
                     break;
                   case "dataMateriTechnicalLink":
                     include "admin/materiTraining/dataMateriTechnicalLink.php";
-                    break;
-                  case "dataScoreSafetyImport":
-                    include "admin/dataScore/dataScoreSafetyImport.php";
                     break;
                   default:
                     include "404.php";

@@ -127,7 +127,10 @@
         } 
         else {
             ?> 
-                <div class="text-center text-muted">Data Tidak Ditemukan</div>
+                <div class='text-center col-md-12'>
+                    <img src='../img/magnifier.svg' alt='pencarian' class='p-3'>
+                    <div class="text-center text-muted">Data Tidak Ditemukan</div>
+                </div>
             <?php
         }
         ?>                
@@ -173,7 +176,10 @@
         } 
         else {
             ?> 
-                <div class="text-center text-muted">Data Tidak Ditemukan</div>
+                <div class='text-center col-md-12'>
+                    <img src='../img/magnifier.svg' alt='pencarian' class='p-3'>
+                    <div class="text-center text-muted">Data Tidak Ditemukan</div>
+                </div>
             <?php
         }
         ?>                

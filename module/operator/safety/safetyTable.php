@@ -64,7 +64,7 @@
                             <span>Detail Nilai</span>
                           </button>
                           <button type="button" class="btn btn-danger spider-dataNilaiSafety-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiSafetyOperatorModal" id_nilaiSafetyOperatorSpider="<?php echo $rowTampilData["id_score_safety"];?>">
-                            <i class="fas fa-info-circle"></i>
+                          <i class="fas fa-pie-chart"></i>
                             <span>Spider Chart</span>
                           </button>
                         </td>

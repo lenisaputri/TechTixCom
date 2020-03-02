@@ -13,3 +13,19 @@ $(".info-dataNilaiQuality-supervisor").click(function () {
         }
     });
 });
+
+$(".spider-dataNilaiQuality-supervisor").click(function () {
+    var id_nilaiQualitySupervisorSpider = $(this).attr("id_nilaiQualitySupervisorSpider");
+
+    $.ajax({
+        url: "../process/proses_supervisorScoreQuality.php",
+        method: "post",
+        data: {
+            spiderDataScoreQualitySupervisor_idScoreQuality: id_nilaiQualitySupervisorSpider
+        },
+        success: function (data) {
+            $("#spider-dataNilaiQualitySupervisor").html(data);
+            $("#spiderDataNilaiQualitySupervisorModal").modal("show");
+        }
+    });
+});

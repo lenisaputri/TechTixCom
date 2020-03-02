@@ -110,42 +110,42 @@
             <hr class="sidebar-divider">
             <div class="sidebar-heading">Nilai Assasment</div>
               <li class="nav-item">
-                <a class="nav-link" href="index.php?module=safetyTable">
+                <a class="nav-link" href="index.php?module=safetyTable"  data-toggle="collapse" data-target="#collapseSafety" aria-expanded="true" aria-controls="collapseTwo">
                   <i class="fas fa-fw fa-shield-alt"></i>
                   <span>Nilai Safety</span>
                 </a>
-                <!-- <div id="collapseSafety" class="collapse" aria-labelledby="headingSafety" data-parent="#accordionSidebar">
+                <div id="collapseSafety" class="collapse" aria-labelledby="headingSafety" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="index.php?module=safetyTable">Tabel Nilai Online Training</a>
                     <a class="collapse-item" href="index.php?module=safetySpider">Spider Nilai Safety</a>
                     <div class="collapse-divider"></div>
                   </div>
-                </div> -->
+                </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link collapsed" href="index.php?module=generalHrdTable">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGeneralHRD" aria-expanded="true" aria-controls="collapseTwo">
                   <i class="fas fa-fw fa-users"></i>
                   <span>Nilai General HRD</span>
                 </a>
-                <!-- <div id="collapseGeneralHRD" class="collapse" aria-labelledby="headingGeneralHRD" data-parent="#accordionSidebar">
+                <div id="collapseGeneralHRD" class="collapse" aria-labelledby="headingGeneralHRD" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="index.php?module=generalHrdTable">Tabel Nilai Online Training</a>
                     <a class="collapse-item" href="index.php?module=generalHrdSpider">Spider Nilai General HRD</a>
                     <div class="collapse-divider"></div>
                   </div>
-                </div> -->
+                </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.php?module=qualityTable">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQuality" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-certificate"></i>
                 <span>Nilai Quality</span></a>
-                <!-- <div id="collapseQuality" class="collapse" aria-labelledby="headingQuality" data-parent="#accordionSidebar">
+                <div id="collapseQuality" class="collapse" aria-labelledby="headingQuality" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="index.php?module=qualityTable">Tabel Nilai Online Training</a>
                     <a class="collapse-item" href="index.php?module=qualitySpider">Spider Nilai Quality</a>
                     <div class="collapse-divider"></div>
                   </div>
-                </div> -->
+                </div>
               </li>      
               <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTechnical" aria-expanded="true" aria-controls="collapseTwo">
@@ -153,9 +153,9 @@
                 <span>Nilai Technical</span></a>
                 <div id="collapseTechnical" class="collapse" aria-labelledby="headingTechnical" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="index.php?module=technicalNilaiObservasi">Tabel Nilai Observasi</a>
+                    <a class="collapse-item" href="index.php?module=technicalNilaiOnlineTraining">Tabel Nilai Observasi</a>
                     <a class="collapse-item" href="index.php?module=technicalNilaiOnlineTraining">Tabel Nilai Online Training</a>
-                    <a class="collapse-item" href="index.php?module=technicalNilaiPraktek">Tabel Nilai Praktek</a>
+                    <a class="collapse-item" href="index.php?module=###">Tabel Nilai Praktek</a>
                     <div class="collapse-divider"></div>
                   </div>
                 </div>
@@ -278,19 +278,28 @@
                   case "safetyTable":
                     include "operator/safety/safetyTable.php";
                     break;
+                  case "safetySpider":
+                    include "operator/safety/safetySpider.php";
+                    break;
                   case "generalHrdTable":
                     include "operator/generalHrd/generalHrdTable.php";
+                    break;
+                  case "generalHrdSpider":
+                    include "operator/generalHrd/generalHrdSpider.php";
                     break;
                   case "qualityTable":
                     include "operator/quality/qualityTable.php";
                     break;
-                  case "technicalNilaiObservasi":
+                  case "qualitySpider":
+                    include "operator/quality/qualitySpider.php";
+                    break;
+                  case "technical":
                     include "operator/technical/technicalScoreObservasi.php";
                     break;
                   case "technicalNilaiOnlineTraining":
                     include "operator/technical/technicalOnlineTable.php";
                     break;
-                  case "technicalNilaiPraktek":
+                  case "technical":
                     include "operator/technical/technicalScorePraktek.php";
                     break;
                   case "materiSafety":
@@ -316,11 +325,17 @@
                   case "safetyTable":
                     include "supervisor/safety/safetyTable.php";
                     break;
+                  case "safetySpider":
+                    include "supervisor/safety/safetySpider.php";
+                    break;
                   case "safetyTableDetail":
                     include "supervisor/safety/safetyTableDetail.php";
                     break;
                   case "generalHrdTable":
                     include "supervisor/generalHrd/generalHrdTable.php";
+                    break;
+                  case "generalHrdSpider":
+                    include "supervisor/generalHrd/generalHrdSpider.php";
                     break;
                   case "generalHrdTableDetail":
                     include "supervisor/generalHrd/generalHrdTableDetail.php";
@@ -328,17 +343,17 @@
                   case "qualityTable":
                     include "supervisor/quality/qualityTable.php";
                     break;
+                  case "qualitySpider":
+                    include "supervisor/quality/qualitySpider.php";
+                    break;
                   case "qualityTableDetail":
                     include "supervisor/quality/qualityTableDetail.php";
                     break;
-                  case "technicalNilaiObservasi":
-                    include "supervisor/technical/technicalScoreObservasi.php";
+                  case "technical":
+                    include "supervisor/technical.php";
                     break;
                   case "technicalNilaiOnlineTraining":
                     include "supervisor/technical/technicalOnlineTable.php";
-                    break;
-                  case "technicalNilaiPraktek":
-                    include "supervisor/technical/technicalScorePraktek.php";
                     break;
                   default:
                     include "404.php";

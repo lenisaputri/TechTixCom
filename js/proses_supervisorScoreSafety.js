@@ -13,3 +13,19 @@ $(".info-dataNilaiSafety-supervisor").click(function () {
         }
     });
 });
+
+$(".spider-dataNilaiSafety-supervisor").click(function () {
+    var id_nilaiSafetySupervisorSpider = $(this).attr("id_nilaiSafetySupervisorSpider");
+
+    $.ajax({
+        url: "../process/proses_supervisorScoreSafety.php",
+        method: "post",
+        data: {
+            spiderDataScoreSafetySupervisor_idScoreSafety: id_nilaiSafetySupervisorSpider
+        },
+        success: function (data) {
+            $("#spider-dataNilaiSafetySupervisor").html(data);
+            $("#spiderDataNilaiSafetySupervisorModal").modal("show");
+        }
+    });
+});

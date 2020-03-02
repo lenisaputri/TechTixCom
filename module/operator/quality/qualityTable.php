@@ -70,7 +70,7 @@ include "../process/proses_operatorScoreQuality.php";
                                                     <span>Detail Nilai</span>
                                                 </button>
                                                 <button type="button" class="btn btn-danger spider-dataNilaiQuality-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiQualityOperatorModal" id_nilaiQualityOperatorSpider="<?php echo $rowTampilData["id_score_quality"];?>">
-                            <i class="fas fa-info-circle"></i>
+                                                <i class="fas fa-pie-chart"></i>
                             <span>Spider Chart</span>
                           </button>
             </td>

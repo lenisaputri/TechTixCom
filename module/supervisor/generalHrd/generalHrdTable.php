@@ -2,6 +2,9 @@
   include "../config/connection.php";
   include "../process/proses_supervisorScoreGeneralHrd.php";
 ?>
+<head>
+<script src="../vendor/chart.js/Chart.min.js"></script>
+</head>
 <body>
 <div class="container-fluid" id="generalHrd">
 <nav aria-label="breadcrumb" class="shadow">
@@ -57,6 +60,10 @@
                             <i class="fas fa-info-circle"></i>
                             <span>Detail Nilai</span>
                           </button>
+                          <button type="button" class="btn btn-danger spider-dataNilaiGeneralHrd-supervisor mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiGeneralHrdSupervisorModal" id_nilaiGeneralHrdSupervisorSpider="<?php echo $rowTampilData["id_score_generalHrd"];?>">
+                          <i class="fas fa-pie-chart"></i>
+                            <span>Spider Chart</span>
+                          </button>
                       </td>
                     </tr>
                   <?php
@@ -87,6 +94,21 @@
         </div>
         <div class="modal-body">
           <div class="container-fluid" id="info-dataNilaiGeneralHrdSupervisor"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="spiderDataNilaiGeneralHrdSupervisorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-nilaiGeneralHrdSupervisorSpider border-0">
+          <h5 class="modal-title text-white w-100 text-center">Spider Online Training General Hrd</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" id="spider-dataNilaiGeneralHrdSupervisor"></div>
         </div>
       </div>
     </div>

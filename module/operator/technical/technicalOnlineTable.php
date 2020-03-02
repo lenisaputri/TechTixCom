@@ -108,7 +108,7 @@ include "../process/proses_operatorScoreTechnical.php";
                             <span>Detail Nilai</span>
                           </button>
                           <button type="button" class="btn btn-danger spider-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorSpider="<?php echo $rowTampilData["id_score_technical"];?>">
-                            <i class="fas fa-info-circle"></i>
+                          <i class="fas fa-pie-chart"></i>
                             <span>Spider Chart</span>
                           </button>
                         </td>
@@ -128,7 +128,7 @@ include "../process/proses_operatorScoreTechnical.php";
                             <span>Detail Nilai</span>
                           </button>
                           <button type="button" class="btn btn-danger spider-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorSpider="<?php echo $rowTampilData["id_score_technical"];?>">
-                            <i class="fas fa-info-circle"></i>
+                          <i class="fas fa-pie-chart"></i>
                             <span>Spider Chart</span>
                           </button>
                         </td>

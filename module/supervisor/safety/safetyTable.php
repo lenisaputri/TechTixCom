@@ -2,6 +2,9 @@
 include "../config/connection.php";
 include "../process/proses_supervisorScoreSafety.php";
 ?>
+<head>
+<script src="../vendor/chart.js/Chart.min.js"></script>
+</head>
 <body>
 <div class="container-fluid" id="safety">
 <nav aria-label="breadcrumb" class="shadow">
@@ -57,6 +60,10 @@ include "../process/proses_supervisorScoreSafety.php";
                             <i class="fas fa-info-circle"></i>
                             <span>Detail Nilai</span>
                           </button>
+                          <button type="button" class="btn btn-danger spider-dataNilaiSafety-supervisor mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiSafetySupervisorModal" id_nilaiSafetySupervisorSpider="<?php echo $rowTampilData["id_score_safety"];?>">
+                          <i class="fas fa-pie-chart"></i>
+                            <span>Spider Chart</span>
+                          </button>
                       </td>
                     </tr>
                   <?php
@@ -87,6 +94,21 @@ include "../process/proses_supervisorScoreSafety.php";
         </div>
         <div class="modal-body">
           <div class="container-fluid" id="info-dataNilaiSafetySupervisor"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="spiderDataNilaiSafetySupervisorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-nilaiSafetySupervisorSpider border-0">
+          <h5 class="modal-title text-white w-100 text-center">Spider Online Training Safety</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" id="spider-dataNilaiSafetySupervisor"></div>
         </div>
       </div>
     </div>

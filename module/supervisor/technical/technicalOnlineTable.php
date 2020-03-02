@@ -2,6 +2,9 @@
 include "../config/connection.php";
 include "../process/proses_supervisorScoreTechnical.php";
 ?>
+<head>
+<script src="../vendor/chart.js/Chart.min.js"></script>
+</head>
 <body>
   <div class="container-fluid" id="technical">
     <nav aria-label="breadcrumb" class="shadow">
@@ -56,10 +59,14 @@ include "../process/proses_supervisorScoreTechnical.php";
                                                 <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                                                 <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                                                 <td> 
-                                                <button type="button" class="btn btn-warning info-dataNilaiTechnicalOnline-supervisor mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiTechnicalOnlineSupervisorModal" id_nilaiTechnicalOnlineSupervisorInfo="<?php echo $rowTampilData["id_score_technical"];?>">
-                            <i class="fas fa-info-circle"></i>
-                            <span>Detail Nilai</span>
-                          </button>
+                                                  <button type="button" class="btn btn-warning info-dataNilaiTechnicalOnline-supervisor mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiTechnicalOnlineSupervisorModal" id_nilaiTechnicalOnlineSupervisorInfo="<?php echo $rowTampilData["id_score_technical"];?>">
+                                                    <i class="fas fa-info-circle"></i>
+                                                    <span>Detail Nilai</span>
+                                                  </button>
+                                                  <button type="button" class="btn btn-danger spider-dataNilaiTechnicalOnline-supervisor mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiTechnicalOnlineSupervisorModal" id_nilaiTechnicalOnlineSupervisorSpider="<?php echo $rowTampilData["id_score_technical"];?>">
+                                                    <i class="fas fa-pie-chart"></i>
+                                                    <span>Spider Chart</span>
+                                                  </button>
                                                 </td>
                                             </tr>
                                         <?php 
@@ -92,6 +99,21 @@ include "../process/proses_supervisorScoreTechnical.php";
         </div>
         <div class="modal-body">
           <div class="container-fluid" id="info-dataNilaiTechnicalOnlineSupervisor"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="spiderDataNilaiTechnicalOnlineSupervisorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-nilaiTechnicalOnlineSupervisorSpider border-0">
+          <h5 class="modal-title text-white w-100 text-center">Spider Online Training Technical Online</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" id="spider-dataNilaiTechnicalOnlineSupervisor"></div>
         </div>
       </div>
     </div>

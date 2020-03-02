@@ -13,3 +13,19 @@ $(".info-dataNilaiTechnicalOnline-supervisor").click(function () {
         }
     });
 });
+
+$(".spider-dataNilaiTechnicalOnline-supervisor").click(function () {
+    var id_nilaiTechnicalOnlineSupervisorSpider = $(this).attr("id_nilaiTechnicalOnlineSupervisorSpider");
+
+    $.ajax({
+        url: "../process/proses_supervisorScoreTechnical.php",
+        method: "post",
+        data: {
+            spiderDataScoreTechnicalOnlineSupervisor_idScoreTechnicalOnline: id_nilaiTechnicalOnlineSupervisorSpider
+        },
+        success: function (data) {
+            $("#spider-dataNilaiTechnicalOnlineSupervisor").html(data);
+            $("#spiderDataNilaiTechnicalOnlineSupervisorModal").modal("show");
+        }
+    });
+});

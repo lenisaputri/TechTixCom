@@ -124,7 +124,10 @@
         } 
         else {
             ?> 
+            <div class='text-center col-md-12'>
+                <img src='../img/magnifier.svg' alt='pencarian' class='p-3'>
                 <div class="text-center text-muted">Data Tidak Ditemukan</div>
+            </div>
             <?php
         }
         ?>                
@@ -132,6 +135,52 @@
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
                 </div>
+            </div>
+        <?php
+    }  
+
+    if(isset($_POST["spiderDataScoreTechnicalOnlineOperator_idScoreTechnicalOnline"])){
+        $spiderScoreGeneralHrd = "SELECT tst.*, tstd.*, tstd.id_score_technical_detail,tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+        FROM tabel_score_technical tst, tabel_operator tp , tabel_jabatan tj, tabel_score_technical_detail tstd
+        WHERE tst.id_operator = tp.id_operator 
+        AND tp.id_jabatan = tj.id_jabatan
+        AND tst.id_score_technical = tstd.id_score_technical
+        AND tst.id_score_technical = $_POST[spiderDataScoreTechnicalOnlineOperator_idScoreTechnicalOnline]";
+        $resultSpiderScoreGeneralHrd = mysqli_query($con, $spiderScoreGeneralHrd);
+    
+        if(mysqli_num_rows($resultSpiderScoreGeneralHrd) > 0){
+        $rowSpiderScoreGeneralHrd=mysqli_fetch_assoc($resultSpiderScoreGeneralHrd);
+            ?>
+             <canvas id="marksChartGeneralHrdOperator"></canvas>
+                <script>
+                var marksCanvas = document.getElementById("marksChartGeneralHrdOperator");
+                
+                var marksData = {
+                  labels: ["Safety Procedure", "Equipment List", "Operasional Parameter", "Maintenance Parameter", "Trouble Shooting", "", ""],
+                  datasets: [{
+                    label: [<?php echo '"' . $rowSpiderScoreGeneralHrd['tanggal_training'] . '"';?>],
+                    backgroundColor: "rgba(200,0,0,0.2)",
+                    data: [<?php echo '"' . $rowSpiderScoreGeneralHrd['sftp'] . '","' . $rowSpiderScoreGeneralHrd['equipment'] . '","' . $rowSpiderScoreGeneralHrd['operational'] . '","' . $rowSpiderScoreGeneralHrd['mainten'] . '","' . $rowSpiderScoreGeneralHrd['trouble'] . '"';?>]
+                  }]
+                  };
+                  
+                  var radarChart = new Chart(marksCanvas, {
+                    type: 'radar',
+                    data: marksData
+                  });
+                </script>
+            <?php
+        } 
+        else {
+            ?> 
+            <div class='text-center col-md-12'>
+                <img src='../img/magnifier.svg' alt='pencarian' class='p-3'>
+                <div class="text-center text-muted">Data Tidak Ditemukan</div>
+            </div>
+            <?php
+        }
+        ?>                
+            <div class="form-group">
             </div>
         <?php
     }  

@@ -13,3 +13,19 @@ $(".info-dataNilaiGeneralHrd-operator").click(function () {
         }
     });
 });
+
+$(".spider-dataNilaiGeneralHrd-operator").click(function () {
+    var id_nilaiGeneralHrdOperatorSpider = $(this).attr("id_nilaiGeneralHrdOperatorSpider");
+
+    $.ajax({
+        url: "../process/proses_operatorScoreGeneralHrd.php",
+        method: "post",
+        data: {
+            spiderDataScoreGeneralHrdOperator_idScoreGeneralHrd: id_nilaiGeneralHrdOperatorSpider
+        },
+        success: function (data) {
+            $("#spider-dataNilaiGeneralHrdOperator").html(data);
+            $("#spiderDataNilaiGeneralHrdOperatorModal").modal("show");
+        }
+    });
+});

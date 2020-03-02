@@ -2,7 +2,9 @@
 include "../config/connection.php";
 include "../process/proses_operatorScoreQuality.php";
 ?>
-
+<head>
+<script src="../vendor/chart.js/Chart.min.js"></script>
+</head>
 <body>
 <!-- Begin Page Content -->
 <div class="container-fluid" id="safety">
@@ -67,6 +69,10 @@ include "../process/proses_operatorScoreQuality.php";
                                                     <i class="fas fa-info-circle"></i>
                                                     <span>Detail Nilai</span>
                                                 </button>
+                                                <button type="button" class="btn btn-danger spider-dataNilaiQuality-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiQualityOperatorModal" id_nilaiQualityOperatorSpider="<?php echo $rowTampilData["id_score_quality"];?>">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Spider Chart</span>
+                          </button>
             </td>
           </tr>
           <?php
@@ -105,6 +111,21 @@ include "../process/proses_operatorScoreQuality.php";
             </div>
         </div>
     </div>
+    <div class="modal fade" id="spiderDataNilaiQualityOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-nilaiQualityOperatorSpider border-0">
+          <h5 class="modal-title text-white w-100 text-center">Spider Online Training Quality</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" id="spider-dataNilaiQualityOperator"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 <!-- /.container-fluid -->
 
 </body>

@@ -2,6 +2,9 @@
 include "../config/connection.php";
 include "../process/proses_operatorScoreTechnical.php";
 ?>
+<head>
+<script src="../vendor/chart.js/Chart.min.js"></script>
+</head>
 <body>
   <div class="container-fluid" id="technical">
     <?php 
@@ -104,6 +107,10 @@ include "../process/proses_operatorScoreTechnical.php";
                             <i class="fas fa-info-circle"></i>
                             <span>Detail Nilai</span>
                           </button>
+                          <button type="button" class="btn btn-danger spider-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorSpider="<?php echo $rowTampilData["id_score_technical"];?>">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Spider Chart</span>
+                          </button>
                         </td>
                       </tr>
                       <?php
@@ -119,6 +126,10 @@ include "../process/proses_operatorScoreTechnical.php";
                         <button type="button" class="btn btn-warning info-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorInfo="<?php echo $rowTampilData["id_score_technical"];?>">
                             <i class="fas fa-info-circle"></i>
                             <span>Detail Nilai</span>
+                          </button>
+                          <button type="button" class="btn btn-danger spider-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorSpider="<?php echo $rowTampilData["id_score_technical"];?>">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Spider Chart</span>
                           </button>
                         </td>
                       </tr>
@@ -166,6 +177,21 @@ include "../process/proses_operatorScoreTechnical.php";
         </div>
         <div class="modal-body">
           <div class="container-fluid" id="info-dataNilaiTechnicalOnlineOperator"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="spiderDataNilaiTechnicalOnlineOperatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-center bg-nilaiTechnicalOnlineOperatorSpider border-0">
+          <h5 class="modal-title text-white w-100 text-center">Spider Online Training Technical Online</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" id="spider-dataNilaiTechnicalOnlineOperator"></div>
         </div>
       </div>
     </div>

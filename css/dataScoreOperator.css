@@ -3,7 +3,17 @@
   background-color: #0368ca !important;
 }
 
+#spiderDataNilaiSafetyOperatorModal .bg-nilaiSafetyOperatorSpider
+{
+  background-color: #0368ca !important;
+}
+
 #infoDataNilaiGeneralHrdOperatorModal .bg-nilaiGeneralHrdOperatorInfo
+{
+  background-color: #0368ca !important;
+}
+
+#spiderDataNilaiGeneralHrdOperatorModal .bg-nilaiGeneralHrdOperatorSpider
 {
   background-color: #0368ca !important;
 }
@@ -12,7 +22,17 @@
   background-color: #0368ca !important;
 }
 
+#spiderDataNilaiQualityOperatorModal .bg-nilaiQualityOperatorSpider
+{
+  background-color: #0368ca !important;
+}
+
 #infoDataNilaiTechnicalOnlineOperatorModal .bg-nilaiTechnicalOnlineOperatorInfo{
+  background-color: #0368ca !important;
+}
+
+#spiderDataNilaiTechnicalOnlineOperatorModal .bg-nilaiTechnicalOnlineOperatorSpider
+{
   background-color: #0368ca !important;
 }
   

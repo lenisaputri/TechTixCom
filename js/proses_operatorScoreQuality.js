@@ -13,3 +13,19 @@ $(".info-dataNilaiQuality-operator").click(function () {
         }
     });
 });
+
+$(".spider-dataNilaiQuality-operator").click(function () {
+    var id_nilaiQualityOperatorSpider = $(this).attr("id_nilaiQualityOperatorSpider");
+
+    $.ajax({
+        url: "../process/proses_operatorScoreQuality.php",
+        method: "post",
+        data: {
+            spiderDataScoreQualityOperator_idScoreQuality: id_nilaiQualityOperatorSpider
+        },
+        success: function (data) {
+            $("#spider-dataNilaiQualityOperator").html(data);
+            $("#spiderDataNilaiQualityOperatorModal").modal("show");
+        }
+    });
+});

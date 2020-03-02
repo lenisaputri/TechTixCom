@@ -13,3 +13,19 @@ $(".info-dataNilaiTechnicalOnline-operator").click(function () {
         }
     });
 });
+
+$(".spider-dataNilaiTechnicalOnline-operator").click(function () {
+    var id_nilaiTechnicalOnlineOperatorSpider = $(this).attr("id_nilaiTechnicalOnlineOperatorSpider");
+
+    $.ajax({
+        url: "../process/proses_operatorScoreTechnical.php",
+        method: "post",
+        data: {
+            spiderDataScoreTechnicalOnlineOperator_idScoreTechnicalOnline: id_nilaiTechnicalOnlineOperatorSpider
+        },
+        success: function (data) {
+            $("#spider-dataNilaiTechnicalOnlineOperator").html(data);
+            $("#spiderDataNilaiTechnicalOnlineOperatorModal").modal("show");
+        }
+    });
+});

@@ -137,5 +137,48 @@
                 </div>
             </div>
         <?php
+    } 
+    
+    if(isset($_POST["spiderDataScoreQualityOperator_idScoreQuality"])){
+        $spiderScoreQuality = "SELECT tsq.*, tsqd.*, tsqd.id_score_quality_detail,tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+        FROM tabel_score_quality tsq, tabel_operator tp , tabel_jabatan tj, tabel_score_quality_detail tsqd
+        WHERE tsq.id_operator = tp.id_operator 
+        AND tp.id_jabatan = tj.id_jabatan
+        AND tsq.id_score_quality = tsqd.id_score_quality
+        AND tsq.id_score_quality = $_POST[spiderDataScoreQualityOperator_idScoreQuality]";
+        $resultSpiderScoreQuality = mysqli_query($con, $spiderScoreQuality);
+    
+        if(mysqli_num_rows($resultSpiderScoreQuality) > 0){
+        $rowSpiderScoreQuality=mysqli_fetch_assoc($resultSpiderScoreQuality);
+            ?>
+             <canvas id="marksChartQualityOperator"></canvas>
+                <script>
+                var marksCanvas = document.getElementById("marksChartQualityOperator");
+                
+                var marksData = {
+                  labels: ["Food Safety System", "GMP", "Halal", "", "", "", ""],
+                  datasets: [{
+                    label: [<?php echo '"' . $rowSpiderScoreQuality['tanggal_training'] . '"';?>],
+                    backgroundColor: "rgba(200,0,0,0.2)",
+                    data: [<?php echo '"' . $rowSpiderScoreQuality['fss'] . '","' . $rowSpiderScoreQuality['gmp'] . '","' . $rowSpiderScoreQuality['halal'] . '"';?>]
+                  }]
+                  };
+                  
+                  var radarChart = new Chart(marksCanvas, {
+                    type: 'radar',
+                    data: marksData
+                  });
+                </script>
+            <?php
+        } 
+        else {
+            ?> 
+                <div class="text-center text-muted">Data Tidak Ditemukan</div>
+            <?php
+        }
+        ?>                
+            <div class="form-group">
+            </div>
+        <?php
     }  
 ?>

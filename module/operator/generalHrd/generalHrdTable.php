@@ -26,13 +26,13 @@
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           <i class="fas fa-fw fa-users"></i>
-            <span>Data Nilai General HRD</span>
+            <span>Data Nilai Training GeneralHRD Online</span>
         </li>
       </ol>
     </nav>
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Hasil Nilai Training</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Hasil Nilai Training GeneralHRD Online</h6>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -91,7 +91,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-center bg-nilaiGeneralHrdOperatorInfo border-0">
-          <h5 class="modal-title text-white w-100 text-center">Data Nilai Online Training GeneralHrd</h5>
+          <h5 class="modal-title text-white w-100 text-center">Detail Nilai Training GeneralHRD Online</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -106,7 +106,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-center bg-nilaiGeneralHrdOperatorSpider border-0">
-          <h5 class="modal-title text-white w-100 text-center">Spider Online Training General Hrd</h5>
+          <h5 class="modal-title text-white w-100 text-center">Spider Training GeneralHRD Online</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

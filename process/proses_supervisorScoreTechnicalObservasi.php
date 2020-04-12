@@ -1,39 +1,38 @@
 <?php
     include "../config/connection.php";
 
-    if(isset($_POST["infoDataScoreTechnicalOnlineSupervisor_idScoreSupervisor"])){
-        $infoScoreTechnical = "SELECT tst.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
-            FROM tabel_score_technical tst, tabel_operator tp , tabel_jabatan tj 
-            WHERE tst.id_operator = tp.id_operator 
+    if(isset($_POST["infoDataScoreTechnicalObservasiSupervisor_idScoreSupervisor"])){
+        $infoScoreTechnicalObservasi = "SELECT tsto.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+            FROM tabel_score_technical_observasi tsto, tabel_operator tp , tabel_jabatan tj 
+            WHERE tsto.id_operator = tp.id_operator 
             AND tp.id_jabatan = tj.id_jabatan
-            AND tst.id_score_technical = $_POST[infoDataScoreTechnicalOnlineSupervisor_idScoreSupervisor]";
-        $resultInfoScoreTechnical = mysqli_query($con, $infoScoreTechnical);
+            AND tsto.id_score_technical_observasi = $_POST[infoDataScoreTechnicalObservasiSupervisor_idScoreSupervisor]";
+        $resultInfoScoreTechnicalObservasi = mysqli_query($con, $infoScoreTechnicalObservasi);
     
-        if(mysqli_num_rows($resultInfoScoreTechnical) > 0){
-            $rowInfoScoreTechnical=mysqli_fetch_assoc($resultInfoScoreTechnical);
+        if(mysqli_num_rows($resultInfoScoreTechnicalObservasi) > 0){
+            $rowInfoScoreTechnicalObservasi=mysqli_fetch_assoc($resultInfoScoreTechnicalObservasi);
                 ?>
                     <div class="row">
                         <div class="col-sm-6">
-                            <p>NAMA : <?php echo $rowInfoScoreTechnical["nama_lengkap"]; ?></p>
-                            <p>NIK : <?php echo $rowInfoScoreTechnical["nik"]; ?></p>
-                            <p>JABATAN : <?php echo $rowInfoScoreTechnical["nama_jabatan"]; ?></p>          
+                            <p>NAMA : <?php echo $rowInfoScoreTechnicalObservasi["nama_lengkap"]; ?></p>
+                            <p>NIK : <?php echo $rowInfoScoreTechnicalObservasi["nik"]; ?></p>
+                            <p>JABATAN : <?php echo $rowInfoScoreTechnicalObservasi["nama_jabatan"]; ?></p>          
                         </div>
                         <div class="col-sm-6">
-                            <p>POIN : <?php echo $rowInfoScoreTechnical["poin"]; ?></p>
-                            <p>NILAI : <?php echo $rowInfoScoreTechnical["nilai"]; ?></p>
+                            <p>TOTAL : <?php echo $rowInfoScoreTechnicalObservasi["total"]; ?></p>
+                            <p>RATA-RATA : <?php echo $rowInfoScoreTechnicalObservasi["ratarata"]; ?></p>
                         </div>
                     </div>
-                    <p class="row d-flex justify-content-end">TANGGAL TRAINING : <?php echo $rowInfoScoreTechnical["tanggal_training"]; ?></p>
+                    <p class="row d-flex justify-content-end">TANGGAL OBSERVASI : <?php echo $rowInfoScoreTechnicalObservasi["tanggal_observasi"]; ?></p>
                     <hr>
                 <?php
-                    $infoScoreTechnicalDetail = "SELECT tst.*, tp.id_operator, tp.nik, tstd.*
-                        FROM tabel_score_technical tst, tabel_operator tp , tabel_score_technical_detail tstd 
-                        WHERE tst.id_operator = tp.id_operator 
-                        AND tst.id_score_technical = tstd.id_score_technical
-                        AND tst.id_score_technical = $_POST[infoDataScoreTechnicalOnlineSupervisor_idScoreSupervisor]";
+                    $infoScoreTechnicalObservasiDetail = "SELECT tsto.*, tp.id_operator, tp.nik
+                        FROM tabel_score_technical_observasi tsto, tabel_operator tp
+                        WHERE tsto.id_operator = tp.id_operator 
+                        AND tsto.id_score_technical_observasi = $_POST[infoDataScoreTechnicalObservasiSupervisor_idScoreSupervisor]";
                     
-                    $resultInfoScoreTechnicalDetail = mysqli_query($con, $infoScoreTechnicalDetail);
-                    if(mysqli_num_rows($resultInfoScoreTechnicalDetail) > 0){
+                    $resultInfoScoreTechnicalObservasiDetail = mysqli_query($con, $infoScoreTechnicalObservasiDetail);
+                    if(mysqli_num_rows($resultInfoScoreTechnicalObservasiDetail) > 0){
                         ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered text-center" width="100%" cellspacing="0">
@@ -50,7 +49,7 @@
                                     <tbody>
                                         <?php 
                                             $index=1;
-                                            while($row1 = mysqli_fetch_assoc($resultInfoScoreTechnicalDetail)){
+                                            while($row1 = mysqli_fetch_assoc($resultInfoScoreTechnicalObservasiDetail)){
                                                 ?>
                                                     <tr>
                                                         <td><?php echo $index;?></td>
@@ -97,28 +96,27 @@
         <?php
     }  
     
-    if(isset($_POST["spiderDataScoreTechnicalOnlineSupervisor_idScoreTechnicalOnline"])){
-        $spiderScoreTechnicalSupervisor = "SELECT tst.*, tstd.*, tstd.id_score_technical_detail,tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
-        FROM tabel_score_technical tst, tabel_operator tp , tabel_jabatan tj, tabel_score_technical_detail tstd
-        WHERE tst.id_operator = tp.id_operator 
+    if(isset($_POST["spiderDataScoreTechnicalObservasiSupervisor_idScoreTechnicalObservasi"])){
+        $spiderScoreTechnicalObservasi= "SELECT tsto.*, tp.id_operator, tp.nik, tp.nama as nama_lengkap, tj.nama as nama_jabatan
+        FROM tabel_score_technical_observasi tsto, tabel_operator tp , tabel_jabatan tj
+        WHERE tsto.id_operator = tp.id_operator 
         AND tp.id_jabatan = tj.id_jabatan
-        AND tst.id_score_technical = tstd.id_score_technical
-        AND tst.id_score_technical = $_POST[spiderDataScoreTechnicalOnlineSupervisor_idScoreTechnicalOnline]";
-        $resultSpiderScoreTechnicalSupervisor = mysqli_query($con, $spiderScoreTechnicalSupervisor);
+        AND tsto.id_score_technical_observasi = $_POST[spiderDataScoreTechnicalObservasiSupervisor_idScoreTechnicalObservasi]";
+        $resultSpiderScoreTechnicalObservasi = mysqli_query($con, $spiderScoreTechnicalObservasi);
     
-        if(mysqli_num_rows($resultSpiderScoreTechnicalSupervisor) > 0){
-        $rowSpiderScoreTechnicalSupervisor=mysqli_fetch_assoc($resultSpiderScoreTechnicalSupervisor);
+        if(mysqli_num_rows($resultSpiderScoreTechnicalObservasi) > 0){
+        $rowSpiderScoreTechnicalObservasi=mysqli_fetch_assoc($resultSpiderScoreTechnicalObservasi);
             ?>
-             <canvas id="marksChartTechnicalSupervisor"></canvas>
+             <canvas id="marksChartTechnicalObservasiSupervisor"></canvas>
                 <script>
-                var marksCanvas = document.getElementById("marksChartTechnicalSupervisor");
+                var marksCanvas = document.getElementById("marksChartTechnicalObservasiSupervisor");
                 
                 var marksData = {
                   labels: ["Safety Procedure", "Equipment List", "Operasional Parameter", "Maintenance Parameter", "Trouble Shooting", "", ""],
                   datasets: [{
-                    label: [<?php echo '"' . $rowSpiderScoreTechnicalSupervisor['tanggal_training'] . '"';?>],
+                    label: [<?php echo '"' . $rowSpiderScoreTechnicalObservasi['tanggal_observasi'] . '"';?>],
                     backgroundColor: "rgba(200,0,0,0.2)",
-                    data: [<?php echo '"' . $rowSpiderScoreTechnicalSupervisor['sftp'] . '","' . $rowSpiderScoreTechnicalSupervisor['equipment'] . '","' . $rowSpiderScoreTechnicalSupervisor['operational'] . '","' . $rowSpiderScoreTechnicalSupervisor['mainten'] . '","' . $rowSpiderScoreTechnicalSupervisor['trouble'] . '"';?>]
+                    data: [<?php echo '"' . $rowSpiderScoreTechnicalObservasi['sftp'] . '","' . $rowSpiderScoreTechnicalObservasi['equipment'] . '","' . $rowSpiderScoreTechnicalObservasi['operational'] . '","' . $rowSpiderScoreTechnicalObservasi['mainten'] . '","' . $rowSpiderScoreTechnicalObservasi['trouble'] . '"';?>]
                   }]
                   };
                   

@@ -12,6 +12,14 @@
   background-color: #0368ca !important;
 }
 
+#infoDataNilaiTechnicalObservasiSupervisorModal .bg-nilaiTechnicalObservasiSupervisorInfo{
+  background-color: #0368ca !important;
+}
+
+#infoDataNilaiTechnicalPraktekSupervisorModal .bg-nilaiTechnicalPraktekSupervisorInfo{
+  background-color: #0368ca !important;
+}
+
 #infoDataNilaiTechnicalOnlineSupervisorModal .bg-nilaiTechnicalOnlineSupervisorInfo{
   background-color: #0368ca !important;
 }
@@ -36,3 +44,12 @@
   background-color: #0368ca !important;
 }
   
+#spiderDataNilaiTechnicalObservasiSupervisorModal .bg-nilaiTechnicalObservasiSupervisorSpider
+{
+  background-color: #0368ca !important;
+}
+
+#spiderDataNilaiTechnicalPraktekSupervisorModal .bg-nilaiTechnicalPraktekSupervisorSpider
+{
+  background-color: #0368ca !important;
+}

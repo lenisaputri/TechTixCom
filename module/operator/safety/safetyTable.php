@@ -26,13 +26,13 @@
         </li>
         <li class="breadcrumb-item active" aria-current="page">
           <i class="fas fa-fw fa-shield-alt"></i>
-          <span>Data Nilai Safety</span>
+          <span>Data Nilai Training Safety Online</span>
         </li>
       </ol>
     </nav>
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Hasil Nilai Training</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Hasil Nilai Training Safety Online</h6>
       </div>
       <div class="card-body">
         <div class="table-responsive">
@@ -90,7 +90,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-center bg-nilaiSafetyOperatorInfo border-0">
-          <h5 class="modal-title text-white w-100 text-center">Data Nilai Online Training Safety</h5>
+          <h5 class="modal-title text-white w-100 text-center">Detail Nilai Training Safety Online</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -105,7 +105,7 @@
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-center bg-nilaiSafetyOperatorSpider border-0">
-          <h5 class="modal-title text-white w-100 text-center">Spider Online Training Safety</h5>
+          <h5 class="modal-title text-white w-100 text-center">Spider Training Safety Online</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

@@ -57,5 +57,7 @@
   <script src="../js/proses_supervisorScoreGeneralHrd.js"></script>
   <script src="../js/proses_supervisorScoreQuality.js"></script>
   <script src="../js/proses_supervisorScoreTechnicalOnline.js"></script>
+  <script src="../js/proses_supervisorScoreTechnicalObservasi.js"></script>
+  <script src="../js/proses_supervisorScoreTechnicalPraktek.js"></script>
 
   <script src="../js/materiOperator.js"></script>

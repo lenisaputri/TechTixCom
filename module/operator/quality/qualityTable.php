@@ -29,7 +29,7 @@ include "../process/proses_operatorScoreQuality.php";
     </li>
     <li class="breadcrumb-item active" aria-current="page">
       <i class="fas fa-fw fa-certificate"></i>
-        <span>Data Score Quality</span>
+        <span>Data Nilai Training Quality Online</span>
     </li>
   </ol>
 </nav>
@@ -37,7 +37,7 @@ include "../process/proses_operatorScoreQuality.php";
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
   <div class="card-header py-3">
-    <h6 class="m-0 font-weight-bold text-primary">Hasil Nilai Training</h6>
+    <h6 class="m-0 font-weight-bold text-primary">Hasil Nilai Training Quality Online</h6>
   </div>
   <div class="card-body">
     <div class="table-responsive">
@@ -100,7 +100,7 @@ include "../process/proses_operatorScoreQuality.php";
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-nilaiQualityOperatorInfo border-0">
-                <h5 class="modal-title text-white w-100 text-center">Data Nilai Online Training Quality</h5>
+                <h5 class="modal-title text-white w-100 text-center">Detail Nilai Training Quality Online</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -115,7 +115,7 @@ include "../process/proses_operatorScoreQuality.php";
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header d-flex justify-content-center bg-nilaiQualityOperatorSpider border-0">
-          <h5 class="modal-title text-white w-100 text-center">Spider Online Training Quality</h5>
+          <h5 class="modal-title text-white w-100 text-center">Spider Training Quality Online</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

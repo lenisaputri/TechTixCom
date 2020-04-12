@@ -45,8 +45,7 @@
                 equipment,
                 operational,
                 mainten,
-                trouble,
-                tanggal_training
+                trouble
             )
 
             values(  
@@ -55,8 +54,7 @@
                 '$_POST[equipmentDetail]',
                 '$_POST[operationalDetail]',
                 '$_POST[maintenDetail]',
-                '$_POST[troubleDetail]',
-                '$_POST[tanggalTrainingDetail]'
+                '$_POST[troubleDetail]'
             );";
         
             if(mysqli_query($con, $query2)){ 
@@ -74,8 +72,7 @@
                 equipment = '$_POST[equipmentTechnicalEditDetail]',
                 operational = '$_POST[operationalTechnicalEditDetail]',
                 mainten = '$_POST[maintenTechnicalEditDetail]',
-                trouble = '$_POST[troubleTechnicalEditDetail]',
-                tanggal_training = '$_POST[tanggalTrainingTechnicalEditDetail]'
+                trouble = '$_POST[troubleTechnicalEditDetail]'
                 where id_score_technical_detail='$id_scoreTechnicalDetailUpdate';";
 
                 if(mysqli_query($con,$query10)){

@@ -13,13 +13,13 @@
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     <i class="fas fa-fw fa-trophy"></i>
-                    <span>Data Score General HRD</span>
+                    <span>Data Nilai General HRD Online</span>
                 </li>
             </ol>
         </nav>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score General HRD</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Nilai General HRD Online</h6>
             </div>
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataScoreGeneralHrd.php?module=dataScoreGeneralHrd&act=tambah" method="POST">
@@ -95,7 +95,7 @@
         </div>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Data Materi General HRD</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Data Nilai General HRD Online</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -162,7 +162,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-scoreGeneralHrd border-0">
-                    <h5 class="modal-title text-white w-100 text-center">Edit Data Score General HRD</h5>
+                    <h5 class="modal-title text-white w-100 text-center">Edit Data Nilai General HRD Online</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -196,7 +196,7 @@
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-scoreGeneralHrdInfo border-0">
-                    <h5 class="modal-title text-white w-100 text-center">Edit Data Score General HRD</h5>
+                    <h5 class="modal-title text-white w-100 text-center">Edit Data Nilai General HRD Online</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

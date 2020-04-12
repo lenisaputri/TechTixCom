@@ -196,3 +196,32 @@
   -moz-appearance: none;
   appearance: none;
 }
+
+
+#editDataScoreTechnicalPraktekModal .bg-scoreTechnicalPraktek{
+  background-color: #0368ca !important;
+}
+
+#editDataScoreTechnicalPraktekModal .form-control{
+  font-size: .8rem;
+  border-radius: 10rem;
+  padding: 1.5rem 1rem;
+}
+
+#infoDataScoreTechnicalPraktekModal .bg-scoreTechnicalPraktekInfo{
+  background-color: #0368ca !important;
+}
+
+#editDataScoreTechnicalObservasiModal .bg-scoreTechnicalObservasi{
+  background-color: #0368ca !important;
+}
+
+#editDataScoreTechnicalObservasiModal .form-control{
+  font-size: .8rem;
+  border-radius: 10rem;
+  padding: 1.5rem 1rem;
+}
+
+#infoDataScoreTechnicalObservasiModal .bg-scoreTechnicalObservasiInfo{
+  background-color: #0368ca !important;
+}

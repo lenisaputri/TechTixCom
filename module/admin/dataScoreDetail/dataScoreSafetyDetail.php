@@ -14,18 +14,18 @@
                 <li class="breadcrumb-item" aria-current="page">
                     <a href="index.php?module=dataScoreSafety" >
                         <i class="fas fa-fw fa-trophy"></i>
-                        <span>Data Score Safety</span>
+                        <span>Data Nilai Safety Online</span>
                     </a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
                         <i class="fas fa-fw fa-info"></i>
-                    <span>Data Score Safety Detail</span>
+                    <span>Data Nilai Safety Detail Online</span>
                 </li>
             </ol>
         </nav>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score Safety Detail</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Nilai Safety Detail Online</h6>
             </div>
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataScoreSafetyDetail.php?module=dataScoreSafetyDetail&act=tambah" method="POST" enctype="multipart/form-data">
@@ -165,7 +165,7 @@
         </div>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Data Materi Safety</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Data Nilai Safety Detail Online</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -247,7 +247,7 @@
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-scoreSafetyDetail border-0">
-                    <h5 class="modal-title text-white w-100 text-center">Edit Data Score Safety Detail</h5>
+                    <h5 class="modal-title text-white w-100 text-center">Edit Data Nilai Safety Detail Online</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

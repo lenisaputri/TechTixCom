@@ -13,13 +13,13 @@
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     <i class="fas fa-fw fa-trophy"></i>
-                    <span>Data Score Technical</span>
+                    <span>Data Nilai Technical Online</span>
                 </li>
             </ol>
         </nav>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score Technical</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Nilai Technical Online</h6>
             </div>
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataScoreTechnical.php?module=dataScoreTechnical&act=tambah" method="POST">
@@ -104,7 +104,7 @@
         </div>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Data Materi Technical</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Data Nilai Technical Online</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -134,12 +134,12 @@
                                         ?>
                                             <tr class="text-center" id-score-technical="<?php echo $rowTampilData["id_score_technical"] ?>">
                                                 <td ><?php echo $index; ?></td>
-                                                <td class="kategoriMateri"><?php echo $rowTampilData["nik"]; ?></td>
-                                                <td class="kategoriMateri"><?php echo $rowTampilData["nama_operator"]; ?></td>
-                                                <td class="fileMateri"><?php echo $rowTampilData["kategori_technical"]; ?></td>
-                                                <td class="judulMateri"><?php echo $rowTampilData["poin"]; ?></td>
-                                                <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
-                                                <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
+                                                <td><?php echo $rowTampilData["nik"]; ?></td>
+                                                <td><?php echo $rowTampilData["nama_operator"]; ?></td>
+                                                <td><?php echo $rowTampilData["kategori_technical"]; ?></td>
+                                                <td><?php echo $rowTampilData["poin"]; ?></td>
+                                                <td><?php echo $rowTampilData["nilai"]; ?></td>
+                                                <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
                                                 <td> 
                                                     <button type="button" class="btn btn-warning info-dataScoreTechnical-admin mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataScoreTechnicalModal" id_scoreTechnicalInfo="<?php echo $rowTampilData["id_score_technical"];?>">
                                                         <i class="fas fa-info-circle"></i>
@@ -173,7 +173,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-scoreTechnical border-0">
-                    <h5 class="modal-title text-white w-100 text-center">Edit Data Score Technical</h5>
+                    <h5 class="modal-title text-white w-100 text-center">Edit Data Nilai Technical Online</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -207,7 +207,7 @@
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-scoreTechnicalInfo border-0">
-                    <h5 class="modal-title text-white w-100 text-center">Data Score Technical Detail</h5>
+                    <h5 class="modal-title text-white w-100 text-center">Data Nilai Technical Online</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

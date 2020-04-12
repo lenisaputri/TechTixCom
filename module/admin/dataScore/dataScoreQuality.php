@@ -13,13 +13,13 @@
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
                         <i class="fas fa-fw fa-trophy"></i>
-                        <span>Data Score Quality</span>
+                        <span>Data Nilai Quality Online</span>
                     </li>
                 </ol>
             </nav>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score Quality</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Nilai Quality Online</h6>
             </div>
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataScoreQuality.php?module=dataScoreQuality&act=tambah" method="POST">
@@ -95,7 +95,7 @@
         </div>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Data Materi Quality</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Data Nilai Quality Online</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -162,7 +162,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-scoreQuality border-0">
-                    <h5 class="modal-title text-white w-100 text-center">Edit Data Score Quality</h5>
+                    <h5 class="modal-title text-white w-100 text-center">Edit Data Nilai Quality Online</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -196,7 +196,7 @@
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-scoreQualityInfo border-0">
-                    <h5 class="modal-title text-white w-100 text-center">Data Score Safety Detail</h5>
+                    <h5 class="modal-title text-white w-100 text-center">Data Nilai Quality Detail Online</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

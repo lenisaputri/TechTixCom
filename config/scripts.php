@@ -45,12 +45,15 @@
   <script src="../js/proses_dataScoreGeneralHrd.js"></script>
   <script src="../js/proses_dataScoreTechnical.js"></script>
 
+  <script src="../js/proses_dataScoreTechnicalPraktek.js"></script>
+  <script src="../js/proses_dataScoreTechnicalObservasi.js"></script>
+
   <script src="../js/proses_operatorScoreSafety.js"></script>
   <script src="../js/proses_operatorScoreGeneralHrd.js"></script>
   <script src="../js/proses_operatorScoreQuality.js"></script>
   <script src="../js/proses_operatorScoreTechnicalOnline.js"></script>
 
-    <script src="../js/proses_supervisorScoreSafety.js"></script>
+  <script src="../js/proses_supervisorScoreSafety.js"></script>
   <script src="../js/proses_supervisorScoreGeneralHrd.js"></script>
   <script src="../js/proses_supervisorScoreQuality.js"></script>
   <script src="../js/proses_supervisorScoreTechnicalOnline.js"></script>

@@ -14,18 +14,18 @@
                 <li class="breadcrumb-item" aria-current="page">
                     <a href="index.php?module=dataScoreQuality" >
                     <i class="fas fa-fw fa-trophy"></i>
-                        <span>Data Score Quality</span>
+                        <span>Data Nilai Quality Online</span>
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     <i class="fas fa-fw fa-info"></i>
-                    <span>Data Score Quality Detail</span>
+                    <span>Data Nilai Quality Detail Online</span>
                 </li>
             </ol>
         </nav>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Score Quality Detail</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tambah Data Nilai Quality Detail Online</h6>
             </div>
             <div class="card-body">
                 <form class="user" action="../process/proses_adminDataScoreQualityDetail.php?module=dataScoreQualityDetail&act=tambah" method="POST" enctype="multipart/form-data">
@@ -93,7 +93,7 @@
         </div>
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Data Materi Quality</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Data Nilai Quality Detail Online</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -159,7 +159,7 @@
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header d-flex justify-content-center bg-scoreQualityDetail border-0">
-                    <h5 class="modal-title text-white w-100 text-center">Edit Data Score Quality Detail</h5>
+                    <h5 class="modal-title text-white w-100 text-center">Edit Data Nilai Quality Detail Online</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

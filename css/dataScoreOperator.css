@@ -35,4 +35,22 @@
 {
   background-color: #0368ca !important;
 }
+
+#infoDataNilaiTechnicalPraktekOperatorModal .bg-nilaiTechnicalPraktekOperatorInfo{
+  background-color: #0368ca !important;
+}
+
+#spiderDataNilaiTechnicalPraktekOperatorModal .bg-nilaiTechnicalPraktekOperatorSpider
+{
+  background-color: #0368ca !important;
+}
+
+#infoDataNilaiTechnicalObservasiOperatorModal .bg-nilaiTechnicalObservasiOperatorInfo{
+  background-color: #0368ca !important;
+}
+
+#spiderDataNilaiTechnicalObservasiOperatorModal .bg-nilaiTechnicalObservasiOperatorSpider
+{
+  background-color: #0368ca !important;
+}
   

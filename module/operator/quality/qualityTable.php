@@ -65,12 +65,12 @@ include "../process/proses_operatorScoreQuality.php";
             <td><?php echo $rowTampilData["nilai"]; ?></td>
             <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
             <td>
-            <button type="button" class="btn btn-warning info-dataNilaiQuality-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiQualityOperatorModal" id_nilaiQualityOperatorInfo="<?php echo $rowTampilData["id_score_quality"];?>">
+            <button type="button" class="btn btn-warning info-dataNilaiQuality-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiQualityOperatorModal" id_nilaiQualityOperatorInfo="<?php echo $rowTampilData["id_score_quality"];?>">
                                                     <i class="fas fa-info-circle"></i>
                                                     <span>Detail Nilai</span>
                                                 </button>
-                                                <button type="button" class="btn btn-danger spider-dataNilaiQuality-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiQualityOperatorModal" id_nilaiQualityOperatorSpider="<?php echo $rowTampilData["id_score_quality"];?>">
-                                                <i class="fas fa-pie-chart"></i>
+                                                <button type="button" class="btn btn-danger spider-dataNilaiQuality-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiQualityOperatorModal" id_nilaiQualityOperatorSpider="<?php echo $rowTampilData["id_score_quality"];?>">
+                                                <i class="fas fa-chart-pie"></i>
                             <span>Spider Chart</span>
                           </button>
             </td>

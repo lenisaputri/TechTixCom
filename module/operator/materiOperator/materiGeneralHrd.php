@@ -2,6 +2,7 @@
   include "../config/connection.php";
   include "../process/proses_materiGeneralHrdOperator.php";
 ?>
+<body>
 <div class="container-fluid" id="materiOperator">
     <nav aria-label="breadcrumb" class="shadow">
         <ol class="breadcrumb">
@@ -35,7 +36,7 @@
                                                 <h4 class="panel-title">
                                                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMateriOne<?= $index?>" aria-expanded="true" aria-controls="collapseMateriOne<?= $index?>">
                                                         <?= $row["judul_materi"]?>
-                                                        <i class="more-less glyphicon fas fa-fw fa-plus"></i>
+                                                        <i class="more-less fas fa-fw fa-plus"></i>
                                                     </a>
                                                 </h4>
                                             </div>
@@ -56,26 +57,56 @@
                                                         </div>
                                                         <?php
                                                             if($row["tipe"] == "file"){
-                                                                ?>
-                                                                    <img src="../img/pdf.jpg" height="150px" width="150px;" class="d-flex flex-column justify-content-center">
-                                                                    <p class="col-sm-12 d-flex flex-column justify-content-center" style="word-break: break-all;"><?= $row["file_materi"]?></p>
-                                                                    <div class="form-group row">
-                                                                        <div class="col-sm-12 d-flex flex-column justify-content-center">
-                                                                        <a class="btn btn-primary btn-icon-split" href="../process/proses_download_generalhrd.php?file=<?=$row["file_materi"]?>">
-                                                                            <span class="icon text-white-50">
-                                                                                <i class="fas fa-fw fa-download"></i>
-                                                                            </span>
-                                                                            <span class="text">Download</span>
-                                                                        </a>
+                                                                if($row["file_materi"] != null){
+                                                                    ?>
+                                                                    <p class="col-sm-12 d-flex flex-column justify-content-center" style="font-weight: bold;">FILE :</p>
+                                                                        <div class="form-group row">
+                                                                        <img src="../img/file.png" height="90px" width="70px;" class="d-flex flex-column justify-content-center ml-4">
+                                                                        <p class="col-sm-12 mb-3 mb-sm-2 ml-3 d-flex flex-column justify-content-center" style="word-break: break-all;"><?= $row["file_materi"]?></p>
+                                                                            <div class="col-sm-12 mb-3 mb-sm-2 ml-3">
+                                                                                <a class="btn btn-primary btn-icon-split" href="../process/proses_download_safety.php?file=<?=$row["file_materi"]?>">
+                                                                                    <span class="icon text-white-50">
+                                                                                        <i class="fas fa-fw fa-download"></i>
+                                                                                    </span>
+                                                                                    <span class="text">Download</span>
+                                                                                </a>
+                                                                            </div>
                                                                         </div>
+                                                                    <?php
+                                                                }
+                                                                else{
+                                                                    ?>
+                                                                    <p class="col-sm-12 d-flex flex-column justify-content-center" style="font-weight: bold;">FILE :</p>
+                                                                    <div class='col-md-12'>
+                                                                        <img src='../img/magnifier.svg' alt='pencarian' class='p-3'>
+                                                                        <p class='text-muted'>File Belum Tersedia</p>
                                                                     </div>
+                                                                    <?php
+                                                                }
+
+                                                                ?>
                                                                 <?php
                                                             } 
                                                             else if($row["tipe"] == "link"){
-                                                                ?>
+                                                                if($row["file_materi"] != null){
+                                                                    ?>
+                                                                    <p class="col-sm-12 d-flex flex-column justify-content-center" style="font-weight: bold;">LINK :</p>
                                                                     <div class="embed-responsive embed-responsive-16by9 mb-3">
                                                                         <iframe class="embed-responsive-item" src="<?= $row["file_materi"]?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                                     </div>
+                                                                    <?php
+                                                                }
+                                                                else{
+                                                                    ?>
+                                                                    <p class="col-sm-12 d-flex flex-column justify-content-center" style="font-weight: bold;">LINK :</p>
+                                                                    <div class='col-md-12'>
+                                                                        <img src='../img/magnifier.svg' alt='pencarian' class='p-3'>
+                                                                        <p class='text-muted'>Link Belum Tersedia</p>
+                                                                    </div>
+                                                                    <?php
+                                                                }
+
+                                                                ?>
                                                                 <?php
                                                             }
                                                         ?>
@@ -101,3 +132,4 @@
         </div>
     </div>
 </div>
+            </body>

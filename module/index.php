@@ -124,7 +124,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link collapsed" href="index.php?module=generalHrdTable">
-                  <i class="fas fa-fw fa-users"></i>
+                  <i class="fas fa-fw fa-sitemap"></i>
                   <span>Nilai General HRD</span>
                 </a>
                 <!-- <div id="collapseGeneralHRD" class="collapse" aria-labelledby="headingGeneralHRD" data-parent="#accordionSidebar">
@@ -149,7 +149,7 @@
               </li>      
               <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTechnical" aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-certificate"></i>
+                <i class="fas fa-fw fa-wrench"></i>
                 <span>Nilai Technical</span></a>
                 <div id="collapseTechnical" class="collapse" aria-labelledby="headingTechnical" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
@@ -331,20 +331,11 @@
                   case "safetyTable":
                     include "supervisor/safety/safetyTable.php";
                     break;
-                  case "safetyTableDetail":
-                    include "supervisor/safety/safetyTableDetail.php";
-                    break;
                   case "generalHrdTable":
                     include "supervisor/generalHrd/generalHrdTable.php";
                     break;
-                  case "generalHrdTableDetail":
-                    include "supervisor/generalHrd/generalHrdTableDetail.php";
-                    break;
                   case "qualityTable":
                     include "supervisor/quality/qualityTable.php";
-                    break;
-                  case "qualityTableDetail":
-                    include "supervisor/quality/qualityTableDetail.php";
                     break;
                   case "technicalNilaiObservasi":
                     include "supervisor/technical/technicalScoreObservasi.php";

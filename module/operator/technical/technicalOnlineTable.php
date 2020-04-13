@@ -35,131 +35,55 @@ include "../process/proses_operatorScoreTechnical.php";
         <h6 class="m-0 font-weight-bold text-primary">Hasil Nilai Training Technical Online</h6>
       </div>
       <div class="card-body">
-        <form class="user" action="?module=technicalNilaiOnlineTraining" method="post">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="form-group row">
-                <div class="col-sm-12 mb-3 mb-sm-0">
-                  <select class="custom-select-karyawan my-1 mr-sm-2" name="kategoriTechnical">
-                    <option value="0" class="text">Pilih Kategori Technical</option>
-                      <?php
-                        $resultKategoriTechnical = kategoriTechnical($con);
-                        if(mysqli_num_rows($resultKategoriTechnical) > 0){
-                            while($row = mysqli_fetch_assoc($resultKategoriTechnical)){
-                                echo "<option value='".$row['id_score_technical']."'>".$row['kategori_technical']."</option>";
-                            }
-                        } 
-                        else {
-                          ?>
-                            <option value="0" class="text">Kategori Technical Kosong</option>
-                          <?php
-                        }
-                      ?>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <button type="submit" class="btn btn-success mb-2 mb-sm-0" name="cariKategoriTechnical">
-                  <span class="text">Cari</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
         <div class="table-responsive">
-          <?php
-            if(isset($_POST["cariKategoriTechnical"])){
-                $result=tampilScoreTechnicalKategoriOperator($con,$_POST["kategoriTechnical"]);
-              }
-              else{
-                $result=tampilScoreTechnicalOperator($con, $idUser);
-              }
-            if (mysqli_num_rows($result) > 0){
-            ?>
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                       <tr class="text-center">
                         <th>No.</th>
+                        <th>Kategori Technical</th>
                         <th>Poin</th>
                         <th>Nilai</th>
-                        <th>Kategori Technical</th>
                         <th>Tanggal</th>
                         <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
                     <?php
-                      if(mysqli_num_rows($result) > 0){
-                        $index=1;
-                          while($rowTampilData = mysqli_fetch_assoc($result)){
-                            if(tampilScoreTechnicalOperator($con, $idUser)!=NULL){
-                      ?>
+                      $resultTampilScoreTechnicalOperator = tampilScoreTechnicalOperator($con, $idUser);
+                      $index = 1;
+                      if (mysqli_num_rows($resultTampilScoreTechnicalOperator) > 0){
+                        while ($rowTampilData = mysqli_fetch_assoc($resultTampilScoreTechnicalOperator)) {
+                          ?>
                       <tr class="text-center">
                         <td><?php echo $index; ?></td>
+                        <td><?php echo $rowTampilData["kategori_technical"]; ?></td>
                         <td><?php echo $rowTampilData["poin"]; ?></td>
                         <td><?php echo $rowTampilData["nilai"]; ?></td>
-                        <td><?php echo $rowTampilData["kategori_technical"]; ?></td>
                         <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
                         <td>
-                          <button type="button" class="btn btn-warning info-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorInfo="<?php echo $rowTampilData["id_score_technical"];?>">
+                          <button type="button" class="btn btn-warning info-dataNilaiTechnicalOnline-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorInfo="<?php echo $rowTampilData["id_score_technical"];?>">
                             <i class="fas fa-info-circle"></i>
                             <span>Detail Nilai</span>
                           </button>
-                          <button type="button" class="btn btn-danger spider-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorSpider="<?php echo $rowTampilData["id_score_technical"];?>">
-                          <i class="fas fa-pie-chart"></i>
+                          <button type="button" class="btn btn-danger spider-dataNilaiTechnicalOnline-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorSpider="<?php echo $rowTampilData["id_score_technical"];?>">
+                          <i class="fas fa-chart-pie"></i>
                             <span>Spider Chart</span>
                           </button>
                         </td>
                       </tr>
-                      <?php
-                        } else if(tampilScoreTechnicalOperator($con, $idUser)==NULL){
-                      ?>
-                      <tr class="text-center">
-                        <td><?php echo $index; ?></td>
-                        <td><?php echo $rowTampilData["poin"]; ?></td>
-                        <td><?php echo $rowTampilData["nilai"]; ?></td>
-                        <td><?php echo $rowTampilData["kategori_technical"]; ?></td>
-                        <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
-                        <td>
-                        <button type="button" class="btn btn-warning info-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorInfo="<?php echo $rowTampilData["id_score_technical"];?>">
-                            <i class="fas fa-info-circle"></i>
-                            <span>Detail Nilai</span>
-                          </button>
-                          <button type="button" class="btn btn-danger spider-dataNilaiTechnicalOnline-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorSpider="<?php echo $rowTampilData["id_score_technical"];?>">
-                          <i class="fas fa-pie-chart"></i>
-                            <span>Spider Chart</span>
-                          </button>
-                        </td>
-                      </tr>
-                      <?php
-                                                    }
-                                                $index++;
-                                                }
-                                                ?>
-                    </tbody>
-                    <?php
-                                        } else{
-                                        ?>
-                                        <div class="text-center">
-                                            <img src="../img/magnifier.svg" alt="pencarian" class="p-3">
-                                            <p class="text-muted">Nilai Kategori Tidak Ditemukan</p>
-                                        </div>
-                                        <?php
-                                        }
-                                        ?>
-                  </table>
-                  <?php
-            } else{
-            ?>
-            <div class="text-center">
-                                        <img src="../img/magnifier.svg" alt="pencarian" class="p-3">
-                                        <p class="text-muted">Data Nilai Per-Kategori Tidak Ditemukan</p>
-                                    </div>
-                                    <?php
+                      <?php 
+                                        $index++;
                                     }
                                     ?>
+                                    <?php
+                                }   
+                                else{
+                                    ?>
+                                    <?php
+                                }
+                            ?>
+                        </tbody>
+                    </table>
           </div>
           <div>
         </div>

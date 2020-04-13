@@ -51,7 +51,7 @@ $pdf->Cell(189 ,10,'',0,1);//end of line
 
 //billing address
 $pdf->SetFont('Arial','B',12);
-$pdf->Cell(190 ,7,'HASIL NILAI QUALITY ONLINE TRAINING',0,1,'C');//end of line
+$pdf->Cell(190 ,7,'HASIL NILAI TRAINING QUALITY ONLINE',0,1,'C');//end of line
 $pdf->Cell(100 ,5,'',0,1);//end of line
 
 $pdf->SetFont('Arial','', 11);

@@ -25,6 +25,9 @@
   <!-- Page level custom scripts -->
   <script src="../js/demo/datatables-demo.js"></script>
 
+   <script src="../js/materiOperator.js"></script>
+
+
   <script src="../js/proses_loginUser.js"></script>
   <script src="../js/modalPengaturan.js"></script>
 
@@ -35,6 +38,7 @@
   <script src="../js/proses_jabatanAdmin.js"></script>
 
   <script src="../js/proses_kategoriMateriAdmin.js"></script>
+
   <script src="../js/proses_dataMateriSafetyAdmin.js"></script>
   <script src="../js/proses_dataMateriQualityAdmin.js"></script>
   <script src="../js/proses_dataMateriGeneralHrdAdmin.js"></script>
@@ -52,12 +56,16 @@
   <script src="../js/proses_operatorScoreGeneralHrd.js"></script>
   <script src="../js/proses_operatorScoreQuality.js"></script>
   <script src="../js/proses_operatorScoreTechnicalOnline.js"></script>
+  
+  <script src="../js/proses_operatorScoreTechnicalPraktek.js"></script>
+  <script src="../js/proses_operatorScoreTechnicalObservasi.js"></script>
 
   <script src="../js/proses_supervisorScoreSafety.js"></script>
   <script src="../js/proses_supervisorScoreGeneralHrd.js"></script>
   <script src="../js/proses_supervisorScoreQuality.js"></script>
   <script src="../js/proses_supervisorScoreTechnicalOnline.js"></script>
+
   <script src="../js/proses_supervisorScoreTechnicalObservasi.js"></script>
   <script src="../js/proses_supervisorScoreTechnicalPraktek.js"></script>
 
-  <script src="../js/materiOperator.js"></script>
+ 

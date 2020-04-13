@@ -60,12 +60,12 @@
                         <td><?php echo $rowTampilData["nilai"]; ?></td>
                         <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
                         <td>
-                          <button type="button" class="btn btn-warning info-dataNilaiGeneralHrd-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiGeneralHrdOperatorModal" id_nilaiGeneralHrdOperatorInfo="<?php echo $rowTampilData["id_score_generalHrd"];?>">
+                          <button type="button" class="btn btn-warning info-dataNilaiGeneralHrd-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiGeneralHrdOperatorModal" id_nilaiGeneralHrdOperatorInfo="<?php echo $rowTampilData["id_score_generalHrd"];?>">
                             <i class="fas fa-info-circle"></i>
                               <span>Detail Nilai</span>
                           </button>
-                          <button type="button" class="btn btn-danger spider-dataNilaiGeneralHrd-operator mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiGeneralHrdOperatorModal" id_nilaiGeneralHrdOperatorSpider="<?php echo $rowTampilData["id_score_generalHrd"];?>">
-                          <i class="fas fa-pie-chart"></i>
+                          <button type="button" class="btn btn-danger spider-dataNilaiGeneralHrd-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiGeneralHrdOperatorModal" id_nilaiGeneralHrdOperatorSpider="<?php echo $rowTampilData["id_score_generalHrd"];?>">
+                          <i class="fas fa-chart-pie"></i>
                             <span>Spider Chart</span>
                           </button>
                         </td>

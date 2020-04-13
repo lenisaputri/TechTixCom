@@ -56,12 +56,12 @@ include "../process/proses_supervisorScoreSafety.php";
                       <td class="fileMateri"><?php echo $rowTampilData["nilai"]; ?></td>
                       <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                       <td>
-                        <button type="button" class="btn btn-warning info-dataNilaiSafety-supervisor mb-2 mb-sm-0" data-toggle="modal" data-target="#infoDataNilaiSafetySupervisorModal" id_nilaiSafetySupervisorInfo="<?php echo $rowTampilData["id_score_safety"];?>">
+                        <button type="button" class="btn btn-warning info-dataNilaiSafety-supervisor mb-2 mb-sm-20" data-toggle="modal" data-target="#infoDataNilaiSafetySupervisorModal" id_nilaiSafetySupervisorInfo="<?php echo $rowTampilData["id_score_safety"];?>">
                             <i class="fas fa-info-circle"></i>
                             <span>Detail Nilai</span>
                           </button>
-                          <button type="button" class="btn btn-danger spider-dataNilaiSafety-supervisor mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiSafetySupervisorModal" id_nilaiSafetySupervisorSpider="<?php echo $rowTampilData["id_score_safety"];?>">
-                          <i class="fas fa-pie-chart"></i>
+                          <button type="button" class="btn btn-danger spider-dataNilaiSafety-supervisor mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiSafetySupervisorModal" id_nilaiSafetySupervisorSpider="<?php echo $rowTampilData["id_score_safety"];?>">
+                          <i class="fas fa-chart-pie"></i>
                             <span>Spider Chart</span>
                           </button>
                       </td>

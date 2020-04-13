@@ -63,8 +63,8 @@ include "../process/proses_supervisorScoreTechnicalPraktek.php";
                                                     <i class="fas fa-info-circle"></i>
                                                     <span>Detail Nilai</span>
                                                   </button>
-                                                  <button type="button" class="btn btn-danger spider-dataNilaiTechnicalPraktek-supervisor mb-2 mb-sm-0" data-toggle="modal" data-target="#spiderDataNilaiTechnicalPraktekSupervisorModal" id_nilaiTechnicalPraktekSupervisorSpider="<?php echo $rowTampilData["id_score_technical_praktek"];?>">
-                                                    <i class="fas fa-pie-chart"></i>
+                                                  <button type="button" class="btn btn-danger spider-dataNilaiTechnicalPraktek-supervisor mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiTechnicalPraktekSupervisorModal" id_nilaiTechnicalPraktekSupervisorSpider="<?php echo $rowTampilData["id_score_technical_praktek"];?>">
+                                                    <i class="fas fa-chart-pie"></i>
                                                     <span>Spider Chart</span>
                                                   </button>
                                                 </td>

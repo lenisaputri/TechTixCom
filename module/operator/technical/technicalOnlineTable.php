@@ -62,12 +62,16 @@ include "../process/proses_operatorScoreTechnical.php";
                         <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
                         <td>
                           <button type="button" class="btn btn-warning info-dataNilaiTechnicalOnline-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorInfo="<?php echo $rowTampilData["id_score_technical"];?>">
-                            <i class="fas fa-info-circle"></i>
-                            <span>Detail Nilai</span>
+                          <span>
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </span>
+                                                    <span class="text">Detail Nilai</span>
                           </button>
                           <button type="button" class="btn btn-danger spider-dataNilaiTechnicalOnline-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiTechnicalOnlineOperatorModal" id_nilaiTechnicalOnlineOperatorSpider="<?php echo $rowTampilData["id_score_technical"];?>">
-                          <i class="fas fa-chart-pie"></i>
-                            <span>Spider Chart</span>
+                          <span>
+                                                        <i class="fas fa-chart-pie"></i>
+                                                    </span>
+                                                    <span class="text">Spider Chart</span>
                           </button>
                         </td>
                       </tr>

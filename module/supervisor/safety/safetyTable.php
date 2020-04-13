@@ -57,12 +57,16 @@ include "../process/proses_supervisorScoreSafety.php";
                       <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                       <td>
                         <button type="button" class="btn btn-warning info-dataNilaiSafety-supervisor mb-2 mb-sm-20" data-toggle="modal" data-target="#infoDataNilaiSafetySupervisorModal" id_nilaiSafetySupervisorInfo="<?php echo $rowTampilData["id_score_safety"];?>">
-                            <i class="fas fa-info-circle"></i>
-                            <span>Detail Nilai</span>
+                        <span>
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </span>
+                                                    <span class="text">Detail Nilai</span>
                           </button>
                           <button type="button" class="btn btn-danger spider-dataNilaiSafety-supervisor mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiSafetySupervisorModal" id_nilaiSafetySupervisorSpider="<?php echo $rowTampilData["id_score_safety"];?>">
-                          <i class="fas fa-chart-pie"></i>
-                            <span>Spider Chart</span>
+                          <span>
+                                                        <i class="fas fa-chart-pie"></i>
+                                                    </span>
+                                                    <span class="text">Spider Chart</span>
                           </button>
                       </td>
                     </tr>

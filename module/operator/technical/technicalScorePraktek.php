@@ -62,13 +62,13 @@ include "../process/proses_operatorScoreTechnicalPraktek.php";
                                                 <td><?php echo $rowTampilData["tanggal_praktek"]; ?></td>
                                                 <td> 
                                                   <button type="button" class="btn btn-warning info-dataNilaiTechnicalPraktek-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiTechnicalPraktekOperatorModal" id_nilaiTechnicalPraktekOperatorInfo="<?php echo $rowTampilData["id_score_technical_praktek"];?>">
-                                                    <span class="icon text-white-50">
+                                                    <span>
                                                         <i class="fas fa-info-circle"></i>
                                                     </span>
                                                     <span class="text">Detail Nilai</span>
                                                   </button>
                                                   <button type="button" class="btn btn-danger spider-dataNilaiTechnicalPraktek-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiTechnicalPraktekOperatorModal" id_nilaiTechnicalPraktekOperatorSpider="<?php echo $rowTampilData["id_score_technical_praktek"];?>">
-                                                    <span class="icon text-white-50">
+                                                    <span>
                                                         <i class="fas fa-chart-pie"></i>
                                                     </span>
                                                     <span class="text">Spider Chart</span>

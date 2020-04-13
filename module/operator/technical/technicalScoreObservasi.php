@@ -62,12 +62,16 @@ include "../process/proses_operatorScoreTechnicalObservasi.php";
                                                 <td><?php echo $rowTampilData["tanggal_observasi"]; ?></td>
                                                 <td> 
                                                   <button type="button" class="btn btn-warning info-dataNilaiTechnicalObservasi-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiTechnicalObservasiOperatorModal" id_nilaiTechnicalObservasiOperatorInfo="<?php echo $rowTampilData["id_score_technical_observasi"];?>">
-                                                    <i class="fas fa-info-circle"></i>
-                                                    <span>Detail Nilai</span>
+                                                  <span>
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </span>
+                                                    <span class="text">Detail Nilai</span>
                                                   </button>
                                                   <button type="button" class="btn btn-danger spider-dataNilaiTechnicalObservasi-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiTechnicalObservasiOperatorModal" id_nilaiTechnicalObservasiOperatorSpider="<?php echo $rowTampilData["id_score_technical_observasi"];?>">
-                                                    <i class="fas fa-chart-pie"></i>
-                                                    <span>Spider Chart</span>
+                                                    <span>
+                                                        <i class="fas fa-chart-pie"></i>
+                                                    </span>
+                                                    <span class="text">Spider Chart</span>
                                                   </button>
                                                 </td>
                                             </tr>

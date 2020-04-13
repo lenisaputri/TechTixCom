@@ -66,12 +66,16 @@ include "../process/proses_operatorScoreQuality.php";
             <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
             <td>
             <button type="button" class="btn btn-warning info-dataNilaiQuality-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiQualityOperatorModal" id_nilaiQualityOperatorInfo="<?php echo $rowTampilData["id_score_quality"];?>">
-                                                    <i class="fas fa-info-circle"></i>
-                                                    <span>Detail Nilai</span>
+            <span>
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </span>
+                                                    <span class="text">Detail Nilai</span>
                                                 </button>
                                                 <button type="button" class="btn btn-danger spider-dataNilaiQuality-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiQualityOperatorModal" id_nilaiQualityOperatorSpider="<?php echo $rowTampilData["id_score_quality"];?>">
-                                                <i class="fas fa-chart-pie"></i>
-                            <span>Spider Chart</span>
+                                                <span>
+                                                        <i class="fas fa-chart-pie"></i>
+                                                    </span>
+                                                    <span class="text">Spider Chart</span>
                           </button>
             </td>
           </tr>

@@ -60,12 +60,16 @@
                         <td><?php echo $rowTampilData["tanggal_training"]; ?></td>
                         <td>
                           <button type="button" class="btn btn-warning info-dataNilaiSafety-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiSafetyOperatorModal" id_nilaiSafetyOperatotInfo="<?php echo $rowTampilData["id_score_safety"];?>">
-                            <i class="fas fa-info-circle"></i>
-                            <span>Detail Nilai</span>
+                          <span>
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </span>
+                                                    <span class="text">Detail Nilai</span>
                           </button>
                           <button type="button" class="btn btn-danger spider-dataNilaiSafety-operator mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiSafetyOperatorModal" id_nilaiSafetyOperatorSpider="<?php echo $rowTampilData["id_score_safety"];?>">
-                          <i class="fas fa-chart-pie"></i>
-                            <span>Spider Chart</span>
+                          <span>
+                                                        <i class="fas fa-chart-pie"></i>
+                                                    </span>
+                                                    <span class="text">Spider Chart</span>
                           </button>
                         </td>
                       </tr>

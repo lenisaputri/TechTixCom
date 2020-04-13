@@ -57,12 +57,16 @@
                       <td class="fileMateri"><?php echo $rowTampilData["tanggal_training"]; ?></td>
                       <td>
                       <button type="button" class="btn btn-warning info-dataNilaiGeneralHrd-supervisor mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiGeneralHrdSupervisorModal" id_nilaiGeneralHrdSupervisorInfo="<?php echo $rowTampilData["id_score_generalHrd"];?>">
-                            <i class="fas fa-info-circle"></i>
-                            <span>Detail Nilai</span>
+                      <span>
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </span>
+                                                    <span class="text">Detail Nilai</span>
                           </button>
                           <button type="button" class="btn btn-danger spider-dataNilaiGeneralHrd-supervisor mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiGeneralHrdSupervisorModal" id_nilaiGeneralHrdSupervisorSpider="<?php echo $rowTampilData["id_score_generalHrd"];?>">
-                          <i class="fas fa-chart-pie"></i>
-                            <span>Spider Chart</span>
+                          <span>
+                                                        <i class="fas fa-chart-pie"></i>
+                                                    </span>
+                                                    <span class="text">Spider Chart</span>
                           </button>
                       </td>
                     </tr>

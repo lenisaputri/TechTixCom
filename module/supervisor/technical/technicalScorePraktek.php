@@ -60,12 +60,16 @@ include "../process/proses_supervisorScoreTechnicalPraktek.php";
                                                 <td><?php echo $rowTampilData["tanggal_praktek"]; ?></td>
                                                 <td> 
                                                   <button type="button" class="btn btn-warning info-dataNilaiTechnicalPraktek-supervisor mb-2 mb-sm-2" data-toggle="modal" data-target="#infoDataNilaiTechnicalPraktekSupervisorModal" id_nilaiTechnicalPraktekSupervisorInfo="<?php echo $rowTampilData["id_score_technical_praktek"];?>">
-                                                    <i class="fas fa-info-circle"></i>
-                                                    <span>Detail Nilai</span>
+                                                  <span>
+                                                        <i class="fas fa-info-circle"></i>
+                                                    </span>
+                                                    <span class="text">Detail Nilai</span>
                                                   </button>
                                                   <button type="button" class="btn btn-danger spider-dataNilaiTechnicalPraktek-supervisor mb-2 mb-sm-2" data-toggle="modal" data-target="#spiderDataNilaiTechnicalPraktekSupervisorModal" id_nilaiTechnicalPraktekSupervisorSpider="<?php echo $rowTampilData["id_score_technical_praktek"];?>">
-                                                    <i class="fas fa-chart-pie"></i>
-                                                    <span>Spider Chart</span>
+                                                  <span>
+                                                        <i class="fas fa-chart-pie"></i>
+                                                    </span>
+                                                    <span class="text">Spider Chart</span>
                                                   </button>
                                                 </td>
                                             </tr>

@@ -62,7 +62,7 @@
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateQuality" style="font-weight: bold">TANGGAL ASSESMENT</label>
                                     <div class="input-group date" id="datepickerTanggalTrainingQuality" data-provide="datepicker">
-                                        <input type="text" id="dateQuality" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateQuality">
+                                        <input type="text" id="dateQuality" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateQuality" required>
                                         <div class="input-group-addon">
                                             <span class="input-group-text form-control form-control-user">
                                                 <i class='far fa-calendar-alt' aria-hidden="true"></i>
@@ -76,7 +76,7 @@
                             </div>
                             <hr>
                             <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreQuality">
+                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreQuality" onclick="ValidasiTambahScoreQuality();">
                             <span class="icon text-white-50">
                                 <i class="fas fa-plus"></i>
                             </span>

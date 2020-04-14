@@ -105,14 +105,14 @@
                             <input type="number" class="form-control" value="<?=$rowEditScoreSafety["nilai"]?>" id="nilaiSafetyEdit" name="nilaiSafetyEdit" required>
                         </div>
                         <div class="col-sm-12">
-                            <div id="nilaiSafetyBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="nilaiSafetyEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateSafetyEdit" style="font-weight: bold">TANGGAL ASSESMENT</label>
                             <div class="input-group date" id="datepickerTanggalTrainingEdit" data-provide="datepicker">
-                                <input type="text" id="dateSafetyEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreSafety["tanggal_training"]?>" name="dateSafetyEdit">
+                                <input type="text" id="dateSafetyEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreSafety["tanggal_training"]?>" name="dateSafetyEdit" required>
                                 <div class="input-group-addon">
                                     <span class="input-group-text form-control form-control-user">
                                         <i class='far fa-calendar-alt' aria-hidden="true"></i>
@@ -133,7 +133,7 @@
                 <div class="form-group">
                     <div class="modal-footer border-0">
                         <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                        <button class="btn btn-primary" name="editDataScoreSafety" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                        <button class="btn btn-primary" name="editDataScoreSafety" type="submit" onclick="ValidasiEditScoreSafety();"><i class="fa fa-check"></i> Simpan</button>
                     </div>
                 <?php
     }
@@ -234,7 +234,8 @@
                 <div class="text-center text-muted">Data Tidak Ditemukan</div>
             <?php
         }
-        ?>                
+        ?>         
+        <hr>       
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>

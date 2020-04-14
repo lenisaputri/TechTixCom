@@ -130,8 +130,8 @@
                         <div class="col-sm-6">
                         <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="cocGeneralHrdEditDetail" style="font-weight: bold">Code Of Conduct</label>
-                                    <input type="number" class="form-control" placeholder="Nilai Code Of Conduct" id="cocGeneralHrdEditDetail" name="cocGeneralHrdEditDetail" value="<?=$rowEditScoreGeneralHrdDetail["coc"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="cocGeneralHrdEditDetail" style="font-weight: bold">NILAI CODE OF CONDUCT</label>
+                                    <input type="number" class="form-control" placeholder="NILAI CODE OF CONDUCT" id="cocGeneralHrdEditDetail" name="cocGeneralHrdEditDetail" value="<?=$rowEditScoreGeneralHrdDetail["coc"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="cocGeneralHrdEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -139,8 +139,8 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="pkbcabGeneralHrdEditDetail" style="font-weight: bold">PKB, Compensation & Benefit</label>
-                                    <input type="number" class="form-control" placeholder="NILAI PKB, Compensation & Benefit" id="pkbcabGeneralHrdEditDetail" name="pkbcabGeneralHrdEditDetail" value="<?=$rowEditScoreGeneralHrdDetail["pkb_cab"]?>" required>
+                                    <label class="col-sm-12 small d-flex flex-column justify-content-center" for="pkbcabGeneralHrdEditDetail" style="font-weight: bold">NILAI PKB, COMPENSATION & BENEFIT</label>
+                                    <input type="number" class="form-control" placeholder="NILAI PKB, COMPENSATION & BENEFIT" id="pkbcabGeneralHrdEditDetail" name="pkbcabGeneralHrdEditDetail" value="<?=$rowEditScoreGeneralHrdDetail["pkb_cab"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="pkbcabGeneralHrdEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -148,8 +148,8 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="perperusGeneralHrdEditDetail" style="font-weight: bold">NILAI Peraturan Perusahaan</label>
-                                    <input type="number" class="form-control" placeholder="NILAI Peraturan Perusahaan" id="perperusGeneralHrdEditDetail" name="perperusGeneralHrdEditDetail" value="<?=$rowEditScoreGeneralHrdDetail["perperus"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="perperusGeneralHrdEditDetail" style="font-weight: bold">NILAI PERATURAN PERUSAHAAN</label>
+                                    <input type="number" class="form-control" placeholder="NILAI PERATURAN PERUSAHAAN" id="perperusGeneralHrdEditDetail" name="perperusGeneralHrdEditDetail" value="<?=$rowEditScoreGeneralHrdDetail["perperus"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="perperusGeneralHrdEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -166,7 +166,7 @@
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                    <button class="btn btn-primary" name="editDataScoreGeneralHrdDetail" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                    <button class="btn btn-primary" name="editDataScoreGeneralHrdDetail" type="submit" onclick="ValidasiEditScoreGeneralHrdDetail();"><i class="fa fa-check"></i> Simpan</button>
                 </div>
             </div>
         <?php

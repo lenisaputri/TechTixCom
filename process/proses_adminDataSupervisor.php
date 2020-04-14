@@ -243,19 +243,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class='form-group row'>
-                        <div class='col-sm-12 mb-3 mb-sm-0'>
-                            <div class='col-sm-4'></div>
-                            <div class='col-sm-8>
-                                <div class='modal-footer border-0'>
-                                    <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
-                                    <button class='btn btn-primary' name='editDataSupervisor' type='submit' onclick='ValidasiEditSupervisor(); preventDefaultActionSupervisor2(event);'><i class='fa fa-check'></i> Simpan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+            <hr>
+            <div class='modal-footer border-0'>
+                <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
+                <button class='btn btn-primary' name='editDataSupervisor' type='submit' onclick='ValidasiEditSupervisor(); preventDefaultActionSupervisor2(event);'><i class='fa fa-check'></i> Simpan</button>
+            </div>
+                    
                                         
             <script>
                 document.getElementById('modail').addEventListener('load', setupSupervisor3());

@@ -31,7 +31,7 @@
                                     <?php
                                         $resultOperator = tampilOperator($con);
                                     ?>
-                                    <select class="custom-select-karyawan my-1 mr-sm-2" name="nikTechnicalPraktek">
+                                    <select class="custom-select-karyawan" name="nikTechnicalPraktek">
                                         <?php
                                         if(mysqli_num_rows($resultOperator) > 0){
                                             while($row = mysqli_fetch_assoc($resultOperator)){
@@ -95,7 +95,7 @@
                                     <input type="number" step="0.01" min="1" max="5" class="form-control form-control-user" placeholder="NILAI TROUBLE SHOOTING" id="troublePraktek" name="troublePraktek" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="troubleDetailPraktek" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="troublePraktekBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -119,7 +119,7 @@
                     <hr>
                     <div class="form-group row">
                         <div class="col-sm-12 mb-4 mb-sm-3">
-                            <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataScoreTechnicalPraktek">
+                            <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataScoreTechnicalPraktek" onclick="ValidasiTambahScoreTechnicalPraktek();"> 
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>

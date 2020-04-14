@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="sftpDetail" style="font-weight: bold">SAFETY PROCEDURE</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="sftpDetail" style="font-weight: bold">NILAI SAFETY PROCEDURE</label>
                                     <input type="number" class="form-control form-control-user" placeholder="NILAI SAFETY PROCEDURE" id="sftpDetail" name="sftpDetail" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="equipmentDetail" style="font-weight: bold">EQUIPMENT</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="equipmentDetail" style="font-weight: bold">NILAI EQUIPMENT</label>
                                     <input type="number" class="form-control form-control-user" placeholder="NILAI EQUIPMENT" id="equipmentDetail" name="equipmentDetail" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -98,7 +98,7 @@
                         </div></div>
                         <hr>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreTechnicalDetail">
+                            <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreTechnicalDetail" onclick="ValidasiTambahScoreTechnicalDetail();">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>

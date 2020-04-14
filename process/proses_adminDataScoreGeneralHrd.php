@@ -87,7 +87,7 @@
                             <input type="number" class="form-control" value="<?=$rowEditScoreGeneralHrd["poin"]?>" id="poinGeneralHrdEdit" name="poinGeneralHrdEdit" required>
                         </div>
                         <div class="col-sm-12">
-                            <div id="poinGeneralHrdyEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="poinGeneralHrdEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -96,14 +96,14 @@
                             <input type="number" class="form-control" value="<?=$rowEditScoreGeneralHrd["nilai"]?>" id="nilaiGeneralHrdEdit" name="nilaiGeneralHrdEdit" required>
                         </div>
                         <div class="col-sm-12">
-                            <div id="nilaiGeneralHrdBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="nilaiGeneralHrdEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateGeneralHrdEdit" style="font-weight: bold">TANGGAL ASSESMENT</label>
                             <div class="input-group date" id="datepickerTanggalTrainingGeneralHrdEdit" data-provide="datepicker">
-                                <input type="text" id="dateGeneralHrdEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreGeneralHrd["tanggal_training"]?>" name="dateGeneralHrdEdit">
+                                <input type="text" id="dateGeneralHrdEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreGeneralHrd["tanggal_training"]?>" name="dateGeneralHrdEdit" required>
                                 <div class="input-group-addon">
                                     <span class="input-group-text form-control form-control-user">
                                         <i class='far fa-calendar-alt' aria-hidden="true"></i>
@@ -111,9 +111,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div id="dateGeneralHrdEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        <div class="col-sm-12">
+                            <div id="dateGeneralHrdEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                        </div>
                     </div>
                     <hr>
                     <?php
@@ -124,7 +124,7 @@
                 <div class="form-group">
                     <div class="modal-footer border-0">
                         <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                        <button class="btn btn-primary" name="editDataScoreGeneralHrd" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                        <button class="btn btn-primary" name="editDataScoreGeneralHrd" type="submit" onclick="ValidasiEditScoreGeneralHrd();"><i class="fa fa-check"></i> Simpan</button>
                     </div>
                 </div>
             <?php
@@ -211,6 +211,7 @@
                 <?php
             }
             ?>               
+                <hr>
                 <div class="form-group">
                     <div class="modal-footer border-0">
                         <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>

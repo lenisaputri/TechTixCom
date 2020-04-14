@@ -126,12 +126,12 @@
                                     <input type="text" class="form-control" placeholder="TANGGAL TRAINING" id="tanggalTrainingDetail" name="tanggalTrainingDetail" value="<?=$rowEditScoreTechnicalDetail["tanggal_training"]?>" disabled>
                                 </div>
                                 <div class="col-sm-12">
-                                <div id="tanggalTrainingDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                <div id="tanggalTrainingEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="sftpTechnicalEditDetail" style="font-weight: bold">SAFETY PROCEDURE</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="sftpTechnicalEditDetail" style="font-weight: bold">NILAI SAFETY PROCEDURE</label>
                                     <input type="number" class="form-control" placeholder="NILAI SAFETY PROCEDURE" id="sftpTechnicalEditDetail" name="sftpTechnicalEditDetail" value="<?=$rowEditScoreTechnicalDetail["sftp"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -142,7 +142,7 @@
                         <div class="col-sm-6">
                         <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="equipmentTechnicalEditDetail" style="font-weight: bold">EQUIPMENT LIST</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="equipmentTechnicalEditDetail" style="font-weight: bold">NILAI EQUIPMENT LIST</label>
                                     <input type="number" class="form-control" placeholder="NILAI EQUIPMENT LIST" id="equipmentTechnicalEditDetail" name="equipmentTechnicalEditDetail" value="<?=$rowEditScoreTechnicalDetail["equipment"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -151,7 +151,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="operationalTechnicalEditDetail" style="font-weight: bold">OPERASIONAL PARAMETER</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="operationalTechnicalEditDetail" style="font-weight: bold">NILAI OPERASIONAL PARAMETER</label>
                                     <input type="number" class="form-control" placeholder="NILAI OPERASIONAL PARAMETER" id="operationalTechnicalEditDetail" name="operationalTechnicalEditDetail" value="<?=$rowEditScoreTechnicalDetail["operational"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -160,7 +160,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="maintenTechnicalEditDetail" style="font-weight: bold">MAINTENANCE PARAMETER</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="maintenTechnicalEditDetail" style="font-weight: bold">NILAI MAINTENANCE PARAMETER</label>
                                     <input type="number" class="form-control" placeholder="NILAI MAINTENANCE PARAMETER" id="maintenTechnicalEditDetail" name="maintenTechnicalEditDetail" value="<?=$rowEditScoreTechnicalDetail["mainten"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -169,7 +169,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="troubleTechnicalEditDetail" style="font-weight: bold">TROUBLE SHOOTING</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="troubleTechnicalEditDetail" style="font-weight: bold">NILAI TROUBLE SHOOTING</label>
                                     <input type="number" class="form-control" placeholder="NILAI TROUBLE SHOOTING" id="troubleTechnicalEditDetail" name="troubleTechnicalEditDetail" value="<?=$rowEditScoreTechnicalDetail["trouble"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -187,7 +187,7 @@
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                    <button class="btn btn-primary" name="editDataScoreTechnicalDetail" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                    <button class="btn btn-primary" name="editDataScoreTechnicalDetail" type="submit" onclick="ValidasiEditScoreTechnicalDetail();"><i class="fa fa-check"></i> Simpan</button>
                 </div>
             </div>
         <?php

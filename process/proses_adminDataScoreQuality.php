@@ -96,14 +96,14 @@
                             <input type="number" class="form-control" value="<?=$rowEditScoreQuality["nilai"]?>" id="nilaiQualityEdit" name="nilaiQualityEdit" required>
                         </div>
                         <div class="col-sm-12">
-                            <div id="nilaiQualityBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="nilaiQualityEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateQualityEdit" style="font-weight: bold">TANGGAL ASSESMENT</label>
                             <div class="input-group date" id="datepickerTanggalTrainingQualityEdit" data-provide="datepicker">
-                                <input type="text" id="dateQualityEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreQuality["tanggal_training"]?>" name="dateQualityEdit">
+                                <input type="text" id="dateQualityEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreQuality["tanggal_training"]?>" name="dateQualityEdit" required>
                                 <div class="input-group-addon">
                                     <span class="input-group-text form-control form-control-user">
                                         <i class='far fa-calendar-alt' aria-hidden="true"></i>
@@ -124,7 +124,7 @@
                 <div class="form-group">
                     <div class="modal-footer border-0">
                         <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                        <button class="btn btn-primary" name="editDataScoreQuality" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                        <button class="btn btn-primary" name="editDataScoreQuality" type="submit" onclick="ValidasiEditScoreQuality();"><i class="fa fa-check"></i> Simpan</button>
                     </div>
                 </div>
             <?php
@@ -211,6 +211,7 @@
             <?php
         }
         ?>    
+        <hr>
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>

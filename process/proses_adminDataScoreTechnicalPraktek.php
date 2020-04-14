@@ -185,7 +185,8 @@
                 <div class="text-center text-muted">Data Tidak Ditemukan</div>
             <?php
         }
-        ?>                
+        ?>      
+        <hr>          
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
@@ -245,7 +246,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="sftpTechnicalEditPraktek" style="font-weight: bold">SAFETY PROCEDURE</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="sftpTechnicalEditPraktek" style="font-weight: bold">NILAI SAFETY PROCEDURE</label>
                                     <input type="number" step="0.01" min="1" max="5" class="form-control" placeholder="NILAI SAFETY PROCEDURE" id="sftpTechnicalEditPraktek" name="sftpTechnicalEditPraktek" value="<?=$rowEditScoreTechnicalPraktek["sftp"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -256,7 +257,7 @@
                         <div class="col-sm-6">
                         <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="equipmentTechnicalEditPraktek" style="font-weight: bold">EQUIPMENT LIST</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="equipmentTechnicalEditPraktek" style="font-weight: bold">NILAI EQUIPMENT LIST</label>
                                     <input type="number" step="0.01" min="1" max="5" class="form-control" placeholder="NILAI EQUIPMENT LIST" id="equipmentTechnicalEditPraktek" name="equipmentTechnicalEditPraktek" value="<?=$rowEditScoreTechnicalPraktek["equipment"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -265,7 +266,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="operationalTechnicalEditPraktek" style="font-weight: bold">OPERASIONAL PARAMETER</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="operationalTechnicalEditPraktek" style="font-weight: bold">NILAI OPERASIONAL PARAMETER</label>
                                     <input type="number" step="0.01" min="1" max="5" class="form-control" placeholder="NILAI OPERASIONAL PARAMETER" id="operationalTechnicalEditPraktek" name="operationalTechnicalEditPraktek" value="<?=$rowEditScoreTechnicalPraktek["operational"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -274,7 +275,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="maintenTechnicalEditPraktek" style="font-weight: bold">MAINTENANCE PARAMETER</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="maintenTechnicalEditPraktek" style="font-weight: bold">NILAI MAINTENANCE PARAMETER</label>
                                     <input type="number" step="0.01" min="1" max="5" class="form-control" placeholder="NILAI MAINTENANCE PARAMETER" id="maintenTechnicalEditPraktek" name="maintenTechnicalEditPraktek" value="<?=$rowEditScoreTechnicalPraktek["mainten"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -283,7 +284,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="troubleTechnicalEditPraktek" style="font-weight: bold">TROUBLE SHOOTING</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="troubleTechnicalEditPraktek" style="font-weight: bold">NILAI TROUBLE SHOOTING</label>
                                     <input type="number" step="0.01" min="1" max="5" class="form-control" placeholder="NILAI TROUBLE SHOOTING" id="troubleTechnicalEditPraktek" name="troubleTechnicalEditPraktek" value="<?=$rowEditScoreTechnicalPraktek["trouble"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -301,7 +302,7 @@
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                    <button class="btn btn-primary" name="editDataScoreTechnicalPraktek" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                    <button class="btn btn-primary" name="editDataScoreTechnicalPraktek" type="submit" onclick="ValidasiEditScoreTechnicalPraktek();"><i class="fa fa-check"></i> Simpan</button>
                 </div>
             </div>
         <?php

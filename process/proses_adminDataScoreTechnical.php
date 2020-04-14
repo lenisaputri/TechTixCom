@@ -88,10 +88,10 @@
                         <input type="hidden" name="id_scoreTechnicalUpdate" value="<?=$rowEditScoreTechnical["id_score_technical"]?>" > 
                         <div class="col-sm-12">
                             <label class="col-sm-6 small d-flex flex-column justify-content-center" for="kategoriTechnicalEdit" style="font-weight: bold">KATEGORI TECHNICAL</label>
-                            <input type="text" class="form-control" value="<?=$rowEditScoreTechnical["kategori_technical"]?>" id="kategoriTechnicalEdit" name="kategoriTechnicalEdit">
+                            <input type="text" class="form-control" value="<?=$rowEditScoreTechnical["kategori_technical"]?>" id="kategoriTechnicalEdit" name="kategoriTechnicalEdit" required>
                         </div>
                         <div class="col-sm-12">
-                            <div id="kategoriTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="kategoriTechnicalEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -109,14 +109,14 @@
                             <input type="number" class="form-control" value="<?=$rowEditScoreTechnical["nilai"]?>" id="nilaiTechnicalEdit" name="nilaiTechnicalEdit" required>
                         </div>
                         <div class="col-sm-12">
-                            <div id="nilaiTechnicalBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                            <div id="nilaiTechnicalEditBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateTechnicalEdit" style="font-weight: bold">TANGGAL ASSESMENT</label>
                             <div class="input-group date" id="datepickerTanggalTrainingTechnicalEdit" data-provide="datepicker">
-                                <input type="text" id="dateTechnicalEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreTechnical["tanggal_training"]?>" name="dateTechnicalEdit">
+                                <input type="text" id="dateTechnicalEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreTechnical["tanggal_training"]?>" name="dateTechnicalEdit" required>
                                 <div class="input-group-addon">
                                     <span class="input-group-text form-control form-control-user">
                                         <i class='far fa-calendar-alt' aria-hidden="true"></i>
@@ -137,7 +137,7 @@
                 <div class="form-group">
                     <div class="modal-footer border-0">
                         <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                        <button class="btn btn-primary" name="editDataScoreTechnical" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                        <button class="btn btn-primary" name="editDataScoreTechnical" type="submit" onclick="ValidasiEditScoreTechnical();"><i class="fa fa-check"></i> Simpan</button>
                     </div>
                 <?php
     }
@@ -226,7 +226,8 @@
                 <div class="text-center text-muted">Data Tidak Ditemukan</div>
             <?php
         }
-        ?>                
+        ?>          
+        <hr>      
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>

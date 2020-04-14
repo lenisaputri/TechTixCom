@@ -149,7 +149,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="smk3SafetyEditDetail" style="font-weight: bold">SMK3</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="smk3SafetyEditDetail" style="font-weight: bold">NILAI SMK3</label>
                                     <input type="number" class="form-control" placeholder="NILAI SMK3" id="smk3SafetyEditDetail" name="smk3SafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["smk3"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -158,7 +158,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="eaHiraSafetyEditDetail" style="font-weight: bold">EA-HIRA</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="eaHiraSafetyEditDetail" style="font-weight: bold">NILAI EA-HIRA</label>
                                     <input type="number" class="form-control" placeholder="NILAI EA-HIRA" id="eaHiraSafetyEditDetail" name="eaHiraSafetyEditDetail" value="<?=$rowEditScoreSafetyDetail["ea_hira"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -259,7 +259,7 @@
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                    <button class="btn btn-primary" name="editDataScoreSafetyDetail" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                    <button class="btn btn-primary" name="editDataScoreSafetyDetail" type="submit" onclick="ValidasiEditScoreSafetyDetail();"><i class="fa fa-check"></i> Simpan</button>
                 </div>
             </div>
         <?php

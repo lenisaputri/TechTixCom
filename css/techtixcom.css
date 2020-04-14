@@ -3077,7 +3077,7 @@ input[type="button"].btn-block {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #4e73df;
+  background-color: #0368ca;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -10602,7 +10602,7 @@ form.user .custom-checkbox.small label {
 
 form.user .form-control-user {
   font-size: 0.8rem;
-  border-radius: 10rem;
+  /* border-radius: 10rem; */
   padding: 1.5rem 1rem;
 }
 

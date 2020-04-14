@@ -50,8 +50,8 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fssDetail" style="font-weight: bold">Food Safety System</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI Food Safety System" id="fssDetail" name="fssDetail" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fssDetail" style="font-weight: bold">NILAI FOOD SAFETY SYSTEM</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI FOOD SAFETY SYSTEM" id="fssDetail" name="fssDetail" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="fssDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -61,7 +61,7 @@
                         <div class="col-sm-6">
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gmpDetail" style="font-weight: bold">GMP</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gmpDetail" style="font-weight: bold">NILAI GMP</label>
                                     <input type="number" class="form-control form-control-user" placeholder="NILAI GMP" id="gmpDetail" name="gmpDetail" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -70,7 +70,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="halalDetail" style="font-weight: bold">HALAL</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="halalDetail" style="font-weight: bold">NILAI HALAL</label>
                                     <input type="number" class="form-control form-control-user" placeholder="NILAI HALAL" id="halalDetail" name="halalDetail" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -81,7 +81,7 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreQualityDetail">
+                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreQualityDetail" onclick="ValidasiTambahScoreQualityDetail();">
                             <span class="icon text-white-50">
                                 <i class="fas fa-plus"></i>
                             </span>

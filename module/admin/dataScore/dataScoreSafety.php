@@ -62,7 +62,7 @@
                         <div class="col-sm-12">
                             <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateSafety" style="font-weight: bold">TANGGAL ASSESMENT</label>
                             <div class="input-group date" id="datepickerTanggalTraining" data-provide="datepicker">
-                                <input type="text" id="dateSafety" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateSafety">
+                                <input type="text" id="dateSafety" class="form-control form-control-user datepicker" placeholder="TANGGAL ASSESMENT" name="dateSafety" required>
                                 <div class="input-group-addon">
                                     <span class="far fa-calendar-alt input-group-text form-control form-control-user" aria-hidden="true">
                                     <!-- <i class='far fa-calendar-alt' aria-hidden="true"></i> -->
@@ -76,7 +76,7 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreSafety">
+                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreSafety" onclick="ValidasiTambahScoreSafety();">
                             <span class="icon text-white-50">
                                 <i class="fas fa-plus"></i>
                             </span>

@@ -50,8 +50,8 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="cocDetail" style="font-weight: bold">CODE OF CONDUCT</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="Nilai Code Of Conduct" id="cocDetail" name="cocDetail" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="cocDetail" style="font-weight: bold">NILAI CODE OF CONDUCT</label>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI CODE OF CONDUCT" id="cocDetail" name="cocDetail" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="cocDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -61,7 +61,7 @@
                         <div class="col-sm-6">
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="pkbcabDetail" style="font-weight: bold">PKB, COMPENSATION & BENEFIT</label>
+                                    <label class="col-sm-12 small d-flex flex-column justify-content-center" for="pkbcabDetail" style="font-weight: bold">NILAI PKB, COMPENSATION & BENEFIT</label>
                                     <input type="number" class="form-control form-control-user" placeholder="NILAI PKB, Compensation & Benefit" id="pkbcabDetail" name="pkbcabDetail" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -71,7 +71,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="perperusDetail" style="font-weight: bold">NILAI PERATURAN PERUSAHAAN</label>
-                                    <input type="number" class="form-control form-control-user" placeholder="NILAI Peraturan Perpustakaan" id="perperusDetail" name="perperusDetail" required>
+                                    <input type="number" class="form-control form-control-user" placeholder="NILAI PERATURAN PERUSAHAAN" id="perperusDetail" name="perperusDetail" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="perperusDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -81,7 +81,7 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreGeneralHrdDetail">
+                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreGeneralHrdDetail" onclick="ValidasiTambahScoreGeneralHrdDetail();">
                             <span class="icon text-white-50">
                                 <i class="fas fa-plus"></i>
                             </span>

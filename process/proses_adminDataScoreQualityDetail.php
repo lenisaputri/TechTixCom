@@ -130,8 +130,8 @@
                         <div class="col-sm-6">
                         <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fssQualityEditDetail" style="font-weight: bold">Food Safety System</label>
-                                    <input type="number" class="form-control" placeholder="NILAI FSS" id="fssQualityEditDetail" name="fssQualityEditDetail" value="<?=$rowEditScoreQualityDetail["fss"]?>" required>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="fssQualityEditDetail" style="font-weight: bold">NILAI FOOD SAFETY SYSTEM</label>
+                                    <input type="number" class="form-control" placeholder="NILAI FOOD SAFETY SYSTEM" id="fssQualityEditDetail" name="fssQualityEditDetail" value="<?=$rowEditScoreQualityDetail["fss"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="fssQualityEditDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -139,7 +139,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gmpQualityEditDetail" style="font-weight: bold">GMP</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="gmpQualityEditDetail" style="font-weight: bold">NILAI GMP</label>
                                     <input type="number" class="form-control" placeholder="NILAI GMP" id="gmpQualityEditDetail" name="gmpQualityEditDetail" value="<?=$rowEditScoreQualityDetail["gmp"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -148,7 +148,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="halalQualityEditDetail" style="font-weight: bold">HALAL</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="halalQualityEditDetail" style="font-weight: bold">NILAI HALAL</label>
                                     <input type="number" class="form-control" placeholder="NILAI HALAL" id="halalQualityEditDetail" name="halalQualityEditDetail" value="<?=$rowEditScoreQualityDetail["halal"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -166,7 +166,7 @@
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                    <button class="btn btn-primary" name="editDataScoreQualityDetail" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                    <button class="btn btn-primary" name="editDataScoreQualityDetail" type="submit" onclick="ValidasiEditScoreQualityDetail();"><i class="fa fa-check"></i> Simpan</button>
                 </div>
             </div>
         <?php

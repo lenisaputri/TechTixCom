@@ -449,7 +449,7 @@
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header d-flex justify-content-center bg-editPengaturan border-0">
-            <h5 class="modal-title text-white w-100 text-center">Edit Data Jabatan</h5>
+            <h5 class="modal-title text-white w-100 text-center">Pengaturan</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -468,7 +468,7 @@
                     <input type="hidden" name="id_levelnya" id="id_levelnya" value="<?php echo $level ?>">
                     <label class="col-sm-3 small d-flex flex-column justify-content-center" for="foto" style="font-weight: bold">GANTI FOTO</label>
                     <div class="input-group col-sm-9">
-                      <input type="file" class="form-control border-0 form-control-user"  id="foto" name="foto" onblur="reset_Blank(); reset_Size(); reset_Check();" onchange="preview_image(event);" accept="image/*">
+                      <input type="file" id="foto" name="foto" onblur="reset_Blank(); reset_Size(); reset_Check();" onchange="preview_image(event);" accept="image/*">
                     </div>
                   </div>
                   <div class="form-group row">

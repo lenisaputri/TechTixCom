@@ -186,6 +186,7 @@
             <?php
         }
         ?>                
+        <hr>
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
@@ -222,7 +223,7 @@
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="dateTechnicalObservasiEdit" style="font-weight: bold">TANGGAL ASSESMENT</label>
                                     <div class="input-group date" id="datepickerTanggalPraktekTechnicalObservasiEdit" data-provide="datepicker">
-                                        <input type="text" id="dateTechnicalObservasiEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreTechnicalObservasi["tanggal_observasi"]?>" name="dateTechnicalObservasiEdit">
+                                        <input type="text" id="dateTechnicalObservasiEdit" class="form-control form-control-user datepicker" value="<?=$rowEditScoreTechnicalObservasi["tanggal_observasi"]?>" name="dateTechnicalObservasiEdit" required>
                                         <div class="input-group-addon">
                                             <span class="input-group-text form-control form-control-user">
                                                 <i class='far fa-calendar-alt' aria-hidden="true"></i>
@@ -245,7 +246,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="sftpTechnicalEditObservasi" style="font-weight: bold">SAFETY PROCEDURE</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="sftpTechnicalEditObservasi" style="font-weight: bold">NILAI SAFETY PROCEDURE</label>
                                     <input type="number" step="0.01" min="1" max="5" class="form-control" placeholder="NILAI SAFETY PROCEDURE" id="sftpTechnicalEditObservasi" name="sftpTechnicalEditObservasi" value="<?=$rowEditScoreTechnicalObservasi["sftp"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -256,7 +257,7 @@
                         <div class="col-sm-6">
                         <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="equipmentTechnicalEditObservasi" style="font-weight: bold">EQUIPMENT LIST</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="equipmentTechnicalEditObservasi" style="font-weight: bold">NILAI EQUIPMENT LIST</label>
                                     <input type="number" step="0.01" min="1" max="5" class="form-control" placeholder="NILAI EQUIPMENT LIST" id="equipmentTechnicalEditObservasi" name="equipmentTechnicalEditObservasi" value="<?=$rowEditScoreTechnicalObservasi["equipment"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -265,7 +266,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="operationalTechnicalEditObservasi" style="font-weight: bold">OPERASIONAL PARAMETER</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="operationalTechnicalEditObservasi" style="font-weight: bold">NILAI OPERASIONAL PARAMETER</label>
                                     <input type="number" step="0.01" min="1" max="5" class="form-control" placeholder="NILAI OPERASIONAL PARAMETER" id="operationalTechnicalEditObservasi" name="operationalTechnicalEditObservasi" value="<?=$rowEditScoreTechnicalObservasi["operational"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -274,7 +275,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="maintenTechnicalEditObservasi" style="font-weight: bold">MAINTENANCE PARAMETER</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="maintenTechnicalEditObservasi" style="font-weight: bold">NILAI MAINTENANCE PARAMETER</label>
                                     <input type="number" step="0.01" min="1" max="5" class="form-control" placeholder="NILAI MAINTENANCE PARAMETER" id="maintenTechnicalEditObservasi" name="maintenTechnicalEditObservasi" value="<?=$rowEditScoreTechnicalObservasi["mainten"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -283,7 +284,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="troubleTechnicalEditObservasi" style="font-weight: bold">TROUBLE SHOOTING</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="troubleTechnicalEditObservasi" style="font-weight: bold">NILAI TROUBLE SHOOTING</label>
                                     <input type="number" step="0.01" min="1" max="5" class="form-control" placeholder="NILAI TROUBLE SHOOTING" id="troubleTechnicalEditObservasi" name="troubleTechnicalEditObservasi" value="<?=$rowEditScoreTechnicalObservasi["trouble"]?>" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -301,7 +302,7 @@
             <div class="form-group">
                 <div class="modal-footer border-0">
                     <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
-                    <button class="btn btn-primary" name="editDataScoreTechnicalObservasi" type="submit"><i class="fa fa-check"></i> Simpan</button>
+                    <button class="btn btn-primary" name="editDataScoreTechnicalObservasi" type="submit" onclick="ValidasiEditScoreTechnicalObservasi();"><i class="fa fa-check"></i> Simpan</button>
                 </div>
             </div>
         <?php

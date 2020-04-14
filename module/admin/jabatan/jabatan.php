@@ -32,6 +32,7 @@
                             <div id="namaBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                         </div>
                     </div>
+                    <hr>
                     <div class="form-group row">
                         <div class="col-sm-12 mb-4 mb-sm-3">
                             <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahJabatan" onclick="ValidasiTambahJabatan();">

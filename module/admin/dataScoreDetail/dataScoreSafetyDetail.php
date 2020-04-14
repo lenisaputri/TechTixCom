@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="smk3Detail" style="font-weight: bold">SMK3</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="smk3Detail" style="font-weight: bold">NILAI SMK3</label>
                                     <input type="number" class="form-control form-control-user" placeholder="NILAI SMK3" id="smk3Detail" name="smk3Detail" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="eaHiraDetail" style="font-weight: bold">EA-HIRA</label>
+                                    <label class="col-sm-6 small d-flex flex-column justify-content-center" for="eaHiraDetail" style="font-weight: bold">NILAI EA-HIRA</label>
                                     <input type="number" class="form-control form-control-user" placeholder="NILAI EA-HIRA" id="eaHiraDetail" name="eaHiraDetail" required>
                                 </div>
                                 <div class="col-sm-12">
@@ -153,7 +153,7 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreSafetyDetail">
+                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreSafetyDetail" onclick="ValidasiTambahScoreSafetyDetail();">
                             <span class="icon text-white-50">
                                 <i class="fas fa-plus"></i>
                             </span>

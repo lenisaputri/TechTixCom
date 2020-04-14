@@ -244,19 +244,15 @@
                             <div id='jabatanAdminAdminBlank2' class='col-sm-12 small d-flex flex-column justify-content-center text-danger'></div>
                         </div>
                     </div>
-                    <div class='form-group row'>
-                        <div class='col-sm-12 mb-3 mb-sm-0'>
-                            <div class='col-sm-4'></div>
-                            <div class='col-sm-8>
-                                <div class='modal-footer border-0'>
-                                    <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
-                                    <button class='btn btn-primary' name='editDataAdmin' type='submit' onclick='ValidasiEditAdmin(); preventDefaultActionAdmin2(event);'><i class='fa fa-check'></i> Simpan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div> 
             </div>
+            <hr>
+           <div class='modal-footer border-0 '>
+                <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-times'></i> Tutup</button>
+                <button class='btn btn-primary' name='editDataAdmin' type='submit' onclick='ValidasiEditAdmin(); preventDefaultActionAdmin2(event);'><i class='fa fa-check'></i> Simpan</button>
+            </div>
+                            
+                  
                                         
             <script>
                 document.getElementById('modail').addEventListener('load', setupAdmin3());

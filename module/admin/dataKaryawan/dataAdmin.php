@@ -55,10 +55,10 @@
                                         <img src="../attachment/img/avatar.jpeg" id="fotoPrevAdminAdmin3" height="200px" width="200px">
                                     </div>
                                     <div class="col-md-2"></div>
-                                    <div class="col-md-10">
+                                    <div class="col-md-10 ml-4">
                                         <br>
                                         <input id='fileid2' type='file' name='fileid2' onchange="preview_imagesAdmin22(event);"  hidden required />
-                                        <input id='buttonid2' type='button' value='Load Gambar'class="btn btn-loading btn-primary tmbl-loading ml-2"  />
+                                        <input id='buttonid2' type='button' value='Load Gambar'class="btn btn-loading btn-primary tmbl-loading ml-3"  />
                                     </div>
                                     <div class="col-sm-3"></div>
                                     <div class="col-sm-9">
@@ -89,7 +89,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-12 mb-3 mb-sm-0">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="password" style="font-weight: bold">JENIS KELAMIN</label>
-                                    <div class="form-check form-check-inline">
+                                    <div class="form-check form-check-inline ml-2">
                                         <input class="form-check-input form-control-user" type="radio" name="jkAdminAdmin" id="jkAdminAdmin1" value="Laki-Laki">
                                         <label class="form-check-label" for="jkAdminAdmin1">Laki-Laki</label>
                                     </div>
@@ -118,6 +118,7 @@
                             </div>
                         </div>
                     </div>
+                    <hr>
                     <div class="form-group row">
                         <div class="col-sm-12 mb-3 mb-sm-0">
                             <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataAdmin" onclick="ValidasiTambahAdmin(); preventDefaultActionAdmin(event);">

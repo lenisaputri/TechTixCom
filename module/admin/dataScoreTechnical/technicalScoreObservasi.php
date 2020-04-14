@@ -31,7 +31,7 @@
                                     <?php
                                         $resultOperator = tampilOperator($con);
                                     ?>
-                                    <select class="custom-select-karyawan my-1 mr-sm-2" name="nikTechnicalObservasi">
+                                    <select class="custom-select-karyawan" name="nikTechnicalObservasi">
                                         <?php
                                         if(mysqli_num_rows($resultOperator) > 0){
                                             while($row = mysqli_fetch_assoc($resultOperator)){
@@ -74,7 +74,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-sm-6 small d-flex flex-column justify-content-center" for="operationalObservasi" style="font-weight: bold">NILAI OPERATIONAL PARAMETER</label>
-                                    <input type="number" step="0.01" min="1" max="5" class="form-control form-control-user" placeholder="NILAI EQUIPMENT" id="operationalObservasi" name="operationalObservasi" required>
+                                    <input type="number" step="0.01" min="1" max="5" class="form-control form-control-user" placeholder="NILAI OPERATIONAL PARAMETER" id="operationalObservasi" name="operationalObservasi" required>
                                 </div>
                                 <div class="col-sm-12">
                                     <div id="operationalObservasiBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
@@ -95,7 +95,7 @@
                                     <input type="number" step="0.01" min="1" max="5" class="form-control form-control-user" placeholder="NILAI TROUBLE SHOOTING" id="troubleObservasi" name="troubleObservasi" required>
                                 </div>
                                 <div class="col-sm-12">
-                                    <div id="troubleDetailObservasi" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
+                                    <div id="troubleObservasiBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -119,7 +119,7 @@
                     <hr>
                     <div class="form-group row">
                         <div class="col-sm-12 mb-4 mb-sm-3">
-                            <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataScoreTechnicalObservasi">
+                            <button type="submit" class="btn btn-success btn-icon-split float-right" name="tambahDataScoreTechnicalObservasi" onclick="ValidasiTambahScoreTechnicalObservasi();">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>

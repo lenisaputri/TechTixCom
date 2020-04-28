@@ -95,16 +95,16 @@
                                     <div id="troubleDetailBlank" class="col-sm-12 small d-flex flex-column justify-content-center text-danger"></div>
                                 </div>
                             </div>
-                        </div></div>
-                        <hr>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreTechnicalDetail" onclick="ValidasiTambahScoreTechnicalDetail();">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Tambah Data</span>
-                            </button>
                         </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-icon-split mb-2 mb-sm-0" name="tambahDataScoreTechnicalDetail" onclick="ValidasiTambahScoreTechnicalDetail();">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-plus"></i>
+                                </span>
+                            <span class="text">Tambah Data</span>
+                        </button>
                     </div>
                 </form>
             </div>

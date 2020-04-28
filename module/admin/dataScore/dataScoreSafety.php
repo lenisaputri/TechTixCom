@@ -85,7 +85,7 @@
                     </div>
                     <div class="form-group">
                         <div class="row d-flex justify-content-end">
-                            <button type="button" class="btn btn-info btn-icon-split" name="tambahDataMateri" onclick="location.href='index.php?module=dataScoreSafetyDetail';">
+                            <button type="button" class="btn btn-info btn-icon-split mr-2 mb-sm-0" name="tambahDataMateri" onclick="location.href='index.php?module=dataScoreSafetyDetail';">
                                 <span class="text">Tambah Data Detail</span>
                             </button>
                         </div>
@@ -98,6 +98,16 @@
                 <h6 class="m-0 font-weight-bold text-primary">Data Nilai Safety Online</h6>
             </div>
             <div class="card-body">
+                <div class="form-group">
+                    <div class="row d-flex justify-content-end">
+                        <button type="button" class="btn btn-primary btn-icon-split mr-2 mb-sm-0" name="tambahDataMateri" onclick="location.href='index.php?module=printDataScoreSafety';">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-print"></i>
+                            </span>
+                            <span class="text">Print Data</span>
+                        </button>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>

@@ -431,6 +431,9 @@
                   case "dataMateriTechnicalLink":
                     include "admin/materiTraining/dataMateriTechnicalLink.php";
                     break;
+                  case "printDataScoreSafety":
+                    include "admin/printDataScore/printDataScoreSafetyAdmin.php";
+                    break;
                   default:
                     include "404.php";
                 }

@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
   include "../config/connection.php";
   include "../process/proses_adminDataScoreSafety.php";
 ?>
@@ -100,7 +101,7 @@
             <div class="card-body">
                 <div class="form-group">
                     <div class="row d-flex justify-content-end">
-                        <button type="button" class="btn btn-primary btn-icon-split mr-2 mb-sm-0" name="tambahDataMateri" onclick="location.href='index.php?module=printDataScoreSafety';">
+                        <button type="button" class="btn btn-primary btn-icon-split mr-2 mb-sm-0" name="printDataScoreSafety" data-toggle="modal" data-target="#printDataScoreSafetyModal">
                             <span class="icon text-white-50">
                                 <i class="fas fa-print"></i>
                             </span>
@@ -217,4 +218,34 @@
             </div>
         </div>
     </div>
+        <!-- Modal -->
+<form method="POST" action="../process/report_filterAdminDataScoreSafety.php" target="_blank" >
+  <div class="modal fade" id="printDataScoreSafetyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><small>PRINT FILTER DATE</small></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="control-label">Star Date</label>
+        <input type="date" name="from" id="stayf" value="<?php echo date('Y-m-d'); ?>" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label">End Date</label>
+        <input type="date" name="end" id="stayf" value="<?php echo date('Y-m-d'); ?>" class="form-control">
+    </div>                
+    <div class="form-group">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button class="btn btn-primary" type="submit" name="submit" value="proses" onclick="return valid();">Print</button>
+    </div>
+</div>
+</div>  
+</div>
+</div>
+</form>
+<!--end modal-->
 </body>

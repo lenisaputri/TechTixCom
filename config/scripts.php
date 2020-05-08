@@ -13,8 +13,9 @@
 
   <!-- datepicker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js"></script>
-  <!-- <script src="../js/demo/chart-area-demo.js"></script>
-  <script src="../js/demo/chart-pie-demo.js"></script> -->
+  <script src="../js/demo/chart-area-demo.js"></script>
+  <script src="../js/demo/chart-bar-demo.js"></script>
+  <!-- <script src="../js/demo/chart-pie-demo.js"></script> -->
   <script src="../js/demo/chart-radar-demo.js"></script>
   <!-- <script src="../js/demo/chart-radar-demo-safety-operator.js"></script> -->
 

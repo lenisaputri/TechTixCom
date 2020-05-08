@@ -267,10 +267,19 @@
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo ($namaUser); ?></span>
-              </a>             
+               <img class="mr-2 img-profile rounded-circle" src="../attachment/img/<?php echo ($rowUser['foto'] == null) ? 'avatar.jpeg' : $rowUser['foto']; ?>">  
+               <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo ($namaUser); ?></span>
+              </a>            
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+              <?php
+              if ($level == "admin") {
+                ?>
+                  <a class="dropdown-item" href="index.php?module=profileAdmin">
+                  <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>Profile Admin
+                </a>
+                <?php
+              } 
+            ?>
                 <a class="dropdown-item" href="index.php?module=setting" data-target="#editPengaturan" data-toggle="modal">
                   <i class="fas fa-cog fa-sm fa-fw mr-2 text-gray-400"></i>Settings
                 </a>
@@ -430,6 +439,9 @@
                     break;
                   case "dataMateriTechnicalLink":
                     include "admin/materiTraining/dataMateriTechnicalLink.php";
+                    break;
+                  case "profileAdmin":
+                    include "admin/profile/profileAdmin.php";
                     break;
                   default:
                     include "404.php";

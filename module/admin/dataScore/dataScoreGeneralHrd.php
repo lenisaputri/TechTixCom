@@ -239,8 +239,8 @@ error_reporting(0);
         <input type="date" name="end" id="stayf" value="<?php echo date('Y-m-d'); ?>" class="form-control">
     </div>                
     <div class="form-group">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button class="btn btn-primary" type="submit" name="submit" value="proses" onclick="return valid();">Print</button>
+    <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
+        <button class="btn btn-primary" type="submit" name="submit" value="proses" onclick="return valid();"><i class="fa fa-print"></i> Print</button>
     </div>
 </div>
 </div>  

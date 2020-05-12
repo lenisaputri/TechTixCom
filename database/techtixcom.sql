@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2020 at 07:05 AM
+-- Generation Time: May 12, 2020 at 11:29 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -45,9 +45,7 @@ CREATE TABLE `tabel_admin` (
 --
 
 INSERT INTO `tabel_admin` (`id_admin`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `jenis_kelamin`, `waktu_tambah`, `waktu_edit`) VALUES
-(1, 3, 2, 'admin1', 123, 'bts-21 (1).jpg', 'Laki-Laki', '0000-00-00 00:00:00', '2020-01-24 00:00:00'),
-(2, 22, 8, 'r', 10000, 'card-1.png', 'Laki-Laki', '2020-01-24 00:00:00', '2020-01-26 00:00:00'),
-(3, 23, 1, 'ssss', 1333, 'card-1.png', '', '2020-01-24 00:00:00', '2020-01-29 00:00:00');
+(1, 3, 2, 'Admin', 1032020, 'LOGO-PT-INDOLAKTO.jpg', 'Perempuan', '0000-00-00 00:00:00', '2020-05-12 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -123,17 +121,6 @@ CREATE TABLE `tabel_materi_safety` (
   `tanggal_upload` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tabel_materi_safety`
---
-
-INSERT INTO `tabel_materi_safety` (`id_materi_safety`, `kategori_materi`, `judul_materi`, `keterangan_materi`, `file_materi`, `tipe`, `tanggal_upload`) VALUES
-(6, 'avvvvvvvvvvvv', 'avvvvvvvv', 'ac', 'https://www.youtube.com/embed/2-fy-Ad3rgg', 'link', '2020-01-24'),
-(7, 'aaa', 'iiiiiii', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '', 'file', '2020-01-24'),
-(11, 'aaaaa', 'aaaaa', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'Jawaban soal.docx', 'file', '2020-01-28'),
-(12, 'q', 'q', 'q', 'https://www.youtube.com/embed/2-fy-Ad3rgg', 'link', '2020-01-28'),
-(15, 'oo', 'llo', 'oaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'Pedoman-Kebutuhan-Penguasaan-Teknik-Berbasis-Industri-Aplikasi-dan-Pengembang-Permainan.pdf', 'file', '2020-01-28');
-
 -- --------------------------------------------------------
 
 --
@@ -168,14 +155,6 @@ CREATE TABLE `tabel_operator` (
   `waktu_edit` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tabel_operator`
---
-
-INSERT INTO `tabel_operator` (`id_operator`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `jenis_kelamin`, `waktu_tambah`, `waktu_edit`) VALUES
-(4, 11, 1, 'assaaaaa', 12, 'card-1.png', 'Perempuan', '2020-01-21 00:00:00', '2020-01-24 00:00:00'),
-(5, 26, 9, 'qqqqq', 1, '56397b43-0ccd-4a0c-81eb-570e0963f11e.jpg', 'Laki-Laki', '2020-01-24 00:00:00', '2020-01-24 00:00:00');
-
 -- --------------------------------------------------------
 
 --
@@ -189,15 +168,6 @@ CREATE TABLE `tabel_score_generalhrd` (
   `nilai` int(15) NOT NULL,
   `tanggal_training` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tabel_score_generalhrd`
---
-
-INSERT INTO `tabel_score_generalhrd` (`id_score_generalHrd`, `id_operator`, `poin`, `nilai`, `tanggal_training`) VALUES
-(1, 4, 11, 90, '2020-01-13'),
-(2, 4, 1, 1, '2020-02-24'),
-(3, 4, 1, 1, '2020-02-02');
 
 -- --------------------------------------------------------
 
@@ -213,14 +183,6 @@ CREATE TABLE `tabel_score_generalhrd_detail` (
   `perperus` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tabel_score_generalhrd_detail`
---
-
-INSERT INTO `tabel_score_generalhrd_detail` (`id_score_generalHrd_detail`, `id_score_generalHrd`, `coc`, `pkb_cab`, `perperus`) VALUES
-(1, 1, 89, 99, 99),
-(2, 1, 89, 99, 99);
-
 -- --------------------------------------------------------
 
 --
@@ -234,13 +196,6 @@ CREATE TABLE `tabel_score_quality` (
   `nilai` int(11) NOT NULL,
   `tanggal_training` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tabel_score_quality`
---
-
-INSERT INTO `tabel_score_quality` (`id_score_quality`, `id_operator`, `poin`, `nilai`, `tanggal_training`) VALUES
-(1, 4, 12, 12, '2020-02-02');
 
 -- --------------------------------------------------------
 
@@ -256,13 +211,6 @@ CREATE TABLE `tabel_score_quality_detail` (
   `halal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tabel_score_quality_detail`
---
-
-INSERT INTO `tabel_score_quality_detail` (`id_score_quality_detail`, `id_score_quality`, `fss`, `gmp`, `halal`) VALUES
-(1, 1, 1, 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -276,15 +224,6 @@ CREATE TABLE `tabel_score_safety` (
   `nilai` int(15) NOT NULL,
   `tanggal_training` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tabel_score_safety`
---
-
-INSERT INTO `tabel_score_safety` (`id_score_safety`, `id_operator`, `poin`, `nilai`, `tanggal_training`) VALUES
-(4, 5, 34444, 323, '2020-01-31'),
-(5, 4, 566, 778, '2020-02-29'),
-(7, 4, 5000, 70000, '2020-02-22');
 
 -- --------------------------------------------------------
 
@@ -308,15 +247,6 @@ CREATE TABLE `tabel_score_safety_detail` (
   `p3k` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tabel_score_safety_detail`
---
-
-INSERT INTO `tabel_score_safety_detail` (`id_score_safety_detail`, `id_score_safety`, `smk3`, `ea_hira`, `movement_forklift`, `confined_space`, `loto`, `apd`, `bbs`, `fire_fighting`, `wah`, `environment`, `p3k`) VALUES
-(2, 4, 60, 90, 80, 90, 90, 90, 70, 65, 89, 90, 33),
-(3, 5, 45, 66, 78, 90, 89, 77, 88, 88, 99, 89, 90),
-(7, 7, 77, 89, 8, 8, 8, 8, 8, 84, 85, 86, 80);
-
 -- --------------------------------------------------------
 
 --
@@ -331,15 +261,6 @@ CREATE TABLE `tabel_score_technical` (
   `nilai` int(11) NOT NULL,
   `tanggal_training` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tabel_score_technical`
---
-
-INSERT INTO `tabel_score_technical` (`id_score_technical`, `id_operator`, `kategori_technical`, `poin`, `nilai`, `tanggal_training`) VALUES
-(4, 4, 'lallala', 12, 12, '2020-02-06'),
-(5, 4, 'kakkaewageth', 1122, 11222, '2020-02-12'),
-(6, 4, 'ouooo', 111, 222244, '2020-02-06');
 
 -- --------------------------------------------------------
 
@@ -357,12 +278,45 @@ CREATE TABLE `tabel_score_technical_detail` (
   `trouble` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `tabel_score_technical_detail`
+-- Table structure for table `tabel_score_technical_observasi`
 --
 
-INSERT INTO `tabel_score_technical_detail` (`id_score_technical_detail`, `id_score_technical`, `sftp`, `equipment`, `operational`, `mainten`, `trouble`) VALUES
-(1, 4, 89, 88, 88, 90, 99);
+CREATE TABLE `tabel_score_technical_observasi` (
+  `id_score_technical_observasi` int(11) NOT NULL,
+  `id_operator` int(11) NOT NULL,
+  `kategori_technical` varchar(200) NOT NULL,
+  `sftp` double NOT NULL,
+  `equipment` double NOT NULL,
+  `operational` double NOT NULL,
+  `mainten` double NOT NULL,
+  `trouble` double NOT NULL,
+  `total` double NOT NULL,
+  `tanggal_observasi` date NOT NULL,
+  `ratarata` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tabel_score_technical_praktek`
+--
+
+CREATE TABLE `tabel_score_technical_praktek` (
+  `id_score_technical_praktek` int(11) NOT NULL,
+  `id_operator` int(11) NOT NULL,
+  `kategori_technical` varchar(200) NOT NULL,
+  `sftp` double NOT NULL,
+  `equipment` double NOT NULL,
+  `operational` double NOT NULL,
+  `mainten` double NOT NULL,
+  `trouble` double NOT NULL,
+  `total` double NOT NULL,
+  `ratarata` double NOT NULL,
+  `tanggal_praktek` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -382,14 +336,6 @@ CREATE TABLE `tabel_supervisor` (
   `waktu_edit` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tabel_supervisor`
---
-
-INSERT INTO `tabel_supervisor` (`id_supervisor`, `id_user`, `id_jabatan`, `nama`, `nik`, `foto`, `jenis_kelamin`, `waktu_tambah`, `waktu_edit`) VALUES
-(1, 2, 1, 'supervisor1', 11111, 'card-1.png', 'Laki-Laki', '2020-01-09 00:00:00', '2020-01-21 00:00:00'),
-(2, 9, 9, 'aaaaaa', 122, '51436135_2551525554862691_8785967233080754176_n.jpg', 'Laki-Laki', '2020-01-20 00:00:00', '0000-00-00 00:00:00');
-
 -- --------------------------------------------------------
 
 --
@@ -408,13 +354,7 @@ CREATE TABLE `tabel_user` (
 --
 
 INSERT INTO `tabel_user` (`id_user`, `username`, `password`, `level`) VALUES
-(2, '11111', '11111', 'supervisor'),
-(3, '123', '1234', 'admin'),
-(9, '122', '1222', 'supervisor'),
-(11, '12', '12', 'operator'),
-(22, '10000', 'rrr', 'admin'),
-(23, '1333', 'v', 'admin'),
-(26, '1', 'aaaa', 'operator');
+(3, '01032020', '01032020', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -512,7 +452,8 @@ ALTER TABLE `tabel_score_safety_detail`
 -- Indexes for table `tabel_score_technical`
 --
 ALTER TABLE `tabel_score_technical`
-  ADD PRIMARY KEY (`id_score_technical`);
+  ADD PRIMARY KEY (`id_score_technical`),
+  ADD KEY `id_operator` (`id_operator`);
 
 --
 -- Indexes for table `tabel_score_technical_detail`
@@ -520,6 +461,20 @@ ALTER TABLE `tabel_score_technical`
 ALTER TABLE `tabel_score_technical_detail`
   ADD PRIMARY KEY (`id_score_technical_detail`),
   ADD KEY `id_score_technical` (`id_score_technical`);
+
+--
+-- Indexes for table `tabel_score_technical_observasi`
+--
+ALTER TABLE `tabel_score_technical_observasi`
+  ADD PRIMARY KEY (`id_score_technical_observasi`),
+  ADD KEY `id_operator` (`id_operator`);
+
+--
+-- Indexes for table `tabel_score_technical_praktek`
+--
+ALTER TABLE `tabel_score_technical_praktek`
+  ADD PRIMARY KEY (`id_score_technical_praktek`),
+  ADD KEY `id_operator` (`id_operator`);
 
 --
 -- Indexes for table `tabel_supervisor`
@@ -579,7 +534,7 @@ ALTER TABLE `tabel_materi_technical`
 -- AUTO_INCREMENT for table `tabel_operator`
 --
 ALTER TABLE `tabel_operator`
-  MODIFY `id_operator` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_operator` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tabel_score_generalhrd`
@@ -597,7 +552,7 @@ ALTER TABLE `tabel_score_generalhrd_detail`
 -- AUTO_INCREMENT for table `tabel_score_quality`
 --
 ALTER TABLE `tabel_score_quality`
-  MODIFY `id_score_quality` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_score_quality` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tabel_score_quality_detail`
@@ -609,7 +564,7 @@ ALTER TABLE `tabel_score_quality_detail`
 -- AUTO_INCREMENT for table `tabel_score_safety`
 --
 ALTER TABLE `tabel_score_safety`
-  MODIFY `id_score_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_score_safety` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tabel_score_safety_detail`
@@ -627,7 +582,19 @@ ALTER TABLE `tabel_score_technical`
 -- AUTO_INCREMENT for table `tabel_score_technical_detail`
 --
 ALTER TABLE `tabel_score_technical_detail`
-  MODIFY `id_score_technical_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_score_technical_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tabel_score_technical_observasi`
+--
+ALTER TABLE `tabel_score_technical_observasi`
+  MODIFY `id_score_technical_observasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tabel_score_technical_praktek`
+--
+ALTER TABLE `tabel_score_technical_praktek`
+  MODIFY `id_score_technical_praktek` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tabel_supervisor`
@@ -639,7 +606,7 @@ ALTER TABLE `tabel_supervisor`
 -- AUTO_INCREMENT for table `tabel_user`
 --
 ALTER TABLE `tabel_user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables
@@ -696,10 +663,28 @@ ALTER TABLE `tabel_score_safety_detail`
   ADD CONSTRAINT `tabel_score_safety_detail_ibfk_1` FOREIGN KEY (`id_score_safety`) REFERENCES `tabel_score_safety` (`id_score_safety`);
 
 --
+-- Constraints for table `tabel_score_technical`
+--
+ALTER TABLE `tabel_score_technical`
+  ADD CONSTRAINT `tabel_score_technical_ibfk_1` FOREIGN KEY (`id_operator`) REFERENCES `tabel_operator` (`id_operator`);
+
+--
 -- Constraints for table `tabel_score_technical_detail`
 --
 ALTER TABLE `tabel_score_technical_detail`
   ADD CONSTRAINT `tabel_score_technical_detail_ibfk_1` FOREIGN KEY (`id_score_technical`) REFERENCES `tabel_score_technical` (`id_score_technical`);
+
+--
+-- Constraints for table `tabel_score_technical_observasi`
+--
+ALTER TABLE `tabel_score_technical_observasi`
+  ADD CONSTRAINT `tabel_score_technical_observasi_ibfk_1` FOREIGN KEY (`id_operator`) REFERENCES `tabel_operator` (`id_operator`);
+
+--
+-- Constraints for table `tabel_score_technical_praktek`
+--
+ALTER TABLE `tabel_score_technical_praktek`
+  ADD CONSTRAINT `tabel_score_technical_praktek_ibfk_1` FOREIGN KEY (`id_operator`) REFERENCES `tabel_operator` (`id_operator`);
 
 --
 -- Constraints for table `tabel_supervisor`

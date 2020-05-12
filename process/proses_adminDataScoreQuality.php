@@ -8,7 +8,7 @@
         return $resultTampilOperator;
     }
 
-    if (isset($_POST["tambahDataScoreQuality"]) || isset($_POST["editDataScoreQuality"]) || isset($_POST["hapusDataMateriQuality"])){
+    if (isset($_POST["tambahDataScoreQuality"]) || isset($_POST["editDataScoreQuality"]) || isset($_POST["hapusDataScoreQuality"])){
         if($_GET["module"]=="dataScoreQuality" && $_GET["act"]=="tambah"){
             $dateQuality =  date('Y-m-d', strtotime($_POST[dateQuality]));
             $query2 = "INSERT INTO tabel_score_quality (
@@ -51,6 +51,7 @@
         } 
         else if ($_GET["module"]=="dataScoreQuality" && $_GET["act"]=="hapus"){
             $idnya = $_POST['id_score_quality'];
+
             $queryDelete2 = "DELETE FROM tabel_score_quality_detail WHERE id_score_quality='$idnya';";
             $queryDelete = "DELETE FROM tabel_score_quality WHERE id_score_quality='$idnya';";
 

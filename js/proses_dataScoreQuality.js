@@ -24,12 +24,12 @@ $(".edit-dataScoreQuality-admin").click(function () {
 });
 
 $(".hapus-dataScoreQuality-admin").click(function () {
-  var id_score_quality = $(this).attr("id_score_quality");
+    var id_score_quality = $(this).attr("id_score_quality");
 
-  $('#id_scoreQualityHapus').val(id_score_quality);
+    $('#id_scoreQualityHapus').val(id_score_quality);
 
-  $('#hapusDataScoreQualityModal').modal("show");
-})
+    $('#hapusDataScoreQualityModall').modal("show");
+});
 
 $(".info-dataScoreQuality-admin").click(function () {
   var id_scoreQualityInfo = $(this).attr("id_scoreQualityInfo");

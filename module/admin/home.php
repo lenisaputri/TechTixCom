@@ -3,7 +3,8 @@
   include "../process/proses_dashboardAdmin.php";
 ?>
 <head>
-  <script src="../vendor/chart.js/Chart.min.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/chart.js/Chart.min.js"></script>
 </head>
 <body>
   <div class="container-fluid" id="dataKaryawan">
@@ -25,7 +26,7 @@
                 </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-user fa-2x text-gray-300"></i>
+                <i class="fas fa-fw fa-id-card fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -46,7 +47,7 @@
                   </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-user fa-2x text-gray-300"></i>
+                <i class="fas fa-fw fa-id-card fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -67,7 +68,7 @@
                     </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-user fa-2x text-gray-300"></i>
+                <i class="fas fa-fw fa-id-card fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -88,7 +89,7 @@
                       </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-user fa-2x text-gray-300"></i>
+                <i class="fas fa-fw fa-sitemap fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -112,7 +113,7 @@
                         </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-user fa-2x text-gray-300"></i>
+                <i class="fas fa-fw fa-file fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -133,7 +134,7 @@
                         </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-user fa-2x text-gray-300"></i>
+                <i class="fas fa-fw fa-file fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -154,7 +155,7 @@
                           </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-user fa-2x text-gray-300"></i>
+                <i class="fas fa-fw fa-file fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -175,7 +176,7 @@
                           </div>
               </div>
               <div class="col-auto">
-                <i class="fas fa-user fa-2x text-gray-300"></i>
+                <i class="fas fa-fw fa-file fa-2x text-gray-300"></i>
               </div>
             </div>
           </div>
@@ -185,18 +186,62 @@
   <!-- -->
 
      <!--chart 1-->
-  <div class="card shadow mb-4">
+  <!-- <div class="card shadow mb-4">
     <div class="card-header py-3">
       <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
     </div>
     <div class="card-body">
       <div class="chart-bar">
-        <canvas id="myBarChart"></canvas>
+        <canvas id="graphCanvas"></canvas>
       </div>
       <hr>
       Styling for the bar chart can be found in the <code>/js/demo/chart-bar-demo.js</code> file.
     </div>
   </div>
-   <!--chart 2-->
-  </div>
+   chart 2-->
+  <!-- </div>
+  <script>
+        $(document).ready(function () {
+            showGraph();
+        });
+
+        function showGraph()
+        {
+            {
+                $.post("../process/proses_chartSafetyAdmin.php",
+                function (data)
+                {
+                    console.log(data);
+                     var nama = [];
+                     var nilai = [];
+
+                    for (var i in data) {
+                        nama.push(data[i].nama);
+                        nilai.push(data[i].nilai);
+                    }
+
+                    var chartdata = {
+                        labels: nama,
+                        datasets: [
+                            {
+                                label: 'Operator',
+                                backgroundColor: "#4e73df",
+                                hoverBackgroundColor: "#2e59d9",
+                                borderColor: "#4e73df",
+                                hoverBorderColor: '#666666',
+                                data: nilai
+                            }
+                        ]
+                    };
+
+                    var graphTarget = $("#graphCanvas");
+
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'bar',
+                        data: chartdata
+                    });
+                });
+            }
+        }
+        </script> -->
 <body>

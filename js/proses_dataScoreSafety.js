@@ -29,7 +29,7 @@ $(".hapus-dataScoreSafety-admin").click(function () {
     $('#id_scoreSafetyHapus').val(id_score_safety);
 
     $('#hapusDataScoreSafetyModal').modal("show");
-})
+});
 
 $(".info-dataScoreSafety-admin").click(function () {
     var id_scoreSafetyInfo = $(this).attr("id_scoreSafetyInfo");

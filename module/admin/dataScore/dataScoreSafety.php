@@ -147,7 +147,7 @@ error_reporting(0);
                                                     <button type="button" class="btn btn-primary edit-dataScoreSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#editDataScoreSafetyModal" id_scoreSafetyEdit="<?php echo $rowTampilData["id_score_safety"];?>">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
-                                                    <button type="button" class="btn btn-danger hapus-dataScoreSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataMateriSafetyModal" id_score_safety="<?php echo $rowTampilData["id_score_safety"];?>" >
+                                                    <button type="button" class="btn btn-danger hapus-dataScoreSafety-admin mb-2 mb-sm-0" data-toggle="modal" data-target="#hapusDataScoreSafetyModal" id_score_safety="<?php echo $rowTampilData["id_score_safety"];?>" >
                                                         <i class="fas fa-trash"></i>
                                                     </button>
                                                 </td>

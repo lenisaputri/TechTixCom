@@ -149,11 +149,31 @@
         else if($_GET["module"] =="dataOperator" && $_GET["act"]=="hapus"){
             $delete=$_POST['id_user'];
             $idnya = $_POST['id_operator'];
+            // $idSafety = $_POST['id_score_safety'];
+            // $idGeneral = $_POST['id_score_generalHrd'];
+            // $idTechnical = $_POST['id_score_technical'];
+            // $idQuality = $_POST['id_score_quality'];
+
+            // $queryDelete9 = "DELETE tssd.*, tss.* FROM tabel_score_safety_detail tssd, tabel_score_safety tss 
+            // WHERE tssd.id_score_safety=tss.id_score_safety AND tss.id_operator='$idnya';";
+
+            // $queryDelete10 = "DELETE tsgd.*, tsg.* FROM tabel_score_generalhrd_detail tsgd, tabel_score_generalhrd tsg 
+            // WHERE tsgd.id_score_generalHrd=tsg.id_score_generalHrd AND tsg.id_operator='$idnya';";
+
+            // $queryDelete11 = "DELETE FROM tabel_score_quality_detail WHERE id_score_quality='$idQuality';";
+            // $queryDelete12 = "DELETE FROM tabel_score_technical_detail WHERE id_score_technical='$idTechnical';";
+            // mysqli_query($con,$queryDelete9) && mysqli_query($con,$queryDelete10) && 
+            $queryDelete3 = "DELETE FROM tabel_score_safety WHERE id_operator='$idnya';";
+            $queryDelete4 = "DELETE FROM tabel_score_generalhrd WHERE id_operator='$idnya';";
+            $queryDelete5 = "DELETE FROM tabel_score_quality WHERE id_operator='$idnya';";
+            $queryDelete6 = "DELETE FROM tabel_score_technical WHERE id_operator='$idnya';";
+            $queryDelete7 = "DELETE FROM tabel_score_technical_observasi WHERE id_operator='$idnya';";
+            $queryDelete8 = "DELETE FROM tabel_score_technical_praktek WHERE id_operator='$idnya';";
 
             $queryDelete = "DELETE FROM tabel_operator WHERE id_operator='$idnya';";
             $queryDelete2 = "DELETE FROM tabel_user WHERE id_user='$delete';";
-
-            if(mysqli_query($con,$queryDelete) && mysqli_query($con,$queryDelete2)){
+            
+            if(mysqli_query($con,$queryDelete3) && mysqli_query($con,$queryDelete4) && mysqli_query($con,$queryDelete5) && mysqli_query($con,$queryDelete6) && mysqli_query($con,$queryDelete7) && mysqli_query($con,$queryDelete8) && mysqli_query($con,$queryDelete) && mysqli_query($con,$queryDelete2)){
                 header('location:../module/index.php?module=' . $_GET["module"]);
             }
 
